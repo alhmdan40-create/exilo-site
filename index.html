@@ -17,14 +17,12 @@ body {
   color: white;
 }
 
-/* البنر */
 .hero img {
   width: 100%;
   height: 260px;
   object-fit: cover;
 }
 
-/* العناوين */
 .section-title {
   text-align: center;
   margin: 40px 0 20px;
@@ -33,22 +31,6 @@ body {
   font-weight: 900;
 }
 
-/* لماذا إكسيلو */
-.features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 20px;
-}
-
-.feature-box {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 18px;
-  text-align: center;
-}
-
-/* المنتجات */
 .products {
   display: grid;
   gap: 20px;
@@ -72,13 +54,6 @@ body {
   padding: 20px;
 }
 
-.price {
-  font-size: 22px;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-/* زر */
 .btn {
   display: inline-block;
   background: linear-gradient(45deg, #d4af37, #f1d77a);
@@ -89,71 +64,15 @@ body {
   font-weight: bold;
 }
 
-/* الدفع */
-.payments {
-  margin: 30px 20px;
-  padding: 25px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 20px;
-  text-align: center;
-}
-
-.payment-logos {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.logo-box {
-  background: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.logo-box img {
-  width: 70px;
-}
-
-/* واتساب */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 14px 22px;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-}
-
-/* الفوتر */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- البنر -->
 <section class="hero">
   <img src="banner.png.PNG">
 </section>
 
-<!-- لماذا إكسيلو -->
-<div class="section-title">لماذا إكسيلو؟</div>
-
-<div class="features">
-  <div class="feature-box">🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</div>
-  <div class="feature-box">🧠 نكشف أنماطك ونفهم سلوكك بعمق</div>
-  <div class="feature-box">🎯 انتقال من التشتت إلى الوضوح</div>
-  <div class="feature-box">🔥 نتائج تقاس بالتغيير لا بالكلام</div>
-</div>
-
-<!-- الدورات -->
 <div class="section-title">الدورات والخدمات</div>
 
 <div class="products">
@@ -162,9 +81,8 @@ footer {
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
     <div class="product-content">
       <h3>دورة تحليل الشخصية</h3>
-      <p>دورة باوربوينت لتحليل الخط والتوقيع والرسومات</p>
-      <div class="price">149 ريال</div>
-      <a href="#" class="btn">شراء الآن</a>
+      <p>تحليل الخط والتوقيع والرسومات</p>
+      <a href="course1.html" class="btn">عرض التفاصيل</a>
     </div>
   </div>
 
@@ -172,73 +90,12 @@ footer {
     <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png">
     <div class="product-content">
       <h3>دورة لغة الجسد</h3>
-      <p>دورة باوربوينت لفهم الإشارات الجسدية</p>
-      <div class="price">149 ريال</div>
-      <a href="#" class="btn">شراء الآن</a>
-    </div>
-  </div>
-
-  <div class="product">
-    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
-    <div class="product-content">
-      <h3>جلسات كوتشينج</h3>
-      <p>جلسات مباشرة عبر الهاتف</p>
-      <div class="price">200 ريال</div>
-      <a href="#" class="btn">احجز الآن</a>
+      <p>فهم الإشارات الجسدية والتواصل</p>
+      <a href="course2.html" class="btn">عرض التفاصيل</a>
     </div>
   </div>
 
 </div>
-
-<!-- الكتب -->
-<div class="section-title">الكتب الرقمية</div>
-
-<div class="products">
-
-  <div class="product">
-    <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png">
-    <div class="product-content">
-      <h3>كتاب إلكتروني</h3>
-      <p>كتاب تطوير الذات بصيغة PDF</p>
-      <div class="price">20 ريال</div>
-      <a href="#" class="btn">شراء الآن</a>
-    </div>
-  </div>
-
-  <div class="product">
-    <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png">
-    <div class="product-content">
-      <h3>باكج 3 كتب</h3>
-      <p>مجموعة كتب تطوير الذات</p>
-      <div class="price">50 ريال</div>
-      <a href="#" class="btn">شراء الآن</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- الدفع -->
-<div class="payments">
-  <h3>ادفع بثقة وأمان 🔒</h3>
-  <p>نقبل الدفع عبر Apple Pay و مدى</p>
-
-  <div class="payment-logos">
-    <div class="logo-box">
-      <img src="mada.png.png">
-    </div>
-    <div class="logo-box">
-      <img src="applepay.png.png">
-    </div>
-  </div>
-</div>
-
-<a class="whatsapp" href="https://wa.me/966530205304">
-  واتساب
-</a>
-
-<footer>
-© 2026 EXILO. جميع الحقوق محفوظة
-</footer>
 
 </body>
 </html>
