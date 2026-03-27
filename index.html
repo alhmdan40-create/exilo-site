@@ -1,66 +1,95 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exilo | المدرب هاني آل حمدان</title><style>
-    header {
-        background: #1a3a5f linear-gradient(135deg, #1a3a5f 0%, #2c5282 100%);
-        background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80'); /* خلفية تقنية مؤقتة احترافية */
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 8rem 1rem;
-        text-align: center;
-        position: relative;
-    }
-    header::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(26, 58, 95, 0.7); /* طبقة زرقاء شفافة فوق الصورة */
-        z-index: 1;
-    }
-    .logo-text, .tagline { position: relative; z-index: 2; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXILO</title>
+
+<style>
+body{
+margin:0;
+font-family: 'Arial';
+background:#0b1c2c;
+color:white;
+text-align:center;
+}
+
+.hero{
+padding:100px 20px;
+background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+background-size:cover;
+}
+
+h1{
+font-size:40px;
+}
+
+.btn{
+background:#00c896;
+padding:15px 30px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+display:inline-block;
+margin-top:20px;
+}
+
+.section{
+padding:60px 20px;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:#12263a;
+padding:20px;
+width:250px;
+border-radius:10px;
+}
+
+.footer{
+padding:30px;
+background:#091521;
+}
 </style>
+</head>
 
-<header>
-    <h1 class="logo-text">EXILO | إكسيلو</h1>
-    <p class="tagline">بإشراف المدرب هاني آل حمدان</p>
-    <p style="position:relative; z-index:2; font-style: italic;">بوابتك الرقمية للارتقاء والاسترخاء</p>
-</header>
+<body>
 
-
-<div class="container">
-    <div class="intro-card">
-        <h2>مرحباً بك في عالم الارتقاء الذاتي</h2>
-        <p>نحن هنا لنقدم لك الأدوات الرقمية والجلسات التوجيهية التي تساعدك على تحقيق توازنك النفسي والمهني.</p>
-        <a href="https://wa.me/YOURNUMBER" class="btn">تواصل معي مباشرة</a>
-    </div>
-
-    <h2 class="section-title">خدماتنا المتميزة</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>المكتبة الرقمية</h3>
-            <p>أدلة عملية وكتب رقمية في فن الاسترخاء والتحرر الذهني.</p>
-            <a href="#" class="btn-gold btn">تصفح الكتب</a>
-        </div>
-        <div class="card">
-            <h3>جلسات الكوتشينج</h3>
-            <p>جلسات استشارية خاصة لتطوير المهارات الشخصية وحل المعوقات.</p>
-            <a href="#" class="btn-gold btn">حجز جلسة</a>
-        </div>
-        <div class="card">
-            <h3>الاسترخاء والهدوء</h3>
-            <p>منهجيات متقدمة للوصول للسلام الداخلي بدون تعقيد.</p>
-            <a href="#" class="btn-gold btn">تعرف عليها</a>
-        </div>
-    </div>
+<div class="hero">
+<h1>إكسيلو | EXILO</h1>
+<p>رحلتك نحو التوازن تبدأ هنا</p>
+<a class="btn" href="https://wa.me/966XXXXXXXXX">احجز جلسة الآن</a>
 </div>
 
-<footer>
-    <p>جميع الحقوق محفوظة &copy; 2026 | متجر Exilo | هاني آل حمدان</p>
-</footer>
+<div class="section">
+<h2>خدماتنا</h2>
+<div class="cards">
+<div class="card">جلسات كوتشينغ</div>
+<div class="card">مكتبة رقمية</div>
+<div class="card">برامج تطوير</div>
+</div>
+</div>
+
+<div class="section">
+<h2>لماذا EXILO؟</h2>
+<p>نساعدك على تحقيق التوازن النفسي والمهني بأسلوب احترافي</p>
+</div>
+
+<div class="section">
+<h2>ابدأ الآن</h2>
+<a class="btn" href="https://wa.me/966XXXXXXXXX">تواصل عبر واتساب</a>
+</div>
+
+<div class="footer">
+<p>© EXILO 2026</p>
+</div>
 
 </body>
 </html>
