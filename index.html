@@ -1,34 +1,109 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Exilo Store</title>
-<style>
-body {
-  font-family: Arial;
-  text-align: center;
-  background: #0f172a;
-  color: white;
-}
-h1 {
-  margin-top: 50px;
-}
-.btn {
-  background: #22c55e;
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-}
-</style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exilo | المدرب هاني آل حمدان</title>
+    <style>
+        :root {
+            --primary-blue: #1a3a5f;
+            --soft-gray: #f8f9fa;
+            --accent-gold: #c5a059;
+            --text-dark: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            background-color: var(--soft-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), #2c5282);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+        .logo-text { font-size: 3rem; font-weight: bold; margin: 0; letter-spacing: 2px; }
+        .tagline { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+        
+        .container { max-width: 1000px; margin: -50px auto 40px; padding: 0 20px; }
+        
+        .intro-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .section-title { color: var(--primary-blue); margin-top: 40px; text-align: center; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid var(--primary-blue);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .card:hover { transform: translateY(-5px); }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .btn-gold { background: var(--accent-gold); color: #fff; }
 
+        footer { background: #1a1a1a; color: #888; text-align: center; padding: 2rem; margin-top: 50px; }
+    </style>
+</head>
 <body>
 
-<h1>🚀 متجر Exilo</h1>
-<p>متجر رقمي للكتب والدورات</p>
+<header>
+    <h1 class="logo-text">EXILO</h1>
+    <p class="tagline">بإشراف المدرب هاني آل حمدان</p>
+</header>
 
-<a class="btn" href="#">تصفح المنتجات</a>
+<div class="container">
+    <div class="intro-card">
+        <h2>مرحباً بك في عالم الارتقاء الذاتي</h2>
+        <p>نحن هنا لنقدم لك الأدوات الرقمية والجلسات التوجيهية التي تساعدك على تحقيق توازنك النفسي والمهني.</p>
+        <a href="https://wa.me/YOURNUMBER" class="btn">تواصل معي مباشرة</a>
+    </div>
+
+    <h2 class="section-title">خدماتنا المتميزة</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>المكتبة الرقمية</h3>
+            <p>أدلة عملية وكتب رقمية في فن الاسترخاء والتحرر الذهني.</p>
+            <a href="#" class="btn-gold btn">تصفح الكتب</a>
+        </div>
+        <div class="card">
+            <h3>جلسات الكوتشينج</h3>
+            <p>جلسات استشارية خاصة لتطوير المهارات الشخصية وحل المعوقات.</p>
+            <a href="#" class="btn-gold btn">حجز جلسة</a>
+        </div>
+        <div class="card">
+            <h3>الاسترخاء والهدوء</h3>
+            <p>منهجيات متقدمة للوصول للسلام الداخلي بدون تعقيد.</p>
+            <a href="#" class="btn-gold btn">تعرف عليها</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>جميع الحقوق محفوظة &copy; 2026 | متجر Exilo | هاني آل حمدان</p>
+</footer>
 
 </body>
 </html>
