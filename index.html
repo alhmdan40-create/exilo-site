@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exilo | إكسيلو | المدرب هاني آل حمدان</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <title>Exilo | إكسيلو</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #0a192f;
@@ -19,11 +15,8 @@
         body {
             font-family: 'Tajawal', sans-serif;
             margin: 0;
-            padding: 0;
             background-color: var(--site-bg);
             direction: rtl;
-            overflow-x: hidden;
-            color: #333;
         }
 
         .banner-wrapper {
@@ -40,14 +33,14 @@
             display: block;
         }
 
-        /* اللوجو الجديد فوق البنر */
-        .banner-logo-overlay {
+        /* الشعار البرمجي فوق البنر */
+        .banner-logo-svg {
             position: absolute;
-            top: 20px;
+            top: 15px;
             right: 20px;
-            height: 70px; /* حجم اللوجو في البنر */
+            width: 60px;
+            height: 60px;
             z-index: 20;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .hide-text-mask {
@@ -77,28 +70,26 @@
             border-top: 5px solid var(--navy);
         }
 
-        /* اللوجو في المربع الأبيض */
-        .logo-prominent {
-            height: 100px; /* حجم اللوجو في المربع */
-            width: auto;
-            margin: 0 auto 30px;
+        /* تنسيق الشعار البرمجي في المربع الأبيض */
+        .main-logo-svg {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
             display: block;
         }
 
         .welcome-title {
             color: var(--navy);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin: 0 0 20px 0;
-            line-height: 1.2;
+            margin-bottom: 15px;
         }
 
         .welcome-desc {
             color: #555;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            margin-bottom: 30px;
         }
 
         .cta-btn {
@@ -108,23 +99,20 @@
             padding: 18px 60px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(10,25,47,0.2);
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .welcome-title { font-size: 1.8rem; }
-            .logo-prominent { height: 80px; }
-            .banner-logo-overlay { height: 50px; }
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(10,25,47,0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="banner-wrapper">
-        <img src="logo.png.PNG" alt="Exilo Logo" class="banner-logo-overlay">
+        <div class="banner-logo-svg">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 20H80V35H35V45H70V60H35V65H80V80H20V20Z" fill="#b59410"/>
+                <rect x="10" y="10" width="80" height="80" rx="10" stroke="#b59410" stroke-width="4"/>
+            </svg>
+        </div>
         
         <img src="banner-top.png.PNG" alt="Exilo Banner" class="banner-img">
         <div class="hide-text-mask"></div>
@@ -133,18 +121,19 @@
     <div class="content-container">
         <section class="welcome-box">
             
-            <img src="logo.png.PNG" alt="Exilo Logo" class="logo-prominent">
+            <div class="main-logo-svg">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 25H75V35H40V45H65V55H40V65H75V75H25V25Z" fill="#b59410"/>
+                    <rect x="10" y="10" width="80" height="80" rx="15" stroke="#0a192f" stroke-width="3"/>
+                    <rect x="5" y="5" width="90" height="90" rx="20" stroke="#b59410" stroke-width="1"/>
+                </svg>
+            </div>
             
             <h1 class="welcome-title">مرحباً بك في عالم إكسيلو</h1>
-            
-            <p class="welcome-desc">
-                بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.
-            </p>
-            
+            <p class="welcome-desc">بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان.</p>
             <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الآن</a>
         </section>
     </div>
 
 </body>
 </html>
-
