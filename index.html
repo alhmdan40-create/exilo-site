@@ -5,129 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exilo | إكسيلو للارتقاء والاسترخاء</title>
     <style>
-        :root {
-            --navy: #0a192f;
-            --gold: #b59410;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            margin: 0;
-            background-color: #f4f7f9;
-            direction: rtl;
-        }
-
-        .top-bar {
-            background: linear-gradient(90deg, #b59410, #d4af37);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-weight: bold;
-        }
-
-        /* هذا الجزء هو المسؤول عن إظهار البانر IMG_2163.png */
+        :root { --navy: #0a192f; --gold: #b59410; --white: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7f9; direction: rtl; }
+        .top-bar { background: linear-gradient(90deg, #b59410, #d4af37); color: white; text-align: center; padding: 12px; font-weight: bold; }
+        
         header {
             width: 100%;
             height: 450px;
-            background-image: url('IMG_2163.png'); 
+            /* استخدام الاسم الدقيق الظاهر في لقطة الشاشة */
+            background-image: url('banner-top.png.PNG'); 
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            background-color: var(--navy);
             border-bottom: 5px solid var(--gold);
-            background-color: var(--navy);
         }
 
-        .main-content {
-            max-width: 900px;
-            margin: -50px auto 50px;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        h1 { color: var(--navy); margin-bottom: 20px; }
-        p { color: #555; font-size: 1.1rem; line-height: 1.8; }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--navy);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(10, 25, 47, 0.3);
-            transition: 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            background-color: var(--gold);
-        }
-
-        /* شبكة الخدمات المضافة */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto 50px;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--gold);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #888;
-            font-size: 0.9rem;
-        }
+        .main-content { max-width: 900px; margin: -50px auto 50px; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; position: relative; z-index: 10; }
+        h1 { color: var(--navy); }
+        .cta-button { display: inline-block; background-color: var(--navy); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 30px; }
+        
+        .logo-small { height: 60px; margin-bottom: 10px; }
+        footer { text-align: center; padding: 40px; color: #888; }
     </style>
 </head>
 <body>
-
     <div class="top-bar">✨ بوابتكم الرقمية للارتقاء والاسترخاء | خصم خاص لفترة محدودة ✨</div>
-
     <header></header>
-
     <div class="main-content">
+        <img src="logo.png.PNG" alt="Exilo Logo" class="logo-small">
         <h1>مرحباً بك في عالم إكسيلو</h1>
-        <p>نحن نقدم لك الأدوات العلمية والتدريبية الأكثر تطوراً للوصول إلى السلام الداخلي والارتقاء بجودة حياتك، تحت إشراف المدرب هاني آل حمدان بأساليب مبتكرة.</p>
+        <p>نحن نقدم لك الأدوات الذكية للوصول إلى السلام الداخلي والارتقاء بجودة حياتك تحت إشراف المدرب هاني آل حمدان.</p>
         <a href="https://wa.me/966500000000" class="cta-button">احجز جلستك الاستشارية الآن</a>
     </div>
-
-    <div class="services-grid">
-        <div class="card">
-            <h3>📚 المكتبة الرقمية</h3>
-            <p>أدلة تدريبية وكتب حصرية لرحلتك نحو الهدوء.</p>
-        </div>
-        <div class="card">
-            <h3>💻 الدورات التدريبية</h3>
-            <p>برامج مسجلة وتفاعلية لتطوير مهاراتك الذاتية.</p>
-        </div>
-        <div class="card">
-            <h3>🤝 جلسات الكوتشينج</h3>
-            <p>جلسات خاصة ومباشرة لتفكيك العوائق وتحقيق الأهداف.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 | EXILO</p>
-    </footer>
-
+    <footer><p>جميع الحقوق محفوظة &copy; 2026 | EXILO</p></footer>
 </body>
 </html>
