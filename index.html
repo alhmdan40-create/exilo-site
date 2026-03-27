@@ -6,28 +6,26 @@
 <title>EXILO</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
-/* BODY */
 body{
 margin:0;
 font-family:'Cairo', sans-serif;
 background:#f9fafb;
 color:#111827;
+scroll-behavior:smooth;
 }
 
-/* HEADER */
 .header{
 position:sticky;
 top:0;
 z-index:1000;
 background:#ffffff;
 box-shadow:0 5px 20px rgba(0,0,0,0.05);
-padding-bottom:25px;
 }
 
-/* NAV */
 .nav{
 display:flex;
 justify-content:space-between;
@@ -35,14 +33,12 @@ align-items:center;
 padding:15px 30px;
 }
 
-/* LOGO */
 .logo{
 font-size:28px;
 font-weight:700;
 color:#d4af37;
 }
 
-/* MENU */
 .menu{
 display:flex;
 gap:30px;
@@ -55,7 +51,6 @@ font-size:14px;
 position:relative;
 }
 
-/* Hover Line */
 .menu a::after{
 content:'';
 position:absolute;
@@ -71,7 +66,6 @@ transition:0.3s;
 width:100%;
 }
 
-/* BUTTON */
 .cta{
 background:#d4af37;
 color:white;
@@ -81,26 +75,37 @@ font-size:13px;
 text-decoration:none;
 }
 
-/* HERO */
-.hero-content{
+.banner{
+background:
+linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)),
+url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+background-size:cover;
+background-position:center;
+padding:90px 20px;
 text-align:center;
-margin-top:20px;
 }
 
-.hero-content h1{
-font-size:55px;
-font-weight:700;
-letter-spacing:2px;
+.banner h1{
+font-size:60px;
 margin:0;
 }
 
-.tagline{
-margin-top:8px;
-font-size:18px;
+.banner-text{
+margin-top:15px;
+font-size:20px;
 color:#6b7280;
 }
 
-/* SECTION */
+.banner-btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 30px;
+border-radius:25px;
+background:#d4af37;
+color:white;
+text-decoration:none;
+}
+
 .section{
 padding:70px 20px;
 text-align:center;
@@ -119,15 +124,27 @@ padding:25px;
 width:260px;
 border-radius:12px;
 border:1px solid #e5e7eb;
-transition:0.3s;
+transition:0.4s;
+opacity:0;
+transform:translateY(30px);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,0.05);
 }
 
-/* BUTTON */
+.icon{
+font-size:30px;
+color:#d4af37;
+margin-bottom:15px;
+}
+
 .btn{
 margin-top:15px;
 padding:10px 25px;
@@ -138,12 +155,10 @@ border-radius:25px;
 display:inline-block;
 }
 
-/* TITLES */
 .gold{
 color:#d4af37;
 }
 
-/* FOOTER */
 .footer{
 padding:30px;
 background:#111827;
@@ -152,16 +167,12 @@ margin-top:40px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-
 <div class="nav">
-
 <div class="logo">EXILO</div>
 
 <div class="menu">
@@ -171,54 +182,56 @@ margin-top:40px;
 <a href="#about">من نحن</a>
 </div>
 
-<a class="cta" href="https://wa.me/966XXXXXXXXX">ابدأ الآن</a>
-
+<a class="cta" href="https://wa.me/966530205304">ابدأ الآن</a>
+</div>
 </div>
 
-<div class="hero-content">
+<div class="banner">
 <h1>EXILO</h1>
-<p class="tagline">التوازن يبدأ من هنا</p>
+<p class="banner-text">التوازن يبدأ من هنا</p>
+<a href="#courses" class="banner-btn">استكشف الدورات</a>
 </div>
 
-</div>
-
-<!-- SERVICES -->
 <div class="section" id="services">
 <h2 class="gold">خدماتنا</h2>
 
 <div class="cards">
 
 <div class="card">
+<i class="fas fa-graduation-cap icon"></i>
 <h3>الدورات الرقمية</h3>
 <p>دورات احترافية في تحليل الشخصية وتطوير الذات</p>
 </div>
 
 <div class="card">
+<i class="fas fa-book-open icon"></i>
 <h3>المكتبة الرقمية</h3>
 <p>كتب وأدلة عملية تساعدك على النمو والتوازن</p>
 </div>
 
 <div class="card">
+<i class="fas fa-user-check icon"></i>
 <h3>الجلسات التدريبية</h3>
-<p>جلسات كوتشينغ واستشارات عبر الهاتف</p>
+<p>جلسات كوتشينغ واستشارات شخصية</p>
 </div>
 
 </div>
 </div>
 
-<!-- COURSES -->
 <div class="section" id="courses">
 <h2 class="gold">أبرز الدورات</h2>
 
 <div class="cards">
 
 <div class="card">
+<i class="fas fa-brain icon"></i>
 <h3>تحليل الشخصية</h3>
 <p>تعلم قراءة الشخصيات من الخط والتوقيع والرسومات</p>
 <a class="btn" href="course1.html">عرض الدورة</a>
 </div>
 
 <div class="card">
+<i class="fas fa-eye icon"></i>
 <h3>لغة الجسد</h3>
 <p>افهم الآخرين بدون كلمات</p>
 <a class="btn" href="#">عرض الدورة</a>
@@ -227,7 +240,6 @@ margin-top:40px;
 </div>
 </div>
 
-<!-- ABOUT -->
 <div class="section" id="about">
 <h2 class="gold">من نحن</h2>
 <p>
@@ -235,15 +247,27 @@ EXILO منصة رقمية متخصصة في تطوير الذات والتواز
 </p>
 </div>
 
-<!-- CTA -->
 <div class="section">
 <h2 class="gold">ابدأ رحلتك الآن</h2>
-<a class="btn" href="https://wa.me/966XXXXXXXXX">تواصل الآن</a>
+<a class="btn" href="https://wa.me/966530205304">تواصل الآن</a>
 </div>
 
 <div class="footer">
 © EXILO 2026
 </div>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+cards.forEach(card => {
+const top = card.getBoundingClientRect().top;
+if(top < window.innerHeight - 50){
+card.classList.add('show');
+}
+});
+});
+</script>
 
 </body>
 </html>
