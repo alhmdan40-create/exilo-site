@@ -68,11 +68,11 @@ color:#e5e7eb;
 text-decoration:none;
 }
 
-/* BANNER (صورة هدوء مناسبة) */
+/* BANNER (بدون أشخاص) */
 .banner{
 background:
-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1506126613408-eca07ce68773');
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
 background-size:cover;
 background-position:center;
 padding:100px 20px;
@@ -111,25 +111,44 @@ padding:10px;
 border-radius:10px;
 }
 
-/* SECTIONS */
-.section{
-padding:50px 20px;
-text-align:center;
-}
-
-.cards{
+/* BANNERS (الأقسام) */
+.banners{
 display:flex;
 flex-wrap:wrap;
-justify-content:center;
 gap:20px;
+justify-content:center;
 }
 
-.card{
-background:#1e293b;
-padding:20px;
-width:250px;
-border-radius:12px;
-border:1px solid #334155;
+.banner-box{
+width:300px;
+height:200px;
+background-size:cover;
+background-position:center;
+border-radius:15px;
+position:relative;
+overflow:hidden;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.overlay a{
+background:#d4af37;
+padding:8px 20px;
+border-radius:20px;
+color:white;
+text-decoration:none;
+margin-top:10px;
 }
 
 /* FOOTER */
@@ -190,26 +209,34 @@ background:#020617;
 <p>نقبل الدفع عبر مدى و Apple Pay</p>
 </div>
 
-<!-- SECTIONS -->
+<!-- BANNERS SECTIONS -->
 <div class="section">
-<h2>خدماتنا</h2>
+<h2 style="text-align:center;">استكشف خدماتنا</h2>
 
-<div class="cards">
-<div class="card">الدورات الرقمية</div>
-<div class="card">المكتبة الرقمية</div>
-<div class="card">الجلسات التدريبية</div>
+<div class="banners">
+
+<div class="banner-box" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7')">
+<div class="overlay">
+<h3>الدورات الرقمية</h3>
+<a href="#">استكشف</a>
+</div>
+</div>
+
+<div class="banner-box" style="background-image:url('https://images.unsplash.com/photo-1512820790803-83ca734da794')">
+<div class="overlay">
+<h3>المكتبة الرقمية</h3>
+<a href="#">تصفح</a>
+</div>
+</div>
+
+<div class="banner-box" style="background-image:url('https://images.unsplash.com/photo-1506784365847-bbad939e9335')">
+<div class="overlay">
+<h3>الجلسات التدريبية</h3>
+<a href="#">احجز الآن</a>
+</div>
 </div>
 
 </div>
-
-<div class="section">
-<h2>الدورات</h2>
-
-<div class="cards">
-<div class="card">تحليل الشخصية</div>
-<div class="card">لغة الجسد</div>
-</div>
-
 </div>
 
 <!-- FOOTER -->
