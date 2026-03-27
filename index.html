@@ -1,14 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exilo | إكسيلو | المدرب هاني آل حمدان</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <title>Exilo | إكسيلو</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #0a192f;
@@ -27,85 +24,54 @@
             color: #333;
         }
 
-        /* حاوية البانر الأساسية */
+        /* حاوية البانر الأساسية (البحر والصخور) */
         .banner-wrapper {
             position: relative;
             width: 100%;
             line-height: 0;
             background-color: var(--navy);
-            border-bottom: 6px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-bottom: 5px solid var(--gold);
         }
 
+        /* البانر يظهر نظيفاً الآن وبدون أي لوجو مدمج فيه */
         .banner-img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* --- سر الدمج الاحترافي للشعار الجديد --- */
-        .banner-logo-container {
-            position: absolute;
-            top: 25px; /* موضع علوي أنيق */
-            right: 25px; /* موضع أيمن أنيق */
-            z-index: 10;
-            padding: 15px;
-            /* إضافة تدرج ناعم جداً خلف الشعار لدمجه مع الصورة دون تشويهها */
-            background: radial-gradient(circle, rgba(10, 25, 47, 0.6) 0%, rgba(10, 25, 47, 0.0) 80%);
-            border-radius: 50%;
-        }
-
-        /* تنسيق الشعار الذهبي الجديد (E) */
-        .banner-logo-svg {
-            width: 80px; /* حجم بارز وملفت */
-            height: 80px;
-            display: block;
-            /* إضافة ظل ناعم للشعار ليعطيه عمقاً */
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-        }
-
-        /* طبقة إخفاء النص السفلي في البانر (بإشراف المدرب...) */
-        .hide-text-mask {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 15%; /* مساحة كافية للتغطية */
-            background-color: var(--site-bg);
-            z-index: 5;
-        }
-
         /* مساحة المحتوى */
         .content-container {
             max-width: 900px;
-            margin: -40px auto 80px; /* تداخل خفيف مع البانر لزيادة الفخامة */
+            margin: -50px auto 80px; /* تداخل خفيف مع البانر لزيادة الفخامة */
             padding: 0 20px;
             position: relative;
-            z-index: 15;
+            z-index: 10;
         }
 
-        /* بطاقة الترحيب */
+        /* المربع الأبيض الترحيبي */
         .welcome-box {
             background: white;
             padding: 50px 40px;
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.06); /* ظل أعمق وأفخم */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06); /* ظل ناعم وأنيق */
             text-align: center;
             border-top: 5px solid var(--navy);
         }
 
-        /* تنسيق اللوجو في المربع الأبيض بخط ملفت ومتناسق */
-        .main-logo-svg {
-            width: 120px; /* حجم بارز وملفت */
-            height: 120px;
+        /* --- تنسيق اللوجو الكامل الفخم (الدرع الذهبي المزخرف) في المربع الأبيض --- */
+        .logo-prominent {
+            height: 120px; /* حجم بارز وملفت للدرع */
+            width: auto;
             margin: 0 auto 30px;
             display: block;
+            /* إضافة ظل ناعم للشعار ليعطيه عمقاً */
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
         .welcome-title {
             color: var(--navy);
-            font-size: 2.5rem; /* حجم كبير وملفت */
+            font-size: 2.2rem;
             font-weight: 700;
             margin: 0 0 20px 0;
             line-height: 1.2;
@@ -113,21 +79,22 @@
 
         .welcome-desc {
             color: #555;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.8;
             max-width: 700px;
             margin: 0 auto 30px;
         }
 
+        /* تنسيق الزر المطلوب: احجز جلستك الآن */
         .cta-btn {
             display: inline-block;
             background: var(--navy);
             color: white;
-            padding: 18px 60px;
+            padding: 16px 60px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             box-shadow: 0 5px 15px rgba(10,25,47,0.2);
             transition: all 0.3s ease;
         }
@@ -141,9 +108,7 @@
         @media (max-width: 768px) {
             .content-container { margin-top: -20px; }
             .welcome-box { padding: 30px 20px; }
-            .main-logo-svg { height: 90px; margin-bottom: 20px; }
-            .banner-logo-svg { width: 60px; height: 60px; }
-            .banner-logo-container { top: 15px; right: 15px; padding: 10px; }
+            .logo-prominent { height: 90px; margin-bottom: 20px; }
             .welcome-title { font-size: 1.8rem; }
             .welcome-desc { font-size: 1rem; }
         }
@@ -152,30 +117,18 @@
 <body>
 
     <div class="banner-wrapper">
-        <div class="banner-logo-container">
-            <svg class="banner-logo-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#b59410" stroke-width="2"/>
-                <path d="M35 35H65V42H45V46H60V53H45V57H65V65H35V35Z" fill="#b59410"/>
-            </svg>
-        </div>
-        
         <img src="banner-top.png.PNG" alt="Exilo Banner" class="banner-img">
-        
-        <div class="hide-text-mask"></div>
     </div>
 
     <div class="content-container">
         <section class="welcome-box">
             
-            <svg class="main-logo-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="48" fill="var(--navy)"/>
-                <path d="M35 35H65V42H45V46H60V53H45V57H65V65H35V35Z" fill="#b59410"/>
-            </svg>
+            <img src="logo_new.png" alt="Exilo New Logo" class="logo-prominent">
             
             <h1 class="welcome-title">مرحباً بك في عالم إكسيلو</h1>
             
             <p class="welcome-desc">
-                بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بأساليب مبتكرة تدعم جودة حياتك.
+                بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.
             </p>
             
             <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الآن</a>
