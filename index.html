@@ -6,61 +6,60 @@
 <title>EXILO</title>
 
 <style>
-
-/* ===== الأساس ===== */
 body {
   margin: 0;
-  font-family: 'Tahoma', sans-serif;
-  background: #0b1a2b;
-  color: white;
+  font-family: Arial;
+  background: linear-gradient(#f5f7fa, #e4ecf5);
+  color: #1a1a1a;
 }
 
-/* ===== الهيدر (فارغ) ===== */
+/* ===== الهيدر ===== */
 header {
-  height: 60px;
-  background: #081420;
+  padding: 15px;
+  text-align: center;
+  background: #0b1e3a;
+  color: #d4af37;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* ===== البنر ===== */
-.hero {
-  height: 220px;
-  overflow: hidden;
-  border-bottom: 2px solid #d4af37;
-}
-
-.hero-bg {
+.hero img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
+  display: block;
 }
 
-/* ===== العناوين ===== */
+/* ===== الأقسام ===== */
 .section-title {
   text-align: center;
-  color: #d4af37;
-  margin: 30px 0 15px;
-  font-size: 24px;
+  margin: 30px 0 10px;
+  font-size: 22px;
+  color: #0b1e3a;
+  font-weight: bold;
 }
 
 /* ===== الكروت ===== */
 .card {
-  background: #16273d;
+  background: #ffffff;
   margin: 15px;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .price {
+  font-size: 20px;
   margin: 10px 0;
-  font-size: 18px;
+  color: #0b1e3a;
 }
 
-/* ===== الأزرار ===== */
 .btn {
   background: #d4af37;
   color: black;
-  padding: 12px 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
   display: inline-block;
@@ -68,15 +67,15 @@ header {
 }
 
 /* ===== الدفع ===== */
-.payment {
-  background: #16273d;
+.payments {
+  background: #ffffff;
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
 }
 
-.payment img {
+.payments img {
   width: 80px;
   margin: 10px;
 }
@@ -88,7 +87,7 @@ header {
   right: 20px;
   background: #25D366;
   color: white;
-  padding: 15px 20px;
+  padding: 12px 20px;
   border-radius: 30px;
   text-decoration: none;
 }
@@ -98,24 +97,22 @@ footer {
   text-align: center;
   padding: 15px;
   font-size: 12px;
-  color: #ccc;
+  color: #555;
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== الهيدر ===== -->
-<header></header>
+<header>EXILO</header>
 
-<!-- ===== البنر (بدون نص) ===== -->
+<!-- ===== البنر ===== -->
 <section class="hero">
-  <img src="banner-top.png.PNG" class="hero-bg">
+  <img src="banner.png">
 </section>
 
 <!-- ===== الدورات ===== -->
-<h2 class="section-title">الدورات المتاحة</h2>
+<div class="section-title">الدورات المتاحة</div>
 
 <div class="card">
   <h3>دورة تحليل الشخصية</h3>
@@ -124,27 +121,24 @@ footer {
   <a href="#" class="btn">شراء الآن</a>
 </div>
 
+<!-- ===== الجلسات ===== -->
 <div class="card">
   <h3>جلسات كوتشينج</h3>
-  <p>جلسات تدريبية مباشرة</p>
+  <p>جلسات تدريبية مباشرة لتطوير الذات</p>
   <div class="price">200 ريال</div>
   <a href="#" class="btn">احجز الآن</a>
 </div>
 
 <!-- ===== الدفع ===== -->
-<div class="payment">
-  <h3>🔒 ادفع بثقة وأمان</h3>
+<div class="payments">
+  <h3>ادفع بثقة وأمان 🔒</h3>
   <p>نقبل الدفع عبر Apple Pay و مدى</p>
-
-  <!-- تأكد من رفع الصور -->
   <img src="mada.png">
-  <img src="apple.png">
+  <img src="applepay.png">
 </div>
 
 <!-- ===== واتساب ===== -->
-<a href="https://wa.me/966530205304" class="whatsapp">
-  واتساب
-</a>
+<a class="whatsapp" href="https://wa.me/966530205304">واتساب</a>
 
 <!-- ===== الفوتر ===== -->
 <footer>
