@@ -24,22 +24,39 @@ body {
   object-fit: cover;
 }
 
-/* عناوين */
+/* العنوان */
 .section-title {
   text-align: center;
   margin: 40px 0 20px;
-  font-size: 26px;
+  font-size: 28px;
   color: #d4af37;
   font-weight: 900;
 }
 
-/* تعريف */
-.about {
-  margin: 20px;
-  padding: 25px;
+/* المميزات */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.feature-box {
   background: rgba(255,255,255,0.08);
-  border-radius: 20px;
-  line-height: 1.9;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.12);
+}
+
+.feature-box img {
+  width: 55px;
+  margin-bottom: 12px;
 }
 
 /* الكروت */
@@ -49,15 +66,6 @@ body {
   padding: 25px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.card h3 {
-  font-size: 22px;
-}
-
-.card p {
-  color: #ddd;
 }
 
 .price {
@@ -131,19 +139,31 @@ footer {
   <img src="banner.png.PNG">
 </section>
 
-<!-- تعريف -->
-<div class="section-title">من أنا</div>
+<!-- لماذا إكسيلو -->
+<div class="section-title">لماذا إكسيلو؟</div>
 
-<div class="about">
-مدرب تنمية بشرية وتطوير الذات  
-مدرب في إعداد وتدريب المدربين  
-مدرب في أنماط الشخصيات وفهم النفسيات  
-مدرب في الأنظمة التمثيلية  
-مدرب في لغة الجسد  
-مدرب في البرمجة اللغوية العصبية  
-محلل شخصيات من خلال الخط والتوقيع والرسومات  
-ممارس متقدم في التنويم الإيحائي  
-إعلامي معتمد من الهيئة العامة لتنظيم الإعلام
+<div class="features">
+
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
+    <p>🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/3771/3771417.png">
+    <p>🧠 نكشف أنماطك ونفهم سلوكك بعمق</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+    <p>🎯 انتقال حقيقي من التشتت إلى الوضوح</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
+    <p>🔥 نتائج تقاس بالتغيير لا بالكلام</p>
+  </div>
+
 </div>
 
 <!-- المنتجات -->
@@ -178,12 +198,10 @@ footer {
   </div>
 </div>
 
-<!-- واتساب -->
 <a class="whatsapp" href="https://wa.me/966530205304">
   واتساب
 </a>
 
-<!-- الفوتر -->
 <footer>
 © 2026 EXILO. جميع الحقوق محفوظة
 </footer>
