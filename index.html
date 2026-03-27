@@ -13,63 +13,63 @@
 body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
-  background: linear-gradient(135deg, #0b1e3a, #1f3f6e);
+  background: linear-gradient(180deg, #0b1e3a, #142f55);
   color: white;
 }
 
-/* ===== الهيدر ===== */
+/* الهيدر */
 header {
   text-align: center;
-  padding: 15px;
-  font-size: 22px;
+  padding: 20px;
+  font-size: 24px;
   font-weight: 900;
   color: #d4af37;
 }
 
-/* ===== البنر ===== */
+/* البنر */
 .hero img {
   width: 100%;
   height: 250px;
   object-fit: cover;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
 }
 
-/* ===== العنوان ===== */
+/* العنوان */
 .section-title {
   text-align: center;
   margin: 30px 0;
-  font-size: 24px;
+  font-size: 26px;
   color: #d4af37;
   font-weight: 900;
 }
 
-/* ===== الكروت ===== */
+/* الكروت */
 .card {
   background: rgba(255,255,255,0.08);
   margin: 20px;
   padding: 25px;
-  border-radius: 18px;
+  border-radius: 20px;
   text-align: center;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .card h3 {
   font-size: 22px;
-  margin-bottom: 10px;
 }
 
 .card p {
   color: #ddd;
-  margin-bottom: 15px;
+  margin: 10px 0;
 }
 
 .price {
   font-size: 22px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
-/* ===== الأزرار ===== */
+/* الأزرار */
 .btn {
   display: inline-block;
   background: linear-gradient(45deg, #d4af37, #f1d77a);
@@ -80,12 +80,12 @@ header {
   font-weight: bold;
 }
 
-/* ===== الدفع ===== */
+/* الدفع */
 .payments {
   margin: 30px 20px;
   padding: 25px;
   background: rgba(255,255,255,0.08);
-  border-radius: 18px;
+  border-radius: 20px;
   text-align: center;
 }
 
@@ -94,7 +94,7 @@ header {
   margin: 10px;
 }
 
-/* ===== واتساب ===== */
+/* واتساب */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -107,7 +107,7 @@ header {
   font-weight: bold;
 }
 
-/* ===== الفوتر ===== */
+/* الفوتر */
 footer {
   text-align: center;
   padding: 20px;
@@ -122,20 +122,19 @@ footer {
 
 <header>EXILO</header>
 
-<!-- ===== البنر ===== -->
+<!-- البنر -->
 <section class="hero">
-  <img src="banner.png">
+  <img src="banner-top.png.PNG" alt="banner">
 </section>
 
-<!-- ===== المنتجات ===== -->
+<!-- المنتجات -->
 <div class="section-title">الدورات المتاحة</div>
 
 <div class="card">
   <h3>دورة تحليل الشخصية</h3>
   <p>تحليل الخط والتوقيع والرسومات</p>
   <div class="price">149 ريال</div>
-  
-  <!-- زر شراء -->
+
   <a href="https://wa.me/966530205304?text=أبغى شراء دورة تحليل الشخصية" class="btn">
     شراء الآن
   </a>
@@ -146,27 +145,26 @@ footer {
   <p>جلسات تدريبية مباشرة لتطوير الذات</p>
   <div class="price">200 ريال</div>
 
-  <!-- زر حجز -->
   <a href="https://wa.me/966530205304?text=أبغى حجز جلسة كوتشينج" class="btn">
     احجز الآن
   </a>
 </div>
 
-<!-- ===== الدفع ===== -->
+<!-- الدفع -->
 <div class="payments">
   <h3>ادفع بثقة وأمان 🔒</h3>
   <p>نقبل الدفع عبر Apple Pay و مدى</p>
 
-  <img src="mada.png">
-  <img src="applepay.png">
+  <img src="mada.png" alt="mada">
+  <img src="applepay.png" alt="apple pay">
 </div>
 
-<!-- ===== واتساب ===== -->
+<!-- واتساب -->
 <a class="whatsapp" href="https://wa.me/966530205304">
   واتساب
 </a>
 
-<!-- ===== الفوتر ===== -->
+<!-- الفوتر -->
 <footer>
 © 2026 EXILO - جميع الحقوق محفوظة
 </footer>
