@@ -33,6 +33,21 @@ body {
   font-weight: 900;
 }
 
+/* لماذا إكسيلو */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.feature-box {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+}
+
 /* المنتجات */
 .products {
   display: grid;
@@ -47,14 +62,12 @@ body {
   text-align: center;
 }
 
-/* صورة المنتج */
 .product img {
   width: 100%;
   height: 160px;
   object-fit: cover;
 }
 
-/* المحتوى */
 .product-content {
   padding: 20px;
 }
@@ -113,6 +126,7 @@ body {
   text-decoration: none;
 }
 
+/* الفوتر */
 footer {
   text-align: center;
   padding: 20px;
@@ -129,12 +143,34 @@ footer {
   <img src="banner.png.PNG">
 </section>
 
+<!-- لماذا إكسيلو -->
+<div class="section-title">لماذا إكسيلو؟</div>
+
+<div class="features">
+
+  <div class="feature-box">
+    🚀 لا نقدم معلومات… بل نصنع تحول حقيقي
+  </div>
+
+  <div class="feature-box">
+    🧠 نكشف أنماطك ونفهم سلوكك بعمق
+  </div>
+
+  <div class="feature-box">
+    🎯 انتقال من التشتت إلى الوضوح
+  </div>
+
+  <div class="feature-box">
+    🔥 نتائج تقاس بالتغيير لا بالكلام
+  </div>
+
+</div>
+
 <!-- المنتجات -->
 <div class="section-title">الدورات والخدمات</div>
 
 <div class="products">
 
-  <!-- تحليل الشخصية -->
   <div class="product">
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
     <div class="product-content">
@@ -145,7 +181,6 @@ footer {
     </div>
   </div>
 
-  <!-- لغة الجسد -->
   <div class="product">
     <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png">
     <div class="product-content">
@@ -156,7 +191,6 @@ footer {
     </div>
   </div>
 
-  <!-- جلسات -->
   <div class="product">
     <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
     <div class="product-content">
