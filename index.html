@@ -19,33 +19,22 @@
             overflow-x: hidden;
         }
 
-        .top-notice {
-            background: linear-gradient(90deg, #b59410, #d4af37);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 20;
-        }
-
-        /* حاوية الهيدر */
+        /* حاوية الهيدر - تم حذف الشريط البرتقالي من هنا */
         header {
             width: 100%;
-            height: 400px; /* تقليل الارتفاع لإخفاء الجزء السفلي من الصورة */
-            overflow: hidden; /* قص أي جزء يخرج عن الإطار */
+            height: 380px; /* تقليل الارتفاع لقص الجزء السفلي من الصورة */
+            overflow: hidden; /* هذا السطر هو الذي سيخفي عبارة المدرب */
             background-color: var(--navy);
             border-bottom: 6px solid var(--gold);
             position: relative;
         }
 
-        /* تنسيق الصورة لتظهر بعرض كامل وتنزاح للأعلى */
         .banner-img {
             width: 100%;
             height: auto;
             display: block;
-            margin-top: -20px; /* رفع الصورة للأعلى قليلاً لإخفاء سطر الاسم */
+            /* إزاحة الصورة قليلاً للأعلى لضمان اختفاء النص السفلي */
+            margin-top: -5px; 
         }
 
         .content-container {
@@ -53,7 +42,7 @@
             margin: -60px auto 80px;
             padding: 0 20px;
             position: relative;
-            z-index: 30;
+            z-index: 10;
         }
 
         .welcome-box {
@@ -74,19 +63,20 @@
             text-decoration: none;
             font-weight: bold;
             margin-top: 25px;
+            transition: 0.3s;
         }
 
-        /* تحسين العرض للجوال */
+        .cta-btn:hover {
+            background-color: var(--gold);
+        }
+
         @media (max-width: 768px) {
-            header { height: 250px; }
-            .banner-img { margin-top: -10px; }
-            .welcome-box { padding: 25px; margin-top: 10px; }
+            header { height: 240px; }
+            .content-container { margin-top: -30px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="top-notice">✨ بوابتكم الرقمية للارتقاء والاسترخاء | خصم خاص لفترة محدودة ✨</div>
 
     <header>
         <img src="banner-top.png.PNG" alt="Exilo Banner" class="banner-img">
@@ -95,7 +85,7 @@
     <div class="content-container">
         <section class="welcome-box">
             <h2 style="color: var(--navy);">مرحباً بك في عالم إكسيلو</h2>
-            <p style="color: #555;">بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان.</p>
+            <p style="color: #555;">بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.</p>
             <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الاستشارية الآن</a>
         </section>
     </div>
