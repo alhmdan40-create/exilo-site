@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EXILO</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600;700&display=swap" rel="stylesheet">
@@ -21,22 +22,18 @@ color:#fff;
 position:sticky;
 top:0;
 background:#020617;
-z-index:1000;
-}
-
-.nav{
+padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 20px;
 }
 
 .logo img{
 height:40px;
 }
 
-.menu-btn{
-font-size:24px;
+.menu{
+font-size:25px;
 color:#d4af37;
 cursor:pointer;
 }
@@ -46,49 +43,133 @@ cursor:pointer;
 position:fixed;
 top:0;
 right:-300px;
-width:280px;
+width:260px;
 height:100%;
 background:#020617;
 padding:20px;
 transition:0.3s;
+z-index:999;
 }
 
 .sidebar.active{
 right:0;
 }
 
-.sidebar h3{
-color:#d4af37;
-}
-
 .sidebar a{
 display:block;
-margin:10px 0;
-color:#e5e7eb;
+color:#fff;
+margin:12px 0;
 text-decoration:none;
 }
 
-/* BANNER (بدون أشخاص) */
-.banner{
-background:
-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
+/* HERO */
+.hero{
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2');
 background-size:cover;
 background-position:center;
-padding:100px 20px;
+padding:120px 20px;
 text-align:center;
 }
 
-.banner h1{
-font-size:65px;
+.hero h1{
+font-size:60px;
+margin:0;
 }
 
-.banner-text{
+.hero p{
 color:#d1d5db;
 font-size:20px;
 }
 
-/* PAYMENT */
+/* SECTION */
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+.gold{
+color:#d4af37;
+}
+
+/* BANNERS */
+.banners{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.banner-box{
+width:300px;
+height:200px;
+border-radius:15px;
+background-size:cover;
+background-position:center;
+overflow:hidden;
+position:relative;
+}
+
+.overlay{
+background:rgba(0,0,0,0.6);
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.overlay a{
+background:#d4af37;
+padding:8px 20px;
+border-radius:20px;
+color:#fff;
+text-decoration:none;
+margin-top:10px;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.feature{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+width:250px;
+}
+
+/* COURSES */
+.course-box{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.course{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+width:250px;
+}
+
+.course button{
+background:#d4af37;
+border:none;
+padding:10px;
+border-radius:8px;
+color:#fff;
+cursor:pointer;
+}
+
+/* PAYMENTS */
 .payments{
 background:#1e293b;
 margin:20px;
@@ -100,62 +181,39 @@ text-align:center;
 .payment-icons{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:30px;
 margin-top:15px;
 }
 
 .payment-icons img{
-width:80px;
+width:90px;
 background:white;
 padding:10px;
 border-radius:10px;
 }
 
-/* BANNERS (الأقسام) */
-.banners{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-justify-content:center;
+/* CTA */
+.cta{
+padding:60px;
+background:#020617;
+text-align:center;
 }
 
-.banner-box{
-width:300px;
-height:200px;
-background-size:cover;
-background-position:center;
-border-radius:15px;
-position:relative;
-overflow:hidden;
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-}
-
-.overlay a{
+.cta a{
 background:#d4af37;
-padding:8px 20px;
-border-radius:20px;
+padding:12px 25px;
+border-radius:30px;
 color:white;
 text-decoration:none;
-margin-top:10px;
 }
 
 /* FOOTER */
 .footer{
+background:#020617;
 padding:30px;
 text-align:center;
-background:#020617;
+font-size:14px;
+opacity:0.8;
 }
 
 </style>
@@ -165,67 +223,54 @@ background:#020617;
 
 <!-- HEADER -->
 <div class="header">
-<div class="nav">
-
-<div class="menu-btn" onclick="openMenu()">☰</div>
-
+<div class="menu" onclick="toggleMenu()">☰</div>
 <div class="logo">
 <img src="logo.png">
-</div>
-
 </div>
 </div>
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-
-<h3>القائمة</h3>
 <a href="#">الرئيسية</a>
 <a href="#">الدورات</a>
 <a href="#">الخدمات</a>
 <a href="#">من نحن</a>
 
-<h3>منتجاتنا</h3>
+<hr>
+
+<strong>منتجاتنا</strong>
 <a href="#">تحليل الشخصية</a>
 <a href="#">لغة الجسد</a>
-
 </div>
 
-<!-- BANNER -->
-<div class="banner">
+<!-- HERO -->
+<div class="hero">
 <h1>EXILO</h1>
-<p class="banner-text">التوازن يبدأ من هنا</p>
+<p>رحلتك نحو التوازن الحقيقي تبدأ الآن</p>
 </div>
 
-<!-- PAYMENT -->
-<div class="payments">
-<h3>ادفع بسهولة وأمان 🔒</h3>
-
-<div class="payment-icons">
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Mada_Logo.svg">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
-</div>
-
-<p>نقبل الدفع عبر مدى و Apple Pay</p>
-</div>
-
-<!-- BANNERS SECTIONS -->
+<!-- ABOUT -->
 <div class="section">
-<h2 style="text-align:center;">استكشف خدماتنا</h2>
+<p>منصة EXILO تقدم لك أدوات رقمية وجلسات احترافية تساعدك على فهم نفسك وتطوير ذاتك</p>
+</div>
+
+<!-- BANNERS -->
+<div class="section">
+<h2 class="gold">اكتشف عالم EXILO</h2>
 
 <div class="banners">
 
 <div class="banner-box" style="background-image:url('https://images.unsplash.com/photo-1492724441997-5dc865305da7')">
 <div class="overlay">
 <h3>الدورات الرقمية</h3>
-<a href="#">استكشف</a>
+<a href="#">ابدأ التعلم</a>
 </div>
 </div>
 
 <div class="banner-box" style="background-image:url('https://images.unsplash.com/photo-1512820790803-83ca734da794')">
 <div class="overlay">
 <h3>المكتبة الرقمية</h3>
-<a href="#">تصفح</a>
+<a href="#">تصفح المكتبة</a>
 </div>
 </div>
 
@@ -239,16 +284,78 @@ background:#020617;
 </div>
 </div>
 
+<!-- FEATURES -->
+<div class="section">
+<h2 class="gold">لماذا EXILO؟</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>🎯 محتوى احترافي</h3>
+<p>مصمم لتحقيق نتائج حقيقية</p>
+</div>
+
+<div class="feature">
+<h3>🧠 فهم عميق</h3>
+<p>نساعدك على تطوير ذاتك</p>
+</div>
+
+<div class="feature">
+<h3>⚡ تجربة سهلة</h3>
+<p>وصول سريع وسلس</p>
+</div>
+
+</div>
+</div>
+
+<!-- COURSES -->
+<div class="section">
+<h2 class="gold">الدورات المميزة</h2>
+
+<div class="course-box">
+
+<div class="course">
+<h3>تحليل الشخصية</h3>
+<p>اكتشف أسرار الشخصيات من الخط</p>
+<button>اشترك الآن</button>
+</div>
+
+<div class="course">
+<h3>لغة الجسد</h3>
+<p>افهم الآخرين بسهولة</p>
+<button>اشترك الآن</button>
+</div>
+
+</div>
+</div>
+
+<!-- PAYMENTS -->
+<div class="payments">
+<h3>ادفع بثقة وأمان 🔒</h3>
+
+<div class="payment-icons">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Apple_Pay_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Mada_Logo.svg">
+</div>
+
+<p>نقبل الدفع عبر Apple Pay و مدى</p>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>استثمر في نفسك</h2>
+<p>النجاح يبدأ بقرار</p>
+<a href="#">ابدأ الآن</a>
+</div>
+
 <!-- FOOTER -->
 <div class="footer">
-<p>© 2026 EXILO</p>
-<p style="opacity:0.6;font-size:13px;">
-جميع الحقوق محفوظة. هذا الموقع وجميع محتوياته محمية بموجب حقوق النشر.
-</p>
+© 2026 EXILO. جميع الحقوق محفوظة.<br>
+هذا الموقع وجميع محتوياته محمية بموجب حقوق النشر.
 </div>
 
 <script>
-function openMenu(){
+function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("active");
 }
 </script>
