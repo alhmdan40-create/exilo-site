@@ -21,7 +21,6 @@ body {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  display: block;
 }
 
 .section-title {
@@ -38,7 +37,6 @@ body {
   padding: 25px;
   border-radius: 20px;
   text-align: center;
-  backdrop-filter: blur(10px);
 }
 
 .price {
@@ -48,11 +46,10 @@ body {
 }
 
 .btn {
-  display: inline-block;
   background: linear-gradient(45deg, #d4af37, #f1d77a);
-  color: black;
   padding: 12px 25px;
   border-radius: 12px;
+  color: black;
   text-decoration: none;
   font-weight: bold;
 }
@@ -66,22 +63,19 @@ body {
   text-align: center;
 }
 
-/* أهم تعديل هنا 🔥 */
+/* ترتيب الشعارات */
 .payment-logos {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 20px;
+  align-items: center;
 }
 
-/* مدى */
-.mada {
-  width: 80px;
-}
-
-/* أبل باي (تصغير إضافي) */
-.apple {
-  width: 60px;
+/* إزالة الخلفية البيضاء بصريًا 🔥 */
+.payment-logos img {
+  width: 70px;
+  filter: brightness(0) invert(1); /* يحولها لأبيض */
+  opacity: 0.9;
 }
 
 /* واتساب */
@@ -94,13 +88,11 @@ body {
   border-radius: 30px;
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  font-size: 12px;
   color: #aaa;
 }
 
@@ -119,15 +111,13 @@ footer {
   <h3>دورة تحليل الشخصية</h3>
   <p>تحليل الخط والتوقيع والرسومات</p>
   <div class="price">149 ريال</div>
-
   <a href="#" class="btn">شراء الآن</a>
 </div>
 
 <div class="card">
   <h3>جلسات كوتشينج</h3>
-  <p>جلسات تدريبية مباشرة لتطوير الذات</p>
+  <p>جلسات تدريبية مباشرة</p>
   <div class="price">200 ريال</div>
-
   <a href="#" class="btn">احجز الآن</a>
 </div>
 
@@ -136,16 +126,14 @@ footer {
   <p>نقبل الدفع عبر Apple Pay و مدى</p>
 
   <div class="payment-logos">
-    <img src="mada.png.png" class="mada">
-    <img src="applepay.png.png" class="apple">
+    <img src="mada.png.png">
+    <img src="applepay.png.png">
   </div>
 </div>
 
 <a class="whatsapp" href="#">واتساب</a>
 
-<footer>
-© 2026 EXILO
-</footer>
+<footer>© 2026 EXILO</footer>
 
 </body>
 </html>
