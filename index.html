@@ -24,7 +24,7 @@ body {
   object-fit: cover;
 }
 
-/* العنوان */
+/* العناوين */
 .section-title {
   text-align: center;
   margin: 40px 0 20px;
@@ -33,45 +33,36 @@ body {
   font-weight: 900;
 }
 
-/* المميزات */
-.features {
+/* المنتجات */
+.products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 20px;
   padding: 20px;
 }
 
-.feature-box {
+.product {
   background: rgba(255,255,255,0.08);
-  padding: 25px;
-  border-radius: 18px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.feature-box:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.12);
-}
-
-.feature-box img {
-  width: 55px;
-  margin-bottom: 12px;
-}
-
-/* الكروت */
-.card {
-  background: rgba(255,255,255,0.08);
-  margin: 20px;
-  padding: 25px;
   border-radius: 20px;
+  overflow: hidden;
   text-align: center;
+}
+
+/* صورة المنتج */
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* المحتوى */
+.product-content {
+  padding: 20px;
 }
 
 .price {
   font-size: 22px;
+  margin: 10px 0;
   font-weight: bold;
-  margin: 15px 0;
 }
 
 /* زر */
@@ -79,8 +70,8 @@ body {
   display: inline-block;
   background: linear-gradient(45deg, #d4af37, #f1d77a);
   color: black;
-  padding: 12px 25px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -102,7 +93,7 @@ body {
 
 .logo-box {
   background: white;
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -122,7 +113,6 @@ body {
   text-decoration: none;
 }
 
-/* الفوتر */
 footer {
   text-align: center;
   padding: 20px;
@@ -139,48 +129,44 @@ footer {
   <img src="banner.png.PNG">
 </section>
 
-<!-- لماذا إكسيلو -->
-<div class="section-title">لماذا إكسيلو؟</div>
-
-<div class="features">
-
-  <div class="feature-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
-    <p>🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</p>
-  </div>
-
-  <div class="feature-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/3771/3771417.png">
-    <p>🧠 نكشف أنماطك ونفهم سلوكك بعمق</p>
-  </div>
-
-  <div class="feature-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-    <p>🎯 انتقال حقيقي من التشتت إلى الوضوح</p>
-  </div>
-
-  <div class="feature-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
-    <p>🔥 نتائج تقاس بالتغيير لا بالكلام</p>
-  </div>
-
-</div>
-
 <!-- المنتجات -->
 <div class="section-title">الدورات والخدمات</div>
 
-<div class="card">
-  <h3>دورة تحليل الشخصية</h3>
-  <p>تحليل الخط والتوقيع والرسومات</p>
-  <div class="price">149 ريال</div>
-  <a href="#" class="btn">شراء الآن</a>
-</div>
+<div class="products">
 
-<div class="card">
-  <h3>جلسات كوتشينج</h3>
-  <p>جلسات تدريبية مباشرة لتطوير الذات</p>
-  <div class="price">200 ريال</div>
-  <a href="#" class="btn">احجز الآن</a>
+  <!-- تحليل الشخصية -->
+  <div class="product">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+    <div class="product-content">
+      <h3>دورة تحليل الشخصية</h3>
+      <p>دورة باوربوينت لتحليل الخط والتوقيع والرسومات</p>
+      <div class="price">149 ريال</div>
+      <a href="#" class="btn">شراء الآن</a>
+    </div>
+  </div>
+
+  <!-- لغة الجسد -->
+  <div class="product">
+    <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png">
+    <div class="product-content">
+      <h3>دورة لغة الجسد</h3>
+      <p>دورة باوربوينت لفهم الإشارات الجسدية والتواصل</p>
+      <div class="price">149 ريال</div>
+      <a href="#" class="btn">شراء الآن</a>
+    </div>
+  </div>
+
+  <!-- جلسات -->
+  <div class="product">
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png">
+    <div class="product-content">
+      <h3>جلسات كوتشينج</h3>
+      <p>جلسات مباشرة عبر الهاتف لتطوير الذات</p>
+      <div class="price">200 ريال</div>
+      <a href="#" class="btn">احجز الآن</a>
+    </div>
+  </div>
+
 </div>
 
 <!-- الدفع -->
