@@ -3,112 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exilo | أدواتك الذكية للارتقاء والاسترخاء | المدرب هاني آل حمدان</title>
+    <title>Exilo | إكسيلو | المدرب هاني آل حمدان</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --navy: #0a192f;
             --gold: #b59410;
-            --white: #ffffff;
-            --bg-soft: #fbfcfd;
+            --site-bg: #fbfcfd;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            /* تطبيق الخط الاحترافي على كامل الصفحة */
+            font-family: 'Tajawal', sans-serif;
             margin: 0;
-            background-color: var(--bg-soft);
-            color: #333;
-            line-height: 1.8;
+            padding: 0;
+            background-color: var(--site-bg);
             direction: rtl;
+            overflow-x: hidden;
+            color: #333;
         }
 
-        /* حاوية البانر المطور لإخفاء عبارة المدرب نهائياً */
-        header {
+        /* حاوية البانر */
+        .banner-wrapper {
+            position: relative;
             width: 100%;
-            height: 380px; /* تحديد الارتفاع الرأسي لقص النص السفلي */
-            overflow: hidden; /* هذا هو السر: إخفاء أي جزء خارج المساحة */
+            line-height: 0;
             background-color: var(--navy);
-            border-bottom: 6px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* طبقة الإخفاء السفلى لضمان عدم ظهور النص المزعج */
+        .hide-text-mask {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15%; /* مساحة كافية للتغطية */
+            background-color: var(--site-bg);
+            z-index: 5;
+        }
+
+        /* مساحة المحتوى */
+        .content-container {
+            max-width: 900px;
+            margin: -40px auto 80px; /* تداخل خفيف مع البانر */
+            padding: 0 20px;
             position: relative;
             z-index: 10;
         }
 
-        /* تنسيق الصورة لتظهر بعرض كامل وتنزاح للأعلى */
-        header img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-top: -10px; /* إزاحة للأعلى قليلاً لضمان اختفاء النص */
-        }
-
-        /* مساحة المحتوى الأبيض */
-        .container {
-            max-width: 1000px;
-            margin: -60px auto 80px; /* تداخل خفيف مع البانر لزيادة الفخامة */
-            padding: 0 20px;
-            position: relative;
-            z-index: 15;
-        }
-
-        /* بطاقة الترحيب البيضاء */
-        .welcome-card {
+        /* بطاقة الترحيب المطورة */
+        .welcome-box {
             background: white;
-            padding: 50px;
+            padding: 50px 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08); /* ظل أعمق وأفخم */
             text-align: center;
             border-top: 5px solid var(--navy);
         }
 
-        .welcome-card h2 {
-            color: var(--navy);
-            font-size: 2rem;
-            margin-top: 0;
+        /* --- تنسيق اللوجو بشكل ملفت --- */
+        .logo-prominent {
+            height: 80px; /* حجم أكبر وملفت */
+            width: auto;
+            margin: 0 auto 30px;
+            display: block;
+            /* إضافة ظل ناعم للشعار ليعطيه عمقاً */
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        /* زر التواصل */
-        .btn-cta {
+        /* --- تنسيق عبارة الترحيب بخط ملفت --- */
+        .welcome-title {
+            color: var(--navy);
+            font-size: 2.5rem; /* حجم كبير وملفت */
+            font-weight: 700; /* عريض جداً */
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+            letter-spacing: -1px; /* تضييق المسافات يعطي طابعاً عصرياً */
+        }
+
+        /* --- تنسيق الوصف بخط احترافي --- */
+        .welcome-desc {
+            color: #555;
+            font-size: 1.2rem; /* حجم مريح ومقروء */
+            font-weight: 400;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* تنسيق الزر */
+        .cta-btn {
             display: inline-block;
             background: var(--navy);
             color: white;
-            padding: 16px 45px;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
             font-size: 1.1rem;
-            margin-top: 30px;
-            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(10,25,47,0.2);
+            transition: all 0.3s ease;
         }
 
-        .btn-cta:hover {
-            transform: scale(1.05);
-            background: #1a3a5f;
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(10,25,47,0.3);
+            background-color: #112a4f;
         }
 
-        /* توافق الشاشات (لجعل البانر واضحاً على الجوال) */
+        /* تحسينات للجوال */
         @media (max-width: 768px) {
-            header {
-                height: 250px; /* تقليل الارتفاع على الجوال ليتناسب مع الصورة */
-            }
-            .welcome-card {
-                padding: 30px 20px;
-                margin-top: -30px;
-            }
+            .content-container { margin-top: -20px; }
+            .welcome-box { padding: 30px 20px; }
+            .logo-prominent { height: 60px; margin-bottom: 20px; }
+            .welcome-title { font-size: 1.8rem; }
+            .welcome-desc { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="banner-top.png.PNG" alt="Exilo Banner">
-    </header>
+    <div class="banner-wrapper">
+        <img src="banner-top.png.PNG" alt="Exilo Banner" class="banner-img">
+        <div class="hide-text-mask"></div>
+    </div>
 
-    <div class="container">
-        <section class="welcome-card">
-            <h2>مرحباً بك في عالم إكسيلو</h2>
-            <p>نحن نقدم لك الأدوات الذكية للوصول إلى السلام الداخلي والارتقاء بجودة حياتك تحت إشراف المدرب هاني آل حمدان.</p>
+    <div class="content-container">
+        <section class="welcome-box">
             
-            <a href="https://wa.me/966XXXXXXXXX" class="btn-cta">احجز جلستك الاستشارية الآن</a>
+            <img src="logo.png.PNG" alt="Exilo Logo" class="logo-prominent">
+            
+            <h1 class="welcome-title">مرحباً بك في عالم إكسيلو</h1>
+            
+            <p class="welcome-desc">
+                بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.
+            </p>
+            
+            <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الاستشارية الآن</a>
         </section>
     </div>
 
