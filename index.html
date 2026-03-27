@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EXILO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
 body {
   margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg, #0b1e3a, #1b3b6f);
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #0b1e3a, #1f3f6e);
   color: white;
 }
 
@@ -19,62 +22,75 @@ header {
   text-align: center;
   padding: 15px;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 900;
   color: #d4af37;
 }
 
 /* ===== البنر ===== */
 .hero img {
   width: 100%;
-  height: 220px;
+  height: 250px;
   object-fit: cover;
-  display: block;
 }
 
-/* ===== العناوين ===== */
+/* ===== العنوان ===== */
 .section-title {
   text-align: center;
-  margin: 30px 0 10px;
-  font-size: 22px;
+  margin: 30px 0;
+  font-size: 24px;
   color: #d4af37;
+  font-weight: 900;
 }
 
 /* ===== الكروت ===== */
 .card {
   background: rgba(255,255,255,0.08);
-  margin: 15px;
-  padding: 20px;
-  border-radius: 15px;
+  margin: 20px;
+  padding: 25px;
+  border-radius: 18px;
   text-align: center;
   backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #ddd;
+  margin-bottom: 15px;
 }
 
 .price {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
   margin: 10px 0;
 }
 
+/* ===== الأزرار ===== */
 .btn {
-  background: #d4af37;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
   display: inline-block;
-  margin-top: 10px;
+  background: linear-gradient(45deg, #d4af37, #f1d77a);
+  color: black;
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* ===== الدفع ===== */
 .payments {
+  margin: 30px 20px;
+  padding: 25px;
   background: rgba(255,255,255,0.08);
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
+  border-radius: 18px;
   text-align: center;
 }
 
 .payments img {
-  width: 80px;
+  width: 90px;
   margin: 10px;
 }
 
@@ -84,18 +100,19 @@ header {
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  color: white;
-  padding: 12px 20px;
+  padding: 14px 22px;
   border-radius: 30px;
+  color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 
 /* ===== الفوتر ===== */
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   font-size: 12px;
-  color: #ccc;
+  color: #aaa;
 }
 
 </style>
@@ -107,44 +124,51 @@ footer {
 
 <!-- ===== البنر ===== -->
 <section class="hero">
-  <img src="banner-top.png.PNG">
+  <img src="banner.png">
 </section>
 
-<!-- ===== الدورات ===== -->
+<!-- ===== المنتجات ===== -->
 <div class="section-title">الدورات المتاحة</div>
 
 <div class="card">
   <h3>دورة تحليل الشخصية</h3>
   <p>تحليل الخط والتوقيع والرسومات</p>
   <div class="price">149 ريال</div>
-  <a href="#" class="btn">شراء الآن</a>
+  
+  <!-- زر شراء -->
+  <a href="https://wa.me/966530205304?text=أبغى شراء دورة تحليل الشخصية" class="btn">
+    شراء الآن
+  </a>
 </div>
 
-<!-- ===== الجلسات ===== -->
 <div class="card">
   <h3>جلسات كوتشينج</h3>
   <p>جلسات تدريبية مباشرة لتطوير الذات</p>
   <div class="price">200 ريال</div>
-  <a href="#" class="btn">احجز الآن</a>
+
+  <!-- زر حجز -->
+  <a href="https://wa.me/966530205304?text=أبغى حجز جلسة كوتشينج" class="btn">
+    احجز الآن
+  </a>
 </div>
 
 <!-- ===== الدفع ===== -->
 <div class="payments">
   <h3>ادفع بثقة وأمان 🔒</h3>
   <p>نقبل الدفع عبر Apple Pay و مدى</p>
-  
-  <!-- انتبه للأسماء هنا -->
-  <img src="mada.png.PNG">
-  <img src="applepay.png.PNG">
 
+  <img src="mada.png">
+  <img src="applepay.png">
 </div>
 
 <!-- ===== واتساب ===== -->
-<a class="whatsapp" href="https://wa.me/966530205304">واتساب</a>
+<a class="whatsapp" href="https://wa.me/966530205304">
+  واتساب
+</a>
 
 <!-- ===== الفوتر ===== -->
 <footer>
-© 2026 EXILO. جميع الحقوق محفوظة. هذا الموقع وجميع محتوياته محمية بموجب حقوق النشر.
+© 2026 EXILO - جميع الحقوق محفوظة
 </footer>
 
 </body>
