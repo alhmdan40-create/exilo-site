@@ -68,14 +68,18 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  align-items: center;
 }
 
-/* إزالة الخلفية البيضاء بصريًا 🔥 */
-.payment-logos img {
+/* خلفية أنيقة للشعارات */
+.logo-box {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+/* حجم الشعارات */
+.logo-box img {
   width: 70px;
-  filter: brightness(0) invert(1); /* يحولها لأبيض */
-  opacity: 0.9;
 }
 
 /* واتساب */
@@ -126,8 +130,15 @@ footer {
   <p>نقبل الدفع عبر Apple Pay و مدى</p>
 
   <div class="payment-logos">
-    <img src="mada.png.png">
-    <img src="applepay.png.png">
+    
+    <div class="logo-box">
+      <img src="mada.png.png">
+    </div>
+
+    <div class="logo-box">
+      <img src="applepay.png.png">
+    </div>
+
   </div>
 </div>
 
