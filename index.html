@@ -17,26 +17,47 @@ body {
   color: white;
 }
 
+/* البنر */
 .hero img {
   width: 100%;
   height: 260px;
   object-fit: cover;
 }
 
+/* عناوين */
 .section-title {
   text-align: center;
-  margin: 30px 0;
+  margin: 40px 0 20px;
   font-size: 26px;
   color: #d4af37;
   font-weight: 900;
 }
 
+/* تعريف */
+.about {
+  margin: 20px;
+  padding: 25px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  line-height: 1.9;
+}
+
+/* الكروت */
 .card {
   background: rgba(255,255,255,0.08);
   margin: 20px;
   padding: 25px;
   border-radius: 20px;
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  font-size: 22px;
+}
+
+.card p {
+  color: #ddd;
 }
 
 .price {
@@ -45,16 +66,18 @@ body {
   margin: 15px 0;
 }
 
+/* زر */
 .btn {
+  display: inline-block;
   background: linear-gradient(45deg, #d4af37, #f1d77a);
+  color: black;
   padding: 12px 25px;
   border-radius: 12px;
-  color: black;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* ===== الدفع ===== */
+/* الدفع */
 .payments {
   margin: 30px 20px;
   padding: 25px;
@@ -63,21 +86,18 @@ body {
   text-align: center;
 }
 
-/* ترتيب الشعارات */
 .payment-logos {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-/* خلفية أنيقة للشعارات */
 .logo-box {
   background: white;
   padding: 10px 15px;
   border-radius: 10px;
 }
 
-/* حجم الشعارات */
 .logo-box img {
   width: 70px;
 }
@@ -94,6 +114,7 @@ body {
   text-decoration: none;
 }
 
+/* الفوتر */
 footer {
   text-align: center;
   padding: 20px;
@@ -105,11 +126,28 @@ footer {
 
 <body>
 
+<!-- البنر -->
 <section class="hero">
   <img src="banner.png.PNG">
 </section>
 
-<div class="section-title">الدورات المتاحة</div>
+<!-- تعريف -->
+<div class="section-title">من أنا</div>
+
+<div class="about">
+مدرب تنمية بشرية وتطوير الذات  
+مدرب في إعداد وتدريب المدربين  
+مدرب في أنماط الشخصيات وفهم النفسيات  
+مدرب في الأنظمة التمثيلية  
+مدرب في لغة الجسد  
+مدرب في البرمجة اللغوية العصبية  
+محلل شخصيات من خلال الخط والتوقيع والرسومات  
+ممارس متقدم في التنويم الإيحائي  
+إعلامي معتمد من الهيئة العامة لتنظيم الإعلام
+</div>
+
+<!-- المنتجات -->
+<div class="section-title">الدورات والخدمات</div>
 
 <div class="card">
   <h3>دورة تحليل الشخصية</h3>
@@ -120,31 +158,35 @@ footer {
 
 <div class="card">
   <h3>جلسات كوتشينج</h3>
-  <p>جلسات تدريبية مباشرة</p>
+  <p>جلسات تدريبية مباشرة لتطوير الذات</p>
   <div class="price">200 ريال</div>
   <a href="#" class="btn">احجز الآن</a>
 </div>
 
+<!-- الدفع -->
 <div class="payments">
   <h3>ادفع بثقة وأمان 🔒</h3>
   <p>نقبل الدفع عبر Apple Pay و مدى</p>
 
   <div class="payment-logos">
-    
     <div class="logo-box">
       <img src="mada.png.png">
     </div>
-
     <div class="logo-box">
       <img src="applepay.png.png">
     </div>
-
   </div>
 </div>
 
-<a class="whatsapp" href="#">واتساب</a>
+<!-- واتساب -->
+<a class="whatsapp" href="https://wa.me/966530205304">
+  واتساب
+</a>
 
-<footer>© 2026 EXILO</footer>
+<!-- الفوتر -->
+<footer>
+© 2026 EXILO. جميع الحقوق محفوظة
+</footer>
 
 </body>
 </html>
