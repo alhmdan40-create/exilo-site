@@ -17,7 +17,6 @@
         }
 
         body {
-            /* تطبيق الخط الاحترافي على كامل الصفحة */
             font-family: 'Tajawal', sans-serif;
             margin: 0;
             padding: 0;
@@ -27,7 +26,7 @@
             color: #333;
         }
 
-        /* حاوية البانر */
+        /* تنسيق البانر */
         .banner-wrapper {
             position: relative;
             width: 100%;
@@ -42,76 +41,68 @@
             display: block;
         }
 
-        /* طبقة الإخفاء السفلى لضمان عدم ظهور النص المزعج */
+        /* طبقة إخفاء النص السفلي في البانر */
         .hide-text-mask {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 15%; /* مساحة كافية للتغطية */
+            height: 15%;
             background-color: var(--site-bg);
             z-index: 5;
         }
 
-        /* مساحة المحتوى */
         .content-container {
             max-width: 900px;
-            margin: -40px auto 80px; /* تداخل خفيف مع البانر */
+            margin: -40px auto 80px;
             padding: 0 20px;
             position: relative;
             z-index: 10;
         }
 
-        /* بطاقة الترحيب المطورة */
         .welcome-box {
             background: white;
             padding: 50px 40px;
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08); /* ظل أعمق وأفخم */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
             text-align: center;
             border-top: 5px solid var(--navy);
         }
 
-        /* --- تنسيق اللوجو بشكل ملفت --- */
         .logo-prominent {
-            height: 80px; /* حجم أكبر وملفت */
+            height: 80px;
             width: auto;
             margin: 0 auto 30px;
             display: block;
-            /* إضافة ظل ناعم للشعار ليعطيه عمقاً */
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        /* --- تنسيق عبارة الترحيب بخط ملفت --- */
         .welcome-title {
             color: var(--navy);
-            font-size: 2.5rem; /* حجم كبير وملفت */
-            font-weight: 700; /* عريض جداً */
+            font-size: 2.5rem;
+            font-weight: 700;
             margin: 0 0 20px 0;
             line-height: 1.2;
-            letter-spacing: -1px; /* تضييق المسافات يعطي طابعاً عصرياً */
         }
 
-        /* --- تنسيق الوصف بخط احترافي --- */
         .welcome-desc {
             color: #555;
-            font-size: 1.2rem; /* حجم مريح ومقروء */
-            font-weight: 400;
+            font-size: 1.2rem;
             line-height: 1.8;
             max-width: 700px;
             margin: 0 auto 30px;
         }
 
-        /* تنسيق الزر */
+        /* الزر المحدث */
         .cta-btn {
             display: inline-block;
             background: var(--navy);
             color: white;
-            padding: 18px 50px;
+            padding: 18px 60px; /* زيادة العرض ليعطي فخامة أكثر */
             border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             box-shadow: 0 5px 15px rgba(10,25,47,0.2);
             transition: all 0.3s ease;
         }
@@ -122,13 +113,10 @@
             background-color: #112a4f;
         }
 
-        /* تحسينات للجوال */
         @media (max-width: 768px) {
-            .content-container { margin-top: -20px; }
-            .welcome-box { padding: 30px 20px; }
-            .logo-prominent { height: 60px; margin-bottom: 20px; }
             .welcome-title { font-size: 1.8rem; }
-            .welcome-desc { font-size: 1rem; }
+            .welcome-box { padding: 30px 20px; }
+            .cta-btn { padding: 15px 40px; font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -150,7 +138,7 @@
                 بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.
             </p>
             
-            <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الاستشارية الآن</a>
+            <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الآن</a>
         </section>
     </div>
 
