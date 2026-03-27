@@ -9,9 +9,14 @@
         :root { --navy: #0a192f; --gold: #b59410; --site-bg: #fbfcfd; }
         body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--site-bg); direction: rtl; }
 
-        /* البانر العلوي نظيف تماماً */
-        .banner-wrapper { position: relative; width: 100%; line-height: 0; border-bottom: 5px solid var(--gold); }
-        .banner-img { width: 100%; height: auto; display: block; }
+        /* البانر العلوي - استخدمت رابطاً مباشراً لضمان الظهور */
+        .banner-wrapper { 
+            position: relative; 
+            width: 100%; 
+            height: 280px; 
+            background: var(--navy) url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            border-bottom: 5px solid var(--gold);
+        }
 
         .content-container { max-width: 900px; margin: -60px auto 80px; padding: 0 20px; position: relative; z-index: 10; }
         .welcome-box { 
@@ -23,51 +28,40 @@
             border-top: 8px solid var(--navy); 
         }
 
-        /* حاوية الشعار المرسوم بالكود (الدرع المزخرف الكامل) */
-        .shield-logo-vector { width: 180px; height: 180px; margin: 0 auto 25px; display: block; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+        /* الشعار الدرع الكامل (مرسوم بالكود مباشرة) */
+        .logo-svg { width: 180px; height: 180px; margin: 0 auto 25px; display: block; }
 
-        .welcome-title { color: var(--navy); font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; }
-        .welcome-desc { color: #444; font-size: 1.2rem; line-height: 1.8; margin-bottom: 40px; }
+        .welcome-title { color: var(--navy); font-size: 2.2rem; margin-bottom: 15px; font-weight: 700; }
+        .welcome-desc { color: #444; font-size: 1.1rem; line-height: 1.8; margin-bottom: 35px; }
 
         .cta-btn { 
             display: inline-block; 
             background: var(--navy); 
             color: white; 
-            padding: 18px 70px; 
+            padding: 18px 60px; 
             border-radius: 50px; 
             text-decoration: none; 
             font-weight: bold; 
-            font-size: 1.25rem;
             box-shadow: 0 8px 25px rgba(10,25,47,0.2);
-            transition: 0.3s;
         }
-        .cta-btn:hover { transform: translateY(-3px); background-color: #112a4f; }
     </style>
 </head>
 <body>
 
-    <div class="banner-wrapper">
-        <img src="banner-top.png.PNG" alt="Exilo" class="banner-img">
-    </div>
+    <div class="banner-wrapper"></div>
 
     <div class="content-container">
         <section class="welcome-box">
-            <div class="shield-logo-vector">
+            <div class="logo-svg">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 10 L175 45 L175 120 C175 165 100 195 100 195 C100 195 25 165 25 120 L25 45 Z" fill="none" stroke="#b59410" stroke-width="5"/>
-                    <path d="M100 22 L162 52 L162 115 C162 150 100 175 100 175 C100 175 38 150 38 115 L38 52 Z" fill="none" stroke="#b59410" stroke-width="1.5"/>
-                    
-                    <g fill="#b59410">
-                        <path d="M72 75 H128 V88 H90 V102 H120 V114 H90 V128 H128 V142 H72 V75 Z"/>
-                        <path d="M60 55 Q100 30 140 55" fill="none" stroke="#b59410" stroke-width="2" opacity="0.6"/>
-                        <path d="M100 180 Q100 180 150 140" fill="none" stroke="#b59410" stroke-width="1" opacity="0.4"/>
-                        <path d="M100 180 Q100 180 50 140" fill="none" stroke="#b59410" stroke-width="1" opacity="0.4"/>
-                    </g>
+                    <path d="M100 15 L165 48 L165 115 C165 155 100 185 100 185 C100 185 35 155 35 115 L35 48 Z" fill="none" stroke="#b59410" stroke-width="6"/>
+                    <path d="M100 28 L155 55 L155 110 C155 145 100 170 100 170 C100 170 45 145 45 110 L45 55 Z" fill="none" stroke="#b59410" stroke-width="2"/>
+                    <path d="M78 78 H125 V92 H98 V105 H120 V118 H98 V132 H125 V145 H78 V78 Z" fill="#b59410"/>
                 </svg>
             </div>
             
             <h1 class="welcome-title">مرحباً بك في عالم إكسيلو</h1>
-            <p class="welcome-desc">بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.</p>
+            <p class="welcome-desc">بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان.</p>
             
             <a href="https://wa.me/966XXXXXXXXX" class="cta-btn">احجز جلستك الآن</a>
         </section>
