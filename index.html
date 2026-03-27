@@ -1,231 +1,275 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EXILO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exilo | أدواتك الذكية للتحرر الذهني والارتقاء الذاتي</title>
+    <style>
+        :root {
+            --navy-deep: #1a3a5f;
+            --gold-royal: #b59410;
+            --gold-light: #d4af37;
+            --bg-soft: #fcfcfc;
+            --text-main: #2c3e50;
+            --shadow-lux: 0 15px 35px rgba(0,0,0,0.07);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
 
-<style>
+        /* شريط الإعلان العلوي */
+        .announcement-bar {
+            background: linear-gradient(90deg, var(--gold-royal), var(--gold-light));
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-/* BODY */
-body{
-margin:0;
-font-family:'Cairo', sans-serif;
-background:#f9fafb;
-color:#111827;
-}
+        /* الهيدر واللوجو */
+        header {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--gold-royal);
+        }
 
-/* HEADER */
-.header{
-background:#ffffff;
-padding-bottom:40px;
-border-bottom:1px solid #e5e7eb;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
+        .logo-box img {
+            max-width: 280px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .slogan {
+            color: var(--navy-deep);
+            font-size: 1.3rem;
+            margin-top: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
 
-/* NAVBAR */
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-}
+        /* الحاوية الرئيسية */
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-/* LOGO */
-.logo{
-font-size:28px;
-font-weight:700;
-color:#d4af37;
-}
+        /* قسم الترحيب */
+        .hero-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lux);
+            text-align: center;
+            margin-bottom: 60px;
+            border-right: 6px solid var(--navy-deep);
+        }
 
-/* MENU */
-.menu{
-display:flex;
-gap:25px;
-}
+        .hero-section h2 {
+            color: var(--navy-deep);
+            font-size: 2.2rem;
+            margin-top: 0;
+        }
 
-.menu a{
-text-decoration:none;
-color:#374151;
-font-size:14px;
-transition:0.3s;
-}
+        .hero-section p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 20px auto;
+            color: #555;
+        }
 
-.menu a:hover{
-color:#d4af37;
-}
+        /* شبكة الخدمات */
+        .section-title {
+            text-align: center;
+            color: var(--navy-deep);
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
 
-/* CTA */
-.cta{
-background:#d4af37;
-color:white;
-padding:10px 20px;
-border-radius:20px;
-text-decoration:none;
-font-size:14px;
-}
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
 
-/* HERO TEXT */
-.hero-content{
-text-align:center;
-margin-top:40px;
-}
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lux);
+            text-align: center;
+            border-top: 5px solid var(--gold-royal);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-.hero-content h1{
-font-size:60px;
-margin:0;
-}
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--navy-deep);
+        }
 
-.tagline{
-margin-top:10px;
-font-size:20px;
-color:#6b7280;
-}
+        .service-card h3 {
+            color: var(--navy-deep);
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
 
-/* SECTIONS */
-.section{
-padding:70px 20px;
-text-align:center;
-}
+        .service-card p {
+            flex-grow: 1;
+            margin-bottom: 25px;
+            color: #666;
+        }
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
+        /* الأزرار */
+        .btn {
+            display: inline-block;
+            background: var(--navy-deep);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.card{
-background:white;
-padding:25px;
-width:260px;
-border-radius:12px;
-border:1px solid #e5e7eb;
-transition:0.3s;
-}
+        .btn:hover {
+            background: #2c5282;
+            box-shadow: 0 5px 15px rgba(26, 58, 95, 0.3);
+        }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
+        .btn-outline {
+            background: transparent;
+            color: var(--gold-royal);
+            border: 2px solid var(--gold-royal);
+        }
 
-.btn{
-margin-top:15px;
-padding:10px 25px;
-border:1px solid #d4af37;
-color:#d4af37;
-text-decoration:none;
-border-radius:25px;
-display:inline-block;
-}
+        .btn-outline:hover {
+            background: var(--gold-royal);
+            color: white;
+        }
 
-.gold{
-color:#d4af37;
-}
+        /* قسم التواصل والدفع */
+        .cta-box {
+            background: var(--navy-deep);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
 
-/* FOOTER */
-.footer{
-padding:30px;
-background:#111827;
-color:white;
-margin-top:40px;
-}
+        .payment-methods {
+            margin-top: 30px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            display: inline-block;
+        }
 
-</style>
+        .pay-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
 
+        .pay-tag {
+            background: white;
+            color: var(--navy-deep);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* الفوتر */
+        footer {
+            background: #111;
+            color: #888;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h2 { font-size: 1.7rem; }
+            .logo-box img { max-width: 220px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="header">
+    <div class="announcement-bar">
+        ✨ عرض انطلاق Exilo: احصل على خصم 15% عند حجز جلستك الأولى اليوم
+    </div>
 
-<div class="nav">
+    <header>
+        <div class="logo-box">
+            <img src="logo.png" alt="Exilo Logo">
+            <div class="slogan">أدواتك الذكية للتحرر الذهني والارتقاء الذاتي</div>
+        </div>
+    </header>
 
-<div class="logo">EXILO</div>
+    <div class="main-container">
+        <section class="hero-section">
+            <h2>ارتقِ بجودة حياتك مع Exilo</h2>
+            <p>نحن نقدم لك عصارة الخبرة في التنمية البشرية والتدريب الشخصي، مدمجة بأحدث تقنيات الاسترخاء والتحرر الذهني الرقمية. ابدأ رحلتك اليوم بإشراف المدرب هاني آل حمدان.</p>
+            <a href="https://wa.me/966XXXXXXXXX" class="btn">تحدث معي مباشرة عبر واتساب</a>
+        </section>
 
-<div class="menu">
-<a href="#">الرئيسية</a>
-<a href="#courses">الدورات</a>
-<a href="#services">الخدمات</a>
-<a href="#about">من نحن</a>
-</div>
+        <h2 class="section-title">حلولنا للارتقاء والسكينة</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>المكتبة الرقمية</h3>
+                <p>إصدارات حصرية تشمل كتباً رقمية وأدلة تدريبية في فن الاسترخاء العميق والتحرر من الضغوط دون تعقيد.</p>
+                <a href="#" class="btn btn-outline">تصفح الكتب</a>
+            </div>
 
-<a class="cta" href="https://wa.me/966XXXXXXXXX">ابدأ الآن</a>
+            <div class="service-card">
+                <h3>جلسات الكوتشينج</h3>
+                <p>جلسات استشارية فردية (عن بُعد) مصممة خصيصاً لمساعدتك على تجاوز المعوقات والوصول إلى أهدافك بوضوح.</p>
+                <a href="#" class="btn btn-outline">حجز موعد</a>
+            </div>
 
-</div>
+            <div class="service-card">
+                <h3>برامج الاسترخاء</h3>
+                <p>منهجيات مدروسة للتوازن النفسي والصفاء الذهني، تعتمد على التكنولوجيا الهادئة لتعزيز إنتاجيتك وسلامك الداخلي.</p>
+                <a href="#" class="btn btn-outline">اكتشف المزيد</a>
+            </div>
+        </div>
 
-<div class="hero-content">
-<h1>EXILO</h1>
-<p class="tagline">التوازن يبدأ من هنا</p>
-</div>
+        <section class="cta-box">
+            <h3>جاهز لبرمجة عقلك على النجاح والهدوء؟</h3>
+            <p>انضم إلى مئات المستفيدين الذين غيروا حياتهم باستخدام أدواتنا الذكية.</p>
+            
+            <div class="payment-methods">
+                <p>وسائل دفع آمنة ومريحة</p>
+                <div class="pay-icons">
+                    <span class="pay-tag">mada</span>
+                    <span class="pay-tag"> Pay</span>
+                    <span class="pay-tag">Visa</span>
+                    <span class="pay-tag">MasterCard</span>
+                </div>
+            </div>
+        </section>
+    </div>
 
-</div>
-
-<!-- SERVICES -->
-<div class="section" id="services">
-<h2 class="gold">خدماتنا</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>الدورات الرقمية</h3>
-<p>دورات احترافية في تحليل الشخصية وتطوير الذات</p>
-</div>
-
-<div class="card">
-<h3>المكتبة الرقمية</h3>
-<p>كتب وأدلة عملية تساعدك على النمو والتوازن</p>
-</div>
-
-<div class="card">
-<h3>الجلسات التدريبية</h3>
-<p>جلسات كوتشينغ واستشارات عبر الهاتف</p>
-</div>
-
-</div>
-</div>
-
-<!-- COURSES -->
-<div class="section" id="courses">
-<h2 class="gold">أبرز الدورات</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>تحليل الشخصية</h3>
-<p>تعلم قراءة الشخصيات من الخط والتوقيع والرسومات</p>
-<a class="btn" href="course1.html">عرض الدورة</a>
-</div>
-
-<div class="card">
-<h3>لغة الجسد</h3>
-<p>افهم الآخرين بدون كلمات</p>
-<a class="btn" href="#">عرض الدورة</a>
-</div>
-
-</div>
-</div>
-
-<!-- ABOUT -->
-<div class="section" id="about">
-<h2 class="gold">من نحن</h2>
-<p>
-EXILO منصة رقمية متخصصة في تطوير الذات والتوازن النفسي، نقدم دورات وجلسات تدريبية تساعدك على فهم نفسك والارتقاء بحياتك
-</p>
-</div>
-
-<!-- CTA -->
-<div class="section">
-<h2 class="gold">ابدأ رحلتك الآن</h2>
-<a class="btn" href="https://wa.me/966XXXXXXXXX">تواصل الآن</a>
-</div>
-
-<div class="footer">
-© EXILO 2026
-</div>
+    <footer>
+        <p style="color: white; font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;">EXILO</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | متجر إكسيلو | هاني آل حمدان</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">بوابتك الرقمية للارتقاء والاسترخاء</p>
+    </footer>
 
 </body>
 </html>
