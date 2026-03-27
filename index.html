@@ -3,98 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exilo | أدواتك الذكية للتحرر الذهني والارتقاء الذاتي</title>
+    <title>Exilo | أدواتك الذكية للارتقاء والاسترخاء</title>
     <style>
         :root {
-            --navy-deep: #0a192f; /* كحلي ملكي عميق */
-            --gold-royal: #b59410; /* ذهبي ملكي */
+            --navy-deep: #0a192f;
+            --gold-royal: #b59410;
             --gold-light: #d4af37;
-            --bg-soft: #f4f7f6;
-            --white: #ffffff;
+            --bg-soft: #f8fafd;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
             margin: 0;
             background-color: var(--bg-soft);
             color: #333;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* شريط التنبيه العلوي */
-        .promo-bar {
+        /* شريط العرض العلوي الذهبي */
+        .top-notice {
             background: linear-gradient(90deg, var(--gold-royal), var(--gold-light));
             color: white;
             text-align: center;
             padding: 12px;
             font-size: 0.95rem;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        /* الهيدر المستطيل الفاخر (برمجي) */
-        .main-header {
-            background: var(--navy-deep);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(181, 148, 16, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(181, 148, 16, 0.1) 0%, transparent 40%);
-            padding: 100px 20px;
-            text-align: center;
+        /* الهيدر البنر المستطيل الفاخر */
+        header {
+            width: 100%;
+            height: 450px; /* ارتفاع مثالي لإبراز تفاصيل الجبال واللوجو */
+            background-image: url('banner-top.png');
+            background-size: cover;
+            background-position: center;
             border-bottom: 6px solid var(--gold-royal);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .main-header h1 {
-            color: var(--white);
-            font-size: 4.5rem;
-            margin: 0;
-            letter-spacing: 8px;
-            font-weight: 900;
-            text-shadow: 3px 3px 15px rgba(0,0,0,0.5);
-        }
-
-        .main-header p {
-            color: var(--gold-light);
-            font-size: 1.5rem;
-            margin-top: 20px;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        /* الحاوية الرئيسية */
+        /* حاوية المحتوى */
         .container {
             max-width: 1100px;
-            margin: -50px auto 60px;
+            margin: -60px auto 80px;
             padding: 0 20px;
             position: relative;
-            z-index: 10;
+            z-index: 5;
         }
 
-        /* كرت الترحيب */
-        .welcome-box {
-            background: var(--white);
+        /* بطاقة الترحيب */
+        .welcome-card {
+            background: white;
             padding: 50px;
             border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.07);
             text-align: center;
             border-right: 10px solid var(--navy-deep);
         }
 
-        .welcome-box h2 {
+        .welcome-card h2 {
             color: var(--navy-deep);
             font-size: 2.2rem;
             margin-bottom: 20px;
         }
 
-        .welcome-box p {
+        .welcome-card p {
             font-size: 1.25rem;
             color: #555;
             max-width: 850px;
-            margin: 0 auto 30px;
+            margin: 0 auto 35px;
         }
 
-        /* شبكة الخدمات */
+        /* شبكة الخدمات والمنتجات */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -102,33 +86,33 @@
             margin-top: 50px;
         }
 
-        .service-card {
-            background: var(--white);
+        .card {
+            background: white;
             padding: 40px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border-top: 5px solid var(--gold-royal);
             transition: all 0.4s ease;
         }
 
-        .service-card:hover {
+        .card:hover {
             transform: translateY(-12px);
             box-shadow: 0 15px 45px rgba(0,0,0,0.08);
             border-top-color: var(--navy-deep);
         }
 
-        .service-card h3 {
+        .card h3 {
             color: var(--navy-deep);
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
 
-        /* الأزرار الفاخرة */
+        /* الأزرار الاحترافية */
         .btn {
             display: inline-block;
             background: var(--navy-deep);
-            color: var(--white);
+            color: white;
             padding: 16px 45px;
             border-radius: 60px;
             text-decoration: none;
@@ -140,7 +124,7 @@
 
         .btn:hover {
             background: #1a3a5f;
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .btn-outline {
@@ -152,13 +136,13 @@
 
         .btn-outline:hover {
             background: var(--gold-royal);
-            color: var(--white);
+            color: white;
         }
 
-        /* قسم وسائل الدفع */
-        .payment-section {
+        /* قسم وسائل الدفع المريحة */
+        .payment-box {
             background: var(--navy-deep);
-            color: var(--white);
+            color: white;
             padding: 50px 20px;
             border-radius: 25px;
             text-align: center;
@@ -182,7 +166,7 @@
             color: var(--gold-light);
         }
 
-        /* الفوتر */
+        /* تذييل الصفحة */
         footer {
             background: #050c16;
             color: #777;
@@ -193,49 +177,44 @@
 
         /* توافق الجوال */
         @media (max-width: 768px) {
-            .main-header h1 { font-size: 2.8rem; letter-spacing: 4px; }
-            .main-header p { font-size: 1.1rem; }
-            .main-header { padding: 70px 15px; }
-            .welcome-box { padding: 30px 20px; }
-            .welcome-box h2 { font-size: 1.7rem; }
+            header { height: 220px; }
+            .welcome-card { padding: 30px 20px; }
+            .welcome-card h2 { font-size: 1.7rem; }
+            .container { margin-top: -30px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="promo-bar">✨ بوابتكم الرقمية للارتقاء والاسترخاء | خصم خاص لفترة محدودة ✨</div>
+    <div class="top-notice">✨ بوابتكم الرقمية للارتقاء والاسترخاء | خصم خاص لفترة محدودة بمناسبة الانطلاق ✨</div>
 
-    <header class="main-header">
-        <div class="header-content">
-            <h1>EXILO</h1>
-            <p>أدواتك الذكية للتحرر الذهني والارتقاء الذاتي</p>
-        </div>
-    </header>
+    <header>
+        </header>
 
     <div class="container">
-        <section class="welcome-box">
+        <section class="welcome-card">
             <h2>مرحباً بك في عالم إكسيلو</h2>
-            <p>نحن هنا لنقدم لك الأدوات العلمية والتدريبية الأكثر تطوراً للوصول إلى السلام الداخلي والارتقاء بجودة حياتك، بإشراف مباشر من المدرب هاني آل حمدان.</p>
-            <a href="https://wa.me/966XXXXXXXXX" class="btn">تواصل معي مباشرة عبر واتساب</a>
+            <p>نحن نقدم لك الأدوات العلمية والتقنية الأكثر تطوراً للوصول إلى السلام الداخلي والارتقاء بجودة حياتك بأساليب مبتكرة، تحت إشراف المدرب هاني آل حمدان.</p>
+            <a href="https://wa.me/966XXXXXXXXX" class="btn">احجز جلستك الاستشارية الآن</a>
         </section>
 
         <div class="services-grid">
-            <div class="service-card">
+            <div class="card">
                 <h3>المكتبة الرقمية</h3>
-                <p>تضم مجموعة من الكتب والأدلة الرقمية المختصة في فن الاسترخاء والتحرر من الضغوط بأساليب عملية.</p>
-                <a href="#" class="btn btn-outline">تصفح الإصدارات</a>
+                <p>إصدارات حصرية وأدلة تدريبية في فن الاسترخاء العميق والتحرر الذهني بأساليب عملية مبسطة.</p>
+                <a href="#" class="btn btn-outline">تصفح الكتب</a>
             </div>
 
-            <div class="service-card">
+            <div class="card">
                 <h3>جلسات الكوتشينج</h3>
-                <p>جلسات استشارية فردية مصممة لمساعدتك على تجاوز معوقات النجاح والارتقاء بوعيك الذاتي.</p>
-                <a href="#" class="btn btn-outline">حجز جلسة</a>
+                <p>جلسات خاصة ومباشرة لتفكيك التحديات الشخصية ورسم خارطة طريق واضحة للارتقاء بوعيك وأهدافك.</p>
+                <a href="#" class="btn btn-outline">حجز موعد</a>
             </div>
         </div>
 
-        <section class="payment-section">
+        <section class="payment-box">
             <h3 style="margin-top:0;">وسائل دفع آمنة ومريحة لخدمتكم</h3>
-            <p style="opacity: 0.7;">نقبل جميع بطاقات الدفع والوسائل الإلكترونية الحديثة</p>
+            <p style="opacity: 0.8;">نقبل جميع بطاقات الدفع والوسائل الإلكترونية لضمان راحة عملائنا</p>
             <div class="pay-badges">
                 <div class="badge">mada</div>
                 <div class="badge">Apple Pay</div>
@@ -246,9 +225,9 @@
     </div>
 
     <footer>
-        <p style="color: var(--white); font-weight: bold; font-size: 1.3rem; margin-bottom: 10px;">EXILO</p>
+        <p style="color: white; font-weight: bold; font-size: 1.3rem; margin-bottom: 10px;">EXILO</p>
         <p>جميع الحقوق محفوظة &copy; 2026 | متجر إكسيلو | هاني آل حمدان</p>
-        <p style="font-size: 0.85rem; margin-top: 15px; opacity: 0.5;">بوابتك الرقمية للارتقاء والاسترخاء</p>
+        <p style="font-size: 0.85rem; margin-top: 15px; opacity: 0.5;">أدواتك الذكية للتحرر الذهني والارتقاء الذاتي</p>
     </footer>
 
 </body>
