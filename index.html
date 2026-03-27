@@ -12,51 +12,42 @@ body{
 margin:0;
 font-family:'Cairo', sans-serif;
 background:#0a0f1c;
-color:#fff;
+color:white;
 text-align:center;
 }
 
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d');
 background-size:cover;
 }
 
 h1{
-font-size:48px;
-letter-spacing:2px;
-}
-
-.gold{
+font-size:50px;
 color:#d4af37;
 }
 
-p{
-max-width:600px;
-line-height:1.8;
-opacity:0.8;
-}
-
 .btn{
-margin-top:25px;
+margin-top:20px;
 padding:14px 30px;
 border:1px solid #d4af37;
 color:#d4af37;
 text-decoration:none;
 border-radius:30px;
-transition:0.3s;
 }
 
 .btn:hover{
 background:#d4af37;
-color:#000;
+color:black;
 }
 
+/* SECTIONS */
 .section{
 padding:80px 20px;
 }
@@ -65,7 +56,7 @@ padding:80px 20px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:25px;
+gap:20px;
 }
 
 .card{
@@ -73,8 +64,8 @@ background:#111827;
 padding:25px;
 width:260px;
 border-radius:15px;
-transition:0.3s;
 border:1px solid #1f2937;
+transition:0.3s;
 }
 
 .card:hover{
@@ -95,39 +86,73 @@ opacity:0.6;
 
 <!-- HERO -->
 <div class="hero">
-<h1 class="gold">EXILO</h1>
-<p>بوابتك الفاخرة للارتقاء الذاتي والتوازن النفسي</p>
-<a class="btn" href="https://wa.me/966XXXXXXXXX">ابدأ رحلتك الآن</a>
-</div>
-
-<!-- SERVICES -->
-<div class="section">
-<h2 class="gold">خدماتنا</h2>
-<div class="cards">
-<div class="card">جلسات كوتشينغ خاصة</div>
-<div class="card">مكتبة رقمية متقدمة</div>
-<div class="card">برامج تطوير احترافية</div>
-</div>
+<h1>EXILO</h1>
+<p>التوازن يبدأ من هنا</p>
+<a class="btn" href="#courses">استكشف الدورات</a>
 </div>
 
 <!-- ABOUT -->
 <div class="section">
-<h2 class="gold">لماذا EXILO؟</h2>
-<p>نقدم تجربة فريدة تجمع بين الاحترافية والهدوء النفسي لنساعدك على تحقيق أفضل نسخة من نفسك</p>
+<h2 style="color:#d4af37;">من نحن</h2>
+<p>
+EXILO منصة رقمية متخصصة في تطوير الذات والتوازن النفسي، نقدم دورات وجلسات تدريبية تساعدك على فهم نفسك والارتقاء بحياتك
+</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+<h2 style="color:#d4af37;">خدماتنا</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>الدورات الرقمية</h3>
+<p>دورات PDF احترافية في تطوير الذات وتحليل الشخصية</p>
+</div>
+
+<div class="card">
+<h3>المكتبة الرقمية</h3>
+<p>كتب وأدلة عملية تساعدك على النمو والتطور</p>
+</div>
+
+<div class="card">
+<h3>الجلسات التدريبية</h3>
+<p>جلسات كوتشينغ واستشارات شخصية عبر الهاتف</p>
+</div>
+
+</div>
+</div>
+
+<!-- COURSES -->
+<div class="section" id="courses">
+<h2 style="color:#d4af37;">أبرز الدورات</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>تحليل الشخصية من الخط والتوقيع والرسومات</h3>
+<p>تعلم قراءة الشخصيات وفهمها بعمق</p>
+<a class="btn" href="course1.html">عرض الدورة</a>
+</div>
+
+<div class="card">
+<h3>إتقان لغة الجسد</h3>
+<p>افهم الآخرين بدون كلمات</p>
+<a class="btn" href="#">عرض الدورة</a>
+</div>
+
+</div>
 </div>
 
 <!-- CTA -->
 <div class="section">
-<h2 class="gold">ابدأ الآن</h2>
-<a class="btn" href="https://wa.me/966XXXXXXXXX">تواصل عبر واتساب</a>
+<h2 style="color:#d4af37;">ابدأ رحلتك الآن</h2>
+<a class="btn" href="https://wa.me/966XXXXXXXXX">تواصل الآن</a>
 </div>
 
 <div class="footer">
 © EXILO 2026
 </div>
-
-</body>
-</html>
 
 </body>
 </html>
