@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXILO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
 <style>
+
 body{
 margin:0;
 font-family:'Cairo', sans-serif;
@@ -16,30 +17,52 @@ color:white;
 text-align:center;
 }
 
-/* HERO */
+/* HEADER */
 .hero{
-height:100vh;
+height:70vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
 url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d');
 background-size:cover;
 }
 
-h1{
-font-size:50px;
+/* LOGO */
+.logo{
+font-size:55px;
+font-family:'Playfair Display', serif;
 color:#d4af37;
+letter-spacing:4px;
 }
 
-.btn{
+/* TAGLINE */
+.tagline{
 margin-top:20px;
-padding:14px 30px;
+font-size:28px;
+font-weight:600;
+background: linear-gradient(90deg, #d4af37, #fff5cc, #d4af37);
+background-size:200%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation: shine 5s linear infinite;
+}
+
+@keyframes shine{
+0%{background-position:0%;}
+100%{background-position:200%;}
+}
+
+/* BUTTON */
+.btn{
+margin-top:30px;
+padding:14px 35px;
 border:1px solid #d4af37;
 color:#d4af37;
 text-decoration:none;
 border-radius:30px;
+transition:0.3s;
 }
 
 .btn:hover{
@@ -47,9 +70,9 @@ background:#d4af37;
 color:black;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section{
-padding:80px 20px;
+padding:70px 20px;
 }
 
 .cards{
@@ -73,51 +96,51 @@ transform:translateY(-10px);
 border-color:#d4af37;
 }
 
+/* FOOTER */
 .footer{
 padding:30px;
 border-top:1px solid #1f2937;
 opacity:0.6;
 }
+
+.gold{
+color:#d4af37;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- HEADER -->
 <div class="hero">
-<h1>EXILO</h1>
-<p>التوازن يبدأ من هنا</p>
-<a class="btn" href="#courses">استكشف الدورات</a>
-</div>
+<div class="logo">EXILO</div>
 
-<!-- ABOUT -->
-<div class="section">
-<h2 style="color:#d4af37;">من نحن</h2>
-<p>
-EXILO منصة رقمية متخصصة في تطوير الذات والتوازن النفسي، نقدم دورات وجلسات تدريبية تساعدك على فهم نفسك والارتقاء بحياتك
-</p>
+<div class="tagline">التوازن يبدأ من هنا</div>
+
+<a class="btn" href="#courses">استكشف الدورات</a>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
-<h2 style="color:#d4af37;">خدماتنا</h2>
+<h2 class="gold">خدماتنا</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>الدورات الرقمية</h3>
-<p>دورات PDF احترافية في تطوير الذات وتحليل الشخصية</p>
+<p>دورات احترافية في تحليل الشخصية وتطوير الذات</p>
 </div>
 
 <div class="card">
 <h3>المكتبة الرقمية</h3>
-<p>كتب وأدلة عملية تساعدك على النمو والتطور</p>
+<p>كتب وأدلة عملية تساعدك على النمو والتوازن</p>
 </div>
 
 <div class="card">
 <h3>الجلسات التدريبية</h3>
-<p>جلسات كوتشينغ واستشارات شخصية عبر الهاتف</p>
+<p>جلسات كوتشينغ واستشارات شخصية</p>
 </div>
 
 </div>
@@ -125,18 +148,18 @@ EXILO منصة رقمية متخصصة في تطوير الذات والتواز
 
 <!-- COURSES -->
 <div class="section" id="courses">
-<h2 style="color:#d4af37;">أبرز الدورات</h2>
+<h2 class="gold">أبرز الدورات</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>تحليل الشخصية من الخط والتوقيع والرسومات</h3>
-<p>تعلم قراءة الشخصيات وفهمها بعمق</p>
+<h3>تحليل الشخصية</h3>
+<p>تعلم قراءة الشخصيات من الخط والتوقيع والرسومات</p>
 <a class="btn" href="course1.html">عرض الدورة</a>
 </div>
 
 <div class="card">
-<h3>إتقان لغة الجسد</h3>
+<h3>لغة الجسد</h3>
 <p>افهم الآخرين بدون كلمات</p>
 <a class="btn" href="#">عرض الدورة</a>
 </div>
@@ -144,9 +167,17 @@ EXILO منصة رقمية متخصصة في تطوير الذات والتواز
 </div>
 </div>
 
+<!-- ABOUT -->
+<div class="section">
+<h2 class="gold">من نحن</h2>
+<p>
+EXILO منصة رقمية متخصصة في تطوير الذات والتوازن النفسي، نقدم أدوات معرفية وجلسات تدريبية تساعدك على فهم نفسك والارتقاء بحياتك
+</p>
+</div>
+
 <!-- CTA -->
 <div class="section">
-<h2 style="color:#d4af37;">ابدأ رحلتك الآن</h2>
+<h2 class="gold">ابدأ رحلتك الآن</h2>
 <a class="btn" href="https://wa.me/966XXXXXXXXX">تواصل الآن</a>
 </div>
 
