@@ -5,74 +5,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXILO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* BODY */
 body{
 margin:0;
 font-family:'Cairo', sans-serif;
-background:#0a0f1c;
-color:white;
-text-align:center;
+background:#f9fafb;
+color:#111827;
 }
 
 /* HEADER */
-.hero{
-height:70vh;
+.header{
+background:#ffffff;
+padding-bottom:40px;
+border-bottom:1px solid #e5e7eb;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* NAVBAR */
+.nav{
 display:flex;
-flex-direction:column;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d');
-background-size:cover;
+padding:15px 40px;
 }
 
 /* LOGO */
 .logo{
-font-size:55px;
-font-family:'Playfair Display', serif;
-color:#d4af37;
-letter-spacing:4px;
-}
-
-/* TAGLINE */
-.tagline{
-margin-top:20px;
 font-size:28px;
-font-weight:600;
-background: linear-gradient(90deg, #d4af37, #fff5cc, #d4af37);
-background-size:200%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation: shine 5s linear infinite;
-}
-
-@keyframes shine{
-0%{background-position:0%;}
-100%{background-position:200%;}
-}
-
-/* BUTTON */
-.btn{
-margin-top:30px;
-padding:14px 35px;
-border:1px solid #d4af37;
+font-weight:700;
 color:#d4af37;
+}
+
+/* MENU */
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu a{
 text-decoration:none;
-border-radius:30px;
+color:#374151;
+font-size:14px;
 transition:0.3s;
 }
 
-.btn:hover{
-background:#d4af37;
-color:black;
+.menu a:hover{
+color:#d4af37;
 }
 
-/* SECTION */
+/* CTA */
+.cta{
+background:#d4af37;
+color:white;
+padding:10px 20px;
+border-radius:20px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* HERO TEXT */
+.hero-content{
+text-align:center;
+margin-top:40px;
+}
+
+.hero-content h1{
+font-size:60px;
+margin:0;
+}
+
+.tagline{
+margin-top:10px;
+font-size:20px;
+color:#6b7280;
+}
+
+/* SECTIONS */
 .section{
 padding:70px 20px;
+text-align:center;
 }
 
 .cards{
@@ -83,28 +98,39 @@ gap:20px;
 }
 
 .card{
-background:#111827;
+background:white;
 padding:25px;
 width:260px;
-border-radius:15px;
-border:1px solid #1f2937;
+border-radius:12px;
+border:1px solid #e5e7eb;
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-border-color:#d4af37;
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.btn{
+margin-top:15px;
+padding:10px 25px;
+border:1px solid #d4af37;
+color:#d4af37;
+text-decoration:none;
+border-radius:25px;
+display:inline-block;
+}
+
+.gold{
+color:#d4af37;
 }
 
 /* FOOTER */
 .footer{
 padding:30px;
-border-top:1px solid #1f2937;
-opacity:0.6;
-}
-
-.gold{
-color:#d4af37;
+background:#111827;
+color:white;
+margin-top:40px;
 }
 
 </style>
@@ -114,16 +140,32 @@ color:#d4af37;
 <body>
 
 <!-- HEADER -->
-<div class="hero">
+<div class="header">
+
+<div class="nav">
+
 <div class="logo">EXILO</div>
 
-<div class="tagline">التوازن يبدأ من هنا</div>
+<div class="menu">
+<a href="#">الرئيسية</a>
+<a href="#courses">الدورات</a>
+<a href="#services">الخدمات</a>
+<a href="#about">من نحن</a>
+</div>
 
-<a class="btn" href="#courses">استكشف الدورات</a>
+<a class="cta" href="https://wa.me/966XXXXXXXXX">ابدأ الآن</a>
+
+</div>
+
+<div class="hero-content">
+<h1>EXILO</h1>
+<p class="tagline">التوازن يبدأ من هنا</p>
+</div>
+
 </div>
 
 <!-- SERVICES -->
-<div class="section">
+<div class="section" id="services">
 <h2 class="gold">خدماتنا</h2>
 
 <div class="cards">
@@ -140,7 +182,7 @@ color:#d4af37;
 
 <div class="card">
 <h3>الجلسات التدريبية</h3>
-<p>جلسات كوتشينغ واستشارات شخصية</p>
+<p>جلسات كوتشينغ واستشارات عبر الهاتف</p>
 </div>
 
 </div>
@@ -168,10 +210,10 @@ color:#d4af37;
 </div>
 
 <!-- ABOUT -->
-<div class="section">
+<div class="section" id="about">
 <h2 class="gold">من نحن</h2>
 <p>
-EXILO منصة رقمية متخصصة في تطوير الذات والتوازن النفسي، نقدم أدوات معرفية وجلسات تدريبية تساعدك على فهم نفسك والارتقاء بحياتك
+EXILO منصة رقمية متخصصة في تطوير الذات والتوازن النفسي، نقدم دورات وجلسات تدريبية تساعدك على فهم نفسك والارتقاء بحياتك
 </p>
 </div>
 
