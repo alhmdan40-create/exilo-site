@@ -41,20 +41,20 @@
             display: block;
         }
 
-        /* طبقة إخفاء النص السفلي في البانر */
+        /* طبقة إخفاء النص السفلي في البانر (لحذف عبارة المدرب) */
         .hide-text-mask {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 15%;
+            height: 15%; /* مساحة كافية للتغطية */
             background-color: var(--site-bg);
             z-index: 5;
         }
 
         .content-container {
             max-width: 900px;
-            margin: -40px auto 80px;
+            margin: -40px auto 80px; /* تداخل خفيف مع البانر */
             padding: 0 20px;
             position: relative;
             z-index: 10;
@@ -64,45 +64,50 @@
             background: white;
             padding: 50px 40px;
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08); /* ظل أعمق وأفخم */
             text-align: center;
             border-top: 5px solid var(--navy);
         }
 
+        /* --- تنسيق الشعار الجديد الفخم --- */
         .logo-prominent {
-            height: 80px;
+            height: 90px; /* حجم أكبر وملفت */
             width: auto;
             margin: 0 auto 30px;
             display: block;
+            /* إضافة ظل ناعم للشعار ليعطيه عمقاً */
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
+        /* --- تنسيق عبارة الترحيب بخط ملفت --- */
         .welcome-title {
             color: var(--navy);
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2.5rem; /* حجم كبير وملفت */
+            font-weight: 700; /* عريض جداً */
             margin: 0 0 20px 0;
             line-height: 1.2;
         }
 
+        /* --- تنسيق الوصف بخط احترافي --- */
         .welcome-desc {
             color: #555;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* حجم مريح ومقروء */
+            font-weight: 400;
             line-height: 1.8;
             max-width: 700px;
             margin: 0 auto 30px;
         }
 
-        /* الزر المحدث */
+        /* تنسيق الزر */
         .cta-btn {
             display: inline-block;
             background: var(--navy);
             color: white;
-            padding: 18px 60px; /* زيادة العرض ليعطي فخامة أكثر */
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             box-shadow: 0 5px 15px rgba(10,25,47,0.2);
             transition: all 0.3s ease;
         }
@@ -113,10 +118,13 @@
             background-color: #112a4f;
         }
 
+        /* تحسينات للجوال */
         @media (max-width: 768px) {
-            .welcome-title { font-size: 1.8rem; }
+            .content-container { margin-top: -20px; }
             .welcome-box { padding: 30px 20px; }
-            .cta-btn { padding: 15px 40px; font-size: 1.1rem; }
+            .logo-prominent { height: 70px; margin-bottom: 20px; }
+            .welcome-title { font-size: 1.8rem; }
+            .welcome-desc { font-size: 1rem; }
         }
     </style>
 </head>
@@ -130,7 +138,7 @@
     <div class="content-container">
         <section class="welcome-box">
             
-            <img src="logo.png.PNG" alt="Exilo Logo" class="logo-prominent">
+            <img src="https://image-api.macrometa.io/images/0000000000000000/0000000000000000/exilo-logo-presentation.png" alt="Exilo New Logo" class="logo-prominent">
             
             <h1 class="welcome-title">مرحباً بك في عالم إكسيلو</h1>
             
