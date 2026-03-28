@@ -10,11 +10,102 @@
 
 <style>
 body {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(#0f1f3a, #162a4d);
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background: linear-gradient(#0f1f3a,#162a4d);
+  color:white;
+  text-align:center;
+}
+
+/* زر القائمة */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: gold;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #0f1f3a;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar h2 {
+  color: gold;
+}
+
+.sidebar a {
+  display: block;
   color: white;
-  text-align: center;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+/* تسجيل الدخول */
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.login-box {
+  background: #0f1f3a;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 350px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+}
+
+.login-btn {
+  background: gold;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: gold;
 }
 
 /* البنر */
@@ -24,34 +115,18 @@ body {
   object-fit: cover;
 }
 
-/* العناوين */
+/* الأقسام */
 .section-title {
   color: gold;
   font-size: 28px;
   margin: 40px 0 20px;
 }
 
-/* لماذا اكسيلو */
-.features {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 15px;
-  padding: 20px;
-}
-
-.feature {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
-  border-radius: 15px;
-}
-
-/* الكروت */
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
-  padding: 0 20px;
 }
 
 .card {
@@ -59,11 +134,6 @@ body {
   border-radius: 20px;
   width: 300px;
   overflow: hidden;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
 }
 
 .card img {
@@ -73,7 +143,7 @@ body {
 }
 
 .card-content {
-  padding: 20px;
+  padding: 15px;
 }
 
 .btn {
@@ -82,9 +152,6 @@ body {
   padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
 }
 
 /* الفوتر */
@@ -100,100 +167,136 @@ footer {
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  padding: 15px 20px;
-  border-radius: 30px;
+  padding: 15px;
+  border-radius: 50%;
   color: white;
   text-decoration: none;
 }
 </style>
-
 </head>
 
 <body>
+
+<!-- اسم المستخدم -->
+<div class="user-name" id="userName"></div>
+
+<!-- زر القائمة -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- القائمة -->
+<div class="sidebar" id="sidebar">
+
+<h2>EXILO</h2>
+
+<a href="#" onclick="openLogin()">تسجيل الدخول</a>
+
+<hr>
+
+<a href="course-analysis.html">تحليل الشخصيات</a>
+<a href="course-body.html">لغة الجسد</a>
+<a href="books.html">الكتب</a>
+<a href="sessions.html">الجلسات</a>
+
+<hr>
+
+<a href="terms.html">الشروط</a>
+
+</div>
+
+<!-- تسجيل الدخول -->
+<div class="login-modal" id="loginModal">
+  <div class="login-box">
+    <h3>تسجيل الدخول</h3>
+    <input id="name" placeholder="الاسم">
+    <input id="phone" placeholder="رقم الجوال">
+    <button class="login-btn" onclick="login()">دخول</button>
+  </div>
+</div>
 
 <!-- البنر -->
 <div class="banner">
   <img src="banner.png.PNG">
 </div>
 
-<!-- لماذا اكسيلو -->
-<div class="section-title">لماذا إكسيلو؟</div>
-
-<div class="features">
-  <div class="feature">🚀 لا نقدم معلومات.. بل نصنع تحول حقيقي</div>
-  <div class="feature">🧠 فهم عميق للشخصيات والسلوك</div>
-  <div class="feature">🎯 أدوات عملية قابلة للتطبيق</div>
-  <div class="feature">🔥 تطوير حقيقي في حياتك</div>
-</div>
-
-<!-- الدورات -->
+<!-- الأقسام -->
 <div class="section-title">الدورات</div>
 
 <div class="container">
 
-  <div class="card">
-    <img src="body.png.PNG">
-    <div class="card-content">
-      <h3>لغة الجسد</h3>
-      <p>تعلم قراءة الإشارات وفهم المشاعر الخفية</p>
-      <a href="course-body.html" class="btn">عرض التفاصيل</a>
-    </div>
-  </div>
+<div class="card">
+<img src="analysis.png.PNG">
+<div class="card-content">
+<h3>تحليل الشخصيات</h3>
+<a href="course-analysis.html" class="btn">عرض</a>
+</div>
+</div>
 
-  <div class="card">
-    <img src="analysis.png.PNG">
-    <div class="card-content">
-      <h3>تحليل الشخصيات</h3>
-      <p>افهم الشخصيات من الخط والتوقيع والرسومات</p>
-      <a href="course-analysis.html" class="btn">عرض التفاصيل</a>
-    </div>
-  </div>
+<div class="card">
+<img src="body.png.PNG">
+<div class="card-content">
+<h3>لغة الجسد</h3>
+<a href="course-body.html" class="btn">عرض</a>
+</div>
+</div>
 
 </div>
 
-<!-- الجلسات -->
-<div class="section-title">جلسات التوجيه</div>
+<div class="section-title">المنتجات</div>
 
 <div class="container">
-  <div class="card">
-    <img src="sessions.png.PNG">
-    <div class="card-content">
-      <h3>جلسات خاصة</h3>
-      <p>جلسات فردية تساعدك على التوازن واتخاذ القرار</p>
-      <a href="sessions.html" class="btn">احجز الآن</a>
-    </div>
-  </div>
+
+<div class="card">
+<img src="books.png.jpg">
+<div class="card-content">
+<h3>الكتب</h3>
+<a href="books.html" class="btn">عرض</a>
+</div>
 </div>
 
-<!-- الكتب -->
-<div class="section-title">الكتب الرقمية</div>
+<div class="card">
+<img src="sessions.png.PNG">
+<div class="card-content">
+<h3>الجلسات</h3>
+<a href="sessions.html" class="btn">عرض</a>
+</div>
+</div>
 
-<div class="container">
-  <div class="card">
-    <img src="books.png.jpg">
-    <div class="card-content">
-      <h3>الكتب الرقمية</h3>
-      <p>ابدأ رحلة التغيير والتطوير الذاتي</p>
-      <a href="books.html" class="btn">عرض الكتب</a>
-    </div>
-  </div>
 </div>
 
 <!-- الفوتر -->
 <footer>
-
 <p>© 2026 EXILO. جميع الحقوق محفوظة.</p>
-
-<a href="terms.html" style="color:gold; text-decoration:none; display:block; margin-top:10px;">
-الشروط والأحكام
-</a>
-
+<a href="terms.html" style="color:gold;">الشروط والأحكام</a>
 </footer>
 
 <!-- واتساب -->
-<a class="whatsapp" href="https://wa.me/966530205304">
-واتساب
-</a>
+<a class="whatsapp" href="https://wa.me/966530205304">💬</a>
+
+<script>
+function toggleMenu() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function login() {
+  let name = document.getElementById("name").value;
+  if(name === "") return;
+
+  localStorage.setItem("userName", name);
+  document.getElementById("loginModal").style.display = "none";
+  document.getElementById("userName").innerText = "👋 " + name;
+}
+
+window.onload = function() {
+  let name = localStorage.getItem("userName");
+  if(name) {
+    document.getElementById("userName").innerText = "👋 " + name;
+  }
+}
+</script>
 
 </body>
 </html>
