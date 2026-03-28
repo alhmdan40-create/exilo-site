@@ -15,6 +15,7 @@ body {
     font-family: 'Cairo', sans-serif;
     background: #0e2a47;
     color: white;
+    overflow-x: hidden;
 }
 
 /* البنر */
@@ -49,11 +50,6 @@ h2 {
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
 }
 
 /* زر القائمة */
@@ -62,55 +58,72 @@ h2 {
     top: 20px;
     right: 20px;
     background: rgba(0,0,0,0.6);
-    padding: 10px 15px;
+    padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 3000;
+    z-index: 5000;
+    font-size: 18px;
 }
 
-/* الخلفية السوداء */
+/* الخلفية */
 .overlay {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
-    z-index: 2000;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 4000;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* القائمة */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -260px;
+    right: -270px;
     width: 260px;
     height: 100%;
-    background: #0e2a47;
-    padding: 20px;
-    transition: 0.3s;
-    z-index: 3001;
+    background: #081f36;
+    padding: 25px 20px;
+    transition: 0.3s ease;
+    z-index: 5001;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.4);
 }
 
-.sidebar.active {
+.sidebar.show {
     right: 0;
 }
 
 /* زر الإغلاق */
 .close-btn {
     font-size: 24px;
+    margin-bottom: 25px;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
-/* روابط */
+/* روابط القائمة */
 .sidebar a {
     display: block;
-    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
     text-decoration: none;
-    margin: 15px 0;
-    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: rgba(212,175,55,0.2);
+    color: #d4af37;
 }
 
 </style>
@@ -125,14 +138,14 @@ h2 {
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <!-- القائمة -->
-<div class="sidebar" id="menu">
+<div class="sidebar" id="sidebar">
 
 <div class="close-btn" onclick="closeMenu()">✕</div>
 
-<a href="index.html">الرئيسية</a>
-<a href="courses.html">الدورات</a>
-<a href="books.html">الكتب</a>
-<a href="terms.html">الشروط والأحكام</a>
+<a href="index.html">🏠 الرئيسية</a>
+<a href="courses.html">🎓 الدورات</a>
+<a href="books.html">📚 الكتب</a>
+<a href="terms.html">📄 الشروط والأحكام</a>
 
 </div>
 
@@ -144,24 +157,22 @@ h2 {
 <h2>لماذا إكسيلو؟</h2>
 
 <div class="grid">
-
 <a href="courses.html" class="card">🚀 نصنع تحول حقيقي</a>
 <a href="courses.html" class="card">🧠 فهم عميق لذاتك</a>
 <a href="courses.html" class="card">🎯 وضوح في حياتك</a>
 <a href="courses.html" class="card">🔥 تغيير فعلي</a>
-
 </div>
 
 <script>
 
 function openMenu() {
-    document.getElementById("menu").classList.add("active");
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("sidebar").classList.add("show");
+    document.getElementById("overlay").classList.add("show");
 }
 
 function closeMenu() {
-    document.getElementById("menu").classList.remove("active");
-    document.getElementById("overlay").style.display = "none";
+    document.getElementById("sidebar").classList.remove("show");
+    document.getElementById("overlay").classList.remove("show");
 }
 
 </script>
