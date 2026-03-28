@@ -2,107 +2,49 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الكتب الرقمية</title>
-
 <style>
 body {
-  margin: 0;
-  font-family: sans-serif;
   background: linear-gradient(#0f1f3a,#162a4d);
-  color: white;
-  text-align: center;
+  color:white;
+  text-align:center;
+  font-family:sans-serif;
 }
 
-/* العنوان */
-h1 {
-  color: gold;
-  margin-top: 30px;
-}
-
-/* الكرت */
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  width: 320px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* الصورة */
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-/* المحتوى */
-.card-content {
-  padding: 20px;
-}
-
-.price {
-  font-size: 22px;
-  color: gold;
-  margin: 10px 0;
-}
-
-/* الزر */
-.btn {
-  background: gold;
-  color: black;
-  padding: 12px 25px;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-/* زر رجوع */
-.back {
-  display: inline-block;
-  margin-top: 20px;
-  color: #aaa;
-  text-decoration: none;
-}
+.card { width:320px; margin:auto; background:rgba(255,255,255,0.05); border-radius:20px; overflow:hidden;}
+.card img { width:100%; height:220px; object-fit:cover;}
+.card-content { padding:20px;}
+.price { color:gold; font-size:22px;}
+.btn { background:gold; color:black; padding:12px 25px; border-radius:12px; text-decoration:none;}
 </style>
-
 </head>
 
 <body>
 
-<h1>الكتب الرقمية</h1>
+<h1 style="color:gold;">الكتب الرقمية</h1>
 
-<div class="container">
+<div class="card">
+<img src="books.png.jpg">
 
-  <div class="card">
-    <img src="books.png.jpg">
+<div class="card-content">
 
-    <div class="card-content">
-      <h2>كتب EXILO</h2>
+<p>
+ابدأ رحلتك نحو التغيير الحقيقي.
 
-      <p>
-        مجموعة كتب رقمية تساعدك على تطوير ذاتك، فهم نفسك، 
-        وبناء عقلية قوية تقودك للنجاح
-      </p>
+✔ تطوير الذات  
+✔ فهم أعمق للحياة  
+✔ تغيير طريقة التفكير  
+✔ بناء عقلية قوية  
 
-      <div class="price">99 ريال</div>
+التغيير يبدأ من هنا.
+</p>
 
-      <a href="#" class="btn">شراء الآن</a>
+<p style="color:gold;">⚡ نسخ محدودة</p>
 
-      <br>
+<div class="price">99 ريال</div>
 
-      <a href="index.html" class="back">⬅ العودة للرئيسية</a>
-    </div>
+<a href="#" class="btn">شراء الآن</a>
 
-  </div>
-
+</div>
 </div>
 
 </body>
