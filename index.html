@@ -3,32 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>EXILO</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin:0;
-  font-family:'Cairo',sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Cairo', sans-serif;
   background: linear-gradient(#0f1f3a,#162a4d);
-  color:white;
-  text-align:center;
+  color: white;
+  text-align: center;
 }
 
 /* زر القائمة */
 .menu-btn {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   background: gold;
   color: black;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
+  cursor: pointer;
 }
 
 /* القائمة الجانبية */
@@ -40,7 +50,7 @@ body {
   height: 100%;
   background: #0f1f3a;
   padding: 20px;
-  transition: 0.4s;
+  transition: 0.3s;
   z-index: 999;
 }
 
@@ -57,55 +67,9 @@ body {
   color: white;
   text-decoration: none;
   margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   background: rgba(255,255,255,0.05);
-}
-
-/* تسجيل الدخول */
-.login-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 2000;
-}
-
-.login-box {
-  background: #0f1f3a;
-  padding: 25px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 350px;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: none;
-}
-
-.login-btn {
-  background: gold;
-  padding: 12px;
-  border-radius: 10px;
-  width: 100%;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.user-name {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  color: gold;
 }
 
 /* البنر */
@@ -115,50 +79,49 @@ body {
   object-fit: cover;
 }
 
-/* الأقسام */
+/* العناوين */
 .section-title {
   color: gold;
-  font-size: 28px;
+  font-size: 30px;
   margin: 40px 0 20px;
+  font-weight: bold;
 }
 
+/* الكروت */
 .container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
 .card {
   background: rgba(255,255,255,0.05);
   border-radius: 20px;
-  width: 300px;
+  width: 90%;
+  max-width: 400px;
   overflow: hidden;
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
 }
 
-.card-content {
-  padding: 15px;
+.card h3 {
+  margin: 15px 0;
 }
 
 .btn {
   background: gold;
   color: black;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 12px 25px;
+  border-radius: 12px;
   text-decoration: none;
-}
-
-/* الفوتر */
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  color: #aaa;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* واتساب */
@@ -171,14 +134,20 @@ footer {
   border-radius: 50%;
   color: white;
   text-decoration: none;
+  font-size: 20px;
 }
+
+/* الفوتر */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  color: #aaa;
+}
+
 </style>
 </head>
 
 <body>
-
-<!-- اسم المستخدم -->
-<div class="user-name" id="userName"></div>
 
 <!-- زر القائمة -->
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -188,10 +157,6 @@ footer {
 
 <h2>EXILO</h2>
 
-<a href="#" onclick="openLogin()">تسجيل الدخول</a>
-
-<hr>
-
 <a href="course-analysis.html">تحليل الشخصيات</a>
 <a href="course-body.html">لغة الجسد</a>
 <a href="books.html">الكتب</a>
@@ -199,73 +164,56 @@ footer {
 
 <hr>
 
-<a href="terms.html">الشروط</a>
+<a href="terms.html">الشروط والأحكام</a>
 
-</div>
-
-<!-- تسجيل الدخول -->
-<div class="login-modal" id="loginModal">
-  <div class="login-box">
-    <h3>تسجيل الدخول</h3>
-    <input id="name" placeholder="الاسم">
-    <input id="phone" placeholder="رقم الجوال">
-    <button class="login-btn" onclick="login()">دخول</button>
-  </div>
 </div>
 
 <!-- البنر -->
 <div class="banner">
-  <img src="banner.png.PNG">
+<img src="banner-top.png.PNG">
 </div>
 
-<!-- الأقسام -->
+<!-- الدورات -->
 <div class="section-title">الدورات</div>
 
 <div class="container">
 
 <div class="card">
 <img src="analysis.png.PNG">
-<div class="card-content">
 <h3>تحليل الشخصيات</h3>
 <a href="course-analysis.html" class="btn">عرض</a>
-</div>
 </div>
 
 <div class="card">
 <img src="body.png.PNG">
-<div class="card-content">
 <h3>لغة الجسد</h3>
 <a href="course-body.html" class="btn">عرض</a>
 </div>
-</div>
 
 </div>
 
+<!-- المنتجات -->
 <div class="section-title">المنتجات</div>
 
 <div class="container">
 
 <div class="card">
 <img src="books.png.jpg">
-<div class="card-content">
-<h3>الكتب</h3>
+<h3>الكتب الرقمية</h3>
 <a href="books.html" class="btn">عرض</a>
-</div>
 </div>
 
 <div class="card">
 <img src="sessions.png.PNG">
-<div class="card-content">
-<h3>الجلسات</h3>
+<h3>جلسات التوجيه</h3>
 <a href="sessions.html" class="btn">عرض</a>
-</div>
 </div>
 
 </div>
 
 <!-- الفوتر -->
 <footer>
-<p>© 2026 EXILO. جميع الحقوق محفوظة.</p>
+<p>© 2026 EXILO</p>
 <a href="terms.html" style="color:gold;">الشروط والأحكام</a>
 </footer>
 
@@ -275,26 +223,6 @@ footer {
 <script>
 function toggleMenu() {
   document.getElementById("sidebar").classList.toggle("active");
-}
-
-function openLogin() {
-  document.getElementById("loginModal").style.display = "flex";
-}
-
-function login() {
-  let name = document.getElementById("name").value;
-  if(name === "") return;
-
-  localStorage.setItem("userName", name);
-  document.getElementById("loginModal").style.display = "none";
-  document.getElementById("userName").innerText = "👋 " + name;
-}
-
-window.onload = function() {
-  let name = localStorage.getItem("userName");
-  if(name) {
-    document.getElementById("userName").innerText = "👋 " + name;
-  }
 }
 </script>
 
