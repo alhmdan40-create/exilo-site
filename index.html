@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EXILO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Cairo', sans-serif;
   background: linear-gradient(#0f1f3a, #162a4d);
   color: white;
   text-align: center;
@@ -17,7 +20,7 @@ body {
 /* البنر */
 .banner img {
   width: 100%;
-  height: 300px;
+  height: 260px;
   object-fit: cover;
 }
 
@@ -81,20 +84,7 @@ body {
   text-decoration: none;
   display: inline-block;
   margin-top: 10px;
-}
-
-/* الجلسات */
-.session img {
-  width: 90%;
-  max-width: 500px;
-  border-radius: 20px;
-}
-
-/* الكتب */
-.books img {
-  width: 90%;
-  max-width: 500px;
-  border-radius: 20px;
+  font-weight: bold;
 }
 
 /* الفوتر */
@@ -121,7 +111,7 @@ footer {
 
 <body>
 
-<!-- 🔥 البنر -->
+<!-- البنر -->
 <div class="banner">
   <img src="banner.png.PNG">
 </div>
@@ -131,9 +121,9 @@ footer {
 
 <div class="features">
   <div class="feature">🚀 لا نقدم معلومات.. بل نصنع تحول حقيقي</div>
-  <div class="feature">🧠 تكتشف أنماط سلوكك بعمق</div>
-  <div class="feature">🎯 تنتقل من التشتت إلى الوضوح</div>
-  <div class="feature">🔥 تبدأ التغيير الحقيقي في حياتك</div>
+  <div class="feature">🧠 فهم عميق للشخصيات والسلوك</div>
+  <div class="feature">🎯 أدوات عملية قابلة للتطبيق</div>
+  <div class="feature">🔥 تطوير حقيقي في حياتك</div>
 </div>
 
 <!-- الدورات -->
@@ -141,51 +131,63 @@ footer {
 
 <div class="container">
 
-  <!-- لغة الجسد -->
   <div class="card">
     <img src="body.png.PNG">
     <div class="card-content">
-      <h2>لغة الجسد</h2>
-      <p>اكتشف أسرار لغة الجسد واقرأ الآخرين بثقة</p>
+      <h3>لغة الجسد</h3>
+      <p>تعلم قراءة الإشارات وفهم المشاعر الخفية</p>
       <a href="course-body.html" class="btn">عرض التفاصيل</a>
     </div>
   </div>
 
-  <!-- تحليل الشخصيات -->
   <div class="card">
     <img src="analysis.png.PNG">
     <div class="card-content">
-      <h2>تحليل الشخصيات</h2>
-      <p>افهم شخصيات الآخرين من خلال تحليل الخط والتوقيع</p>
+      <h3>تحليل الشخصيات</h3>
+      <p>افهم الشخصيات من الخط والتوقيع والرسومات</p>
       <a href="course-analysis.html" class="btn">عرض التفاصيل</a>
     </div>
   </div>
 
 </div>
 
-<!-- جلسات التوجيه -->
+<!-- الجلسات -->
 <div class="section-title">جلسات التوجيه</div>
 
-<div class="session">
-  <img src="sessions.png.PNG">
-  <p>جلسات توجيه خاصة تساعدك على تحقيق التوازن والوضوح</p>
-  <br>
-  <a href="sessions.html" class="btn">احجز الآن</a>
+<div class="container">
+  <div class="card">
+    <img src="sessions.png.PNG">
+    <div class="card-content">
+      <h3>جلسات خاصة</h3>
+      <p>جلسات فردية تساعدك على التوازن واتخاذ القرار</p>
+      <a href="sessions.html" class="btn">احجز الآن</a>
+    </div>
+  </div>
 </div>
 
 <!-- الكتب -->
 <div class="section-title">الكتب الرقمية</div>
 
-<div class="books">
-  <img src="books.png.jpg">
-  <p>ابدأ رحلة التغيير الشاملة الآن</p>
-  <br>
-  <a href="books.html" class="btn">عرض الكتب</a>
+<div class="container">
+  <div class="card">
+    <img src="books.png.jpg">
+    <div class="card-content">
+      <h3>الكتب الرقمية</h3>
+      <p>ابدأ رحلة التغيير والتطوير الذاتي</p>
+      <a href="books.html" class="btn">عرض الكتب</a>
+    </div>
+  </div>
 </div>
 
 <!-- الفوتر -->
 <footer>
-  © 2026 EXILO. جميع الحقوق محفوظة.
+
+<p>© 2026 EXILO. جميع الحقوق محفوظة.</p>
+
+<a href="terms.html" style="color:gold; text-decoration:none; display:block; margin-top:10px;">
+الشروط والأحكام
+</a>
+
 </footer>
 
 <!-- واتساب -->
