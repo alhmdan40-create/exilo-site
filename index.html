@@ -12,7 +12,7 @@
 body{
 margin:0;
 font-family:'Cairo',sans-serif;
-background:linear-gradient(#0f1f3a,#162a4d);
+background:#0f1f3a;
 color:white;
 text-align:center;
 }
@@ -31,13 +31,12 @@ display:flex;
 align-items:center;
 justify-content:center;
 z-index:2000;
-font-size:22px;
 }
 
 /* البنر */
 .banner{
 position:relative;
-height:320px;
+height:300px;
 }
 
 .banner img{
@@ -46,110 +45,48 @@ height:100%;
 object-fit:cover;
 }
 
+/* طبقة */
 .overlay{
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.6);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:20px;
 }
 
 /* النص */
 .logo{
 color:gold;
-font-size:45px;
+font-size:40px;
 font-weight:900;
 }
 
 .hero-title{
-font-size:30px;
-font-weight:900;
-margin-top:10px;
+font-size:28px;
+font-weight:bold;
 }
 
 .hero-sub{
-font-size:17px;
-opacity:0.9;
-margin-top:5px;
-}
-
-.cta{
-background:gold;
-color:black;
-padding:12px 25px;
-border-radius:10px;
-margin-top:15px;
-font-weight:bold;
-text-decoration:none;
-}
-
-/* العناوين */
-.title{
-color:gold;
-font-size:32px;
-margin:40px 0 20px;
-font-weight:900;
+font-size:16px;
 }
 
 /* لماذا اكسيلو */
+.title{
+color:gold;
+font-size:28px;
+margin:40px 0 20px;
+}
+
 .box{
 background:rgba(255,255,255,0.05);
 margin:12px;
-padding:18px;
+padding:15px;
 border-radius:15px;
-font-size:18px;
-transition:0.3s;
-}
-
-.box:hover{
-background:rgba(255,255,255,0.1);
-transform:scale(1.03);
-}
-
-/* الكروت */
-.card{
-background:rgba(255,255,255,0.05);
-margin:20px;
-padding:20px;
-border-radius:20px;
-}
-
-.card img{
-width:100%;
-height:230px;
-object-fit:cover;
-border-radius:15px;
-}
-
-.card h3{
-font-size:23px;
-margin:15px 0;
-}
-
-.btn{
-background:gold;
-color:black;
-padding:12px 25px;
-border-radius:10px;
-display:inline-block;
-margin-top:10px;
-text-decoration:none;
-font-weight:bold;
-}
-
-/* الفوتر */
-.footer{
-margin-top:50px;
-padding:20px;
-background:#0b172c;
-font-size:14px;
-opacity:0.8;
 }
 
 </style>
@@ -159,7 +96,7 @@ opacity:0.8;
 
 <div class="menu-btn">☰</div>
 
-<!-- البنر -->
+<!-- البنر الوحيد -->
 <div class="banner">
 <img src="banner-top.png.PNG">
 
@@ -174,8 +111,6 @@ opacity:0.8;
 رحلة التوازن الحقيقي تبدأ من هنا
 </div>
 
-<a href="course-analysis.html" class="cta">ابدأ الآن</a>
-
 </div>
 </div>
 
@@ -186,43 +121,6 @@ opacity:0.8;
 <div class="box">🧠 اكتشف أنماطك وسلوكك بعمق</div>
 <div class="box">🎯 انتقل من التشتت إلى الوضوح</div>
 <div class="box">🔥 التغيير يبدأ بالفعل وليس بالكلام</div>
-
-<!-- الدورات -->
-<div class="title">الدورات</div>
-
-<div class="card">
-<img src="analysis.png.PNG">
-<h3>تحليل الشخصيات</h3>
-<a href="course-analysis.html" class="btn">عرض الدورة</a>
-</div>
-
-<div class="card">
-<img src="body.png.PNG">
-<h3>لغة الجسد</h3>
-<a href="course-body.html" class="btn">عرض الدورة</a>
-</div>
-
-<!-- المنتجات -->
-<div class="title">المنتجات</div>
-
-<div class="card">
-<img src="books.png.jpg">
-<h3>الكتب</h3>
-<a href="books.html" class="btn">عرض الكتب</a>
-</div>
-
-<div class="card">
-<img src="sessions.png.PNG">
-<h3>الجلسات</h3>
-<a href="sessions.html" class="btn">احجز الآن</a>
-</div>
-
-<!-- الفوتر -->
-<div class="footer">
-© جميع الحقوق محفوظة - EXILO  
-<br>
-<a href="terms.html" style="color:gold;">الشروط والأحكام</a>
-</div>
 
 </body>
 </html>
