@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>إكسيلو | Exilo</title>
+<title>إكسيلو | EXILO</title>
 
-<!-- خط احترافي -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -21,8 +20,7 @@ body {
 /* البنر */
 .banner img {
     width: 100%;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    display: block;
 }
 
 /* العنوان */
@@ -34,7 +32,7 @@ h2 {
     font-weight: 900;
 }
 
-/* الأقسام */
+/* المربعات */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -51,33 +49,6 @@ h2 {
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-/* الخط الفاصل */
-.line {
-    height: 1px;
-    background: #d4af37;
-    margin: 40px 20px;
-    opacity: 0.4;
-}
-
-/* زر واتساب */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: linear-gradient(135deg, #d4af37, #f5e6a6);
-    color: #000;
-    padding: 14px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 9999;
 }
 
 /* القائمة */
@@ -85,23 +56,23 @@ h2 {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .sidebar {
     position: fixed;
     top: 0;
-    right: -250px;
-    width: 250px;
+    right: -260px;
+    width: 260px;
     height: 100%;
     background: #0e2a47;
     padding: 20px;
     transition: 0.3s;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .sidebar.active {
@@ -111,8 +82,8 @@ h2 {
 .close-btn {
     font-size: 22px;
     cursor: pointer;
-    margin-bottom: 20px;
     display: block;
+    margin-bottom: 20px;
 }
 
 .sidebar a {
@@ -120,6 +91,20 @@ h2 {
     color: white;
     text-decoration: none;
     margin: 15px 0;
+}
+
+/* زر واتساب */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #d4af37;
+    color: #000;
+    padding: 15px 22px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 3000;
 }
 
 </style>
@@ -130,59 +115,49 @@ h2 {
 <!-- زر القائمة -->
 <div class="menu-btn" onclick="openMenu()">☰</div>
 
-<!-- القائمة الجانبية -->
-<div class="sidebar" id="sidebar">
-    <span class="close-btn" onclick="closeMenu()">✕</span>
-    <a href="index.html">الرئيسية</a>
-    <a href="courses.html">الدورات</a>
-    <a href="books.html">الكتب</a>
-    <a href="contact.html">تواصل معنا</a>
-    <a href="terms.html">الشروط والأحكام</a>
+<!-- القائمة -->
+<div class="sidebar" id="menu">
+<span class="close-btn" onclick="closeMenu()">✕</span>
+
+<a href="index.html">الرئيسية</a>
+<a href="courses.html">الدورات</a>
+<a href="books.html">الكتب</a>
+<a href="terms.html">الشروط والأحكام</a>
+
 </div>
 
 <!-- البنر -->
 <div class="banner">
-    <img src="banner-new.png.PNG" alt="banner">
+<img src="banner-new.png.PNG">
 </div>
 
 <h2>لماذا إكسيلو؟</h2>
 
 <div class="grid">
 
-<a href="course-analysis.html" class="card">
-🚀 نصنع تحول حقيقي
-</a>
-
-<a href="course-body.html" class="card">
-🧠 فهم عميق لذاتك
-</a>
-
-<a href="courses.html" class="card">
-🎯 وضوح في حياتك
-</a>
-
-<a href="courses.html" class="card">
-🔥 تغيير فعلي
-</a>
+<a href="courses.html" class="card">🚀 تحول حقيقي</a>
+<a href="courses.html" class="card">🧠 فهم عميق</a>
+<a href="courses.html" class="card">🎯 وضوح كامل</a>
+<a href="courses.html" class="card">🔥 تغيير جذري</a>
 
 </div>
 
-<div class="line"></div>
-
 <!-- زر شراء -->
-<a href="https://wa.me/966538205304?text=السلام عليكم،%20أبغى%20شراء%20أحد%20دورات%20إكسيلو"
-class="whatsapp-btn">
+<a href="https://wa.me/966538205304?text=السلام عليكم،%20أبغى%20شراء%20دورات%20إكسيلو"
+class="whatsapp">
 🛒 اشتري الآن
 </a>
 
 <script>
+
 function openMenu() {
-    document.getElementById("sidebar").classList.add("active");
+document.getElementById("menu").classList.add("active");
 }
 
 function closeMenu() {
-    document.getElementById("sidebar").classList.remove("active");
+document.getElementById("menu").classList.remove("active");
 }
+
 </script>
 
 </body>
