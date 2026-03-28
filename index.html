@@ -9,15 +9,12 @@
 
 <style>
 
-*{box-sizing:border-box;}
-
 body{
 margin:0;
 font-family:'Cairo',sans-serif;
 background:linear-gradient(#0f1f3a,#162a4d);
 color:white;
 text-align:center;
-overflow-x:hidden;
 }
 
 /* زر القائمة */
@@ -33,60 +30,7 @@ border-radius:15px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:20px;
-z-index:3000;
-cursor:pointer;
-}
-
-/* خلفية */
-.overlay-bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-opacity:0;
-visibility:hidden;
-transition:0.3s;
 z-index:2000;
-}
-
-.overlay-bg.active{
-opacity:1;
-visibility:visible;
-}
-
-/* القائمة */
-.sidebar{
-position:fixed;
-top:0;
-right:-280px;
-width:260px;
-height:100%;
-background:#162a4d;
-padding:20px;
-transition:0.3s;
-z-index:3001;
-}
-
-.sidebar.active{
-right:0;
-}
-
-.sidebar h2{
-color:gold;
-margin-bottom:10px;
-}
-
-.sidebar a{
-display:block;
-margin:10px 0;
-padding:12px;
-background:rgba(255,255,255,0.05);
-border-radius:10px;
-color:white;
-text-decoration:none;
 }
 
 /* البنر */
@@ -102,24 +46,25 @@ height:100%;
 object-fit:cover;
 }
 
-/* طبقة البنر */
+/* طبقة داكنة */
 .overlay{
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
+background:rgba(0,0,0,0.55);
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-background:rgba(0,0,0,0.5);
+padding:20px;
 }
 
 /* النص */
 .logo{
 color:gold;
-font-size:42px;
+font-size:40px;
 font-weight:900;
 }
 
@@ -131,7 +76,7 @@ margin-top:10px;
 
 .hero-sub{
 font-size:16px;
-opacity:0.85;
+opacity:0.9;
 }
 
 /* العناوين */
@@ -142,26 +87,21 @@ margin:40px 0 20px;
 font-weight:900;
 }
 
-/* لماذا اكسيلو */
-.features{
-padding:10px;
-}
-
-.feature-box{
+/* مربعات لماذا اكسيلو */
+.box{
 background:rgba(255,255,255,0.05);
-padding:15px;
-margin:10px;
-border-radius:12px;
+margin:12px;
+padding:18px;
+border-radius:15px;
+font-size:17px;
 }
 
 /* الكروت */
 .card{
 background:rgba(255,255,255,0.05);
-margin:20px auto;
+margin:20px;
 padding:20px;
 border-radius:20px;
-width:90%;
-max-width:420px;
 }
 
 .card img{
@@ -169,25 +109,22 @@ width:100%;
 height:220px;
 object-fit:cover;
 border-radius:15px;
-margin-bottom:10px;
+}
+
+.card h3{
+font-size:22px;
+margin:15px 0;
 }
 
 .btn{
 background:gold;
 color:black;
 padding:12px 25px;
-border-radius:12px;
-text-decoration:none;
+border-radius:10px;
 display:inline-block;
 margin-top:10px;
+text-decoration:none;
 font-weight:bold;
-}
-
-/* الفوتر */
-footer{
-margin-top:40px;
-padding:20px;
-color:#aaa;
 }
 
 </style>
@@ -195,34 +132,12 @@ color:#aaa;
 
 <body>
 
-<!-- زر القائمة -->
-<div class="menu-btn" onclick="openMenu()">☰</div>
+<div class="menu-btn">☰</div>
 
-<div class="overlay-bg" id="bg" onclick="closeMenu()"></div>
-
-<!-- القائمة -->
-<div class="sidebar" id="menu">
-
-<h2>EXILO</h2>
-
-<a href="#">🔐 تسجيل الدخول</a>
-
-<hr>
-
-<a href="course-analysis.html">تحليل الشخصيات</a>
-<a href="course-body.html">لغة الجسد</a>
-<a href="books.html">الكتب</a>
-<a href="sessions.html">الجلسات</a>
-
-<hr>
-
-<a href="terms.html">الشروط والأحكام</a>
-
-</div>
-
-<!-- البنر الجديد -->
+<!-- البنر -->
 <div class="banner">
-<img src="banner-tech.png">
+<img src="banner-top.png.PNG">
+
 <div class="overlay">
 <div class="logo">EXILO</div>
 
@@ -240,12 +155,10 @@ color:#aaa;
 <!-- لماذا اكسيلو -->
 <div class="title">لماذا إكسيلو؟</div>
 
-<div class="features">
-<div class="feature-box">🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</div>
-<div class="feature-box">🧠 اكتشف أنماطك وسلوكك بعمق</div>
-<div class="feature-box">🎯 انتقل من التشتت إلى الوضوح</div>
-<div class="feature-box">🔥 التغيير يبدأ بالفعل وليس بالكلام</div>
-</div>
+<div class="box">🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</div>
+<div class="box">🧠 اكتشف أنماطك وسلوكك بعمق</div>
+<div class="box">🎯 انتقل من التشتت إلى الوضوح</div>
+<div class="box">🔥 التغيير يبدأ بالفعل وليس بالكلام</div>
 
 <!-- الدورات -->
 <div class="title">الدورات</div>
@@ -276,25 +189,6 @@ color:#aaa;
 <h3>الجلسات</h3>
 <a href="sessions.html" class="btn">عرض</a>
 </div>
-
-<!-- الفوتر -->
-<footer>
-<p>© 2026 EXILO جميع الحقوق محفوظة</p>
-</footer>
-
-<script>
-
-function openMenu(){
-document.getElementById("menu").classList.add("active");
-document.getElementById("bg").classList.add("active");
-}
-
-function closeMenu(){
-document.getElementById("menu").classList.remove("active");
-document.getElementById("bg").classList.remove("active");
-}
-
-</script>
 
 </body>
 </html>
