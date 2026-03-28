@@ -6,138 +6,117 @@
 
 <title>إكسيلو | EXILO</title>
 
-<!-- خط احترافي -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
 body {
-    margin:0;
-    font-family:'Cairo', sans-serif;
-    background:#0f2747;
-    color:white;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #0e2a47;
+    color: white;
 }
 
-/* ===== البنر ===== */
-.banner img{
-    width:100%;
-    border-radius:0 0 30px 30px;
+/* البنر */
+.banner img {
+    width: 100%;
 }
 
-/* ===== العنوان ===== */
-h1{
-    text-align:center;
-    color:#d4af37;
-    margin:30px 0;
+/* عنوان */
+h2 {
+    text-align: center;
+    color: #d4af37;
+    margin: 30px 0;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-/* ===== الأقسام ===== */
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    padding:20px;
+/* مربعات */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    padding: 20px;
 }
 
-.card{
-    background:linear-gradient(135deg,#d4af37,#f5e6a0);
-    color:black;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    font-weight:700;
-    font-size:18px;
+.card {
+    background: linear-gradient(135deg,#d4af37,#f5e6a6);
+    color: #000;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
-/* ===== الفاصل ===== */
-.line{
-    width:80%;
-    height:1px;
-    background:#d4af37;
-    margin:30px auto;
+/* خط فاصل */
+.line {
+    height: 1px;
+    background: #d4af37;
+    margin: 40px 20px;
+    opacity: 0.4;
 }
 
-/* ===== القائمة ===== */
-.menu-btn{
-    position:fixed;
-    top:20px;
-    right:20px;
-    background:rgba(0,0,0,0.6);
-    color:white;
-    padding:12px;
-    border-radius:12px;
-    font-size:20px;
-    cursor:pointer;
-    z-index:1001;
+/* الأقسام */
+.section {
+    padding: 20px;
 }
 
-/* القائمة الجانبية */
-.sidebar{
-    position:fixed;
-    top:0;
-    right:-260px; /* مخفية */
-    width:260px;
-    height:100%;
-    background:#0b1f3a;
-    transition:0.3s;
-    padding:20px;
-    z-index:1002;
+.section img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
 }
 
-/* لما تفتح */
-.sidebar.active{
-    right:0;
+.section h3 {
+    text-align: center;
+    color: #d4af37;
 }
 
-/* زر X */
-.close-btn{
-    font-size:25px;
-    cursor:pointer;
-    margin-bottom:20px;
-    display:block;
+.section p {
+    text-align: center;
+    opacity: 0.8;
 }
 
-/* روابط */
-.sidebar a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    margin:15px 0;
-    font-size:18px;
+/* زر القائمة */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
 }
 
-/* خلفية شفافة */
-.overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-    display:none;
-    z-index:1000;
+/* القائمة */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background: #0e2a47;
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 1000;
 }
 
-.overlay.active{
-    display:block;
+.sidebar.active {
+    right: 0;
 }
 
-/* ===== الجلسات ===== */
-.sessions{
-    text-align:center;
-    padding:20px;
+.close-btn {
+    font-size: 22px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
-.sessions img{
-    width:90%;
-    border-radius:20px;
-}
-
-/* ===== الفوتر ===== */
-.footer{
-    text-align:center;
-    padding:20px;
-    color:#aaa;
+.sidebar a {
+    display: block;
+    color: white;
+    margin: 15px 0;
+    text-decoration: none;
 }
 
 </style>
@@ -149,57 +128,62 @@ h1{
 <div class="menu-btn" onclick="openMenu()">☰</div>
 
 <!-- القائمة -->
-<div class="sidebar" id="sidebar">
-    <span class="close-btn" onclick="closeMenu()">✕</span>
+<div class="sidebar" id="menu">
 
-    <a href="index.html">الرئيسية</a>
-    <a href="courses.html">الدورات</a>
-    <a href="books.html">الكتب</a>
-    <a href="sessions.html">الجلسات</a>
+<div class="close-btn" onclick="closeMenu()">✕</div>
+
+<a href="index.html">الرئيسية</a>
+<a href="courses.html">الدورات</a>
+<a href="books.html">الكتب</a>
+<a href="terms.html">الشروط</a>
+
 </div>
-
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <!-- البنر -->
 <div class="banner">
-    <img src="banner-new.png.PNG">
+<img src="banner-new.png.PNG">
 </div>
 
-<!-- العنوان -->
-<h1>لماذا إكسيلو؟</h1>
+<h2>لماذا إكسيلو؟</h2>
 
-<!-- الأقسام -->
 <div class="grid">
-    <div class="card">🧠 فهم عميق لذاتك</div>
-    <div class="card">🚀 نصنع تحول حقيقي</div>
-    <div class="card">🔥 تغيير فعلي</div>
-    <div class="card">🎯 وضوح في حياتك</div>
+<div class="card">🚀 نصنع تحول حقيقي</div>
+<div class="card">🧠 فهم عميق لذاتك</div>
+<div class="card">🎯 وضوح في حياتك</div>
+<div class="card">🔥 تغيير فعلي</div>
 </div>
 
 <div class="line"></div>
 
-<!-- الجلسات -->
-<div class="sessions">
-    <h1>الجلسات</h1>
-    <p>ابدأ رحلتك نحو التوازن النفسي والتطوير الحقيقي</p>
-    <img src="body.png.PNG">
+<!-- قسم الجلسات -->
+<div class="section">
+<img src="sessions.png">
+<h3>الجلسات</h3>
+<p>ابدأ رحلتك نحو التوازن النفسي والتطوير الحقيقي</p>
 </div>
 
-<!-- الفوتر -->
-<div class="footer">
-    © جميع الحقوق محفوظة - إكسيلو
+<!-- قسم الدورات -->
+<div class="section">
+<img src="courses.png">
+<h3>الدورات</h3>
+<p>دورات عملية تساعدك تفهم نفسك والآخرين بعمق</p>
+</div>
+
+<!-- قسم الكتب -->
+<div class="section">
+<img src="books.png">
+<h3>الكتب الرقمية</h3>
+<p>كتب مختارة بعناية لتطوير فكرك وحياتك</p>
 </div>
 
 <script>
 
 function openMenu(){
-    document.getElementById("sidebar").classList.add("active");
-    document.getElementById("overlay").classList.add("active");
+document.getElementById("menu").classList.add("active");
 }
 
 function closeMenu(){
-    document.getElementById("sidebar").classList.remove("active");
-    document.getElementById("overlay").classList.remove("active");
+document.getElementById("menu").classList.remove("active");
 }
 
 </script>
