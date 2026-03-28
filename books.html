@@ -3,161 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الكتب</title>
 
-<title>الكتب الرقمية</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 body {
-  margin:0;
-  font-family:'Cairo',sans-serif;
-  background: linear-gradient(#0f1f3a,#162a4d);
-  color:white;
-  text-align:center;
+    font-family: 'Tajawal', sans-serif;
+    background:#0b2341;
+    color:white;
+    text-align:center;
+    margin:0;
+    padding:20px;
 }
 
-h1 {
-  color:gold;
-  margin-top:30px;
-  font-size:34px;
+h1 {color:gold;}
+
+img {
+    width:100%;
+    border-radius:15px;
+    margin:20px 0;
 }
 
-.card {
-  width:92%;
-  max-width:500px;
-  margin:20px auto;
-  background:rgba(255,255,255,0.05);
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 15px 30px rgba(0,0,0,0.4);
-  animation:fadeUp 1s ease;
-}
-
-.card img {
-  width:100%;
-  height:320px;
-  object-fit:cover;
-}
-
-.content {
-  padding:25px;
-  line-height:2.2;
-  font-size:18px;
-  text-align:right;
-}
-
-.highlight {
-  color:gold;
-  font-weight:bold;
-}
-
-.price {
-  color:gold;
-  font-size:30px;
-  margin:20px 0;
+p {
+    line-height:1.8;
+    font-size:18px;
 }
 
 .btn {
-  background:gold;
-  color:black;
-  padding:16px 35px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:18px;
-}
-
-.timer {
-  background:rgba(255,255,255,0.08);
-  margin:20px;
-  padding:15px;
-  border-radius:15px;
-  font-size:20px;
-  color:gold;
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
+    background:gold;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    display:inline-block;
+    margin-top:20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<h1>الكتب الرقمية</h1>
-
-<div class="timer">
-⏳ العرض ينتهي خلال: <span id="countdown"></span>
-</div>
-
-<div class="card">
+<h1>الكتب</h1>
 
 <img src="books.png.jpg">
 
-<div class="content">
+<p>
+ليست مجرد كتب… بل مفاتيح لفهم نفسك والعالم من حولك.
+</p>
 
 <p>
-
-هل تبحث عن تطوير حقيقي يغير طريقة تفكيرك؟
-
-الكتب ليست مجرد معلومات…  
-بل هي <span class="highlight">نقطة تحول</span> في حياتك.
-
-<br><br>
-
-هذه المجموعة صممت لتمنحك:
-
-<br><br>
-
-✔ فهم أعمق لنفسك  
-✔ تغيير طريقة التفكير  
-✔ بناء عادات قوية  
-✔ وعي أعلى في حياتك  
-
-<br><br>
-
-كل كتاب يحتوي على أفكار عملية  
-يمكنك تطبيقها مباشرة في حياتك اليومية.
-
-<br><br>
-
-<span class="highlight">
-اقرأ… وابدأ التغيير الحقيقي
-</span>
-
+كل صفحة تقرأها تقربك خطوة نحو وعي أعلى وقرارات أذكى.
 </p>
 
-<p style="color:#ccc;">
-✔ تحميل فوري  
-✔ قراءة سهلة  
-✔ محتوى عملي  
+<p>
+إذا كنت تبحث عن تطوير حقيقي… فهذا هو المكان الصحيح.
 </p>
 
-<div class="price">50 ريال</div>
-
-<p style="color:#ffcc00; font-size:14px;">
-⚠️ لا يمكن استرجاع المبلغ بعد إرسال المحتوى
-</p>
-
-<a class="btn" href="https://wa.me/966530205304">شراء الآن</a>
-
-</div>
-
-</div>
-
-<script>
-let time = 600;
-setInterval(()=>{
-let m=Math.floor(time/60);
-let s=time%60;
-document.getElementById("countdown").innerHTML=m+":"+(s<10?"0"+s:s);
-time--;
-if(time<0) time=600;
-},1000);
-</script>
+<a href="#" class="btn">تصفح الآن</a>
 
 </body>
 </html>
