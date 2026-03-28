@@ -3,164 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الجلسات</title>
 
-<title>جلسات التوجيه</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 body {
-  margin:0;
-  font-family:'Cairo',sans-serif;
-  background: linear-gradient(#0f1f3a,#162a4d);
-  color:white;
-  text-align:center;
+    font-family: 'Tajawal', sans-serif;
+    background:#0b2341;
+    color:white;
+    text-align:center;
+    margin:0;
+    padding:20px;
 }
 
-h1 {
-  color:gold;
-  margin-top:30px;
-  font-size:34px;
+h1 {color:gold;}
+
+img {
+    width:100%;
+    border-radius:15px;
+    margin:20px 0;
 }
 
-.card {
-  width:92%;
-  max-width:500px;
-  margin:20px auto;
-  background:rgba(255,255,255,0.05);
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 15px 30px rgba(0,0,0,0.4);
-  animation:fadeUp 1s ease;
-}
-
-.card img {
-  width:100%;
-  height:320px;
-  object-fit:cover;
-}
-
-.content {
-  padding:25px;
-  line-height:2.2;
-  font-size:18px;
-  text-align:right;
-}
-
-.highlight {
-  color:gold;
-  font-weight:bold;
-}
-
-.price {
-  color:gold;
-  font-size:30px;
-  margin:20px 0;
+p {
+    line-height:1.8;
+    font-size:18px;
 }
 
 .btn {
-  background:gold;
-  color:black;
-  padding:16px 35px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:18px;
-}
-
-.timer {
-  background:rgba(255,255,255,0.08);
-  margin:20px;
-  padding:15px;
-  border-radius:15px;
-  font-size:20px;
-  color:gold;
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
+    background:gold;
+    color:black;
+    padding:12px 25px;
+    border-radius:25px;
+    display:inline-block;
+    margin-top:20px;
 }
 </style>
-
 </head>
 
 <body>
 
-<h1>جلسات التوجيه</h1>
-
-<div class="timer">
-⏳ العرض ينتهي خلال: <span id="countdown"></span>
-</div>
-
-<div class="card">
+<h1>الجلسات</h1>
 
 <img src="sessions.png.PNG">
 
-<div class="content">
+<p>
+مو كل أحد يقدر يفهمك… لكن هنا تبدأ أول خطوة حقيقية لفهم نفسك.
+جلساتنا مصممة لتفكيك أفكارك، إعادة ترتيب حياتك، وبناء نسخة أقوى منك.
+</p>
 
 <p>
-
-هل تشعر أنك بحاجة إلى وضوح في حياتك؟
-
-هل تواجه قرارات مهمة ولا تعرف الطريق الصحيح؟
-
-<br><br>
-
-جلسات التوجيه ليست مجرد حديث…  
-بل هي <span class="highlight">تحول حقيقي في التفكير</span>.
-
-<br><br>
-
-في هذه الجلسات ستحصل على:
-
-<br><br>
-
-✔ وضوح كامل في أهدافك  
-✔ فهم عميق لمشاكلك  
-✔ حلول عملية قابلة للتطبيق  
-✔ توجيه شخصي يناسب وضعك  
-
-<br><br>
-
-جلسة واحدة قد تغيّر طريقة رؤيتك للحياة بالكامل.
-
-<br><br>
-
-<span class="highlight">
-استثمر في نفسك… لأنها أهم مشروع في حياتك
-</span>
-
+سواء كنت ضايع، متردد، أو تبحث عن وضوح…
+هنا راح تلقى إجاباتك.
 </p>
 
-<p style="color:#ccc;">
-✔ جلسة عبر الهاتف  
-✔ توجيه مباشر  
-✔ نتائج ملموسة  
+<p>
+التغيير ما يبدأ غدًا… يبدأ الآن.
 </p>
 
-<div class="price">150 ريال</div>
-
-<p style="color:#ffcc00; font-size:14px;">
-⚠️ لا يمكن استرجاع المبلغ بعد الحجز
-</p>
-
-<a class="btn" href="https://wa.me/966530205304">احجز الآن</a>
-
-</div>
-
-</div>
-
-<script>
-let time = 600;
-setInterval(()=>{
-let m=Math.floor(time/60);
-let s=time%60;
-document.getElementById("countdown").innerHTML=m+":"+(s<10?"0"+s:s);
-time--;
-if(time<0) time=600;
-},1000);
-</script>
+<a href="#" class="btn">احجز جلستك الآن</a>
 
 </body>
 </html>
