@@ -6,7 +6,7 @@
 
 <title>EXILO | إكسيلو</title>
 
-<!-- الخط -->
+<!-- خط احترافي -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -23,7 +23,7 @@ body {
   display: block;
 }
 
-/* العنوان */
+/* العناوين */
 .title {
   text-align: center;
   color: #d4af37;
@@ -49,13 +49,21 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ألوان فخمة */
 .box1 { background: linear-gradient(135deg, #5f2c82, #49a09d); }
 .box2 { background: linear-gradient(135deg, #1e3c72, #2a5298); }
 .box3 { background: linear-gradient(135deg, #ff512f, #dd2476); }
 .box4 { background: linear-gradient(135deg, #11998e, #38ef7d); }
 
-/* الخدمات */
+/* الخط الفاصل */
+.divider {
+  width: 60%;
+  height: 1px;
+  margin: 40px auto;
+  background: linear-gradient(to right, transparent, #d4af37, transparent);
+  opacity: 0.6;
+}
+
+/* الأقسام */
 .services {
   padding: 20px;
 }
@@ -63,16 +71,19 @@ body {
 .service-card {
   margin-bottom: 30px;
   text-align: center;
+  background: rgba(255,255,255,0.03);
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
 
 .service-card img {
-  width: 100%;
-  height: 180px;
+  width: 90%;
+  height: 150px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
-/* النص */
 .service-title {
   font-size: 22px;
   color: #d4af37;
@@ -95,7 +106,6 @@ body {
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 5px;
 }
 
 /* الفوتر */
@@ -125,9 +135,10 @@ body {
   <div class="box box4">🎯 وضوح في حياتك</div>
 </div>
 
-<!-- الخدمات -->
+<!-- خط فاصل -->
+<div class="divider"></div>
 
-
+<!-- الأقسام -->
 <div class="services">
 
   <!-- الجلسات -->
@@ -135,7 +146,7 @@ body {
     <img src="sessions.png.PNG">
     <div class="service-title">الجلسات</div>
     <div class="service-text">
-      مو كل أحد يفهمك… هنا تبدأ أول خطوة للتغيير الحقيقي
+      مو كل أحد يفهمك… هنا تبدأ أول خطوة تغير حياتك
     </div>
     <a href="sessions.html" class="btn">ابدأ الآن</a>
   </div>
@@ -145,9 +156,9 @@ body {
     <img src="courses.png.jpg">
     <div class="service-title">الدورات</div>
     <div class="service-text">
-      اخرج من نفس الدائرة… وابدأ نسخة جديدة منك اليوم
+      لو استمريت بنفس التفكير… بتوصل لنفس النتائج
     </div>
-    <a href="courses.html" class="btn">استكشف الدورات</a>
+    <a href="courses.html" class="btn">استكشف الآن</a>
   </div>
 
   <!-- الكتب -->
@@ -155,9 +166,9 @@ body {
     <img src="books.png.jpg">
     <div class="service-title">الكتب</div>
     <div class="service-text">
-      أفكار تغيّر طريقة تفكيرك… مو مجرد كلمات
+      مو كل كتاب يستاهل وقتك… لكن هذا يغير طريقة تفكيرك
     </div>
-    <a href="books.html" class="btn">تصفح الكتب</a>
+    <a href="books.html" class="btn">تصفح الآن</a>
   </div>
 
 </div>
