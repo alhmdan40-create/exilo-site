@@ -27,15 +27,15 @@ body {
   position: fixed;
   top: 15px;
   right: 15px;
-  font-size: 24px;
+  font-size: 22px;
   background: rgba(0,0,0,0.5);
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
   z-index: 1000;
 }
 
-/* القائمة الجانبية */
+/* القائمة */
 .side-menu {
   position: fixed;
   top: 0;
@@ -59,19 +59,18 @@ body {
 .close-btn {
   font-size: 22px;
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
 /* العنوان */
 .title {
   text-align: center;
   color: #d4af37;
-  font-size: 30px;
+  font-size: 28px;
   margin: 40px 0 20px;
   font-weight: bold;
 }
 
-/* لماذا اكسيلو */
+/* المربعات */
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -101,7 +100,7 @@ body {
   background: linear-gradient(to right, transparent, #d4af37, transparent);
 }
 
-/* الأقسام */
+/* الكروت */
 .services {
   padding: 20px;
 }
@@ -123,14 +122,14 @@ body {
 }
 
 .service-title {
-  font-size: 22px;
+  font-size: 20px;
   color: #d4af37;
   margin-top: 10px;
   font-weight: bold;
 }
 
 .service-text {
-  font-size: 16px;
+  font-size: 15px;
   color: #ddd;
   margin: 10px 0;
 }
@@ -139,7 +138,7 @@ body {
   display: inline-block;
   background: linear-gradient(135deg, #d4af37, #f1d77a);
   color: black;
-  padding: 8px 20px;
+  padding: 8px 18px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
@@ -170,10 +169,9 @@ body {
 
 <body>
 
-<!-- زر القائمة -->
+<!-- القائمة -->
 <div class="menu-btn" onclick="openMenu()">☰</div>
 
-<!-- القائمة -->
 <div id="sideMenu" class="side-menu">
   <div class="close-btn" onclick="closeMenu()">✖</div>
   <a href="index.html">الرئيسية</a>
@@ -198,9 +196,10 @@ body {
   <div class="box box4">🎯 وضوح في حياتك</div>
 </div>
 
+<!-- فاصل -->
 <div class="divider"></div>
 
-<!-- الأقسام -->
+<!-- الكروت -->
 <div class="services">
 
   <div class="service-card">
