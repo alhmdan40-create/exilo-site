@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EXILO</title>
 
 <style>
@@ -19,7 +20,6 @@ body {
 /* البنر */
 .banner img {
   width: 100%;
-  display: block;
 }
 
 /* القسم */
@@ -27,15 +27,31 @@ body {
   padding: 40px 20px;
 }
 
+/* العنوان */
 .title {
   text-align: center;
   color: #f2c94c;
   font-size: 28px;
   margin-bottom: 30px;
+}
+
+/* لماذا اكسيلو */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.card {
+  background: linear-gradient(135deg,#1e3c72,#2a5298);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
   font-weight: bold;
 }
 
-/* الكروت */
+/* الخدمات */
 .services {
   display: grid;
   grid-template-columns: 1fr;
@@ -46,8 +62,6 @@ body {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-  transition: 0.3s;
 }
 
 .service img {
@@ -60,22 +74,17 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 15px;
   text-align: center;
   color: #f2c94c;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 15px;
   background: linear-gradient(transparent, rgba(0,0,0,0.9));
-}
-
-.service:hover {
-  transform: scale(1.03);
+  font-weight: bold;
 }
 
 /* كمبيوتر */
-@media (min-width: 700px) {
-  .services {
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width:700px){
+  .services{
+    grid-template-columns: repeat(3,1fr);
   }
 }
 
@@ -85,31 +94,47 @@ body {
 
 <body>
 
-<!-- البنر -->
+<!-- 🔥 البنر -->
 <div class="banner">
   <img src="banner-top.png.PNG">
 </div>
 
-<!-- الخدمات -->
+<!-- 🔥 لماذا اكسيلو -->
+<div class="section">
+
+  <div class="title">لماذا إكسيلو؟</div>
+
+  <div class="cards">
+
+    <div class="card">🚀 نصنع تحول حقيقي</div>
+    <div class="card">🧠 فهم عميق لذاتك</div>
+    <div class="card">🎯 وضوح في حياتك</div>
+    <div class="card">🔥 تغيير فعلي</div>
+
+  </div>
+
+</div>
+
+<!-- 🔥 الخدمات -->
 <div class="section">
 
   <div class="title">الخدمات</div>
 
   <div class="services">
 
-    <!-- الجلسات -->
+    <!-- جلسات -->
     <a href="sessions.html" class="service">
       <img src="sessions.png.PNG">
       <div class="service-title">الجلسات</div>
     </a>
 
-    <!-- الدورات -->
+    <!-- دورات -->
     <a href="courses.html" class="service">
       <img src="courses.png.jpg">
       <div class="service-title">الدورات</div>
     </a>
 
-    <!-- الكتب -->
+    <!-- كتب -->
     <a href="books.html" class="service">
       <img src="books.png.jpg">
       <div class="service-title">الكتب</div>
