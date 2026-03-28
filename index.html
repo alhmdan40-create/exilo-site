@@ -1,147 +1,170 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EXILO</title>
+<title>EXILO | إكسيلو</title>
+
+<!-- الخط -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
 body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
-  background: #0b1d3a;
+  background: linear-gradient(to bottom, #0b1d3a, #0e2a52);
+  color: white;
 }
 
 /* البنر */
 .banner img {
   width: 100%;
-}
-
-/* القسم */
-.section {
-  padding: 40px 20px;
+  display: block;
 }
 
 /* العنوان */
 .title {
   text-align: center;
-  color: #f2c94c;
-  font-size: 28px;
-  margin-bottom: 30px;
+  color: #d4af37;
+  font-size: 30px;
+  margin: 40px 0 20px;
+  font-weight: 700;
 }
 
 /* لماذا اكسيلو */
-.cards {
+.features {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  padding: 20px;
 }
 
-.card {
-  background: linear-gradient(135deg,#1e3c72,#2a5298);
-  padding: 20px;
+.box {
+  padding: 30px 15px;
   border-radius: 20px;
   text-align: center;
-  color: white;
+  font-size: 18px;
   font-weight: bold;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
+/* ألوان فخمة */
+.box1 { background: linear-gradient(135deg, #5f2c82, #49a09d); }
+.box2 { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+.box3 { background: linear-gradient(135deg, #ff512f, #dd2476); }
+.box4 { background: linear-gradient(135deg, #11998e, #38ef7d); }
 
 /* الخدمات */
 .services {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  padding: 20px;
 }
 
-.service {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.service img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-}
-
-.service-title {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.service-card {
+  margin-bottom: 30px;
   text-align: center;
-  color: #f2c94c;
-  padding: 15px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* النص */
+.service-title {
+  font-size: 22px;
+  color: #d4af37;
+  margin-top: 10px;
   font-weight: bold;
 }
 
-/* كمبيوتر */
-@media (min-width:700px){
-  .services{
-    grid-template-columns: repeat(3,1fr);
-  }
+.service-text {
+  font-size: 16px;
+  color: #ddd;
+  margin: 10px 0;
 }
 
+/* زر */
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4af37, #f1d77a);
+  color: black;
+  padding: 8px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* الفوتر */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- 🔥 البنر -->
+<!-- البنر -->
 <div class="banner">
-  <img src="banner-top.png.PNG?v=2">
+  <img src="banner-new.png">
 </div>
 
-<!-- 🔥 لماذا اكسيلو -->
-<div class="section">
+<!-- لماذا اكسيلو -->
+<div class="title">لماذا إكسيلو؟</div>
 
-  <div class="title">لماذا إكسيلو؟</div>
+<div class="features">
+  <div class="box box1">🧠 فهم عميق لذاتك</div>
+  <div class="box box2">🚀 نصنع تحول حقيقي</div>
+  <div class="box box3">🔥 تغيير فعلي</div>
+  <div class="box box4">🎯 وضوح في حياتك</div>
+</div>
 
-  <div class="cards">
+<!-- الخدمات -->
+<div class="title">الخدمات</div>
 
-    <div class="card">🚀 نصنع تحول حقيقي</div>
-    <div class="card">🧠 فهم عميق لذاتك</div>
-    <div class="card">🎯 وضوح في حياتك</div>
-    <div class="card">🔥 تغيير فعلي</div>
+<div class="services">
 
+  <!-- الجلسات -->
+  <div class="service-card">
+    <img src="sessions.png.PNG">
+    <div class="service-title">الجلسات</div>
+    <div class="service-text">
+      مو كل أحد يفهمك… هنا تبدأ أول خطوة للتغيير الحقيقي
+    </div>
+    <a href="sessions.html" class="btn">ابدأ الآن</a>
+  </div>
+
+  <!-- الدورات -->
+  <div class="service-card">
+    <img src="courses.png.jpg">
+    <div class="service-title">الدورات</div>
+    <div class="service-text">
+      اخرج من نفس الدائرة… وابدأ نسخة جديدة منك اليوم
+    </div>
+    <a href="courses.html" class="btn">استكشف الدورات</a>
+  </div>
+
+  <!-- الكتب -->
+  <div class="service-card">
+    <img src="books.png.jpg">
+    <div class="service-title">الكتب</div>
+    <div class="service-text">
+      أفكار تغيّر طريقة تفكيرك… مو مجرد كلمات
+    </div>
+    <a href="books.html" class="btn">تصفح الكتب</a>
   </div>
 
 </div>
 
-<!-- 🔥 الخدمات -->
-<div class="section">
-
-  <div class="title">الخدمات</div>
-
-  <div class="services">
-
-    <!-- جلسات -->
-    <a href="sessions.html" class="service">
-      <img src="sessions.png.PNG">
-      <div class="service-title">الجلسات</div>
-    </a>
-
-    <!-- دورات -->
-    <a href="courses.html" class="service">
-      <img src="courses.png.jpg">
-      <div class="service-title">الدورات</div>
-    </a>
-
-    <!-- كتب -->
-    <a href="books.html" class="service">
-      <img src="books.png.jpg">
-      <div class="service-title">الكتب</div>
-    </a>
-
-  </div>
-
+<!-- الفوتر -->
+<div class="footer">
+  © 2026 جميع الحقوق محفوظة - EXILO
 </div>
 
 </body>
