@@ -23,13 +23,13 @@ body::before {
   width: 100%;
   height: 100%;
   background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.3;
+  opacity: 0.35;
   z-index: -1;
 }
 
 .title {
   text-align: center;
-  font-size: 28px;
+  font-size: 30px;
   color: #d4af37;
   margin: 40px 0 20px;
   font-weight: 900;
@@ -38,11 +38,12 @@ body::before {
 .glass {
   background: rgba(255,255,255,0.05);
   border-radius: 20px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
+  padding: 18px;
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* لماذا اكسيلو */
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -50,13 +51,8 @@ body::before {
   padding: 20px;
 }
 
-.feature {
-  text-align: center;
-  line-height: 1.6;
-}
-
 /* الدورات */
-.courses {
+.grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -64,9 +60,9 @@ body::before {
 }
 
 .card {
+  background: rgba(255,255,255,0.05);
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(255,255,255,0.05);
 }
 
 .card img {
@@ -80,24 +76,15 @@ body::before {
   text-align: center;
 }
 
-/* زر */
 .btn {
   background: linear-gradient(45deg, #d4af37, #f1d77a);
   color: black;
-  padding: 10px 18px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
   display: inline-block;
   margin-top: 10px;
   font-weight: bold;
   text-decoration: none;
-}
-
-/* الجلسات */
-.sessions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  padding: 20px;
 }
 
 /* واتساب */
@@ -106,10 +93,11 @@ body::before {
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  padding: 15px 25px;
+  padding: 14px 25px;
   border-radius: 30px;
   text-decoration: none;
   color: white;
+  font-weight: bold;
 }
 
 </style>
@@ -121,31 +109,21 @@ body::before {
 <div class="title">لماذا إكسيلو؟</div>
 
 <div class="features">
-  <div class="glass feature">
-    🚀 لا نقدم معلومات فقط، بل نصنع تحولًا حقيقيًا
-  </div>
 
-  <div class="glass feature">
-    🧠 نكشف أنماطك ونفهم سلوكك بعمق
-  </div>
+  <div class="glass">🚀 لا نقدم معلومات فقط، بل نصنع تحولًا حقيقيًا</div>
+  <div class="glass">🧠 نكشف أنماط سلوكك بعمق</div>
+  <div class="glass">🎯 نساعدك على الانتقال من التشتت إلى الوضوح</div>
+  <div class="glass">🔥 نتائج حقيقية تُقاس بالتغيير، لا بالكلام</div>
 
-  <div class="glass feature">
-    🎯 نساعدك على الانتقال من التشتت إلى الوضوح
-  </div>
-
-  <div class="glass feature">
-    🔥 نتائج حقيقية تُقاس بالتغيير، لا بالكلام
-  </div>
 </div>
 
 <!-- الدورات -->
 <div class="title">الدورات</div>
 
-<div class="courses">
+<div class="grid">
 
-  <!-- تحليل الشخصية -->
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
+    <img src="analysis.png">
     <div class="card-content">
       <h3>دورة تحليل الشخصية</h3>
       <p>تحليل الخط والتوقيع والرسومات</p>
@@ -153,9 +131,8 @@ body::before {
     </div>
   </div>
 
-  <!-- لغة الجسد -->
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1588776814546-ec7e4d3b3f1b">
+    <img src="body.png">
     <div class="card-content">
       <h3>دورة لغة الجسد</h3>
       <p>فهم الإشارات الجسدية والتواصل غير اللفظي</p>
@@ -165,21 +142,39 @@ body::before {
 
 </div>
 
-<!-- الجلسات -->
-<div class="title">الجلسات الرقمية</div>
+<!-- جلسات التوجيه -->
+<div class="title">جلسات التوجيه</div>
 
-<div class="sessions">
-
-  <div class="card">
-    <img src="books.png.jpg">
-  </div>
+<div class="grid">
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef">
+    <img src="session.png">
+    <div class="card-content">
+      <h3>جلسة تطوير شخصي</h3>
+      <p>جلسة فردية تساعدك على فهم ذاتك واتخاذ قرارات أوضح</p>
+      <a href="#" class="btn">احجز الآن</a>
+    </div>
   </div>
 
 </div>
 
+<!-- الكتب الرقمية -->
+<div class="title">الكتب الرقمية</div>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="books.png.jpg">
+    <div class="card-content">
+      <h3>مجموعة كتب تطوير الذات</h3>
+      <p>ابدأ رحلتك نحو التغيير والنمو</p>
+      <a href="#" class="btn">عرض الكتب</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- واتساب -->
 <a class="whatsapp" href="https://wa.me/966530205304">
 واتساب
 </a>
