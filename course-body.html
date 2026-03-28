@@ -3,19 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- خط احترافي -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
 <title>لغة الجسد</title>
 
 <style>
 body {
   margin:0;
-  font-family:sans-serif;
+  font-family: 'Cairo', sans-serif;
   background: linear-gradient(#0f1f3a,#162a4d);
   color:white;
   text-align:center;
 }
 
-h1 { color: gold; margin-top:30px; }
+/* العنوان */
+h1 {
+  color: gold;
+  margin-top:30px;
+  font-weight:700;
+}
 
+/* الكرت */
 .container {
   display:flex;
   justify-content:center;
@@ -25,20 +35,32 @@ h1 { color: gold; margin-top:30px; }
 .card {
   background: rgba(255,255,255,0.05);
   border-radius:20px;
-  width:320px;
+  width:340px;
   overflow:hidden;
 }
 
+/* الصورة */
 .card img {
   width:100%;
-  height:220px;
+  height:240px;
   object-fit:cover;
 }
 
-.card-content { padding:20px; }
+/* النص */
+.card-content {
+  padding:20px;
+  line-height:1.8;
+  font-weight:600;
+}
 
-.price { color:gold; font-size:22px; }
+/* السعر */
+.price {
+  color:gold;
+  font-size:24px;
+  font-weight:700;
+}
 
+/* الزر */
 .btn {
   background:gold;
   color:black;
@@ -47,6 +69,7 @@ h1 { color: gold; margin-top:30px; }
   text-decoration:none;
   display:inline-block;
   margin-top:10px;
+  font-weight:700;
 }
 </style>
 </head>
@@ -75,8 +98,6 @@ h1 { color: gold; margin-top:30px; }
 
 هذه ليست مجرد دورة… بل مهارة تغير حياتك.
 </p>
-
-<p style="color:gold;">⚡ المقاعد محدودة</p>
 
 <div class="price">149 ريال</div>
 
