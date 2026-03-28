@@ -9,24 +9,24 @@
 <style>
 
 body {
-  <div class="banner">
-  <img src="banner-top.png.PNG?v=5">
-</div>
   margin: 0;
   font-family: sans-serif;
   background: #0b1d3a;
 }
 
+/* البنر */
 .banner img {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
+/* القسم */
 .section {
   padding: 40px 20px;
 }
 
+/* العنوان */
 .title {
   text-align: center;
   color: #f2c94c;
@@ -34,6 +34,8 @@ body {
   margin-bottom: 30px;
   font-weight: bold;
 }
+
+/* الكروت */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -41,6 +43,7 @@ body {
   gap: 15px;
 }
 
+/* الكارد */
 .card {
   width: 45%;
   background: linear-gradient(145deg, #1e2a44, #24365a);
@@ -51,6 +54,11 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   border: 1px solid rgba(242, 201, 76, 0.2);
   transition: 0.3s;
+}
+
+/* حركة */
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* الأيقونة */
@@ -65,17 +73,13 @@ body {
   font-size: 15px;
 }
 
-/* حركة */
-.card:hover {
-  transform: translateY(-5px);
-}
-
 /* الجوال */
 @media (max-width: 600px) {
   .card {
     width: 90%;
   }
 }
+
 </style>
 
 </head>
@@ -83,7 +87,7 @@ body {
 <body>
 
 <div class="banner">
-  <img src="banner-top.png.PNG?v=9999">
+  <img src="banner-top.png.PNG?v=20">
 </div>
 
 <div class="section">
