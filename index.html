@@ -24,6 +24,55 @@ body {
 
 /* القسم */
 .section {
+  /* الحاوية */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* الكارد */
+.card {
+  background: linear-gradient(145deg, #1e2a44, #24365a);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 48%;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  border: 1px solid rgba(242, 201, 76, 0.2);
+  transition: 0.3s;
+}
+
+/* حركة (كمبيوتر) */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ضغط (جوال) */
+.card:active {
+  transform: scale(0.97);
+}
+
+/* الأيقونة */
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* النص */
+.text {
+  color: white;
+  font-size: 16px;
+}
+
+/* الجوال */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
   padding: 40px 20px;
   background: #0b1d3a;
 }
