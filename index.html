@@ -6,12 +6,18 @@
 <title>EXILO</title>
 
 <style>
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin:0;
   font-family:sans-serif;
   background:#0f1f3a;
   color:white;
   text-align:center;
+  overflow-x:hidden;
 }
 
 /* زر القائمة */
@@ -21,14 +27,14 @@ body {
   right: 20px;
   background: gold;
   color: black;
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
   display:flex;
   align-items:center;
   justify-content:center;
   cursor:pointer;
-  z-index:1001;
+  z-index:2000;
 }
 
 /* الخلفية */
@@ -38,51 +44,58 @@ body {
   left:0;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.5);
-  display:none;
-  z-index:999;
+  background:rgba(0,0,0,0.6);
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+  z-index:1500;
+}
+
+.overlay.active {
+  opacity:1;
+  visibility:visible;
 }
 
 /* القائمة */
 .sidebar {
   position: fixed;
   top:0;
-  right:-260px;
-  width:260px;
+  right:-270px;
+  width:270px;
   height:100%;
   background:#162a4d;
   padding:20px;
   transition:0.3s;
-  z-index:1000;
+  z-index:2001;
 }
 
 .sidebar.active {
   right:0;
 }
 
-.overlay.active {
-  display:block;
+.sidebar h2 {
+  color:gold;
 }
 
 .sidebar a {
   display:block;
-  margin:10px 0;
+  margin:12px 0;
   padding:12px;
+  border-radius:12px;
   background:rgba(255,255,255,0.05);
-  border-radius:10px;
   color:white;
   text-decoration:none;
 }
 
 /* المحتوى */
-.content {
+.container {
   padding:20px;
 }
 
 .card {
   background:rgba(255,255,255,0.05);
   margin:20px auto;
-  padding:20px;
+  padding:25px;
   border-radius:20px;
   width:90%;
   max-width:400px;
@@ -91,68 +104,75 @@ body {
 .btn {
   background:gold;
   color:black;
-  padding:10px 20px;
-  border-radius:10px;
+  padding:12px 25px;
+  border-radius:12px;
   text-decoration:none;
+  font-weight:bold;
 }
+
+h1 {
+  color:gold;
+}
+
 </style>
 </head>
 
 <body>
 
 <!-- زر -->
-<div class="menu-btn" onclick="openMenu()">☰</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-<!-- خلفية -->
+<!-- الخلفية -->
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <!-- القائمة -->
 <div class="sidebar" id="sidebar">
 
-<h2 style="color:gold;">EXILO</h2>
+<h2>EXILO</h2>
 
 <a href="#">تسجيل الدخول</a>
 <a href="#">تحليل الشخصيات</a>
 <a href="#">لغة الجسد</a>
 <a href="#">الكتب</a>
 <a href="#">الجلسات</a>
+<a href="#">الشروط</a>
 
 </div>
 
 <!-- المحتوى -->
-<div class="content">
+<div class="container">
 
-<h1 style="color:gold;">الدورات</h1>
+<h1>الدورات</h1>
 
 <div class="card">
 <h3>تحليل الشخصيات</h3>
-<a class="btn" href="#">عرض</a>
+<a class="btn">عرض</a>
 </div>
 
 <div class="card">
 <h3>لغة الجسد</h3>
-<a class="btn" href="#">عرض</a>
+<a class="btn">عرض</a>
 </div>
 
-<h1 style="color:gold;">المنتجات</h1>
+<h1>المنتجات</h1>
 
 <div class="card">
 <h3>الكتب</h3>
-<a class="btn" href="#">عرض</a>
+<a class="btn">عرض</a>
 </div>
 
 <div class="card">
 <h3>الجلسات</h3>
-<a class="btn" href="#">عرض</a>
+<a class="btn">عرض</a>
 </div>
 
 </div>
 
 <script>
 
-function openMenu(){
-  document.getElementById("sidebar").classList.add("active");
-  document.getElementById("overlay").classList.add("active");
+function toggleMenu(){
+  document.getElementById("sidebar").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
 }
 
 function closeMenu(){
