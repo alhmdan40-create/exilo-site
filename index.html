@@ -26,6 +26,8 @@ body {
 /* القسم */
 .section {
   padding: 40px 15px;
+  max-width: 900px;
+  margin: auto;
 }
 
 /* العنوان */
@@ -38,65 +40,81 @@ body {
 }
 
 /* الكروت */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* الكارد الأساسي */
 .card {
-  width: 48%;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
-  box-sizing: border-box;
+  color: white;
 
-  /* Glass effect */
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-
-  /* Border ذهبي خفيف */
-  border: 1px solid rgba(242, 201, 76, 0.25);
-
-  /* ظل فاخر */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(242, 201, 76, 0.4);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
-/* توهج ذهبي */
-.card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(242,201,76,0.15), transparent 60%);
-  transform: rotate(25deg);
+/* ألوان مختلفة 🔥 */
+.card:nth-child(1) {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+.card:nth-child(2) {
+  background: linear-gradient(135deg, #42275a, #734b6d);
+}
+.card:nth-child(3) {
+  background: linear-gradient(135deg, #134e5e, #71b280);
+}
+.card:nth-child(4) {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
 }
 
-/* حركة عند المرور */
+/* حركة */
 .card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.9);
 }
 
-/* النص */
-.text {
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.7;
-}
+/* تأخير الحركة */
+.card:nth-child(1){animation-delay:0.2s;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:nth-child(3){animation-delay:0.6s;}
+.card:nth-child(4){animation-delay:0.8s;}
 
 /* الأيقونة */
 .icon {
   font-size: 34px;
   margin-bottom: 12px;
 }
+
 /* النص */
 .text {
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+/* انيميشن */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* الجوال */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 </style>
@@ -107,7 +125,7 @@ body {
 
 <!-- البنر -->
 <div class="banner">
-  <img src="banner-top.png.PNG?v=30">
+  <img src="banner-top.png.PNG?v=50">
 </div>
 
 <!-- لماذا إكسيلو -->
