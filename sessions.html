@@ -2,109 +2,50 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>جلسات التوجيه</title>
-
 <style>
 body {
-  margin: 0;
-  font-family: sans-serif;
   background: linear-gradient(#0f1f3a,#162a4d);
-  color: white;
-  text-align: center;
+  color:white;
+  text-align:center;
+  font-family:sans-serif;
 }
 
-/* العنوان */
-h1 {
-  color: gold;
-  margin-top: 30px;
-}
-
-/* الكرت */
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  width: 320px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* الصورة */
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-/* المحتوى */
-.card-content {
-  padding: 20px;
-}
-
-.price {
-  font-size: 22px;
-  color: gold;
-  margin: 10px 0;
-}
-
-/* الزر */
-.btn {
-  background: gold;
-  color: black;
-  padding: 12px 25px;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-/* زر رجوع */
-.back {
-  display: inline-block;
-  margin-top: 20px;
-  color: #aaa;
-  text-decoration: none;
-}
+.card { width:320px; margin:auto; background:rgba(255,255,255,0.05); border-radius:20px; overflow:hidden;}
+.card img { width:100%; height:220px; object-fit:cover;}
+.card-content { padding:20px;}
+.price { color:gold; font-size:22px;}
+.btn { background:gold; color:black; padding:12px 25px; border-radius:12px; text-decoration:none;}
 </style>
-
 </head>
 
 <body>
 
-<h1>جلسات التوجيه</h1>
+<h1 style="color:gold;">جلسات التوجيه</h1>
 
-<div class="container">
+<div class="card">
+<img src="sessions.png.PNG">
 
-  <div class="card">
-    <img src="sessions.png.PNG">
+<div class="card-content">
 
-    <div class="card-content">
-      <h2>جلسة خاصة</h2>
+<p>
+هذه ليست جلسة عادية…
 
-      <p>
-        جلسة توجيه فردية تساعدك على فهم نفسك بعمق، 
-        اتخاذ قرارات واضحة، والوصول إلى التوازن النفسي والذهني
-      </p>
+هي جلسة مخصصة لك تساعدك على:
+✔ فهم نفسك بعمق  
+✔ اتخاذ قرارات واضحة  
+✔ التخلص من التشتت  
+✔ الوصول للتوازن  
 
-      <div class="price">150 ريال</div>
+قد تكون نقطة التحول في حياتك.
+</p>
 
-      <a href="https://wa.me/966530205304" class="btn">
-        احجز الآن عبر واتساب
-      </a>
+<div class="price">150 ريال</div>
 
-      <br>
+<a href="https://wa.me/966530205304" class="btn">
+احجز الآن
+</a>
 
-      <a href="index.html" class="back">⬅ العودة للرئيسية</a>
-    </div>
-
-  </div>
-
+</div>
 </div>
 
 </body>
