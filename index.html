@@ -14,17 +14,35 @@ body {
   text-align: center;
 }
 
-h1 {
-  color: gold;
-  margin: 30px 0;
+/* البنر */
+.banner img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
+/* العناوين */
 .section-title {
   color: gold;
   font-size: 28px;
   margin: 40px 0 20px;
 }
 
+/* لماذا اكسيلو */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.feature {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+/* الكروت */
 .container {
   display: flex;
   justify-content: center;
@@ -55,46 +73,47 @@ h1 {
   padding: 20px;
 }
 
-.card h2 {
-  margin: 10px 0;
-}
-
-.card p {
-  color: #ccc;
-  font-size: 14px;
-}
-
 .btn {
-  display: inline-block;
-  margin-top: 15px;
   background: gold;
   color: black;
   padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-.session-box {
-  margin: 20px;
-}
-
-.session-box img {
+/* الجلسات */
+.session img {
   width: 90%;
   max-width: 500px;
   border-radius: 20px;
 }
 
+/* الكتب */
+.books img {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+/* الفوتر */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  color: #aaa;
+}
+
+/* واتساب */
 .whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  color: white;
   padding: 15px 20px;
   border-radius: 30px;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 </style>
 
@@ -102,11 +121,26 @@ h1 {
 
 <body>
 
-<h1>الدورات</h1>
+<!-- 🔥 البنر -->
+<div class="banner">
+  <img src="banner.png.PNG">
+</div>
+
+<!-- لماذا اكسيلو -->
+<div class="section-title">لماذا إكسيلو؟</div>
+
+<div class="features">
+  <div class="feature">🚀 لا نقدم معلومات.. بل نصنع تحول حقيقي</div>
+  <div class="feature">🧠 تكتشف أنماط سلوكك بعمق</div>
+  <div class="feature">🎯 تنتقل من التشتت إلى الوضوح</div>
+  <div class="feature">🔥 تبدأ التغيير الحقيقي في حياتك</div>
+</div>
+
+<!-- الدورات -->
+<div class="section-title">الدورات</div>
 
 <div class="container">
 
-  <!-- لغة الجسد -->
   <div class="card">
     <img src="body.png.PNG">
     <div class="card-content">
@@ -116,7 +150,6 @@ h1 {
     </div>
   </div>
 
-  <!-- تحليل الشخصيات -->
   <div class="card">
     <img src="analysis.png.PNG">
     <div class="card-content">
@@ -128,13 +161,26 @@ h1 {
 
 </div>
 
-<!-- جلسات التوجيه -->
+<!-- جلسات -->
 <div class="section-title">جلسات التوجيه</div>
 
-<div class="session-box">
+<div class="session">
   <img src="sessions.png">
   <p>جلسات توجيه خاصة تساعدك على تحقيق التوازن والوضوح</p>
 </div>
+
+<!-- الكتب -->
+<div class="section-title">الكتب الرقمية</div>
+
+<div class="books">
+  <img src="books.png.jpg">
+  <p>ابدأ رحلة التغيير الشاملة الآن</p>
+</div>
+
+<!-- الفوتر -->
+<footer>
+  EXILO 2026 © جميع الحقوق محفوظة
+</footer>
 
 <!-- واتساب -->
 <a class="whatsapp" href="https://wa.me/966XXXXXXXXX">
