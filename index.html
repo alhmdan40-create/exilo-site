@@ -3,125 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>EXILO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-
 <style>
-body{
-margin:0;
-font-family:'Cairo',sans-serif;
-background:#0f1f3a;
-color:white;
-text-align:center;
+
+body {
+    margin:0;
+    font-family:'Cairo', sans-serif;
+    background: linear-gradient(#0f1f3a,#162a4d);
+    color:white;
+    text-align:center;
 }
 
-.menu-btn{
-position:fixed;
-top:20px;
-right:20px;
-background:gold;
-color:black;
-width:55px;
-height:55px;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
+/* زر القائمة */
+.menu-btn {
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#f1d04b;
+    width:60px;
+    height:60px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    cursor:pointer;
+    z-index:1000;
 }
 
-.banner{
-position:relative;
-height:300px;
+/* القائمة الجانبية */
+.sidebar {
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:80%;
+    height:100%;
+    background:#0f1f3a;
+    padding:30px;
+    transition:0.3s;
+    z-index:999;
 }
 
-.banner img{
-width:100%;
-height:100%;
-object-fit:cover;
+.sidebar.active {
+    right:0;
 }
 
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.sidebar a {
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:15px 0;
+    font-size:18px;
+    font-weight:bold;
 }
 
-.logo{
-color:gold;
-font-size:40px;
-font-weight:900;
+/* البنر */
+.banner {
+    position:relative;
 }
 
-.hero-title{
-font-size:28px;
-font-weight:bold;
+.banner img {
+    width:100%;
+    height:260px;
+    object-fit:cover;
 }
 
-.hero-sub{
-font-size:16px;
+.overlay {
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-.title{
-color:gold;
-font-size:28px;
-margin:40px 0 20px;
+/* الشعار */
+.logo {
+    font-size:32px;
+    font-weight:bold;
+    color:#f1d04b;
 }
 
-.box{
-background:rgba(255,255,255,0.05);
-margin:12px;
-padding:15px;
-border-radius:15px;
+/* العنوان */
+.hero-title {
+    font-size:28px;
+    font-weight:bold;
+    margin-top:10px;
 }
 
-.footer{
-margin-top:40px;
-padding:20px;
-background:#0b172c;
+.hero-sub {
+    font-size:16px;
+    opacity:0.9;
 }
+
+/* لماذا اكسيلو */
+.section-title {
+    color:#f1d04b;
+    font-size:28px;
+    margin:40px 0 20px;
+    font-weight:bold;
+}
+
+.box {
+    background:rgba(255,255,255,0.05);
+    margin:15px;
+    padding:18px;
+    border-radius:15px;
+    font-size:16px;
+}
+
+/* الكروت */
+.card {
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    margin:20px;
+    padding:20px;
+}
+
+.card img {
+    width:100%;
+    border-radius:15px;
+}
+
+.btn {
+    background:#f1d04b;
+    color:black;
+    padding:12px 25px;
+    border-radius:10px;
+    display:inline-block;
+    margin-top:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* الفوتر */
+footer {
+    margin-top:40px;
+    padding:20px;
+    font-size:14px;
+    opacity:0.7;
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="menu-btn">☰</div>
+<!-- زر القائمة -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
+<!-- القائمة -->
+<div class="sidebar" id="menu">
+    <a href="index.html">الرئيسية</a>
+    <a href="course-analysis.html">تحليل الشخصيات</a>
+    <a href="course-body.html">لغة الجسد</a>
+    <a href="books.html">الكتب</a>
+    <a href="sessions.html">الجلسات</a>
+    <a href="terms.html">الشروط والأحكام</a>
+</div>
+
+<!-- البنر -->
 <div class="banner">
-<img src="banner-top.png.PNG">
-
-<div class="overlay">
-<div class="logo">EXILO</div>
-
-<div class="hero-title">
-تحرّر… وابدأ من جديد
+    <img src="banner-top.png.PNG">
+    <div class="overlay">
+        <div class="logo">EXILO</div>
+        <div class="hero-title">تحرر... وابدأ من جديد</div>
+        <div class="hero-sub">رحلة التوازن الحقيقي تبدأ من هنا</div>
+    </div>
 </div>
 
-<div class="hero-sub">
-رحلة التوازن الحقيقي تبدأ من هنا
-</div>
-</div>
-</div>
+<!-- لماذا اكسيلو -->
+<div class="section-title">لماذا إكسيلو؟</div>
 
-<div class="title">لماذا إكسيلو؟</div>
-
-<div class="box">🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</div>
+<div class="box">🚀 لا نقدم معلومات... بل نصنع تحول حقيقي</div>
 <div class="box">🧠 اكتشف أنماطك وسلوكك بعمق</div>
 <div class="box">🎯 انتقل من التشتت إلى الوضوح</div>
 <div class="box">🔥 التغيير يبدأ بالفعل وليس بالكلام</div>
 
-<div class="footer">
-© EXILO جميع الحقوق محفوظة  
-<br>
-<a href="terms.html" style="color:gold;">الشروط والأحكام</a>
+<!-- الدورات -->
+<div class="section-title">الدورات</div>
+
+<div class="card">
+    <img src="analysis.png.PNG">
+    <h2>تحليل الشخصيات</h2>
+    <a href="course-analysis.html" class="btn">عرض</a>
 </div>
+
+<div class="card">
+    <img src="body.png.PNG">
+    <h2>لغة الجسد</h2>
+    <a href="course-body.html" class="btn">عرض</a>
+</div>
+
+<!-- المنتجات -->
+<div class="section-title">المنتجات</div>
+
+<div class="card">
+    <img src="books.png.jpg">
+    <h2>الكتب</h2>
+    <a href="books.html" class="btn">عرض</a>
+</div>
+
+<div class="card">
+    <img src="sessions.png.PNG">
+    <h2>الجلسات</h2>
+    <a href="sessions.html" class="btn">عرض</a>
+</div>
+
+<!-- الفوتر -->
+<footer>
+© جميع الحقوق محفوظة - EXILO
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
