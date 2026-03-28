@@ -4,167 +4,170 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
 <title>EXILO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-
 <style>
-
 body {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
-  background: radial-gradient(circle at top, #1b2c4f, #050b1a);
-  color: white;
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #0f1f3d;
+    color: white;
 }
 
-/* خلفية */
+/* الخلفية */
 body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url("https://www.transparenttextures.com/patterns/stardust.png");
-  opacity: 0.35;
-  z-index: -1;
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,215,0,0.15), transparent);
+    z-index: -1;
 }
 
-.title {
-  text-align: center;
-  font-size: 30px;
-  color: #d4af37;
-  margin: 40px 0 20px;
-  font-weight: 900;
+/* البنر */
+.banner img {
+    width: 100%;
+    display: block;
 }
 
-/* grid */
+/* العناوين */
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: gold;
+    margin: 30px 0;
+}
+
+/* الكروت */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
 }
 
-/* كرت */
 .card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  overflow: hidden;
-  text-align: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
-/* الصور */
 .card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
-/* المحتوى */
-.card-content {
-  padding: 15px;
+.card h3 {
+    margin: 15px 0 5px;
+}
+
+.card p {
+    font-size: 14px;
+    opacity: 0.8;
+    padding: 0 10px;
 }
 
 /* زر */
 .btn {
-  background: linear-gradient(45deg, #d4af37, #f1d77a);
-  color: black;
-  padding: 10px 20px;
-  border-radius: 12px;
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  text-decoration: none;
+    background: linear-gradient(to right, gold, #e6c35c);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin: 15px;
+    font-weight: bold;
 }
 
-/* 🔥 توسيط عنصر واحد */
-.center-one {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.center-one .card {
-  width: 90%;
-  max-width: 400px;
+/* سكشن واحد بالنص */
+.center {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
 }
 
 /* واتساب */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 14px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- البنر -->
+<div class="banner">
+    <img src="banner.png">
+</div>
+
+<!-- لماذا اكسيلو -->
+<h2 class="section-title">لماذا إكسيلو؟</h2>
+
+<div class="grid">
+    <div class="card">🚀 لا نقدم معلومات.. بل نصنع تحول حقيقي</div>
+    <div class="card">🧠 تكتشف أنماط سلوكك بعمق</div>
+    <div class="card">🎯 تنتقل من التشتت إلى الوضوح</div>
+    <div class="card">🔥 تبدأ التغيير بالفعل</div>
+</div>
+
 <!-- الدورات -->
-<div class="title">الدورات</div>
+<h2 class="section-title">الدورات</h2>
 
 <div class="grid">
 
-  <div class="card">
+<div class="card">
     <img src="analysis.png">
-    <div class="card-content">
-      <h3>دورة تحليل الشخصية</h3>
-      <p>تحليل الخط والتوقيع والرسومات</p>
-      <a href="#" class="btn">عرض التفاصيل</a>
-    </div>
-  </div>
+    <h3>تحليل الشخصيات</h3>
+    <p>تحليل الخط والتوقيع والرسومات</p>
+    <button class="btn">عرض التفاصيل</button>
+</div>
 
-  <div class="card">
+<div class="card">
     <img src="body.png">
-    <div class="card-content">
-      <h3>دورة لغة الجسد</h3>
-      <p>فهم الإشارات الجسدية والتواصل غير اللفظي</p>
-      <a href="#" class="btn">عرض التفاصيل</a>
-    </div>
-  </div>
+    <h3>لغة الجسد</h3>
+    <p>فهم الإشارات الجسدية والتواصل غير اللفظي</p>
+    <button class="btn">عرض التفاصيل</button>
+</div>
 
 </div>
 
-<!-- جلسات التوجيه -->
-<div class="title">جلسات التوجيه</div>
+<!-- جلسات -->
+<h2 class="section-title">جلسات التوجيه</h2>
 
-<div class="center-one">
-
-  <div class="card">
-    <img src="session.png">
-    <div class="card-content">
-      <h3>جلسة تطوير شخصي</h3>
-      <p>جلسة فردية تساعدك على فهم ذاتك واتخاذ قرارات أوضح</p>
-      <a href="#" class="btn">احجز الآن</a>
-    </div>
-  </div>
-
+<div class="center">
+<div class="card" style="width:90%">
+    <img src="sessions.png">
+    <h3>جلسات خاصة</h3>
+    <p>جلسات عميقة لتطوير الذات واتخاذ القرار</p>
+    <button class="btn">احجز الآن</button>
+</div>
 </div>
 
 <!-- الكتب -->
-<div class="title">الكتب الرقمية</div>
+<h2 class="section-title">الكتب الرقمية</h2>
 
-<div class="center-one">
-
-  <div class="card">
-    <img src="books.png.jpg">
-    <div class="card-content">
-      <h3>مجموعة كتب تطوير الذات</h3>
-      <p>ابدأ رحلتك نحو التغيير والنمو</p>
-      <a href="#" class="btn">عرض الكتب</a>
-    </div>
-  </div>
-
+<div class="center">
+<div class="card" style="width:90%">
+    <img src="books.png">
+    <h3>مجموعة كتب EXILO</h3>
+    <p>ابدأ رحلتك نحو التغيير الحقيقي</p>
+    <button class="btn">تصفح الكتب</button>
+</div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/966530205304">
-واتساب
-</a>
+<!-- واتساب -->
+<div class="whatsapp">واتساب</div>
 
 </body>
 </html>
