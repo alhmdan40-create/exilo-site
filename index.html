@@ -5,10 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXILO</title>
 
+<!-- خط احترافي -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: 'Tajawal', sans-serif;
     background: #0b2341;
     color: white;
     text-align: center;
@@ -32,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-/* القائمة الجانبية */
+/* القائمة */
 .sidebar {
     position: fixed;
     top: 0;
@@ -60,7 +63,7 @@ body {
 
 /* زر الإغلاق */
 .close-btn {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 20px;
     cursor: pointer;
     text-align: left;
@@ -70,6 +73,8 @@ body {
 h2 {
     color: gold;
     margin: 30px 0;
+    font-size: 28px;
+    font-weight: 900;
 }
 
 /* المربعات الذهبية */
@@ -83,8 +88,8 @@ h2 {
 .box {
     padding: 30px;
     border-radius: 15px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 700;
     background: linear-gradient(135deg,#b8962e,#e6c76b,#fff3b0);
     color: #000;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -98,7 +103,7 @@ h2 {
     opacity: 0.3;
 }
 
-/* كروت */
+/* الكروت */
 .card {
     margin: 20px;
     background: #132c52;
@@ -111,14 +116,27 @@ h2 {
     border-radius: 15px;
 }
 
+.card h3 {
+    color: gold;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.card p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* زر */
 .btn {
     margin-top: 15px;
     background: gold;
     color: black;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
     display: inline-block;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* الفوتر */
@@ -138,15 +156,12 @@ h2 {
 
 <!-- القائمة -->
 <div class="sidebar" id="menu">
-
     <div class="close-btn" onclick="toggleMenu()">✖</div>
-
     <a href="#">تسجيل الدخول</a>
     <a href="#">الدورات</a>
     <a href="#">الجلسات</a>
     <a href="#">الكتب</a>
     <a href="#">الشروط</a>
-
 </div>
 
 <!-- البنر -->
@@ -168,8 +183,8 @@ h2 {
 
 <!-- الجلسات -->
 <div class="card">
-    <img src="body.png.PNG">
-    <h3 style="color:gold;">الجلسات</h3>
+    <img src="sessions.png.PNG">
+    <h3>الجلسات</h3>
     <p>ابدأ أول خطوة نحو التغيير الحقيقي</p>
     <a href="#" class="btn">ابدأ الآن</a>
 </div>
@@ -177,7 +192,7 @@ h2 {
 <!-- الدورات -->
 <div class="card">
     <img src="courses.png.jpg">
-    <h3 style="color:gold;">الدورات</h3>
+    <h3>الدورات</h3>
     <p>تعلم مهارات تغير حياتك</p>
     <a href="#" class="btn">عرض الدورات</a>
 </div>
@@ -185,7 +200,7 @@ h2 {
 <!-- الكتب -->
 <div class="card">
     <img src="books.png.jpg">
-    <h3 style="color:gold;">الكتب</h3>
+    <h3>الكتب</h3>
     <p>مجموعة كتب تطوير الذات</p>
     <a href="#" class="btn">تصفح الكتب</a>
 </div>
