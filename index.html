@@ -13,34 +13,36 @@
 body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
-  background: linear-gradient(180deg, #0b1e3a, #142f55);
+  background: radial-gradient(circle at top, #1b2c4f, #050b1a);
   color: white;
 }
 
-/* البنر */
-.hero img {
+body::before {
+  content: "";
+  position: fixed;
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.3;
+  z-index: -1;
 }
 
-/* العناوين */
-.section-title {
+.title {
   text-align: center;
-  margin: 40px 0 10px;
   font-size: 28px;
   color: #d4af37;
+  margin: 40px 0 20px;
   font-weight: 900;
 }
 
-/* نص تسويقي */
-.subtitle {
-  text-align: center;
-  color: #ccc;
-  margin-bottom: 20px;
+.glass {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* لماذا إكسيلو */
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -48,54 +50,54 @@ body {
   padding: 20px;
 }
 
-.feature-box {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 18px;
+.feature {
   text-align: center;
+  line-height: 1.6;
 }
 
-/* المنتجات */
-.products {
+/* الدورات */
+.courses {
   display: grid;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
   padding: 20px;
 }
 
-.product {
-  background: rgba(255,255,255,0.08);
+.card {
   border-radius: 20px;
   overflow: hidden;
-  text-align: center;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.05);
 }
 
-.product:hover {
-  transform: translateY(-8px);
-}
-
-/* الصور */
-.product img {
+.card img {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
 }
 
-/* المحتوى */
-.product-content {
-  padding: 20px;
+.card-content {
+  padding: 15px;
+  text-align: center;
 }
 
 /* زر */
 .btn {
-  display: inline-block;
   background: linear-gradient(45deg, #d4af37, #f1d77a);
   color: black;
-  padding: 12px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
   margin-top: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* الجلسات */
+.sessions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
 }
 
 /* واتساب */
@@ -104,17 +106,10 @@ body {
   bottom: 20px;
   right: 20px;
   background: #25D366;
-  padding: 14px 22px;
+  padding: 15px 25px;
   border-radius: 30px;
-  color: white;
   text-decoration: none;
-}
-
-/* الفوتر */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
+  color: white;
 }
 
 </style>
@@ -122,85 +117,72 @@ footer {
 
 <body>
 
-<!-- البنر -->
-<section class="hero">
-  <img src="banner.png.PNG">
-</section>
-
 <!-- لماذا إكسيلو -->
-<div class="section-title">لماذا إكسيلو؟</div>
+<div class="title">لماذا إكسيلو؟</div>
 
 <div class="features">
-  <div class="feature-box">🚀 لا نقدم معلومات… بل نصنع تحول حقيقي</div>
-  <div class="feature-box">🧠 نكشف أنماطك ونفهم سلوكك بعمق</div>
-  <div class="feature-box">🎯 انتقال من التشتت إلى الوضوح</div>
-  <div class="feature-box">🔥 نتائج تقاس بالتغيير لا بالكلام</div>
+  <div class="glass feature">
+    🚀 لا نقدم معلومات فقط، بل نصنع تحولًا حقيقيًا
+  </div>
+
+  <div class="glass feature">
+    🧠 نكشف أنماطك ونفهم سلوكك بعمق
+  </div>
+
+  <div class="glass feature">
+    🎯 نساعدك على الانتقال من التشتت إلى الوضوح
+  </div>
+
+  <div class="glass feature">
+    🔥 نتائج حقيقية تُقاس بالتغيير، لا بالكلام
+  </div>
 </div>
 
 <!-- الدورات -->
-<div class="section-title">الدورات</div>
-<p class="subtitle">ابدأ رحلتك نحو التغيير الحقيقي اليوم</p>
+<div class="title">الدورات</div>
 
-<div class="products">
+<div class="courses">
 
   <!-- تحليل الشخصية -->
-  <div class="product">
+  <div class="card">
     <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
-    <div class="product-content">
+    <div class="card-content">
       <h3>دورة تحليل الشخصية</h3>
       <p>تحليل الخط والتوقيع والرسومات</p>
-      <a href="#" class="btn">ابدأ الآن</a>
+      <a href="#" class="btn">عرض التفاصيل</a>
     </div>
   </div>
 
   <!-- لغة الجسد -->
-  <div class="product">
+  <div class="card">
     <img src="https://images.unsplash.com/photo-1588776814546-ec7e4d3b3f1b">
-    <div class="product-content">
+    <div class="card-content">
       <h3>دورة لغة الجسد</h3>
-      <p>فهم الإشارات الجسدية والتواصل</p>
-      <a href="#" class="btn">ابدأ الآن</a>
+      <p>فهم الإشارات الجسدية والتواصل غير اللفظي</p>
+      <a href="#" class="btn">عرض التفاصيل</a>
     </div>
   </div>
 
-</div>
-
-<!-- الكتب -->
-<div class="section-title">الكتب الرقمية</div>
-
-<div class="products">
-  <div class="product">
-    <img src="books.png.jpg">
-    <div class="product-content">
-      <h3>الكتب الرقمية</h3>
-      <p>📚 محتوى عميق يساعدك على تطوير حياتك</p>
-      <a href="#" class="btn">ابدأ الآن</a>
-    </div>
-  </div>
 </div>
 
 <!-- الجلسات -->
-<div class="section-title">الجلسات</div>
+<div class="title">الجلسات الرقمية</div>
 
-<div class="products">
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef">
-    <div class="product-content">
-      <h3>جلسات كوتشينج</h3>
-      <p>جلسات استرخاء وتطوير ذات</p>
-      <a href="#" class="btn">ابدأ الآن</a>
-    </div>
+<div class="sessions">
+
+  <div class="card">
+    <img src="books.png.jpg">
   </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef">
+  </div>
+
 </div>
 
-<!-- واتساب -->
 <a class="whatsapp" href="https://wa.me/966530205304">
-  واتساب
+واتساب
 </a>
-
-<footer>
-© 2026 EXILO. جميع الحقوق محفوظة
-</footer>
 
 </body>
 </html>
