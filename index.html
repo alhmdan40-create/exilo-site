@@ -20,6 +20,44 @@ body {
     display: block;
 }
 
+/* زر القائمة */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    padding: 12px;
+    border-radius: 10px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 260px;
+    height: 100%;
+    background: #0b2341;
+    padding: 30px 20px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
 /* العنوان */
 h2 {
     color: gold;
@@ -41,7 +79,6 @@ h2 {
     font-weight: bold;
 }
 
-/* ألوان */
 .box1 {background: linear-gradient(135deg,#3a5ba0,#4e7fff);}
 .box2 {background: linear-gradient(135deg,#7b3fe4,#9ad0ec);}
 .box3 {background: linear-gradient(135deg,#3bd16f,#6ef0a3);}
@@ -78,39 +115,6 @@ h2 {
     text-decoration: none;
 }
 
-/* القائمة */
-.menu-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background: #111;
-    transition: 0.3s;
-    padding: 20px;
-}
-
-.sidebar a {
-    display: block;
-    color: white;
-    margin: 10px 0;
-    text-decoration: none;
-}
-
-.sidebar.open {
-    right: 0;
-}
-
 /* الفوتر */
 .footer {
     margin-top: 40px;
@@ -135,7 +139,7 @@ h2 {
     <a href="#">الشروط</a>
 </div>
 
-<!-- البنر (المهم🔥) -->
+<!-- البنر (ثابت 🔥) -->
 <div class="banner">
     <img src="banner-new.png.PNG">
 </div>
