@@ -15,7 +15,7 @@ body {
     font-family: 'Cairo', sans-serif;
     background: #0e2a47;
     color: white;
-    overflow-x: hidden; /* مهم جدًا */
+    overflow-x: hidden;
 }
 
 /* البنر */
@@ -50,6 +50,27 @@ h2 {
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
+}
+
+/* قسم الجلسات */
+.section {
+    padding: 20px;
+}
+
+.section img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.section h3 {
+    color: #d4af37;
+    text-align: center;
+}
+
+.section p {
+    text-align: center;
+    opacity: 0.8;
 }
 
 /* زر القائمة */
@@ -89,8 +110,8 @@ h2 {
     height: 100%;
     background: #081f36;
     padding: 25px;
-    transform: translateX(100%); /* الحل هنا */
-    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    transition: 0.3s;
     z-index: 9999;
 }
 
@@ -114,11 +135,6 @@ h2 {
     background: rgba(255,255,255,0.05);
     text-decoration: none;
     color: white;
-}
-
-/* منع تحريك الصفحة عند فتح القائمة */
-body.menu-open {
-    overflow: hidden;
 }
 
 </style>
@@ -158,18 +174,30 @@ body.menu-open {
 <a href="courses.html" class="card">🔥 تغيير فعلي</a>
 </div>
 
+<!-- قسم الجلسات -->
+<div class="section">
+<img src="body.png.PNG">
+<h3>الجلسات</h3>
+<p>ابدأ التغيير الحقيقي الآن وارتقِ بحياتك خطوة بخطوة</p>
+</div>
+
+<!-- قسم الدورات -->
+<div class="section">
+<img src="courses.png.jpg">
+<h3>الدورات</h3>
+<p>دورات عملية تساعدك تفهم نفسك والآخرين بشكل أعمق</p>
+</div>
+
 <script>
 
 function openMenu() {
     document.getElementById("sidebar").classList.add("show");
     document.getElementById("overlay").classList.add("show");
-    document.body.classList.add("menu-open");
 }
 
 function closeMenu() {
     document.getElementById("sidebar").classList.remove("show");
     document.getElementById("overlay").classList.remove("show");
-    document.body.classList.remove("menu-open");
 }
 
 </script>
