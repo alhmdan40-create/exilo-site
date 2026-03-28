@@ -24,59 +24,18 @@ body {
 
 /* القسم */
 .section {
-  padding: 40px 15px;
-  max-width: 1000px;
-  margin: auto;
+  padding: 40px 20px;
 }
 
-/* العنوان */
 .title {
   text-align: center;
   color: #f2c94c;
   font-size: 28px;
   margin-bottom: 30px;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 /* الكروت */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.card {
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  border: 1px solid rgba(242, 201, 76, 0.3);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-  transition: 0.3s;
-}
-
-/* ألوان */
-.card:nth-child(1){background:linear-gradient(135deg,#1e3c72,#2a5298);}
-.card:nth-child(2){background:linear-gradient(135deg,#42275a,#734b6d);}
-.card:nth-child(3){background:linear-gradient(135deg,#134e5e,#71b280);}
-.card:nth-child(4){background:linear-gradient(135deg,#2c3e50,#4ca1af);}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.text {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.7;
-}
-
-/* الخدمات */
 .services {
   display: grid;
   grid-template-columns: 1fr;
@@ -87,13 +46,13 @@ body {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
   transition: 0.3s;
 }
 
 .service img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
 }
 
@@ -101,12 +60,12 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  color: #f2c94c;
-  text-align: center;
   padding: 15px;
+  text-align: center;
+  color: #f2c94c;
   font-size: 18px;
   font-weight: bold;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
 }
 
 .service:hover {
@@ -128,38 +87,7 @@ body {
 
 <!-- البنر -->
 <div class="banner">
-  <img src="banner-top.png.PNG?v=80">
-</div>
-
-<!-- لماذا إكسيلو -->
-<div class="section">
-
-  <div class="title">لماذا إكسيلو؟</div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="icon">🚀</div>
-      <div class="text">لا نقدم معلومات... بل نصنع تحول حقيقي</div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🧠</div>
-      <div class="text">اكتشف أنماطك وسلوكك بعمق</div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🎯</div>
-      <div class="text">انتقل من التشتت إلى الوضوح</div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🔥</div>
-      <div class="text">التغيير يبدأ بالفعل وليس بالكلام</div>
-    </div>
-
-  </div>
-
+  <img src="banner-top.png.PNG">
 </div>
 
 <!-- الخدمات -->
@@ -169,20 +97,23 @@ body {
 
   <div class="services">
 
-    <div class="service">
-      <img src="sessions.png">
+    <!-- الجلسات -->
+    <a href="sessions.html" class="service">
+      <img src="sessions.png.PNG">
       <div class="service-title">الجلسات</div>
-    </div>
+    </a>
 
-    <div class="service">
-      <img src="body-language.png">
-      <div class="service-title">لغة الجسد</div>
-    </div>
+    <!-- الدورات -->
+    <a href="courses.html" class="service">
+      <img src="courses.png.jpg">
+      <div class="service-title">الدورات</div>
+    </a>
 
-    <div class="service">
-      <img src="personality.png">
-      <div class="service-title">تحليل الشخصيات</div>
-    </div>
+    <!-- الكتب -->
+    <a href="books.html" class="service">
+      <img src="books.png.jpg">
+      <div class="service-title">الكتب</div>
+    </a>
 
   </div>
 
