@@ -15,47 +15,44 @@ body {
     font-family: 'Cairo', sans-serif;
     background: #0e2a47;
     color: white;
+    overflow-x: hidden;
 }
 
 /* البنر */
 .banner img {
     width: 100%;
+    display: block;
 }
 
-/* عنوان */
+/* العنوان */
 h2 {
     text-align: center;
     color: #d4af37;
     margin: 30px 0;
     font-size: 28px;
+    font-weight: 900;
 }
 
-/* مربعات */
+/* المربعات */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 20px;
 }
 
 .card {
-    background: linear-gradient(135deg,#d4af37,#f5e6a6);
+    background: linear-gradient(135deg, #d4af37, #f5e6a6);
     color: #000;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
     font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
 }
 
-/* الخط */
-.line {
-    height: 1px;
-    background: #d4af37;
-    margin: 40px 20px;
-    opacity: 0.4;
-}
-
-/* الأقسام */
+/* قسم الجلسات */
 .section {
     padding: 20px;
 }
@@ -63,15 +60,17 @@ h2 {
 .section img {
     width: 100%;
     border-radius: 20px;
+    margin-bottom: 15px;
 }
 
 .section h3 {
-    text-align: center;
     color: #d4af37;
+    text-align: center;
 }
 
 .section p {
     text-align: center;
+    opacity: 0.8;
 }
 
 /* زر القائمة */
@@ -79,39 +78,63 @@ h2 {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 14px;
     border-radius: 10px;
-    z-index: 999;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* الخلفية */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 9998;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* القائمة */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -260px;
+    right: 0;
     width: 260px;
     height: 100%;
-    background: #0e2a47;
-    padding: 20px;
+    background: #081f36;
+    padding: 25px;
+    transform: translateX(100%);
     transition: 0.3s;
-    z-index: 1000;
+    z-index: 9999;
 }
 
-.sidebar.active {
-    right: 0;
+.sidebar.show {
+    transform: translateX(0);
 }
 
+/* زر الإغلاق */
 .close-btn {
-    font-size: 22px;
+    font-size: 24px;
+    margin-bottom: 25px;
     cursor: pointer;
 }
 
+/* روابط */
 .sidebar a {
     display: block;
-    color: white;
-    margin: 15px 0;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
     text-decoration: none;
+    color: white;
 }
 
 </style>
@@ -122,14 +145,18 @@ h2 {
 <!-- زر القائمة -->
 <div class="menu-btn" onclick="openMenu()">☰</div>
 
+<!-- الخلفية -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
 <!-- القائمة -->
-<div class="sidebar" id="menu">
+<div class="sidebar" id="sidebar">
+
 <div class="close-btn" onclick="closeMenu()">✕</div>
 
-<a href="index.html">الرئيسية</a>
-<a href="courses.html">الدورات</a>
-<a href="books.html">الكتب</a>
-<a href="terms.html">الشروط</a>
+<a href="index.html">🏠 الرئيسية</a>
+<a href="courses.html">🎓 الدورات</a>
+<a href="books.html">📚 الكتب</a>
+<a href="terms.html">📄 الشروط</a>
 
 </div>
 
@@ -141,36 +168,36 @@ h2 {
 <h2>لماذا إكسيلو؟</h2>
 
 <div class="grid">
-<div class="card">🚀 نصنع تحول حقيقي</div>
-<div class="card">🧠 فهم عميق لذاتك</div>
-<div class="card">🎯 وضوح في حياتك</div>
-<div class="card">🔥 تغيير فعلي</div>
+<a href="courses.html" class="card">🚀 نصنع تحول حقيقي</a>
+<a href="courses.html" class="card">🧠 فهم عميق لذاتك</a>
+<a href="courses.html" class="card">🎯 وضوح في حياتك</a>
+<a href="courses.html" class="card">🔥 تغيير فعلي</a>
 </div>
-
-<div class="line"></div>
 
 <!-- قسم الجلسات -->
 <div class="section">
-<img src="sessions.png">
+<img src="body.png.PNG">
 <h3>الجلسات</h3>
-<p>مو كل أحد يفهمك... هنا تبدأ أول خطوة</p>
+<p>ابدأ التغيير الحقيقي الآن وارتقِ بحياتك خطوة بخطوة</p>
 </div>
 
 <!-- قسم الدورات -->
 <div class="section">
-<img src="courses.png">
+<img src="courses.png.jpg">
 <h3>الدورات</h3>
-<p>تعلم أدوات تغير حياتك فعليًا</p>
+<p>دورات عملية تساعدك تفهم نفسك والآخرين بشكل أعمق</p>
 </div>
 
 <script>
 
-function openMenu(){
-document.getElementById("menu").classList.add("active");
+function openMenu() {
+    document.getElementById("sidebar").classList.add("show");
+    document.getElementById("overlay").classList.add("show");
 }
 
-function closeMenu(){
-document.getElementById("menu").classList.remove("active");
+function closeMenu() {
+    document.getElementById("sidebar").classList.remove("show");
+    document.getElementById("overlay").classList.remove("show");
 }
 
 </script>
