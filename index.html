@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXILO</title>
 
-<title>إكسيلو | EXILO</title>
-
+<!-- خط احترافي -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-
 body {
     margin: 0;
     font-family: 'Cairo', sans-serif;
-    background: #0e2a47;
+    background: #0b2341;
     color: white;
-    overflow-x: hidden; /* مهم جدًا */
+    text-align: center;
 }
 
 /* البنر */
@@ -24,154 +23,197 @@ body {
     display: block;
 }
 
-/* العنوان */
-h2 {
-    text-align: center;
-    color: #d4af37;
-    margin: 30px 0;
-    font-size: 28px;
-    font-weight: 900;
-}
-
-/* المربعات */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 20px;
-}
-
-.card {
-    background: linear-gradient(135deg, #d4af37, #f5e6a6);
-    color: #000;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    text-decoration: none;
-}
-
 /* زر القائمة */
 .menu-btn {
     position: fixed;
     top: 20px;
     right: 20px;
     background: rgba(0,0,0,0.6);
-    padding: 10px 14px;
+    padding: 12px;
     border-radius: 10px;
+    z-index: 999;
     cursor: pointer;
-    z-index: 9999;
-}
-
-/* الخلفية */
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-    z-index: 9998;
-}
-
-.overlay.show {
-    opacity: 1;
-    visibility: visible;
 }
 
 /* القائمة */
 .sidebar {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 260px;
+    right: -100%;
+    width: 70%;
+    max-width: 260px;
     height: 100%;
-    background: #081f36;
-    padding: 25px;
-    transform: translateX(100%); /* الحل هنا */
-    transition: transform 0.3s ease;
-    z-index: 9999;
+    background: #0b2341;
+    padding: 30px 20px;
+    transition: 0.3s;
+    z-index: 1000;
 }
 
-.sidebar.show {
-    transform: translateX(0);
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
 }
 
 /* زر الإغلاق */
 .close-btn {
     font-size: 24px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     cursor: pointer;
+    text-align: left;
 }
 
-/* روابط */
-.sidebar a {
-    display: block;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
+/* العنوان */
+h2 {
+    color: gold;
+    margin: 30px 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+/* المربعات */
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg,#b8962e,#e6c76b,#fff3b0);
+    color: #000;
+}
+
+/* خط فاصل */
+.line {
+    height: 1px;
+    background: gold;
+    margin: 30px 40px;
+    opacity: 0.3;
+}
+
+/* الكروت */
+.card {
+    margin: 20px;
+    background: #132c52;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card h3 {
+    color: gold;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.card p {
+    font-size: 17px;
+    color: #ddd;
+}
+
+/* زر */
+.btn {
+    margin-top: 15px;
+    background: gold;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 25px;
+    display: inline-block;
     text-decoration: none;
-    color: white;
+    font-weight: bold;
 }
 
-/* منع تحريك الصفحة عند فتح القائمة */
-body.menu-open {
-    overflow: hidden;
+/* الفوتر */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    color: #aaa;
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- زر القائمة -->
-<div class="menu-btn" onclick="openMenu()">☰</div>
-
-<!-- الخلفية -->
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <!-- القائمة -->
-<div class="sidebar" id="sidebar">
+<div class="sidebar" id="menu">
+    <div class="close-btn" onclick="toggleMenu()">✖</div>
 
-<div class="close-btn" onclick="closeMenu()">✕</div>
-
-<a href="index.html">🏠 الرئيسية</a>
-<a href="courses.html">🎓 الدورات</a>
-<a href="books.html">📚 الكتب</a>
-<a href="terms.html">📄 الشروط</a>
-
+    <a href="index.html">الرئيسية</a>
+    <a href="courses.html">الدورات</a>
+    <a href="sessions.html">الجلسات</a>
+    <a href="books.html">الكتب</a>
+    <a href="terms.html">الشروط والأحكام</a>
 </div>
 
 <!-- البنر -->
 <div class="banner">
-<img src="banner-new.png.PNG">
+    <img src="banner-new.png.PNG">
 </div>
 
+<!-- لماذا اكسيلو -->
 <h2>لماذا إكسيلو؟</h2>
 
-<div class="grid">
-<a href="courses.html" class="card">🚀 نصنع تحول حقيقي</a>
-<a href="courses.html" class="card">🧠 فهم عميق لذاتك</a>
-<a href="courses.html" class="card">🎯 وضوح في حياتك</a>
-<a href="courses.html" class="card">🔥 تغيير فعلي</a>
+<div class="boxes">
+    <div class="box">🚀 نصنع تحول حقيقي في حياتك</div>
+    <div class="box">🧠 نمنحك فهم عميق لنفسك والآخرين</div>
+    <div class="box">🎯 نساعدك على وضوح قراراتك</div>
+    <div class="box">🔥 نوصلك لمرحلة التغيير الحقيقي</div>
+</div>
+
+<div class="line"></div>
+
+<!-- الجلسات -->
+<div class="card">
+    <img src="sessions.png.PNG">
+    <h3>جلسات التوجيه</h3>
+    <p>ابدأ رحلتك نحو فهم نفسك واتخاذ قرارات أوضح بثقة</p>
+    <a href="sessions.html" class="btn">احجز الآن</a>
+</div>
+
+<!-- الدورات -->
+<div class="card">
+    <img src="courses.png.jpg">
+    <h3>الدورات التدريبية</h3>
+    <p>اكتسب مهارات تحليل الشخصيات ولغة الجسد باحتراف</p>
+    <a href="courses.html" class="btn">ابدأ التعلم</a>
+</div>
+
+<!-- الكتب -->
+<div class="card">
+    <img src="books.png.jpg">
+    <h3>الكتب الرقمية</h3>
+    <p>مجموعة كتب تساعدك على تطوير ذاتك وفهم أعمق للحياة</p>
+    <a href="books.html" class="btn">تصفح الكتب</a>
+</div>
+
+<!-- الفوتر -->
+<div class="footer">
+© 2026 EXILO. جميع الحقوق محفوظة.
 </div>
 
 <script>
-
-function openMenu() {
-    document.getElementById("sidebar").classList.add("show");
-    document.getElementById("overlay").classList.add("show");
-    document.body.classList.add("menu-open");
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("open");
 }
-
-function closeMenu() {
-    document.getElementById("sidebar").classList.remove("show");
-    document.getElementById("overlay").classList.remove("show");
-    document.body.classList.remove("menu-open");
-}
-
 </script>
 
 </body>
