@@ -37,8 +37,7 @@ font-size:22px;
 /* البنر */
 .banner{
 position:relative;
-height:300px;
-overflow:hidden;
+height:320px;
 }
 
 .banner img{
@@ -47,14 +46,13 @@ height:100%;
 object-fit:cover;
 }
 
-/* طبقة داكنة */
 .overlay{
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -65,36 +63,53 @@ padding:20px;
 /* النص */
 .logo{
 color:gold;
-font-size:42px;
+font-size:45px;
 font-weight:900;
 }
 
 .hero-title{
-font-size:28px;
+font-size:30px;
 font-weight:900;
 margin-top:10px;
 }
 
 .hero-sub{
-font-size:16px;
+font-size:17px;
 opacity:0.9;
+margin-top:5px;
+}
+
+.cta{
+background:gold;
+color:black;
+padding:12px 25px;
+border-radius:10px;
+margin-top:15px;
+font-weight:bold;
+text-decoration:none;
 }
 
 /* العناوين */
 .title{
 color:gold;
-font-size:30px;
+font-size:32px;
 margin:40px 0 20px;
 font-weight:900;
 }
 
-/* مربعات */
+/* لماذا اكسيلو */
 .box{
 background:rgba(255,255,255,0.05);
 margin:12px;
 padding:18px;
 border-radius:15px;
-font-size:17px;
+font-size:18px;
+transition:0.3s;
+}
+
+.box:hover{
+background:rgba(255,255,255,0.1);
+transform:scale(1.03);
 }
 
 /* الكروت */
@@ -107,13 +122,13 @@ border-radius:20px;
 
 .card img{
 width:100%;
-height:220px;
+height:230px;
 object-fit:cover;
 border-radius:15px;
 }
 
 .card h3{
-font-size:22px;
+font-size:23px;
 margin:15px 0;
 }
 
@@ -128,6 +143,15 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* الفوتر */
+.footer{
+margin-top:50px;
+padding:20px;
+background:#0b172c;
+font-size:14px;
+opacity:0.8;
+}
+
 </style>
 </head>
 
@@ -135,7 +159,7 @@ font-weight:bold;
 
 <div class="menu-btn">☰</div>
 
-<!-- البنر (الجديد فقط) -->
+<!-- البنر -->
 <div class="banner">
 <img src="banner-top.png.PNG">
 
@@ -149,6 +173,8 @@ font-weight:bold;
 <div class="hero-sub">
 رحلة التوازن الحقيقي تبدأ من هنا
 </div>
+
+<a href="course-analysis.html" class="cta">ابدأ الآن</a>
 
 </div>
 </div>
@@ -167,13 +193,13 @@ font-weight:bold;
 <div class="card">
 <img src="analysis.png.PNG">
 <h3>تحليل الشخصيات</h3>
-<a href="course-analysis.html" class="btn">عرض</a>
+<a href="course-analysis.html" class="btn">عرض الدورة</a>
 </div>
 
 <div class="card">
 <img src="body.png.PNG">
 <h3>لغة الجسد</h3>
-<a href="course-body.html" class="btn">عرض</a>
+<a href="course-body.html" class="btn">عرض الدورة</a>
 </div>
 
 <!-- المنتجات -->
@@ -182,13 +208,20 @@ font-weight:bold;
 <div class="card">
 <img src="books.png.jpg">
 <h3>الكتب</h3>
-<a href="books.html" class="btn">عرض</a>
+<a href="books.html" class="btn">عرض الكتب</a>
 </div>
 
 <div class="card">
 <img src="sessions.png.PNG">
 <h3>الجلسات</h3>
-<a href="sessions.html" class="btn">عرض</a>
+<a href="sessions.html" class="btn">احجز الآن</a>
+</div>
+
+<!-- الفوتر -->
+<div class="footer">
+© جميع الحقوق محفوظة - EXILO  
+<br>
+<a href="terms.html" style="color:gold;">الشروط والأحكام</a>
 </div>
 
 </body>
