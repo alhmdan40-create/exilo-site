@@ -38,37 +38,59 @@ body {
 }
 
 /* الكروت */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-/* الكارد */
 .card {
   width: 48%;
-  background: linear-gradient(135deg, #1f3a5f, #2c4b75);
-  padding: 18px;
-  border-radius: 18px;
+  padding: 20px;
+  border-radius: 20px;
   text-align: center;
   box-sizing: border-box;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  border: 1px solid rgba(242, 201, 76, 0.3);
-  transition: 0.3s;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+
+  /* Border ذهبي خفيف */
+  border: 1px solid rgba(242, 201, 76, 0.25);
+
+  /* ظل فاخر */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* تأثير */
+/* توهج ذهبي */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(242,201,76,0.15), transparent 60%);
+  transform: rotate(25deg);
+}
+
+/* حركة عند المرور */
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+/* النص */
+.text {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
 }
 
 /* الأيقونة */
 .icon {
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 34px;
+  margin-bottom: 12px;
 }
-
 /* النص */
 .text {
   color: #ffffff;
