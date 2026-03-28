@@ -5,225 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXILO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(#0f1f3a,#162a4d);
-  color: white;
-  text-align: center;
+body {
+  margin:0;
+  font-family:sans-serif;
+  background:#0f1f3a;
+  color:white;
 }
 
 /* زر القائمة */
 .menu-btn {
   position: fixed;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
   background: gold;
   color: black;
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:1001;
 }
 
-/* القائمة الجانبية */
+/* الخلفية الشفافة */
+.overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:none;
+  z-index:999;
+}
+
+.overlay.active {
+  display:block;
+}
+
+/* القائمة */
 .sidebar {
   position: fixed;
-  top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100%;
-  background: #0f1f3a;
-  padding: 20px;
-  transition: 0.3s;
-  z-index: 999;
+  top:0;
+  right:-260px;
+  width:260px;
+  height:100%;
+  background:#0f1f3a;
+  padding:20px;
+  transition:0.3s;
+  z-index:1000;
 }
 
 .sidebar.active {
-  right: 0;
-}
-
-.sidebar h2 {
-  color: gold;
+  right:0;
 }
 
 .sidebar a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.05);
+  display:block;
+  margin:10px 0;
+  padding:10px;
+  background:rgba(255,255,255,0.05);
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
 }
-
-/* البنر */
-.banner img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
-/* العناوين */
-.section-title {
-  color: gold;
-  font-size: 30px;
-  margin: 40px 0 20px;
-  font-weight: bold;
-}
-
-/* الكروت */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  width: 90%;
-  max-width: 400px;
-  overflow: hidden;
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.card h3 {
-  margin: 15px 0;
-}
-
-.btn {
-  background: gold;
-  color: black;
-  padding: 12px 25px;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-/* واتساب */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-/* الفوتر */
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  color: #aaa;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- زر القائمة -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<!-- زر -->
+<div class="menu-btn" onclick="openMenu()">☰</div>
+
+<!-- الخلفية -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <!-- القائمة -->
 <div class="sidebar" id="sidebar">
 
-<h2>EXILO</h2>
+<h2 style="color:gold;">EXILO</h2>
 
-<a href="course-analysis.html">تحليل الشخصيات</a>
-<a href="course-body.html">لغة الجسد</a>
-<a href="books.html">الكتب</a>
-<a href="sessions.html">الجلسات</a>
-
-<hr>
-
-<a href="terms.html">الشروط والأحكام</a>
+<a href="#">تسجيل الدخول</a>
+<a href="#">تحليل الشخصيات</a>
+<a href="#">لغة الجسد</a>
+<a href="#">الكتب</a>
+<a href="#">الجلسات</a>
 
 </div>
-
-<!-- البنر -->
-<div class="banner">
-<img src="banner-top.png.PNG">
-</div>
-
-<!-- الدورات -->
-<div class="section-title">الدورات</div>
-
-<div class="container">
-
-<div class="card">
-<img src="analysis.png.PNG">
-<h3>تحليل الشخصيات</h3>
-<a href="course-analysis.html" class="btn">عرض</a>
-</div>
-
-<div class="card">
-<img src="body.png.PNG">
-<h3>لغة الجسد</h3>
-<a href="course-body.html" class="btn">عرض</a>
-</div>
-
-</div>
-
-<!-- المنتجات -->
-<div class="section-title">المنتجات</div>
-
-<div class="container">
-
-<div class="card">
-<img src="books.png.jpg">
-<h3>الكتب الرقمية</h3>
-<a href="books.html" class="btn">عرض</a>
-</div>
-
-<div class="card">
-<img src="sessions.png.PNG">
-<h3>جلسات التوجيه</h3>
-<a href="sessions.html" class="btn">عرض</a>
-</div>
-
-</div>
-
-<!-- الفوتر -->
-<footer>
-<p>© 2026 EXILO</p>
-<a href="terms.html" style="color:gold;">الشروط والأحكام</a>
-</footer>
-
-<!-- واتساب -->
-<a class="whatsapp" href="https://wa.me/966530205304">💬</a>
 
 <script>
-function toggleMenu() {
-  document.getElementById("sidebar").classList.toggle("active");
+
+/* فتح */
+function openMenu(){
+  document.getElementById("sidebar").classList.add("active");
+  document.getElementById("overlay").classList.add("active");
 }
+
+/* إغلاق */
+function closeMenu(){
+  document.getElementById("sidebar").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active");
+}
+
 </script>
 
 </body>
