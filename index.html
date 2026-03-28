@@ -1,108 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EXILO</title>
 
-<!-- خط احترافي -->
+<title>إكسيلو | EXILO</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Cairo', sans-serif;
-    background: #0b2341;
-    color: white;
-    text-align: center;
+
+body{
+    margin:0;
+    font-family:'Cairo',sans-serif;
+    background:#0f2747;
+    color:white;
+    overflow-x:hidden;
 }
 
 /* البنر */
-.banner img {
-    width: 100%;
-    display: block;
-}
-
-/* زر القائمة */
-.menu-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.6);
-    padding: 12px;
-    border-radius: 10px;
-    z-index: 999;
-    cursor: pointer;
-}
-
-/* القائمة */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
-    max-width: 260px;
-    height: 100%;
-    background: #0b2341;
-    padding: 30px 20px;
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.sidebar.open {
-    right: 0;
-}
-
-.sidebar a {
-    display: block;
-    margin: 15px 0;
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-}
-
-/* زر الإغلاق */
-.close-btn {
-    font-size: 24px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    text-align: left;
+.banner img{
+    width:100%;
+    display:block;
 }
 
 /* العنوان */
-h2 {
-    color: gold;
-    margin: 30px 0;
-    font-size: 32px;
-    font-weight: 900;
+h1{
+    text-align:center;
+    color:#d4af37;
+    margin:30px 0;
+}
+
+/* الشبكة */
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    padding:15px;
+    width:100%;
+    box-sizing:border-box;
 }
 
 /* المربعات */
-.boxes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 20px;
-}
-
-.box {
-    padding: 30px;
-    border-radius: 15px;
-    font-size: 20px;
-    font-weight: 800;
-    background: linear-gradient(135deg,#b8962e,#e6c76b,#fff3b0);
-    color: #000;
-}
-
-/* خط فاصل */
-.line {
-    height: 1px;
-    background: gold;
-    margin: 30px 40px;
-    opacity: 0.3;
-}
-
-/* الكروت */
 .card{
     background:linear-gradient(135deg,#d4af37,#f5e6a0);
     color:black;
@@ -119,116 +58,136 @@ h2 {
 
     line-height:1.6;
 }
-    margin: 20px;
-    background: #132c52;
-    border-radius: 20px;
-    padding: 20px;
+
+/* القائمة */
+.menu-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:rgba(0,0,0,0.6);
+    padding:12px;
+    border-radius:12px;
+    z-index:1001;
+    cursor:pointer;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 15px;
+/* القائمة الجانبية */
+.sidebar{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:260px;
+    height:100%;
+    background:#0b1f3a;
+    padding:20px;
+    transition:0.3s;
+    z-index:1002;
 }
 
-.card h3 {
-    color: gold;
-    font-size: 24px;
-    font-weight: 900;
+.sidebar.active{
+    right:0;
 }
 
-.card p {
-    font-size: 17px;
-    color: #ddd;
+.close{
+    font-size:25px;
+    cursor:pointer;
+    margin-bottom:20px;
 }
 
-/* زر */
-.btn {
-    margin-top: 15px;
-    background: gold;
-    color: black;
-    padding: 12px 25px;
-    border-radius: 25px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:15px 0;
+}
+
+/* الخلفية */
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:none;
+    z-index:1000;
+}
+
+.overlay.active{
+    display:block;
+}
+
+/* الجلسات */
+.sessions{
+    text-align:center;
+    padding:20px;
+}
+
+.sessions img{
+    width:90%;
+    border-radius:20px;
 }
 
 /* الفوتر */
-.footer {
-    margin-top: 40px;
-    padding: 20px;
-    font-size: 14px;
-    color: #aaa;
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#aaa;
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- زر القائمة -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="menu-btn" onclick="openMenu()">☰</div>
 
 <!-- القائمة -->
 <div class="sidebar" id="menu">
-    <div class="close-btn" onclick="toggleMenu()">✖</div>
-
+    <div class="close" onclick="closeMenu()">✕</div>
     <a href="index.html">الرئيسية</a>
     <a href="courses.html">الدورات</a>
     <a href="sessions.html">الجلسات</a>
-    <a href="books.html">الكتب</a>
-    <a href="terms.html">الشروط والأحكام</a>
 </div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
 <!-- البنر -->
 <div class="banner">
     <img src="banner-new.png.PNG">
 </div>
 
-<!-- لماذا اكسيلو -->
-<h2>لماذا إكسيلو؟</h2>
+<h1>لماذا إكسيلو؟</h1>
 
-<div class="boxes">
-    <div class="box">🚀 نصنع تحول حقيقي في حياتك</div>
-    <div class="box">🧠 نمنحك فهم عميق لنفسك والآخرين</div>
-    <div class="box">🎯 نساعدك على وضوح قراراتك</div>
-    <div class="box">🔥 نوصلك لمرحلة التغيير الحقيقي</div>
+<div class="grid">
+    <div class="card">🚀 نصنع تحول حقيقي في حياتك</div>
+    <div class="card">🧠 نمنحك فهم عميق لنفسك والآخرين</div>
+    <div class="card">🎯 نساعدك توضح مسارك وتحقق أهدافك</div>
+    <div class="card">🔥 نوصلك لمرحلة التغيير الحقيقي</div>
 </div>
-
-<div class="line"></div>
 
 <!-- الجلسات -->
-<div class="card">
-    <img src="sessions.png.PNG">
-    <h3>جلسات التوجيه</h3>
-    <p>ابدأ رحلتك نحو فهم نفسك واتخاذ قرارات أوضح بثقة</p>
-    <a href="sessions.html" class="btn">احجز الآن</a>
+<div class="sessions">
+    <h1>الجلسات</h1>
+    <p>ابدأ رحلتك نحو التوازن النفسي والتطوير الحقيقي</p>
+    <img src="body.png.PNG">
 </div>
 
-<!-- الدورات -->
-<div class="card">
-    <img src="courses.png.jpg">
-    <h3>الدورات التدريبية</h3>
-    <p>اكتسب مهارات تحليل الشخصيات ولغة الجسد باحتراف</p>
-    <a href="courses.html" class="btn">ابدأ التعلم</a>
-</div>
-
-<!-- الكتب -->
-<div class="card">
-    <img src="books.png.jpg">
-    <h3>الكتب الرقمية</h3>
-    <p>مجموعة كتب تساعدك على تطوير ذاتك وفهم أعمق للحياة</p>
-    <a href="books.html" class="btn">تصفح الكتب</a>
-</div>
-
-<!-- الفوتر -->
 <div class="footer">
-© 2026 EXILO. جميع الحقوق محفوظة.
+© جميع الحقوق محفوظة - إكسيلو
 </div>
 
 <script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("open");
+
+function openMenu(){
+    document.getElementById("menu").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
 }
+
+function closeMenu(){
+    document.getElementById("menu").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+}
+
 </script>
 
 </body>
