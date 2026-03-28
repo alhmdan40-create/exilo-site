@@ -15,7 +15,7 @@ body {
     font-family: 'Cairo', sans-serif;
     background: #0e2a47;
     color: white;
-    overflow-x: hidden;
+    overflow-x: hidden; /* مهم جدًا */
 }
 
 /* البنر */
@@ -61,45 +61,41 @@ h2 {
     padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 5000;
-    font-size: 18px;
+    z-index: 9999;
 }
 
 /* الخلفية */
 .overlay {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    top: 0;
-    left: 0;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
     transition: 0.3s;
-    z-index: 4000;
+    z-index: 9998;
 }
 
 .overlay.show {
     opacity: 1;
-    pointer-events: auto;
+    visibility: visible;
 }
 
 /* القائمة */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -270px;
+    right: 0;
     width: 260px;
     height: 100%;
     background: #081f36;
-    padding: 25px 20px;
-    transition: 0.3s ease;
-    z-index: 5001;
-    box-shadow: -5px 0 20px rgba(0,0,0,0.4);
+    padding: 25px;
+    transform: translateX(100%); /* الحل هنا */
+    transition: transform 0.3s ease;
+    z-index: 9999;
 }
 
 .sidebar.show {
-    right: 0;
+    transform: translateX(0);
 }
 
 /* زر الإغلاق */
@@ -109,7 +105,7 @@ h2 {
     cursor: pointer;
 }
 
-/* روابط القائمة */
+/* روابط */
 .sidebar a {
     display: block;
     padding: 12px;
@@ -118,12 +114,11 @@ h2 {
     background: rgba(255,255,255,0.05);
     text-decoration: none;
     color: white;
-    transition: 0.3s;
 }
 
-.sidebar a:hover {
-    background: rgba(212,175,55,0.2);
-    color: #d4af37;
+/* منع تحريك الصفحة عند فتح القائمة */
+body.menu-open {
+    overflow: hidden;
 }
 
 </style>
@@ -145,7 +140,7 @@ h2 {
 <a href="index.html">🏠 الرئيسية</a>
 <a href="courses.html">🎓 الدورات</a>
 <a href="books.html">📚 الكتب</a>
-<a href="terms.html">📄 الشروط والأحكام</a>
+<a href="terms.html">📄 الشروط</a>
 
 </div>
 
@@ -168,11 +163,13 @@ h2 {
 function openMenu() {
     document.getElementById("sidebar").classList.add("show");
     document.getElementById("overlay").classList.add("show");
+    document.body.classList.add("menu-open");
 }
 
 function closeMenu() {
     document.getElementById("sidebar").classList.remove("show");
     document.getElementById("overlay").classList.remove("show");
+    document.body.classList.remove("menu-open");
 }
 
 </script>
