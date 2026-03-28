@@ -8,9 +8,11 @@
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Cairo', sans-serif;
   background: #0b1d3a;
 }
 
@@ -23,61 +25,56 @@ body {
 
 /* القسم */
 .section {
-  padding: 40px 20px;
+  padding: 40px 15px;
 }
 
 /* العنوان */
 .title {
   text-align: center;
   color: #f2c94c;
-  font-size: 26px;
+  font-size: 28px;
   margin-bottom: 30px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /* الكروت */
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 /* الكارد */
 .card {
-  width: 45%;
-  background: linear-gradient(145deg, #1e2a44, #24365a);
-  padding: 20px;
-  border-radius: 15px;
+  width: 48%;
+  background: linear-gradient(135deg, #1f3a5f, #2c4b75);
+  padding: 18px;
+  border-radius: 18px;
   text-align: center;
   box-sizing: border-box;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  border: 1px solid rgba(242, 201, 76, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(242, 201, 76, 0.3);
   transition: 0.3s;
 }
 
-/* حركة */
+/* تأثير */
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.02);
 }
 
 /* الأيقونة */
 .icon {
-  font-size: 30px;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
 /* النص */
 .text {
-  color: white;
+  color: #ffffff;
   font-size: 15px;
-}
-
-/* الجوال */
-@media (max-width: 600px) {
-  .card {
-    width: 90%;
-  }
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 </style>
@@ -86,10 +83,12 @@ body {
 
 <body>
 
+<!-- البنر -->
 <div class="banner">
-  <img src="banner-top.png.PNG?v=20">
+  <img src="banner-top.png.PNG?v=30">
 </div>
 
+<!-- لماذا إكسيلو -->
 <div class="section">
 
   <div class="title">لماذا إكسيلو؟</div>
