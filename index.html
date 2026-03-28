@@ -6,7 +6,6 @@
 
 <title>EXILO | إكسيلو</title>
 
-<!-- خط احترافي -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -23,13 +22,53 @@ body {
   display: block;
 }
 
-/* العناوين */
+/* زر القائمة */
+.menu-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* القائمة الجانبية */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #0b1d3a;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.close-btn {
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* العنوان */
 .title {
   text-align: center;
   color: #d4af37;
   font-size: 30px;
   margin: 40px 0 20px;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 /* لماذا اكسيلو */
@@ -54,13 +93,12 @@ body {
 .box3 { background: linear-gradient(135deg, #ff512f, #dd2476); }
 .box4 { background: linear-gradient(135deg, #11998e, #38ef7d); }
 
-/* الخط الفاصل */
+/* الفاصل */
 .divider {
   width: 60%;
   height: 1px;
   margin: 40px auto;
   background: linear-gradient(to right, transparent, #d4af37, transparent);
-  opacity: 0.6;
 }
 
 /* الأقسام */
@@ -97,7 +135,6 @@ body {
   margin: 10px 0;
 }
 
-/* زر */
 .btn {
   display: inline-block;
   background: linear-gradient(135deg, #d4af37, #f1d77a);
@@ -111,8 +148,21 @@ body {
 /* الفوتر */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.2);
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.copyright {
+  margin-top: 10px;
   color: #aaa;
+  font-size: 14px;
 }
 </style>
 
@@ -120,12 +170,25 @@ body {
 
 <body>
 
+<!-- زر القائمة -->
+<div class="menu-btn" onclick="openMenu()">☰</div>
+
+<!-- القائمة -->
+<div id="sideMenu" class="side-menu">
+  <div class="close-btn" onclick="closeMenu()">✖</div>
+  <a href="index.html">الرئيسية</a>
+  <a href="courses.html">الدورات</a>
+  <a href="sessions.html">الجلسات</a>
+  <a href="books.html">الكتب</a>
+  <a href="#">تسجيل الدخول</a>
+</div>
+
 <!-- البنر -->
 <div class="banner">
   <img src="banner-new.png.PNG">
 </div>
 
-<!-- لماذا اكسيلو -->
+<!-- لماذا -->
 <div class="title">لماذا إكسيلو؟</div>
 
 <div class="features">
@@ -135,39 +198,29 @@ body {
   <div class="box box4">🎯 وضوح في حياتك</div>
 </div>
 
-<!-- خط فاصل -->
 <div class="divider"></div>
 
 <!-- الأقسام -->
 <div class="services">
 
-  <!-- الجلسات -->
   <div class="service-card">
     <img src="sessions.png.PNG">
     <div class="service-title">الجلسات</div>
-    <div class="service-text">
-      مو كل أحد يفهمك… هنا تبدأ أول خطوة تغير حياتك
-    </div>
+    <div class="service-text">مو كل أحد يفهمك… هنا تبدأ أول خطوة تغير حياتك</div>
     <a href="sessions.html" class="btn">ابدأ الآن</a>
   </div>
 
-  <!-- الدورات -->
   <div class="service-card">
     <img src="courses.png.jpg">
     <div class="service-title">الدورات</div>
-    <div class="service-text">
-      لو استمريت بنفس التفكير… بتوصل لنفس النتائج
-    </div>
+    <div class="service-text">لو استمريت بنفس التفكير… بتوصل لنفس النتائج</div>
     <a href="courses.html" class="btn">استكشف الآن</a>
   </div>
 
-  <!-- الكتب -->
   <div class="service-card">
     <img src="books.png.jpg">
     <div class="service-title">الكتب</div>
-    <div class="service-text">
-      مو كل كتاب يستاهل وقتك… لكن هذا يغير طريقة تفكيرك
-    </div>
+    <div class="service-text">مو كل كتاب يستاهل وقتك… لكن هذا يغير طريقة تفكيرك</div>
     <a href="books.html" class="btn">تصفح الآن</a>
   </div>
 
@@ -175,8 +228,21 @@ body {
 
 <!-- الفوتر -->
 <div class="footer">
-  © 2026 جميع الحقوق محفوظة - EXILO
+  <a href="terms.html">الشروط والأحكام</a>
+  <div class="copyright">
+    © 2026 جميع الحقوق محفوظة - EXILO
+  </div>
 </div>
+
+<script>
+function openMenu() {
+  document.getElementById("sideMenu").style.right = "0";
+}
+
+function closeMenu() {
+  document.getElementById("sideMenu").style.right = "-260px";
+}
+</script>
 
 </body>
 </html>
