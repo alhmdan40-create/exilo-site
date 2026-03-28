@@ -49,9 +49,14 @@ h2 {
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-/* القائمة */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* زر القائمة */
 .menu-btn {
     position: fixed;
     top: 20px;
@@ -60,9 +65,22 @@ h2 {
     padding: 10px 15px;
     border-radius: 10px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 3000;
 }
 
+/* الخلفية السوداء */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    z-index: 2000;
+}
+
+/* القائمة */
 .sidebar {
     position: fixed;
     top: 0;
@@ -72,39 +90,27 @@ h2 {
     background: #0e2a47;
     padding: 20px;
     transition: 0.3s;
-    z-index: 2000;
+    z-index: 3001;
 }
 
 .sidebar.active {
     right: 0;
 }
 
+/* زر الإغلاق */
 .close-btn {
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
-    display: block;
     margin-bottom: 20px;
 }
 
+/* روابط */
 .sidebar a {
     display: block;
     color: white;
     text-decoration: none;
     margin: 15px 0;
-}
-
-/* زر واتساب */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background: #d4af37;
-    color: #000;
-    padding: 15px 22px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    z-index: 3000;
+    font-size: 16px;
 }
 
 </style>
@@ -115,9 +121,13 @@ h2 {
 <!-- زر القائمة -->
 <div class="menu-btn" onclick="openMenu()">☰</div>
 
+<!-- الخلفية -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
 <!-- القائمة -->
 <div class="sidebar" id="menu">
-<span class="close-btn" onclick="closeMenu()">✕</span>
+
+<div class="close-btn" onclick="closeMenu()">✕</div>
 
 <a href="index.html">الرئيسية</a>
 <a href="courses.html">الدورات</a>
@@ -135,27 +145,23 @@ h2 {
 
 <div class="grid">
 
-<a href="courses.html" class="card">🚀 تحول حقيقي</a>
-<a href="courses.html" class="card">🧠 فهم عميق</a>
-<a href="courses.html" class="card">🎯 وضوح كامل</a>
-<a href="courses.html" class="card">🔥 تغيير جذري</a>
+<a href="courses.html" class="card">🚀 نصنع تحول حقيقي</a>
+<a href="courses.html" class="card">🧠 فهم عميق لذاتك</a>
+<a href="courses.html" class="card">🎯 وضوح في حياتك</a>
+<a href="courses.html" class="card">🔥 تغيير فعلي</a>
 
 </div>
-
-<!-- زر شراء -->
-<a href="https://wa.me/966538205304?text=السلام عليكم،%20أبغى%20شراء%20دورات%20إكسيلو"
-class="whatsapp">
-🛒 اشتري الآن
-</a>
 
 <script>
 
 function openMenu() {
-document.getElementById("menu").classList.add("active");
+    document.getElementById("menu").classList.add("active");
+    document.getElementById("overlay").style.display = "block";
 }
 
 function closeMenu() {
-document.getElementById("menu").classList.remove("active");
+    document.getElementById("menu").classList.remove("active");
+    document.getElementById("overlay").style.display = "none";
 }
 
 </script>
