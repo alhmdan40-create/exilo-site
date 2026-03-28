@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,16 +8,65 @@
 
 <style>
 
+/* عام */
 body {
   margin: 0;
+  font-family: sans-serif;
   background: #0b1d3a;
 }
 
-/* البنر فقط */
+/* البنر */
 .banner img {
   width: 100%;
   height: 320px;
   object-fit: cover;
+}
+
+/* قسم لماذا */
+.section {
+  padding: 40px 20px;
+  background: #0b1d3a;
+}
+
+/* العنوان */
+.title {
+  text-align: center;
+  color: #f2c94c;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* الكروت */
+.cards {
+  display: grid;
+  gap: 20px;
+}
+
+/* الكرت */
+.card {
+  background: #1e2a44;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* حركة */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* الأيقونة */
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* النص */
+.text {
+  color: white;
+  font-size: 16px;
 }
 
 </style>
@@ -29,7 +77,7 @@ body {
 
 <!-- البنر -->
 <div class="banner">
-  <img src="banner-top.png.PNG?v=10">
+  <img src="banner-top.png.PNG?v=99">
 </div>
 
 <!-- لماذا إكسيلو -->
