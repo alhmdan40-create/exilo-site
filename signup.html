@@ -1,75 +1,131 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنشاء حساب جديد - إكسيلو</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .signup-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
-        h2 { color: #1a73e8; margin-bottom: 25px; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 12px; background-color: #1a73e8; color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; transition: 0.3s; }
-        button:hover { background-color: #1557b0; }
-        #message { margin-top: 15px; font-size: 14px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول | EXILO</title>
+
+  <!-- خط احترافي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #fbbf24;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #f59e0b;
+    }
+
+    .login {
+      background: #0ea5e9;
+      color: white;
+    }
+
+    .login:hover {
+      background: #0284c7;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="signup-card">
-    <h2>انضم إلى إكسيلو</h2>
-    <p>قم بإنشاء حسابك للوصول إلى الدورات</p>
-    <input type="email" id="email" placeholder="البريد الإلكتروني" required>
-    <input type="password" id="password" placeholder="كلمة المرور (6 أحرف على الأقل)" required>
-    <button id="signupBtn">إنشاء الحساب</button>
-    <div id="message"></div>
-</div>
+  <div class="box">
+    <h2>مرحبًا بك في EXILO</h2>
 
-<script type="module">
-  // استدعاء مكتبات Firebase
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    <input type="email" id="email" placeholder="البريد الإلكتروني">
+    <input type="password" id="password" placeholder="كلمة المرور">
 
-  // إعدادات مشروعك EXILO المستخرجة من Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAmsD5f05l_T78",
-    authDomain: "exilo-376f1.firebaseapp.com",
-    projectId: "exilo-376f1",
-    storageBucket: "exilo-376f1.appspot.com",
-    messagingSenderId: "736619072060",
-    appId: "1:736619072060:web:286dc36624f3be2d2a9139",
-    measurementId: "G-TT3SM78XNS"
-  };
+    <button onclick="registerUser()">إنشاء حساب</button>
+    <button class="login" onclick="loginUser()">تسجيل الدخول</button>
 
-  // تفعيل Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+    <div class="note">ابدأ رحلتك نحو التوازن الآن</div>
+  </div>
 
-  // منطق الضغط على الزر
-  document.getElementById('signupBtn').onclick = async () => {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const messageDiv = document.getElementById('message');
+  <!-- 🔥 Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    try {
-      // محاولة إنشاء الحساب في قاعدة بيانات Firebase
-      await createUserWithEmailAndPassword(auth, email, password);
-      messageDiv.style.color = "green";
-      messageDiv.innerText = "تم إنشاء الحساب بنجاح! سيتم توجيهك قريباً.";
-      // يمكنك هنا إضافة توجيه لصفحة تسجيل الدخول أو الدورات
-    } catch (error) {
-      messageDiv.style.color = "red";
-      // ترجمة الأخطاء الشائعة للعربية
-      if (error.code === 'auth/email-already-in-use') {
-          messageDiv.innerText = "هذا البريد الإلكتروني مسجل مسبقاً.";
-      } else if (error.code === 'auth/weak-password') {
-          messageDiv.innerText = "كلمة المرور ضعيفة جداً.";
-      } else {
-          messageDiv.innerText = "حدث خطأ: " + error.message;
-      }
-    }
-  };
-</script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnlu9c0Dzo",
+      authDomain: "exilo-376f1.firebaseapp.com",
+      projectId: "exilo-376f1",
+      storageBucket: "exilo-376f1.appspot.com",
+      messagingSenderId: "736619072060",
+      appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // إنشاء حساب
+    window.registerUser = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => alert("تم إنشاء الحساب بنجاح 🎉"))
+        .catch((error) => alert(error.message));
+    };
+
+    // تسجيل دخول
+    window.loginUser = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => alert("تم تسجيل الدخول بنجاح ✅"))
+        .catch((error) => alert(error.message));
+    };
+  </script>
 
 </body>
 </html>
