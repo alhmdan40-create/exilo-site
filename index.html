@@ -67,7 +67,7 @@
         .overlay.active { display: block; }
         .close-sidebar { color: var(--gold); font-size: 1.8rem; cursor: pointer; margin-bottom: 30px; }
 
-        /* البنر - تأكد من وجود الملف banner.png 2.PNG */
+        /* البنر */
         .hero { 
             width: 100%; 
             height: 350px; 
@@ -87,16 +87,22 @@
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         .btn { display: inline-block; width: 100%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; }
 
-        /* الفوتر المحسن */
+        /* الفوتر المحسن مع الروابط القانونية */
         footer { 
             background: var(--dark-grey); 
-            padding: 30px 20px; 
+            padding: 40px 20px; 
             border-top: 2px solid var(--gold); 
             text-align: center; 
             width: 100%;
         }
-        .footer-socials { margin-bottom: 15px; }
+        .footer-socials { margin-bottom: 20px; }
         .footer-socials a { color: var(--gold); font-size: 1.5rem; margin: 0 15px; text-decoration: none; }
+        
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #8fa7c7; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--gold); }
+        
+        .copyright { font-size: 0.85rem; color: #5a718a; }
     </style>
 </head>
 <body>
@@ -115,8 +121,8 @@
             <li style="margin-bottom: 20px;"><a href="index.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-home" style="margin-left: 10px; color: var(--gold);"></i> الرئيسية</a></li>
             <li style="margin-bottom: 20px;"><a href="courses-details.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-graduation-cap" style="margin-left: 10px; color: var(--gold);"></i> الدورات الرقمية</a></li>
             <li style="margin-bottom: 20px;"><a href="https://wa.me/966538205304" style="color: var(--text); text-decoration: none;"><i class="fas fa-comments" style="margin-left: 10px; color: var(--gold);"></i> الاستشارات</a></li>
-            <li style="margin-bottom: 20px;"><a href="terms.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-file-contract" style="margin-left: 10px; color: var(--gold);"></i> الشروط</a></li>
-            <li style="margin-bottom: 20px;"><a href="privacy.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-shield-alt" style="margin-left: 10px; color: var(--gold);"></i> الخصوصية</a></li>
+            <li style="margin-bottom: 20px;"><a href="terms.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-file-contract" style="margin-left: 10px; color: var(--gold);"></i> الشروط والأحكام</a></li>
+            <li style="margin-bottom: 20px;"><a href="privacy.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-shield-alt" style="margin-left: 10px; color: var(--gold);"></i> سياسة الخصوصية</a></li>
         </ul>
     </div>
 
@@ -151,11 +157,17 @@
 
     <footer>
         <div class="footer-socials">
-            <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
-            <a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@hanialhmdan" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank"><i class="fab fa-snapchat"></i></a>
+            <a href="https://wa.me/966538205304" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="font-size: 0.9rem; color: #8fa7c7;">&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
+        
+        <div class="footer-links">
+            <a href="terms.html">الشروط والأحكام</a> | 
+            <a href="privacy.html">سياسة الخصوصية</a>
+        </div>
+        
+        <p class="copyright">&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
     </footer>
 
     <script>
