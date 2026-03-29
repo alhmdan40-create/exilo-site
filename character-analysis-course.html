@@ -5,13 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تحليل الشخصيات (الجرافولوجي) | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
         body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; direction: rtl; line-height: 1.8; }
-        .hero { padding: 80px 20px; text-align: center; background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, var(--navy) 100%); }
-        .hero img { max-width: 450px; width: 100%; border-radius: 25px; border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .content { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
-        h1 { color: var(--gold); font-size: 2.5rem; margin-top: 30px; }
+        
+        /* قسم البنر العلوي */
+        .top-banner { 
+            width: 100%; 
+            height: 250px; 
+            background: url('banner.png 2.PNG') no-repeat center center; 
+            background-size: cover; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+            position: relative;
+            border-bottom: 3px solid var(--gold);
+        }
+        .top-banner::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 10, 20, 0.6); }
+        .banner-content { position: relative; z-index: 10; text-align: center; }
+        .banner-logo { font-size: 2.5rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; margin: 0; }
+        .back-link { position: absolute; top: 20px; right: 20px; z-index: 100; color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+
+        .hero { padding: 60px 20px; text-align: center; }
+        .hero img { max-width: 400px; width: 100%; border-radius: 25px; border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .content { max-width: 850px; margin: 0 auto; padding: 20px; }
+        h1 { color: var(--gold); font-size: 2.3rem; margin-top: 20px; }
         h2 { color: var(--gold); border-right: 4px solid var(--gold); padding-right: 15px; margin-top: 40px; }
         .benefit-box { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; margin: 25px 0; border: 1px solid rgba(197,160,89,0.1); }
         .cta-card { text-align: center; padding: 50px; background: linear-gradient(135deg, var(--gold) 0%, #e0b86a 100%); color: var(--navy); border-radius: 30px; margin-top: 60px; }
@@ -19,34 +40,37 @@
     </style>
 </head>
 <body>
+
+    <div class="top-banner">
+        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة للدورات</a>
+        <div class="banner-content">
+            <p class="banner-logo">EXILO</p>
+            <p style="color: white; margin-top: 5px;">إكسيلو | وعي، مهارة، تمكين</p>
+        </div>
+    </div>
+
     <div class="hero">
         <img src="analysis.png.PNG">
         <h1>الجرافولوجي: علم كشف المستور خلف القلم</h1>
-        <p style="font-size: 1.2rem; color: #8fa7c7;">اكتشف أسرار العقل الباطن من خلال الخط والتوقيع</p>
     </div>
 
     <div class="content">
-        <h2>هل تعلم أن خطك هو "رسم بياني" لشخصيتك؟</h2>
-        <p>كل حرف تكتبه، وكل ميلان في قلمك، وكل ضغطة على الورق هي انعكاس مباشر للجهاز العصبي. علم الجرافولوجي ليس مجرد تحليل للخط، بل هو أداة عميقة لفهم الذات والآخرين، واكتشاف المواهب والمخاوف الكامنة.</p>
+        <h2>هل تعلم أن خطك هو "بصمة دماغك"؟</h2>
+        <p>كل حرف تكتبه هو انعكاس مباشر للجهاز العصبي. علم الجرافولوجي هو أداة عميقة لفهم الذات والآخرين واكتشاف المواهب والمخاوف الكامنة.</p>
 
         <div class="benefit-box">
-            <h3>ماذا ستتعلم في هذه الحقيبة الشاملة؟</h3>
+            <h3>ماذا ستتعلم في هذه الحقيبة؟</h3>
             <ul>
-                <li><strong>تحليل الهوامش والمسافات:</strong> كيف تعرف مدى انفتاح الشخص أو انطوائيته من خلال استغلاله لمساحة الورقة.</li>
-                <li><strong>شفرة التوقيع:</strong> التوقيع هو "الواجهة" التي نصدرها للعالم. تعلم كيف تكتشف الطموح، الرغبة في الظهور، أو الميل للعزلة.</li>
-                <li><strong>الحالة المزاجية والطاقة:</strong> اكتشف مستويات الضغط النفسي والقدرة الجسدية من خلال حجم الحروف وشكل الزوايا.</li>
-                <li><strong>علاج السلوك بالخط:</strong> نبذة عن "الجرافوثيرابي" وكيف يمكن لتحسين الخط أن يؤثر إيجاباً على الحالة النفسية.</li>
+                <li><strong>شفرة التوقيع:</strong> اكتشف الطموح، الرغبة في الظهور، أو الميل للعزلة.</li>
+                <li><strong>سيكولوجية الخط:</strong> تحليل المسافات وضغط القلم لفهم التوازن النفسي.</li>
+                <li><strong>لغة الرسومات العفوية:</strong> فك رموز "الشخبطة" وما تعكسه من مشاعر.</li>
             </ul>
         </div>
 
-        <h2>لمن هذه الحقيبة؟</h2>
-        <p>للمديرين الراغبين في فهم موظفيهم، للمعلمين الساعين لفهم طلابهم، للآباء الراغبين في اكتشاف مهارات أبنائهم، ولكل شخص يريد امتلاك مهارة نادرة تميزه في مجتمعه.</p>
-
         <div class="cta-card">
-            <h2 style="color: var(--navy); border: none;">امتلك "النظرة الثاقبة" اليوم</h2>
-            <p style="font-size: 1.2rem; font-weight: bold;">عرض PowerPoint احترافي يضع بين يديك أسرار هذا العلم</p>
+            <h2 style="color: var(--navy); border: none;">امتلك النظرة الثاقبة اليوم</h2>
             <div style="font-size: 3rem; font-weight: bold; margin: 20px 0;">300 ريال</div>
-            <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+الجرافولوجي+المطورة" class="cta-btn">احصل عليها الآن</a>
+            <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+الجرافولوجي" class="cta-btn">احصل عليها الآن</a>
         </div>
     </div>
 </body>
