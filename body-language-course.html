@@ -80,7 +80,109 @@
         <div class="logo-box">
             <h1>EXILO</h1>
             <p>وعي، مهارة، تمكين</p>
+        </div><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لغة الجسد | EXILO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; }
+
+        /* ✅ البنر العلوي: منع التداخل نهائياً ✅ */
+        .header-fixed {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.7)), url('banner.png 2.PNG');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 3px solid var(--gold);
+            z-index: 100; /* لضمان بقائه في الخلف */
+        }
+
+        .back-btn { position: absolute; top: 20px; right: 20px; z-index: 200; }
+        .back-btn a { background: rgba(197, 160, 89, 0.2); color: var(--gold); padding: 8px 15px; border-radius: 8px; text-decoration: none; border: 1px solid var(--gold); }
+
+        .logo-box h1 { color: var(--gold); font-size: 3.5rem; margin: 0; font-weight: bold; }
+        .logo-box p { color: white; margin: 5px 0 0; font-size: 1.2rem; }
+
+        /* ✅ منطقة المحتوى: دفعها للأسفل لمنع تداخل صورة اليد ✅ */
+        .main-content { 
+            max-width: 600px; 
+            margin: 40px auto; /* مسافة أمان كافية أسفل البنر */
+            padding: 0 20px; 
+        }
+
+        .card {
+            background: #0a111f;
+            border-radius: 25px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        /* تنسيق صورة اليد لتكون داخل الكرت فقط */
+        .card-img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--gold); }
+
+        .card-body { padding: 30px; }
+        .card-body h2 { color: var(--gold); margin: 0 0 15px; }
+        .card-body p { color: #b0c4de; line-height: 1.8; font-size: 1.1rem; }
+
+        /* ✅ زر الاشتراك الموحد ✅ */
+        .price-box {
+            background: rgba(197, 160, 89, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price-val { font-size: 2rem; font-weight: bold; color: var(--gold); }
+        .order-btn { 
+            background: var(--gold); color: var(--navy); 
+            padding: 12px 25px; border-radius: 12px; 
+            text-decoration: none; font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-fixed">
+        <div class="back-btn"><a href="courses-details.html">العودة</a></div>
+        <div class="logo-box">
+            
         </div>
+    </header>
+
+    <div class="main-content">
+        <div class="card">
+            <img src="body.png.PNG" class="card-img" alt="دورة لغة الجسد">
+            
+            <div class="card-body">
+                <h2>أسرار لغة الجسد والكاريزما</h2>
+                <p>حقيبة تدريبية متكاملة تمنحك القوة في التواصل غير اللفظي وفهم إيماءات الآخرين بذكاء.</p>
+                
+                <div class="price-box">
+                    <span class="price-val">250 ريال</span>
+                    <a href="https://wa.me/966538205304" class="order-btn">اشترك الآن</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+ض
     </header>
 
     <div class="main-content">
