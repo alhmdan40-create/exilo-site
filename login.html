@@ -3,35 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>تسجيل الدخول</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f5f5f5;
+      padding-top: 80px;
+    }
+
+    input {
+      width: 250px;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #c9a54c;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #b8933f;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <h2>تسجيل الدخول</h2>
+  <h2>تسجيل الدخول / إنشاء حساب</h2>
 
-  <input id="email" type="email" placeholder="البريد الإلكتروني"><br><br>
-  <input id="password" type="password" placeholder="كلمة المرور"><br><br>
+  <input id="email" type="email" placeholder="البريد الإلكتروني"><br>
+  <input id="password" type="password" placeholder="كلمة المرور"><br>
 
   <button onclick="registerUser()">إنشاء حساب</button>
   <button onclick="loginUser()">تسجيل الدخول</button>
 
   <script type="module">
 
-    // استيراد Firebase
+    // Firebase
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    // إعدادات Firebase (انتبه للفواصل)
     const firebaseConfig = {
-      apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnlu9c0Dzo",
+      apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
       authDomain: "exilo-376f1.firebaseapp.com",
       projectId: "exilo-376f1",
-      storageBucket: "exilo-376f1.appspot.com",
+      storageBucket: "exilo-376f1.firebasestorage.app",
       messagingSenderId: "736619072060",
-      appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+      appId: "1:736619072060:web:286dc36624f3be2d2a9139",
+      measurementId: "G-TT3SM787PX"
     };
 
-    // تشغيل Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
@@ -57,6 +90,7 @@
       signInWithEmailAndPassword(auth, email, password)
         .then(() => {
           alert("تم تسجيل الدخول بنجاح ✅");
+          window.location.href = "index.html"; // يرجع للصفحة الرئيسية
         })
         .catch((error) => {
           alert(error.message);
