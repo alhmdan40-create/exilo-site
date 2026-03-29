@@ -2,17 +2,17 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>دورة لغة الجسد</title>
+<title>إكسيلو</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
   direction: rtl;
-  background: #f3f3f3;
+  background: #f5f5f5;
 }
 
-/* شريط علوي */
+/* الناف */
 nav {
   background: black;
   padding: 15px;
@@ -21,28 +21,48 @@ nav {
 
 nav a {
   color: white;
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
 }
 
-/* القسم الأول */
+/* البنر */
 .hero {
+  background: linear-gradient(135deg, #000, #444);
+  color: white;
   text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 35px;
+}
+
+/* لماذا إكسيلو */
+.features {
   padding: 50px;
+  text-align: center;
 }
 
-.hero img {
-  width: 250px;
+.features .box {
+  background: white;
+  margin: 10px;
+  padding: 20px;
   border-radius: 10px;
+  display: inline-block;
+  width: 250px;
 }
 
-/* الكروت */
+/* الأقسام */
+.section {
+  padding: 50px;
+  text-align: center;
+}
+
 .cards {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
-  padding: 30px;
 }
 
 .card {
@@ -53,24 +73,12 @@ nav a {
   box-shadow: 0 0 10px #ccc;
 }
 
-/* تسجيل الدخول */
-.login {
-  text-align: center;
-  padding: 40px;
-}
-
-input {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 200px;
-}
-
-button {
-  padding: 10px 20px;
+/* الفوتر */
+footer {
   background: black;
   color: white;
-  border: none;
+  text-align: center;
+  padding: 30px;
 }
 </style>
 
@@ -80,39 +88,62 @@ button {
 
 <nav>
   <a href="#">الرئيسية</a>
-  <a href="#">الدورة</a>
-  <a href="#">تسجيل الدخول</a>
+  <a href="#">الدورات</a>
+  <a href="#">الجلسات</a>
+  <a href="#">الكتب</a>
 </nav>
 
+<!-- البنر -->
 <section class="hero">
-  <h1>دورة لغة الجسد</h1>
-  <p>تعلم قراءة الناس وفهم الإشارات غير اللفظية</p>
-  <img src="https://i.imgur.com/8Km9tLL.jpg">
+  <h1>إكسيلو</h1>
+  <p>منصة متكاملة لتطوير الذات والمعرفة</p>
 </section>
 
-<section class="cards">
-  <div class="card">
-    <h3>الإشارات الأساسية</h3>
-    <p>تعرف على الحركات</p>
-  </div>
+<!-- لماذا إكسيلو -->
+<section class="features">
+  <h2>لماذا إكسيلو؟</h2>
 
-  <div class="card">
-    <h3>تحليل الشخصية</h3>
-    <p>افهم الآخرين</p>
-  </div>
+  <div class="box">محتوى احترافي عالي الجودة</div>
+  <div class="box">خبراء متخصصين</div>
+  <div class="box">تجربة سهلة وسريعة</div>
+</section>
 
-  <div class="card">
-    <h3>لغة الجسد</h3>
-    <p>طبقها في حياتك</p>
+<!-- الدورات -->
+<section class="section">
+  <h2>الدورات</h2>
+
+  <div class="cards">
+    <div class="card">دورات تطوير الذات</div>
+    <div class="card">دورات المهارات</div>
+    <div class="card">دورات الأعمال</div>
   </div>
 </section>
 
-<section class="login">
-  <h2>تسجيل الدخول</h2>
-  <input type="text" placeholder="اسم المستخدم">
-  <input type="password" placeholder="كلمة المرور">
-  <button>دخول</button>
+<!-- الجلسات -->
+<section class="section">
+  <h2>الجلسات</h2>
+
+  <div class="cards">
+    <div class="card">جلسات استشارية</div>
+    <div class="card">جلسات تدريبية</div>
+  </div>
 </section>
+
+<!-- الكتب -->
+<section class="section">
+  <h2>الكتب</h2>
+
+  <div class="cards">
+    <div class="card">كتب تطوير الذات</div>
+    <div class="card">كتب الأعمال</div>
+  </div>
+</section>
+
+<!-- الفوتر -->
+<footer>
+  <p>© جميع الحقوق محفوظة - إكسيلو</p>
+  <p>الشروط والأحكام | سياسة الخصوصية</p>
+</footer>
 
 </body>
 </html>
