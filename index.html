@@ -16,46 +16,57 @@
             border-bottom: 4px solid var(--gold);
         }
 
-        .main-container { max-width: 1100px; margin: 0 auto 60px; padding: 0 20px; }
-        .welcome-card { background: var(--navy); padding: 40px 20px; text-align: center; }
-        .logo-box { width: 90px; height: 90px; margin: 0 auto 20px; display: block; }
-        .title { color: var(--gold); font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
+        .main-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        
+        /* تنسيق القسم التسويقي الجديد */
+        .marketing-header { text-align: center; margin-bottom: 50px; }
+        .marketing-header h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
+        .marketing-header p { 
+            color: #b0c4de; 
+            font-size: 1.2rem; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            line-height: 1.8; 
+        }
         
         .sections-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
             gap: 30px; 
-            margin-top: 50px; 
         }
 
         .section-item { 
             background: rgba(255,255,255,0.03); 
+            width: 320px; 
             padding: 25px; 
             border-radius: 20px; 
             border: 1px solid rgba(197, 160, 89, 0.15); 
-            transition: 0.4s ease;
             text-align: center;
+            transition: 0.4s ease;
         }
+        .section-item:hover { transform: translateY(-10px); border-color: var(--gold); }
 
-        /* 🟢 الفرض الإجباري لتوحيد المقاسات */
         .img-wrapper {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* يجعل الحاوية مربعة تماماً مهما كان المحتوى */
+            width: 250px; 
+            height: 250px; 
+            margin: 0 auto 20px;
             overflow: hidden;
-            margin-bottom: 20px;
             border-radius: 15px;
-            background: #000; /* خلفية سوداء لسد الفراغات إن وجدت */
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .section-img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* يملأ المربع بالكامل ويقص الزوائد لضمان التناسق */
-            display: block;
+            width: 100% !important; 
+            height: 100% !important; 
+            object-fit: cover !important; 
         }
         
-        .section-item h3 { color: var(--gold); font-size: 1.6rem; margin: 15px 0; }
-        .section-tagline { font-size: 1rem; color: #8fa7c7; margin-bottom: 25px; line-height: 1.6; min-height: 50px; }
+        .section-item h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
+        .section-tagline { font-size: 0.95rem; color: #8fa7c7; line-height: 1.6; margin-bottom: 20px; min-height: 50px;}
 
         .link-item { 
             display: inline-block;
@@ -66,9 +77,7 @@
             background: var(--gold); 
             border-radius: 10px; 
             font-weight: bold; 
-            transition: 0.3s;
         }
-        .link-item:hover { background: #b59410; }
     </style>
 </head>
 <body>
@@ -76,46 +85,44 @@
     <div class="hero-banner"></div>
 
     <div class="main-container">
-        <section class="welcome-card">
-            <div class="logo-box">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 20 L175 55 L175 125 C175 170 100 195 100 195 C100 195 25 170 25 125 L25 55 Z" fill="none" stroke="#c5a059" stroke-width="8"/>
-                    <path d="M75 75 H130 V90 H95 V110 H125 V125 H95 V145 H130 V160 H75 V75 Z" fill="#c5a059"/>
-                </svg>
+        
+        <div class="marketing-header">
+            <h2>لماذا إكسيلو؟</h2>
+            <p>
+                نحن لا نقدم مجرد محتوى، بل نصمم لك **رحلة تحول حقيقية**. 
+                في إكسيلو، ندمج أحدث تقنيات التطوير الذاتي مع أدوات عملية تلمس واقعك، 
+                لتكتشف القوة الكامنة في عقلك الباطن وتصنع مستقبلاً يتسم بالاتزان والنجاح.
+            </p>
+        </div>
+
+        <div class="sections-grid">
+            <div class="section-item">
+                <div class="img-wrapper">
+                    <img src="courses.png.PNG?v=1" class="section-img">
+                </div>
+                <h3>الدورات الرقمية</h3>
+                <p class="section-tagline">برامج تدريبية احترافية تنقلك لمستوى جديد من الوعي والتمكين.</p>
+                <a href="courses-details.html" class="link-item">اكتشف برامجنا</a>
             </div>
-            
-            <h1 class="title">عالم إكسيلو الرقمي</h1>
-            <p style="color: #b0c4de;">بإشراف المدرب هاني آل حمدان</p>
 
-            <div class="sections-grid">
-                <div class="section-item">
-                    <div class="img-wrapper">
-                        <img src="courses.png.PNG" alt="الدورات" class="section-img">
-                    </div>
-                    <h3>الدورات الرقمية</h3>
-                    <p class="section-tagline">برامج تدريبية احترافية تنقلك لمستوى جديد من الوعي والتمكين.</p>
-                    <a href="courses-details.html" class="link-item">اكتشف برامجنا ➔</a>
+            <div class="section-item">
+                <div class="img-wrapper">
+                    <img src="sessions.png.PNG?v=1" class="section-img">
                 </div>
-
-                <div class="section-item">
-                    <div class="img-wrapper">
-                        <img src="sessions.png.PNG" alt="الجلسات" class="section-img">
-                    </div>
-                    <h3>الجلسات والاستشارات</h3>
-                    <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة واحترافية.</p>
-                    <a href="https://wa.me/966503460060" class="link-item">احجز استشارتك الآن</a>
-                </div>
-
-                <div class="section-item">
-                    <div class="img-wrapper">
-                        <img src="store.png.jpg" alt="المتجر" class="section-img">
-                    </div>
-                    <h3>المتجر الرقمي</h3>
-                    <p class="section-tagline">مكتبتك المعرفية.. حقائب تدريبية وكتب رقمية جاهزة للتحميل.</p>
-                    <a href="#" class="link-item">تصفح المتجر</a>
-                </div>
+                <h3>الجلسات والاستشارات</h3>
+                <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة واحترافية.</p>
+                <a href="https://wa.me/966503460060" class="link-item">احجز استشارتك الآن</a>
             </div>
-        </section>
+
+            <div class="section-item">
+                <div class="img-wrapper">
+                    <img src="store.png.jpg?v=1" class="section-img">
+                </div>
+                <h3>المتجر الرقمي</h3>
+                <p class="section-tagline">مكتبتك المعرفية.. حقائب تدريبية وكتب رقمية جاهزة للتحميل.</p>
+                <a href="#" class="link-item">تصفح المتجر</a>
+            </div>
+        </div>
     </div>
 
 </body>
