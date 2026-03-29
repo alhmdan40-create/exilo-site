@@ -10,79 +10,79 @@
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
         body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; direction: rtl; line-height: 1.8; }
         
-        /* ✅ البنر العلوي اللائق والموحد ✅ */
+        /* ✅ البنر الاحترافي الموحد للعزل (لجعل الشعار يبرز) ✅ */
         .top-banner { 
             width: 100%; height: 280px; 
             background: url('banner.png 2.PNG') no-repeat center center; 
             background-size: cover; display: flex; align-items: center; justify-content: center; position: relative;
             border-bottom: 3px solid var(--gold);
         }
-        .top-banner::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 10, 20, 0.75); z-index: 1; }
+        
+        /* طبقة العزل لضمان وضوح شعار EXILO */
+        .top-banner::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(5, 10, 20, 0.7); /* تظليل غامق لعزل الخلفية المزعجة */
+            z-index: 1;
+        }
+
         .banner-content { position: relative; z-index: 10; text-align: center; }
         .banner-logo { font-size: 3.5rem; font-weight: bold; color: var(--gold); margin: 0; line-height: 1; }
-        .back-link { position: absolute; top: 20px; right: 20px; z-index: 100; color: var(--gold); text-decoration: none; font-weight: bold; background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 8px; }
-
-        /* ✅ قسم الصورة التعريفية ✅ */
-        .hero-section { text-align: center; padding: 40px 20px; }
-        .hero-section img { 
-            max-width: 450px; width: 100%; border-radius: 25px; 
-            border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+        
+        .back-link { 
+            position: absolute; top: 20px; right: 20px; z-index: 100; 
+            color: var(--gold); text-decoration: none; font-weight: bold; 
+            background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 8px;
         }
 
-        .content { max-width: 750px; margin: 0 auto; padding: 20px; }
-        h1 { color: var(--gold); text-align: center; font-size: 2.2rem; margin-top: 10px; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; }
         
-        .benefit-box { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; border: 1px solid rgba(197,160,89,0.1); margin: 30px 0; }
-        .benefit-box ul { list-style: none; padding: 0; }
-        .benefit-box li { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
-        
-        /* ✅ كرت الاشتراك الموحد والمضبوط ✅ */
-        .action-card { 
-            background: rgba(197, 160, 89, 0.08); border: 2px solid var(--gold); 
-            border-radius: 25px; padding: 35px; text-align: center; margin-top: 40px; 
-        }
-        .price-tag { font-size: 3.2rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 20px; }
-        .whatsapp-btn { 
-            display: flex; align-items: center; justify-content: center; gap: 12px; 
-            background: var(--gold); color: var(--navy); padding: 20px; border-radius: 15px; 
-            text-decoration: none; font-weight: bold; font-size: 1.4rem; transition: 0.3s; 
-        }
-        .whatsapp-btn:hover { background: #e0b86a; transform: scale(1.02); box-shadow: 0 5px 20px rgba(197, 160, 89, 0.4); }
+        /* تنسيق بطاقة الدورة لظهور كامل الصورة الموقعة */
+        .course-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 20px; overflow: hidden; margin-bottom: 30px; display: flex; flex-direction: column; transition: 0.3sEase; }
+        .course-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+        @media (min-width: 768px) { .course-card { flex-direction: row; } .course-img { width: 45%; } .course-info { width: 55%; } }
+        .course-img { background: #000; height: 350px; display: flex; align-items: center; justify-content: center; }
+        .course-img img { width: 100%; height: 100%; object-fit: contain; } /* لظهور كامل الصورة الموقعة */
+        .course-info { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+        .course-info h2 { color: var(--gold); margin-top: 0; font-size: 1.8rem; }
+        .course-info p { color: #b0c4de; margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(197, 160, 89, 0.1); padding-top: 20px; }
+        .price-tag { font-size: 1.7rem; color: var(--gold); font-weight: bold; }
+        .buy-btn { background: var(--gold); color: var(--navy); padding: 12px 30px; border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .buy-btn:hover { background: #e0b86a; box-shadow: 0 0 15px rgba(197, 160, 89, 0.4); }
+
+        footer { text-align: center; padding: 40px; color: #8fa7c7; font-size: 0.9rem; border-top: 1px solid rgba(197, 160, 89, 0.1); }
     </style>
 </head>
 <body>
+
     <div class="top-banner">
-        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> الدورات</a>
+        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة للدورات</a>
         <div class="banner-content">
-            <h1 class="banner-logo">EXILO</h1>
-            <p style="color:white; margin: 10px 0 0;">وعي، مهارة، تمكين</p>
+            <p class="banner-logo">EXILO</p>
+            <p style="color: white; margin-top: 10px; font-size: 1.2rem;">وعي، مهارة، تمكين</p>
         </div>
     </div>
 
-    <div class="hero-section">
-        <img src="body.png.PNG" alt="دورة لغة الجسد">
-    </div>
-
-    <div class="content">
-        <h1>لغة الجسد: سلاحك الخفي للنجاح</h1>
-        <p style="text-align: center; color: #b0c4de;">حقيبة PowerPoint احترافية متكاملة بلمسة المدرب هاني آل حمدان</p>
-        
-        <div class="benefit-box">
-            <h3>ماذا ستحقق من هذه الحقيبة؟</h3>
-            <ul>
-                <li><i class="fas fa-check-circle" style="color:var(--gold)"></i> كشف المستور بين الابتسامة الحقيقية والمزيفة.</li>
-                <li><i class="fas fa-check-circle" style="color:var(--gold)"></i> وضعيات الجسد التي تمنحك هيبة فورية.</li>
-                <li><i class="fas fa-check-circle" style="color:var(--gold)"></i> قراءة لغة العيون واتجاهات النظر.</li>
-            </ul>
-        </div>
-
-        <div class="action-card">
-            <span class="price-tag">250 ريال</span>
-            <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+لغة+الجسد" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> اشترك الآن عبر الواتساب
-            </a>
-            <p style="font-size: 0.9rem; color: #8fa7c7; margin-top: 15px;">وصول فوري للملفات بعد إتمام عملية الدفع</p>
+    <div class="container">
+        <div class="course-card">
+            <div class="course-img"><img src="body.png.PNG" alt="لغة الجسد"></div>
+            <div class="course-info">
+                <h2>أسرار لغة الجسد والكاريزما</h2>
+                <p>امتلك مهارة قراءة الأفكار عبر الجسد وفرض حضورك في أي مكان. تعلم كيف تكشف المستور بين الابتسامة الحقيقية والمزيفة، وكيف تستخدم وضعيات الجسد لفرض هيبتك الفورية. هذه الحقيبة التدريبية (PowerPoint) ستعطيك الأفضلية في كل مقابلة شخصية، اجتماع عمل، أو حتى في تفاعلاتك اليومية.</p>
+                <p>سجل الآن لتحصل على الملف فوراً وابدأ رحلتك في احتراف التواصل غير اللفظي بلمسة المدرب هاني آل حمدان.</p>
+                <div class="price-row">
+                    <span class="price-tag">250 ريال</span>
+                    <a href="https://wa.me/966538205304?text=أرغب+في+الاشتراك+بدورة+لغة+الجسد" class="buy-btn">اشترك الآن عبر الواتساب</a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
+    </footer>
+
 </body>
 </html>
