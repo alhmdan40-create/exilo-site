@@ -3,116 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الدورة | EXILO</title>
+    <title>تحليل الشخصية بالخط والتوقيع | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ✅ تنسيقات عامة تمنع التداخل ✅ */
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; overflow-x: hidden; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; line-height: 1.8; }
 
-        /* ✅ إصلاح البنر العلوي (منع تكرار EXILO) ✅ */
-        .hero-banner {
-            width: 100%;
-            height: 320px;
-            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.7)), url('banner.png 2.PNG');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 2px solid var(--gold);
-        }
+        .nav-header { padding: 20px; display: flex; justify-content: flex-end; }
+        .back-link { color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 8px 20px; border-radius: 10px; background: rgba(197, 160, 89, 0.1); }
 
-        .nav-back { position: absolute; top: 20px; right: 20px; z-index: 20; }
-        .nav-back a { background: rgba(197, 160, 89, 0.2); color: var(--gold); padding: 8px 15px; border-radius: 8px; text-decoration: none; border: 1px solid var(--gold); font-size: 0.9rem; }
-
-        .banner-text-area { text-align: center; z-index: 10; }
-        .banner-text-area h1 { color: var(--gold); font-size: 3.5rem; margin: 0; font-weight: bold; letter-spacing: 2px; }
-        .banner-text-area p { color: white; margin: 5px 0 0; font-size: 1.2rem; opacity: 0.9; }
-
-        /* ✅ تنسيق البطاقة الرئيسية ✅ */
-        .main-wrapper { max-width: 550px; margin: -40px auto 50px; padding: 0 15px; position: relative; z-index: 30; }
+        .main-container { max-width: 800px; margin: 20px auto; padding: 20px; }
         
-        .content-box {
-            background: #0a111f;
-            border-radius: 25px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-        }
+        .hero-img-box { text-align: center; margin-bottom: 40px; }
+        .hero-img-box img { width: 100%; max-width: 500px; border-radius: 30px; border: 2px solid var(--gold); box-shadow: 0 15px 45px rgba(0,0,0,0.6); }
 
-        .main-img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(197, 160, 89, 0.1); }
+        .marketing-content h1 { color: var(--gold); font-size: 2.5rem; text-align: center; margin-bottom: 30px; }
+        .description-text { font-size: 1.2rem; color: #b0c4de; text-align: justify; }
+        .highlight-box { background: rgba(255, 255, 255, 0.05); border-right: 5px solid var(--gold); padding: 25px; margin: 30px 0; border-radius: 0 15px 15px 0; }
+        
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; font-size: 1.1rem; }
+        .features-list i { color: var(--gold); margin-top: 5px; }
 
-        .info-area { padding: 30px; }
-        .info-area h2 { color: var(--gold); font-size: 1.8rem; margin: 0 0 15px 0; }
-        .info-area p { color: #b0c4de; line-height: 1.7; font-size: 1.1rem; margin-bottom: 25px; }
-
-        /* ✅ إصلاح السعر وزر الواتساب (تنسيق عرضي مرتب) ✅ */
-        .order-section {
-            background: rgba(197, 160, 89, 0.05);
-            border: 1px solid var(--gold);
-            border-radius: 20px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .price-display { display: flex; flex-direction: column; }
-        .price-val { font-size: 1.8rem; font-weight: bold; color: var(--gold); line-height: 1; }
-        .price-cur { font-size: 0.9rem; color: #8fa7c7; margin-top: 5px; }
-
-        .btn-whatsapp {
-            background: var(--gold);
-            color: var(--navy);
-            padding: 12px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            flex-grow: 1;
-            justify-content: center;
-        }
-        .btn-whatsapp:hover { background: #e0b86a; transform: scale(1.02); }
+        .purchase-card { background: linear-gradient(145deg, #0a111f, #101a2d); border: 2px solid var(--gold); border-radius: 25px; padding: 40px; text-align: center; margin-top: 50px; }
+        .price-tag { font-size: 3.5rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 10px; }
+        .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 15px; background: var(--gold); color: var(--navy); padding: 20px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 1.5rem; transition: 0.3s; }
+        .whatsapp-btn:hover { background: #e0b86a; transform: scale(1.02); }
     </style>
 </head>
 <body>
 
-    <header class="hero-banner">
-        <div class="nav-back"><a href="courses-details.html"><i class="fas fa-arrow-right"></i> العودة</a></div>
-        <div class="banner-text-area">
-            <h1>EXILO</h1>
-            <p>وعي، مهارة، تمكين</p>
-        </div>
-    </header>
+    <div class="nav-header">
+        <a href="courses-details.html" class="back-link">العودة للدورات</a>
+    </div>
 
-    <div class="main-wrapper">
-        <div class="content-box">
-            <img src="body.png.PNG" class="main-img" alt="دورة تدريبية">
+    <div class="main-container">
+        <div class="hero-img-box">
+            <img src="analysis.png.PNG" alt="دورة تحليل الشخصية">
+        </div>
+
+        <div class="marketing-content">
+            <h1>أسرار تحليل الشخصية من خلال الخط والتوقيع</h1>
             
-            <div class="info-area">
-                <h2>أسرار لغة الجسد والكاريزما</h2>
-                <p>امتلك مهارة قراءة الأفكار عبر الجسد وفرض حضورك في أي مكان. حقيبة PowerPoint احترافية متكاملة بلمسة المدرب هاني آل حمدان.</p>
-                
-                <div class="order-section">
-                    <div class="price-display">
-                        <span class="price-val">250</span>
-                        <span class="price-cur">ريال سعودي</span>
-                    </div>
-                    <a href="https://wa.me/966538205304" class="btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> اشترك الآن
-                    </a>
-                </div>
+            <div class="description-text">
+                <p>هل تعلم أن كل حرف تكتبه، وكل انحناءة في توقيعك، هي بصمة فريدة تكشف أسرار عالمك الداخلي؟ تحليل الشخصية عبر "الجرافولوجي" ليس مجرد قراءة للخطوط، بل هو علم يغوص في سمات الثقة، الطموح، وحتى الحالة المزاجية والذهنية للكاتب.</p>
+                <p>نضع بين يديك <strong>حقيبة PowerPoint احترافية</strong> مكثفة، تم إعدادها لتكون دليلاً شاملاً لفهم ما وراء السطور. سواء كنت تبحث عن فهم ذاتك بعمق أكبر، أو ترغب في اكتساب مهارة قراءة الآخرين وتوقع ردود أفعالهم، فإن هذه الحقيبة هي مفتاحك السحري بلمسة خبير التطوير <strong>هاني آل حمدان</strong>.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>ما المحاور التي ستتعلمها في هذه الحقيبة؟</h3>
+                <ul class="features-list">
+                    <li><i class="fas fa-search"></i> <strong>دلالات الحروف:</strong> كيف تعكس طريقة كتابة الحروف ميولك الاجتماعية ورغباتك الدفينة.</li>
+                    <li><i class="fas fa-signature"></i> <strong>فك شفرة التوقيع:</strong> ماذا يقول توقيعك عن ثقتك بنفسك وكيف يراك العالم من حولك؟</li>
+                    <li><i class="fas fa-pen-nib"></i> <strong>الضغط والميل:</strong> تعلم كيف تحلل الضغط على القلم وميل الخط لاكتشاف مستويات الطاقة والتوتر.</li>
+                    <li><i class="fas fa-brain"></i> <strong>التوازن النفسي:</strong> قراءة العلامات التي تدل على الاتزان أو الاضطراب من خلال تنظيم الكتابة على الورقة.</li>
+                </ul>
+            </div>
+
+            <p class="description-text">هذا المحتوى التعليمي مصمم ليناسب الجميع؛ من المدربين، والمعلمين، إلى المهتمين بعلم النفس وتطوير الذات. الحقيبة جاهزة للاستخدام الفوري، مدعمة بصور توضيحية تسهل عليك عملية التعلم والتطبيق.</p>
+
+            <div class="purchase-card">
+                <span style="color: #8fa7c7; font-size: 1.1rem;">استثمر في مهاراتك الآن بسعر</span>
+                <span class="price-tag">300 ريال</span>
+                <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+تحليل+الشخصية" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> اطلب الحقيبة عبر الواتساب
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #8fa7c7;">تصلك المادة التدريبية كاملة فور تأكيد عملية الدفع.</p>
             </div>
         </div>
     </div>
+
+    <footer style="text-align: center; padding: 40px; color: #8fa7c7; opacity: 0.6;">
+        &copy; 2026 EXILO - إعداد المدرب هاني آل حمدان
+    </footer>
 
 </body>
 </html>
