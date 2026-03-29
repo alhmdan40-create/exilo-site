@@ -8,13 +8,11 @@
     <style>
         :root { 
             --navy: #050a14; 
-            --card-navy: #0d1b35; 
             --gold: #c5a059; 
             --text-white: #e6f1ff; 
         }
         body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--navy); color: var(--text-white); direction: rtl; }
 
-        /* منطقة البانر العلوية - تظهر كاملة دون تداخل */
         .hero-banner {
             width: 100%;
             height: 450px; 
@@ -22,65 +20,74 @@
             border-bottom: 5px solid var(--gold);
         }
 
-        .main-container { max-width: 1000px; margin: 0 auto 60px; padding: 0 20px; }
+        .main-container { max-width: 1100px; margin: 0 auto 60px; padding: 0 20px; }
         
         .welcome-card { 
-            background: var(--card-navy); 
+            background: var(--navy); 
             padding: 50px 30px; 
-            border-radius: 40px; 
-            box-shadow: 0 30px 70px rgba(0,0,0,0.8); 
             text-align: center; 
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            margin-top: 30px; /* لضمان عدم التداخل مع البنر */
+            margin-top: 20px;
         }
 
-        .logo-box { width: 120px; height: 120px; margin: 0 auto 25px; display: block; filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.4)); }
+        .logo-box { width: 100px; height: 100px; margin: 0 auto 25px; display: block; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3)); }
 
-        .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
-        .description { color: #b0c4de; line-height: 1.8; margin-bottom: 40px; font-size: 1.1rem; }
+        .title { color: var(--gold); font-size: 2.3rem; margin-bottom: 15px; font-weight: 700; }
+        .description { color: #b0c4de; line-height: 1.8; margin-bottom: 50px; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
 
         .btn-booking { 
             display: inline-block; background: linear-gradient(45deg, var(--gold), #8e7033);
-            color: #050a14; padding: 18px 60px; border-radius: 50px; 
+            color: #050a14; padding: 16px 50px; border-radius: 50px; 
             text-decoration: none; font-weight: bold; font-size: 1.2rem; 
-            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
-            margin-bottom: 50px;
+            margin-bottom: 80px;
             transition: 0.3s;
         }
-        .btn-booking:hover { transform: translateY(-3px); }
 
-        /* شبكة الأقسام */
-        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         
         .section-item { 
-            background: rgba(255,255,255,0.03); 
-            padding: 35px 25px; 
-            border-radius: 30px; 
-            border: 1px solid rgba(255,255,255,0.07); 
-            text-align: right;
-            transition: 0.3s;
+            background: var(--navy); 
+            padding: 30px; 
+            border-radius: 25px; 
+            border: 1px solid rgba(255,255,255,0.05); 
+            text-align: center; /* توسيط المحتوى مع الصور */
+            transition: 0.4s ease;
         }
-        .section-item:hover { border-color: var(--gold); transform: translateY(-5px); }
+
+        .section-item:hover { 
+            border-color: var(--gold); 
+            background: rgba(197, 160, 89, 0.03); 
+            transform: translateY(-8px);
+        }
+
+        /* تنسيق صور الأقسام */
+        .section-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            filter: brightness(0.8);
+        }
         
-        .section-item h3 { color: var(--gold); font-size: 1.6rem; margin-top: 0; margin-bottom: 15px; }
-        .section-tagline { font-size: 1rem; color: #8fa7c7; margin-bottom: 25px; line-height: 1.7; }
+        .section-item h3 { color: var(--gold); font-size: 1.6rem; margin-bottom: 15px; }
+        .section-tagline { font-size: 0.95rem; color: #8fa7c7; margin-bottom: 25px; line-height: 1.6; height: 60px; }
 
         .link-item { 
             display: flex; 
             justify-content: center;
             align-items: center;
-            color: #fff; 
+            color: var(--gold); 
             text-decoration: none; 
-            padding: 15px; 
-            margin-top: 10px; 
-            background: rgba(255,255,255,0.05); 
+            padding: 12px; 
+            border: 1px solid var(--gold);
             border-radius: 12px; 
             transition: 0.3s;
             font-weight: bold;
         }
         .link-item:hover { background: var(--gold); color: #050a14; }
 
-        footer { margin-top: 60px; text-align: center; padding-bottom: 30px; color: #5c7291; font-size: 0.9rem; }
+        footer { margin-top: 100px; text-align: center; padding: 30px; color: #3d4f69; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -103,25 +110,24 @@
 
             <div class="sections-grid">
                 <div class="section-item">
+                    <img src="[attachment_2](attachment)" alt="الدورات الرقمية" class="section-img">
                     <h3>الدورات الرقمية</h3>
-                    <p class="section-tagline">
-                        هل أنت جاهز لفك شفرات النجاح؟ استثمر في ذاتك الآن عبر برامج مكثفة صُممت لتنقلك من الحيرة إلى التمكين الكامل.
-                    </p>
-                    <a href="courses-details.html" class="link-item">
-                         اكتشف عالمك الجديد من هنا ➔
-                    </a>
+                    <p class="section-tagline">برامج مكثفة مصممة لتنقلك من الحيرة إلى التمكين الكامل وصناعة الفارق الحقيقي.</p>
+                    <a href="courses-details.html" class="link-item">اكتشف عالمك الجديد ➔</a>
                 </div>
 
                 <div class="section-item">
+                    <img src="[attachment_0](attachment)" alt="الجلسات والاستشارات" class="section-img">
                     <h3>الجلسات والاستشارات</h3>
                     <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة تتسم بالسرية والاحترافية العالية.</p>
-                    <a href="#" class="link-item">احجز استشارتك</a>
+                    <a href="#" class="link-item">احجز استشارتك الآن</a>
                 </div>
 
                 <div class="section-item">
+                    <img src="[attachment_1](attachment)" alt="المتجر الرقمي" class="section-img">
                     <h3>المتجر الرقمي</h3>
                     <p class="section-tagline">مكتبتك الرقمية المتنقلة.. كتب وحقائب تدريبية جاهزة لتكون رفيقتك في رحلة النجاح.</p>
-                    <a href="#" class="link-item">تصفح المتجر</a>
+                    <a href="#" class="link-item">تصفح الكتب والحقائب</a>
                 </div>
             </div>
         </section>
