@@ -7,92 +7,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --navy-deep: #050a14; /* كحلي داكن للخلفية */
-            --card-navy: #0d1b35; /* كحلي للبطاقات */
-            --gold: #c5a059; /* ذهبي ملكي */
-            --text-light: #e6f1ff; /* أبيض ناعم */
+            --navy-deep: #050a14; 
+            --gold: #c5a059; 
+            --text-light: #e6f1ff; 
         }
         body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--navy-deep); color: var(--text-light); direction: rtl; }
 
-        /* منطقة البانر العلوية - تعتمد على الصورة الطبيعية الفخمة */
+        /* تعديل مسار البنر ليتوافق مع اسم الملف في الصورة التي أرفقتها */
         .hero-banner {
             width: 100%;
-            height: 450px; 
-            background: url('banner.png') center/cover no-repeat;
-            border-bottom: 5px solid var(--gold);
+            height: 400px; 
+            /* استخدمنا الاسم الظاهر في GitHub الخاص بك بدقة */
+            background: url('banner.png 2.PNG') center/cover no-repeat;
+            border-bottom: 3px solid var(--gold);
         }
 
         .main-container { max-width: 1100px; margin: 0 auto 60px; padding: 0 20px; }
         
-        /* الصندوق الرئيسي المنفصل - بنفس لون الخلفية تماماً */
         .welcome-card { 
             background: var(--navy-deep); 
-            padding: 50px 30px; 
+            padding: 40px 20px; 
             text-align: center; 
-            margin-top: 20px; /* لضمان عدم التداخل مع البنر */
         }
 
-        .logo-box { width: 110px; height: 110px; margin: 0 auto 25px; display: block; filter: drop-shadow(0 0 10px rgba(197, 160, 89, 0.3)); }
+        .logo-box { width: 100px; height: 100px; margin: 0 auto 20px; display: block; }
 
-        .title { color: var(--gold); font-size: 2.3rem; margin-bottom: 15px; font-weight: 700; }
-        .description { color: #b0c4de; line-height: 1.8; margin-bottom: 40px; font-size: 1.1rem; max-width: 700px; margin: 0 auto 40px; }
+        .title { color: var(--gold); font-size: 2rem; margin-bottom: 15px; font-weight: 700; }
+        .description { color: #b0c4de; line-height: 1.8; margin-bottom: 40px; font-size: 1.1rem; }
 
-        .btn-booking { 
-            display: inline-block; background: linear-gradient(45deg, var(--gold), #8e7033);
-            color: #050a14; padding: 18px 60px; border-radius: 50px; 
-            text-decoration: none; font-weight: bold; font-size: 1.2rem; 
-            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
-            margin-bottom: 60px;
-            transition: 0.3s;
-        }
-
-        /* شبكة الأقسام مع الصور */
-        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .section-item { 
-            background: var(--navy-deep); /* نفس لون الخلفية */
-            padding: 30px; 
-            border-radius: 25px; 
-            border: 1px solid rgba(255,255,255,0.05); 
+            background: rgba(255,255,255,0.02); 
+            padding: 25px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(197, 160, 89, 0.1); 
             text-align: center;
-            transition: 0.4s ease;
         }
 
-        .section-item:hover { 
-            border-color: var(--gold); 
-            background: rgba(197, 160, 89, 0.05); 
-            transform: translateY(-8px);
-        }
-
-        /* تنسيق صور الأقسام */
+        /* صور الأقسام - سنستخدم روابط مباشرة لضمان العمل */
         .section-img {
             width: 100%;
-            height: 180px;
-            object-fit: contain; /* للحفاظ على أبعاد الأيقونات */
-            border-radius: 15px;
-            margin-bottom: 25px;
-            filter: brightness(0.9);
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 20px;
         }
         
-        .section-item h3 { color: var(--gold); font-size: 1.6rem; margin-bottom: 15px; }
-        .section-tagline { font-size: 0.95rem; color: #8fa7c7; margin-bottom: 25px; line-height: 1.7; height: 60px; }
+        .section-item h3 { color: var(--gold); font-size: 1.4rem; margin-bottom: 10px; }
+        .section-tagline { font-size: 0.9rem; color: #8fa7c7; margin-bottom: 20px; line-height: 1.6; }
 
         .link-item { 
-            display: flex; 
-            justify-content: center;
-            align-items: center;
+            display: block; 
             color: #050a14; 
             text-decoration: none; 
             padding: 12px; 
             background: var(--gold);
-            border-radius: 12px; 
-            transition: 0.3s;
+            border-radius: 10px; 
             font-weight: bold;
-            font-size: 0.95rem;
         }
-        .link-item:hover { background: #b59410; }
-
-        footer { margin-top: 100px; text-align: center; padding: 30px; color: #3d4f69; border-top: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
@@ -110,33 +82,30 @@
             
             <h1 class="title">عالم إكسيلو الرقمي</h1>
             <p class="description">استكشف أدواتك المعرفية لتعيش حياة أكثر توازناً وإنجازاً بإشراف المدرب هاني آل حمدان.</p>
-            
-            <a href="https://wa.me/966503460060" class="btn-booking">تواصل معنا مباشرة</a>
 
             <div class="sections-grid">
                 <div class="section-item">
-                    <img src="https://raw.githubusercontent.com/HaniHmdan/Exilosa/main/assets/images/courses_icon.png" alt="الدورات الرقمية" class="section-img">
+                    <img src="https://img.icons8.com/illustrations/external-pack-flat-juicy-fish-outline-juicy-fish/512/external-learning-online-learning-pack-flat-juicy-fish-outline-juicy-fish.png" class="section-img">
                     <h3>الدورات الرقمية</h3>
-                    <p class="section-tagline">برامج مكثفة مصممة لتنقلك من الحيرة إلى التمكين الكامل وصناعة الفارق الحقيقي.</p>
-                    <a href="courses-details.html" class="link-item">اكتشف عالمك الجديد ➔</a>
+                    <p class="section-tagline">برامج مكثفة مصممة لتنقلك من الحيرة إلى التمكين الكامل.</p>
+                    <a href="#" class="link-item">اكتشف عالمك الجديد ➔</a>
                 </div>
 
                 <div class="section-item">
-                    <img src="https://raw.githubusercontent.com/HaniHmdan/Exilosa/main/assets/images/sessions_icon.png" alt="الجلسات والاستشارات" class="section-img">
+                    <img src="https://img.icons8.com/illustrations/external-linear-box-icons-resurgent-consulting/512/external-counseling-mental-health-linear-box-icons-resurgent-consulting.png" class="section-img">
                     <h3>الجلسات والاستشارات</h3>
-                    <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة تتسم بالسرية والاحترافية العالية.</p>
+                    <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة واحترافية.</p>
                     <a href="#" class="link-item">احجز استشارتك الآن</a>
                 </div>
 
                 <div class="section-item">
-                    <img src="https://raw.githubusercontent.com/HaniHmdan/Exilosa/main/assets/images/store_icon.png" alt="المتجر الرقمي" class="section-img">
+                    <img src="https://img.icons8.com/illustrations/flat/512/online-store.png" class="section-img">
                     <h3>المتجر الرقمي</h3>
-                    <p class="section-tagline">مكتبتك الرقمية المتنقلة.. كتب وحقائب تدريبية جاهزة لتكون رفيقتك في رحلة النجاح.</p>
-                    <a href="#" class="link-item">تصفح الكتب والحقائب</a>
+                    <p class="section-tagline">كتب وحقائب تدريبية جاهزة لتكون رفيقتك في النجاح.</p>
+                    <a href="#" class="link-item">تصفح المتجر</a>
                 </div>
             </div>
         </section>
-        <footer>© جميع الحقوق محفوظة - إكسيلو - 2026</footer>
     </div>
 
 </body>
