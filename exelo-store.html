@@ -3,127 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر إكسيلو الرقمي | EXILO</title>
+    <title>المتجر الرقمي | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ✅ التنسيقات العامة المتناغمة مع الهوية ✅ */
-        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; }
+        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
+        * { box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; padding: 0; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); direction: rtl; display: flex; flex-direction: column; }
 
-        /* ترويسة المتجر النظيفة بدون بنر علوي مزعج */
-        .nav-header { padding: 30px; display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto; }
-        .logo-text { color: var(--gold); font-size: 2.2rem; font-weight: bold; text-decoration: none; letter-spacing: 2px; }
-        .back-home { color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 8px 18px; border-radius: 10px; background: rgba(197, 160, 89, 0.1); font-size: 0.9rem; }
+        header { background: var(--navy); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); }
+        .menu-btn { color: var(--gold); font-size: 1.6rem; cursor: pointer; }
+        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; }
 
-        .main-container { max-width: 1000px; margin: 20px auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; flex: 1; }
+        .marketing { text-align: center; margin-bottom: 50px; }
+        .marketing h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 15px; }
+
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .card { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; }
         
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h1 { color: var(--gold); font-size: 2.5rem; margin-bottom: 10px; }
-        .section-title p { color: #8fa7c7; font-size: 1.2rem; }
-
-        /* ✅ تنسيق شبكة الكتب الرقمية ✅ */
-        .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        /* تنسيق عرض غلاف الكتاب */
+        .img-box { width: 100%; height: 380px; margin: 0 auto 20px; overflow: hidden; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .img-box img { width: 100%; height: 100%; object-fit: contain; background: #000; }
         
-        /* تصميم كرت الكتاب لظهور الغلاف بشكل احترافي */
-        .book-card { 
-            background: linear-gradient(145deg, #0a111f, #101a2d); 
-            border: 1px solid rgba(197, 160, 89, 0.2); 
-            border-radius: 25px; 
-            padding: 30px;
-            text-align: center;
-            transition: 0.4s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .book-card:hover { border-color: var(--gold); transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
+        .btn { display: inline-block; width: 100%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; margin-top: 10px; }
 
-        /* تنسيق غلاف الكتاب ليكون مثل الرف */
-        .book-cover-wrapper { 
-            width: 100%; height: 280px; 
-            margin: 0 auto 25px; 
-            overflow: hidden; 
-            display: flex; align-items: center; justify-content: center;
-        }
-        .book-cover-img { 
-            max-width: 100%; max-height: 100%;
-            border-radius: 5px 15px 15px 5px; /* شكل الكتاب التقليدي */
-            box-shadow: -12px 12px 25px rgba(0,0,0,0.7);
-            border-left: 3px solid var(--gold); /* لمسة فخامة ذهبية */
-            transition: 0.3sEase;
-        }
-        .book-card:hover .book-cover-img { transform: scale(1.03); }
-
-        .book-card h2 { color: var(--gold); font-size: 1.5rem; margin-bottom: 12px; }
-        .book-card p { color: #b0c4de; font-size: 1rem; margin-bottom: 25px; line-height: 1.7; flex-grow: 1; text-align: justify; }
-
-        /* تنسيق السعر والزر */
-        .price-row { 
-            display: flex; justify-content: space-between; align-items: center; 
-            border-top: 1px solid rgba(197, 160, 89, 0.1); padding-top: 20px; 
-            margin-top: auto;
-        }
-        .price-tag { font-size: 1.6rem; color: white; font-weight: bold; }
-        .details-btn { 
-            background: var(--gold); color: var(--navy); 
-            padding: 10px 22px; border-radius: 12px; 
-            text-decoration: none; font-weight: bold; font-size: 0.95rem;
-            transition: 0.3s;
-        }
-        .details-btn:hover { background: #e0b86a; transform: scale(1.05); }
-
-        footer { text-align: center; padding: 60px; color: #8fa7c7; opacity: 0.6; }
+        footer { background: var(--dark-grey); padding: 40px 20px; border-top: 2px solid var(--gold); text-align: center; margin-top: 50px; }
+        .copyright { font-size: 0.85rem; color: #5a718a; }
     </style>
 </head>
 <body>
 
-    <header class="nav-header">
+    <header>
+        <div class="menu-btn"><i class="fas fa-bars"></i></div>
         <a href="index.html" class="logo-text">EXILO</a>
-        <a href="index.html" class="back-home">الرئيسية</a>
-    </header>
+        <div style="width: 50px;"></div> </header>
 
-    <div class="main-container">
-        <div class="section-title">
-            <h1>المتجر الرقمي</h1>
-            <p>إصدارات حصرية للمدرب هاني آل حمدان في تطوير الذات</p>
+    <div class="container">
+        <div class="marketing">
+            <h2>المكتبة الرقمية</h2>
+            <p>إصدارات حصرية للمدرب هاني آل حمدان لصناعة التغيير والاستقرار النفسي.</p>
         </div>
 
-        <div class="store-grid">
-            <div class="book-card">
-                <div class="book-cover-wrapper"><img src="image_7.png" alt="غلاف دليل السكينة" class="book-cover-img"></div>
-                <h2>دليل السكينة</h2>
-                <p>دليلك العملي لتعلم فنون الاسترخاء الجسدي والذهني العميقة. اكتشف استراتيجيات فعالة للتهدئة والهدوء، مصممة بدقة لتناسب نمط حياتك العصري.</p>
-                <div class="price-row">
-                    <span class="price-tag">150 ريال</span>
-                    <a href="books/serenity-guide.html" class="details-btn">تفاصيل الكتاب</a>
-                </div>
+        <div class="grid">
+            <div class="card">
+                <div class="img-box"><img src="serenity.png"></div>
+                <h3>دليل السكينة</h3>
+                <a href="serenity-book.html" class="btn">تفاصيل الكتاب</a>
             </div>
-
-            <div class="book-card">
-                <div class="book-cover-wrapper"><img src="image_6.png" alt="غلاف شفرة العقل الباطن" class="book-cover-img"></div>
-                <h2>شفرة العقل الباطن</h2>
-                <p>المرجع العلمي الشامل لاحتراف التنويم الإيحائي. اكتشف كيف تبرمج عقلك الباطن لتحقيق النجاح، وتغيير القناعات السلبية، وبناء مستقبل مشرق.</p>
-                <div class="price-row">
-                    <span class="price-tag">200 ريال</span>
-                    <a href="books/mind-code.html" class="details-btn">تفاصيل الكتاب</a>
-                </div>
+            <div class="card">
+                <div class="img-box"><img src="mind-code.png"></div>
+                <h3>شفرة العقل الباطن</h3>
+                <a href="mind-code-book.html" class="btn">تفاصيل الكتاب</a>
             </div>
-
-            <div class="book-card">
-                <div class="book-cover-wrapper"><img src="image_5.png" alt="غلاف ترميم الثقة" class="book-cover-img"></div>
-                <h2>ترميم الثقة</h2>
-                <p>دليل التغيير والاستشفاء بعد الخيانة الزوجية. منهج متكامل لبناء جسور الثقة المهدمة، وتجاوز الألم، وصناعة حياة زوجية مستقرة وجديدة.</p>
-                <div class="price-row">
-                    <span class="price-tag">180 ريال</span>
-                    <a href="books/trust-restoration.html" class="details-btn">تفاصيل الكتاب</a>
-                </div>
+            <div class="card">
+                <div class="img-box"><img src="trust.png"></div>
+                <h3>ترميم الثقة</h3>
+                <a href="trust-book.html" class="btn">تفاصيل الكتاب</a>
             </div>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 EXILO - المدرب هاني آل حمدان
+        <p class="copyright">&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
     </footer>
 
 </body>
