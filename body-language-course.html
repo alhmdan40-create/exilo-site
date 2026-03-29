@@ -13,32 +13,47 @@
         .nav-header { padding: 20px; display: flex; justify-content: flex-end; }
         .back-link { color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 8px 20px; border-radius: 10px; background: rgba(197, 160, 89, 0.1); }
 
-        .main-container { max-width: 800px; margin: 20px auto; padding: 20px; }
+        .main-container { max-width: 800px; margin: 10px auto; padding: 20px; }
         
-        /* تصميم الصورة التعريفية */
         .hero-img-box { text-align: center; margin-bottom: 40px; }
-        .hero-img-box img { width: 100%; max-width: 500px; border-radius: 30px; border: 2px solid var(--gold); box-shadow: 0 15px 45px rgba(0,0,0,0.6); }
+        .hero-img-box img { width: 100%; max-width: 480px; border-radius: 30px; border: 2px solid var(--gold); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
 
-        /* المحتوى التسويقي */
-        .marketing-content h1 { color: var(--gold); font-size: 2.5rem; text-align: center; margin-bottom: 30px; }
-        .description-text { font-size: 1.2rem; color: #b0c4de; text-align: justify; }
-        .highlight-box { background: rgba(255, 255, 255, 0.05); border-right: 5px solid var(--gold); padding: 25px; margin: 30px 0; border-radius: 0 15px 15px 0; }
+        .marketing-content h1 { color: var(--gold); font-size: 2.3rem; text-align: center; margin-bottom: 25px; font-weight: bold; }
         
-        .features-list { list-style: none; padding: 0; }
-        .features-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; font-size: 1.1rem; }
-        .features-list i { color: var(--gold); margin-top: 5px; }
+        /* أيقونة الباور بوينت الاحترافية */
+        .ppt-badge { 
+            display: inline-block; background: #d24726; color: white; padding: 6px 18px; 
+            border-radius: 8px; font-weight: bold; margin-bottom: 15px; font-size: 0.95rem;
+        }
 
-        /* صندوق الشراء */
-        .purchase-card { background: linear-gradient(145deg, #0a111f, #101a2d); border: 2px solid var(--gold); border-radius: 25px; padding: 40px; text-align: center; margin-top: 50px; }
-        .price-tag { font-size: 3.5rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 10px; }
-        .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 15px; background: var(--gold); color: var(--navy); padding: 20px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 1.5rem; transition: 0.3s; }
-        .whatsapp-btn:hover { background: #e0b86a; transform: scale(1.02); }
+        .description-text { font-size: 1.25rem; color: #b0c4de; text-align: justify; margin-bottom: 25px; }
+        
+        .highlight-card { 
+            background: linear-gradient(145deg, rgba(197, 160, 89, 0.12), rgba(10, 17, 31, 0.6)); 
+            border: 1px solid rgba(197, 160, 89, 0.35); padding: 35px; border-radius: 25px; margin: 35px 0;
+        }
+
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 14px; font-size: 1.18rem; }
+        .features-list i { color: var(--gold); margin-top: 6px; font-size: 1.25rem; }
+
+        .purchase-section { text-align: center; margin-top: 55px; border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 45px; }
+        .price-label { color: #8fa7c7; font-size: 1.15rem; display: block; margin-bottom: 8px; }
+        .price-amount { font-size: 3.8rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 30px; }
+        
+        .cta-button { 
+            display: inline-flex; align-items: center; justify-content: center; gap: 15px; 
+            background: var(--gold); color: var(--navy); padding: 22px 60px; border-radius: 20px; 
+            text-decoration: none; font-weight: bold; font-size: 1.7rem; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            box-shadow: 0 12px 35px rgba(197, 160, 89, 0.35);
+        }
+        .cta-button:hover { transform: scale(1.06); background: #e0b86a; box-shadow: 0 15px 45px rgba(197, 160, 89, 0.5); }
     </style>
 </head>
 <body>
 
     <div class="nav-header">
-        <a href="courses-details.html" class="back-link">العودة للدورات</a>
+        <a href="courses-details.html" class="back-link">العودة للمتجر</a>
     </div>
 
     <div class="main-container">
@@ -47,39 +62,35 @@
         </div>
 
         <div class="marketing-content">
-            <h1>حقيبة أسرار لغة الجسد والكاريزما</h1>
+            <div style="text-align: center;"><span class="ppt-badge"><i class="fas fa-file-powerpoint"></i> حقيبة PowerPoint احترافية</span></div>
+            <h1>أسرار لغة الجسد والكاريزما الفورية</h1>
             
             <div class="description-text">
-                <p>هل شعرت يوماً أن هناك رسائل خفية تُقال لك دون كلمات؟ هل تتمنى أن تملك القدرة على قراءة أفكار من حولك بمجرد النظر إلى حركاتهم؟</p>
-                <p>نقدم لك <strong>الحقيبة التدريبية المتكاملة (PowerPoint)</strong> التي تلخص سنوات من الخبرة في تحليل السلوك الإنساني بلمسة المدرب <strong>هاني آل حمدان</strong>. هذه ليست مجرد معلومات نظرية، بل هي أدوات عملية تجعلك الشخص الأكثر تأثيراً في أي مكان تتواجد فيه.</p>
+                <p>امتلك الآن **حقيبة باور بوينت (PowerPoint)** متكاملة ومصممة بعناية فائقة لتكشف لك ما وراء الكلمات. هذا المحتوى التدريبي ليس مجرد شرائح عادية، بل هو "سلاحك الخفي" لفهم لغة الجسد، وكشف الخداع، وفرض حضورك في أي محفل بذكاء وهدوء.</p>
+                <p>بإشراف ولمسة المدرب **هاني آل حمدان**، ستتعرف من خلال هذا العرض المرئي الجذاب على فنون التأثير غير اللفظي وكيفية بناء كاريزما طاغية تجعل الجميع ينصت إليك قبل أن تنطق بكلمة واحدة.</p>
             </div>
 
-            <div class="highlight-box">
-                <h3>لماذا هذه الحقيبة هي خيارك الأفضل؟</h3>
+            <div class="highlight-card">
+                <h3 style="color: var(--gold); margin-top: 0; font-size: 1.5rem;">لماذا تقتني هذه الحقيبة؟</h3>
                 <ul class="features-list">
-                    <li><i class="fas fa-check-circle"></i> <strong>تحليل الإيماءات:</strong> تعلم كيف تفرق بين الابتسامة الصادقة والمزيفة بذكاء.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>كشف الخداع:</strong> تعرف على العلامات الجسدية التي تظهر عند محاولة إخفاء الحقيقة.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>بناء الهيبة:</strong> اكتشف وضعيات الجسد التي تمنحك كاريزما القيادة والثقة الفورية في الاجتماعات.</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>لغة العيون:</strong> افهم اتجاهات النظر وما تعكسه من مشاعر داخلية دفينة.</li>
+                    <li><i class="fas fa-chalkboard-teacher"></i> <strong>تصميم PowerPoint احترافي:</strong> عرض تقديمي جاهز، منظم، وسهل التصفح بجودة عالية جداً.</li>
+                    <li><i class="fas fa-eye"></i> <strong>فهم لغة العيون والوجه:</strong> قراءة أدق التفاصيل التي تظهر المشاعر الحقيقية لمن تقابلهم.</li>
+                    <li><i class="fas fa-user-shield"></i> <strong>استراتيجيات الثقة:</strong> وضعيات جسدية مبرمجة لتعزيز ثقتك بنفسك وتأثيرك على الآخرين فوراً.</li>
                 </ul>
             </div>
 
-            <p class="description-text">هذه الحقيبة مصممة لتكون مرجعك الدائم، سواء كنت مدرباً يبحث عن مادة علمية رصينة، أو فرداً يسعى لتطوير مهاراته الاجتماعية والمهنية. الملف جاهز للعرض والمراجعة في أي وقت وبجودة عالية جداً.</p>
+            <p class="description-text">هذه الحقيبة هي استثمار حقيقي لكل مدرب، قائد، أو طامح للتميز الاجتماعي، فهي تجمع بين العلم والمتعة البصرية في ملف واحد بين يديك.</p>
 
-            <div class="purchase-card">
-                <span style="color: #8fa7c7; font-size: 1.1rem;">احصل على الحقيبة الآن بسعر</span>
-                <span class="price-tag">250 ريال</span>
-                <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+لغة+الجسد" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> اطلبها الآن عبر الواتساب
+            <div class="purchase-section">
+                <span class="price-label">احصل على الحقيبة الآن مقابل</span>
+                <span class="price-amount">250 ريال</span>
+                <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+باوربوينت+لغة+الجسد" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> اطلبها الآن
                 </a>
-                <p style="margin-top: 15px; font-size: 0.9rem; color: #8fa7c7;">يتم إرسال الملفات إليك مباشرة بعد إتمام عملية الدفع.</p>
+                <p style="margin-top: 25px; font-size: 1.1rem; color: #8fa7c7;"><i class="fas fa-check-double"></i> تسليم فوري للملف مباشرة بعد الطلب</p>
             </div>
         </div>
     </div>
-
-    <footer style="text-align: center; padding: 40px; color: #8fa7c7; opacity: 0.6;">
-        &copy; 2026 EXILO - المدرب هاني آل حمدان
-    </footer>
 
 </body>
 </html>
