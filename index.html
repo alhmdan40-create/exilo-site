@@ -3,187 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إكسيلو | EXILO</title>
+    <title>إكسيلو | EXILO - المدرب هاني آل حمدان</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
-        
         * { box-sizing: border-box; }
-        html, body { height: 100%; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Tajawal', sans-serif; 
-            background-color: var(--navy); 
-            color: var(--text); 
-            direction: rtl; 
-            display: flex; 
-            flex-direction: column; 
-            overflow-x: hidden;
-        }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); direction: rtl; margin: 0; overflow-x: hidden; }
 
-        /* الهيدر */
-        header {
-            background: var(--navy);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--gold);
-        }
+        header { background: var(--navy); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--gold); }
+        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.6rem; letter-spacing: 2px; text-decoration: none; }
 
-        .menu-btn { color: var(--gold); font-size: 1.6rem; cursor: pointer; }
-        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; }
-        .login-btn { background: var(--gold); color: var(--navy); padding: 7px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
+        .hero { width: 100%; height: 350px; background: url('banner.png.jpg') center/cover no-repeat; border-bottom: 4px solid var(--gold); }
 
-        /* القائمة الجانبية */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -300px; 
-            width: 280px;
-            height: 100%;
-            background: var(--dark-grey);
-            z-index: 3000;
-            transition: 0.4s ease;
-            padding: 30px 20px;
-            border-left: 2px solid var(--gold);
-            display: none;
-        }
-        .sidebar.active { display: block; right: 0; }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
-            z-index: 2000;
-        }
-        .overlay.active { display: block; }
-        .close-sidebar { color: var(--gold); font-size: 1.8rem; cursor: pointer; margin-bottom: 30px; }
-
-        /* البنر */
-        .hero { 
-            width: 100%; 
-            height: 350px; 
-            background: url('banner.png%202.PNG') center/cover no-repeat; 
-            border-bottom: 4px solid var(--gold); 
-        }
-
-        /* المحتوى الرئيسي */
-        .content { flex: 1; }
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         .marketing { text-align: center; margin-bottom: 50px; }
         .marketing h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 15px; }
-        
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .card { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; margin-bottom: 20px; }
-        .img-box { width: 100%; height: 250px; margin: 0 auto 20px; overflow: hidden; border-radius: 15px; background: #000; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .btn { display: inline-block; width: 100%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; }
 
-        /* الفوتر المحسن مع الروابط القانونية */
-        footer { 
-            background: var(--dark-grey); 
-            padding: 40px 20px; 
-            border-top: 2px solid var(--gold); 
-            text-align: center; 
-            width: 100%;
-        }
-        .footer-socials { margin-bottom: 20px; }
-        .footer-socials a { color: var(--gold); font-size: 1.5rem; margin: 0 15px; text-decoration: none; }
-        
-        .footer-links { margin-bottom: 20px; }
-        .footer-links a { color: #8fa7c7; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
-        .footer-links a:hover { color: var(--gold); }
-        
-        .copyright { font-size: 0.85rem; color: #5a718a; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .card { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; transition: 0.3s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); background: rgba(255,255,255,0.06); }
+
+        .img-box { width: 100%; height: 350px; margin-bottom: 20px; overflow: hidden; border-radius: 15px; background: #000; border: 1px solid rgba(197, 160, 89, 0.1); }
+        .img-box img { width: 100%; height: 100%; object-fit: contain; }
+
+        .btn { display: inline-block; width: 100%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: #d4b477; }
+
+        footer { background: var(--dark-grey); padding: 40px 20px; border-top: 2px solid var(--gold); text-align: center; }
+        .social-links a { color: var(--gold); margin: 0 15px; font-size: 1.8rem; text-decoration: none; }
+        .copyright { font-size: 0.85rem; color: #5a718a; margin-top: 25px; }
     </style>
 </head>
 <body>
 
-    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-
     <header>
-        <div class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
-        <div class="logo-text">EXILO</div>
-        <a href="#" class="login-btn">تسجيل دخول</a>
+        <div style="width: 40px;"></div>
+        <a href="index.html" class="logo-text">EXILO</a>
+        <a href="https://wa.me/966538205304" style="background: var(--gold); color: var(--navy); padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">تواصل معنا</a>
     </header>
 
-    <div class="sidebar" id="sidebar">
-        <div class="close-sidebar" onclick="toggleSidebar()"><i class="fas fa-times"></i></div>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 20px;"><a href="index.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-home" style="margin-left: 10px; color: var(--gold);"></i> الرئيسية</a></li>
-            <li style="margin-bottom: 20px;"><a href="courses-details.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-graduation-cap" style="margin-left: 10px; color: var(--gold);"></i> الدورات الرقمية</a></li>
-            <li style="margin-bottom: 20px;"><a href="exelo-store.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-book" style="margin-left: 10px; color: var(--gold);"></i> المتجر الرقمي</a></li>
-            <li style="margin-bottom: 20px;"><a href="https://wa.me/966538205304" style="color: var(--text); text-decoration: none;"><i class="fas fa-comments" style="margin-left: 10px; color: var(--gold);"></i> الاستشارات</a></li>
-            <li style="margin-bottom: 20px;"><a href="terms.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-file-contract" style="margin-left: 10px; color: var(--gold);"></i> الشروط والأحكام</a></li>
-            <li style="margin-bottom: 20px;"><a href="privacy.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-shield-alt" style="margin-left: 10px; color: var(--gold);"></i> سياسة الخصوصية</a></li>
-        </ul>
-    </div>
+    <div class="hero"></div>
 
-    <div class="content">
-        <div class="hero"></div>
+    <div class="container">
+        <div class="marketing">
+            <h2>مرحباً بك في إكسيلو</h2>
+            <p style="font-size: 1.2rem; color: #b0c4de;">بوابة التغيير والاستشفاء النفسي مع المدرب هاني آل حمدان</p>
+        </div>
 
-        <div class="container">
-            <div class="marketing">
-                <h2>لماذا إكسيلو؟</h2>
-                <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية لتكتشف القوة الكامنة في عقلك الباطن وتصنع مستقبلاً يتسم بالاتزان والنجاح.</p>
+        <div class="grid">
+            <div class="card">
+                <div class="img-box"><img src="courses.png.jpg" alt="الدورات"></div>
+                <h3>الدورات الرقمية</h3>
+                <a href="courses-details.html" class="btn">اكتشف برامجنا</a>
             </div>
 
-            <div class="grid">
-                <div class="card">
-                    <div class="img-box"><img src="courses.png.PNG"></div>
-                    <h3>الدورات الرقمية</h3>
-                    <a href="courses-details.html" class="btn">اكتشف برامجنا</a>
-                </div>
-                <div class="card">
-                    <div class="img-box"><img src="sessions.png.PNG"></div>
-                    <h3>الجلسات والاستشارات</h3>
-                    <a href="https://wa.me/966538205304" class="btn">احجز استشارتك</a>
-                </div>
-                <div class="card">
-                    <div class="img-box"><img src="store.png.jpg"></div>
-                    <h3>المتجر الرقمي</h3>
-                    <a href="exelo-store.html" class="btn">تصفح المتجر</a>
-                </div>
+            <div class="card">
+                <div class="img-box"><img src="sessions.png.PNG" alt="الجلسات والاستشارات"></div>
+                <h3>الجلسات والاستشارات</h3>
+                <a href="https://wa.me/966538205304?text=أريد+حجز+جلسة+استشارية" class="btn">احجز استشارتك الآن</a>
+            </div>
+
+            <div class="card">
+                <div class="img-box"><img src="store.png.jpg" alt="المتجر"></div>
+                <h3>المتجر الرقمي</h3>
+                <a href="exelo-store.html" class="btn">تصفح الكتب</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-socials">
-            <a href="https://www.tiktok.com/@hanialhmdan" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank"><i class="fab fa-snapchat"></i></a>
-            <a href="https://wa.me/966538205304" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
         </div>
-        
-        <div class="footer-links">
-            <a href="terms.html">الشروط والأحكام</a> | 
-            <a href="privacy.html">سياسة الخصوصية</a>
-        </div>
-        
-        <p class="copyright">&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
+        <p class="copyright">&copy; 2026 إكسيلو | جميع الحقوق محفوظة للمدرب هاني آل حمدان</p>
     </footer>
 
-    <script>
-        function toggleSidebar() {
-            const sb = document.getElementById('sidebar');
-            const ov = document.getElementById('overlay');
-            if (sb.style.display === "block") {
-                sb.style.display = "none";
-                sb.classList.remove('active');
-                ov.classList.remove('active');
-            } else {
-                sb.style.display = "block";
-                setTimeout(() => { sb.classList.add('active'); ov.classList.add('active'); }, 10);
-            }
-        }
-    </script>
 </body>
 </html>
