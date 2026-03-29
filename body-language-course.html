@@ -3,116 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفاصيل الدورة | EXILO</title>
+    <title>أسرار لغة الجسد | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ✅ تنسيقات عامة تمنع التداخل ✅ */
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; overflow-x: hidden; }
-
-        /* ✅ إصلاح البنر العلوي (منع تكرار EXILO) ✅ */
-        .hero-banner {
-            width: 100%;
-            height: 320px;
-            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.7)), url('banner.png 2.PNG');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .nav-back { position: absolute; top: 20px; right: 20px; z-index: 20; }
-        .nav-back a { background: rgba(197, 160, 89, 0.2); color: var(--gold); padding: 8px 15px; border-radius: 8px; text-decoration: none; border: 1px solid var(--gold); font-size: 0.9rem; }
-
-        .banner-text-area { text-align: center; z-index: 10; }
-        .banner-text-area h1 { color: var(--gold); font-size: 3.5rem; margin: 0; font-weight: bold; letter-spacing: 2px; }
-        .banner-text-area p { color: white; margin: 5px 0 0; font-size: 1.2rem; opacity: 0.9; }
-
-        /* ✅ تنسيق البطاقة الرئيسية ✅ */
-        .main-wrapper { max-width: 550px; margin: -40px auto 50px; padding: 0 15px; position: relative; z-index: 30; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; direction: rtl; line-height: 1.8; }
         
-        .content-box {
-            background: #0a111f;
-            border-radius: 25px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+        /* ✅ البنر الاحترافي الموحد للعزل (لجعل الشعار يبرز) ✅ */
+        .top-banner { 
+            width: 100%; height: 320px; 
+            background: url('banner.png 2.PNG') no-repeat center center; 
+            background-size: cover; display: flex; align-items: center; justify-content: center; position: relative;
+            border-bottom: 4px solid var(--gold);
+        }
+        
+        /* طبقة العزل لضمان وضوح شعار EXILO */
+        .top-banner::after { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(5, 10, 20, 0.75); /* تظليل غامق لعزل الخلفية المزعجة */
+            z-index: 1;
         }
 
-        .main-img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(197, 160, 89, 0.1); }
-
-        .info-area { padding: 30px; }
-        .info-area h2 { color: var(--gold); font-size: 1.8rem; margin: 0 0 15px 0; }
-        .info-area p { color: #b0c4de; line-height: 1.7; font-size: 1.1rem; margin-bottom: 25px; }
-
-        /* ✅ إصلاح السعر وزر الواتساب (تنسيق عرضي مرتب) ✅ */
-        .order-section {
-            background: rgba(197, 160, 89, 0.05);
-            border: 1px solid var(--gold);
-            border-radius: 20px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
+        .banner-content { position: relative; z-index: 10; text-align: center; }
+        .banner-logo { font-size: 3.8rem; font-weight: bold; color: var(--gold); margin: 0; line-height: 1; letter-spacing: 2px; }
+        
+        .back-link { 
+            position: absolute; top: 25px; right: 25px; z-index: 100; 
+            color: var(--gold); text-decoration: none; font-weight: bold; 
+            background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 8px;
+            font-size: 0.95rem;
         }
 
-        .price-display { display: flex; flex-direction: column; }
-        .price-val { font-size: 1.8rem; font-weight: bold; color: var(--gold); line-height: 1; }
-        .price-cur { font-size: 0.9rem; color: #8fa7c7; margin-top: 5px; }
+        .container { max-width: 850px; margin: 0 auto; padding: 20px; }
+        
+        /* ✅ تنسيق بطاقة المحتوى الجديد والصورة التعريفية ✅ */
+        .course-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 20px; overflow: hidden; margin-bottom: 40px; display: flex; flex-direction: column; transition: 0.3sEase; }
+        .course-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+        @media (min-width: 768px) { .course-card { flex-direction: row; } .course-img { width: 45%; } .course-info { width: 55%; } }
+        
+        /* ✅ احتواء صورة اليد ومنع خروجها ✅ */
+        .course-img { background: #000; height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .course-img img { width: 100%; height: 100%; object-fit: contain; } /* لظهور كامل الصورة الموقعة */
+        
+        .course-info { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .course-info h2 { color: var(--gold); margin-top: 0; font-size: 2rem; }
+        .course-info p { color: #b0c4de; margin-bottom: 25px; font-size: 1.15rem; line-height: 1.8; }
+        
+        .price-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(197, 160, 89, 0.1); padding-top: 25px; }
+        .price-tag { font-size: 1.8rem; color: var(--gold); font-weight: bold; }
+        .buy-btn { background: var(--gold); color: var(--navy); padding: 14px 35px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        .buy-btn:hover { background: #e0b86a; box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); }
 
-        .btn-whatsapp {
-            background: var(--gold);
-            color: var(--navy);
-            padding: 12px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            flex-grow: 1;
-            justify-content: center;
-        }
-        .btn-whatsapp:hover { background: #e0b86a; transform: scale(1.02); }
+        footer { text-align: center; padding: 60px 40px 40px; color: #8fa7c7; font-size: 1rem; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 60px; }
     </style>
 </head>
 <body>
 
-    <header class="hero-banner">
-        <div class="nav-back"><a href="courses-details.html"><i class="fas fa-arrow-right"></i> العودة</a></div>
-        <div class="banner-text-area">
-            <h1>EXILO</h1>
-            <p>وعي، مهارة، تمكين</p>
+    <div class="top-banner">
+        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة للدورات</a>
+        <div class="banner-content">
+            <p class="banner-logo">EXILO</p>
+            <p style="color: white; margin-top: 10px; font-size: 1.4rem;">وعي، مهارة، تمكين</p>
         </div>
-    </header>
+    </div>
 
-    <div class="main-wrapper">
-        <div class="content-box">
-            <img src="body.png.PNG" class="main-img" alt="دورة تدريبية">
-            
-            <div class="info-area">
+    <div class="container">
+        <div class="course-card">
+            <div class="course-img"><img src="body.png.PNG" alt="لغة الجسد"></div>
+            <div class="course-info">
                 <h2>أسرار لغة الجسد والكاريزما</h2>
                 <p>امتلك مهارة قراءة الأفكار عبر الجسد وفرض حضورك في أي مكان. حقيبة PowerPoint احترافية متكاملة بلمسة المدرب هاني آل حمدان.</p>
-                
-                <div class="order-section">
-                    <div class="price-display">
-                        <span class="price-val">250</span>
-                        <span class="price-cur">ريال سعودي</span>
-                    </div>
-                    <a href="https://wa.me/966538205304" class="btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> اشترك الآن
-                    </a>
+                <div class="price-row">
+                    <span class="price-tag">250 ريال</span>
+                    <a href="https://wa.me/966538205304?text=أرغب+في+دورة+لغة+الجسد" class="buy-btn">اشترك الآن عبر الواتساب</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
+    </footer>
 
 </body>
 </html>
