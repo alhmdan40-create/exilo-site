@@ -1,110 +1,118 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>دورة لغة الجسد</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      direction: rtl;
-    }
+<meta charset="UTF-8">
+<title>دورة لغة الجسد</title>
 
-    nav {
-      background: #222;
-      padding: 15px;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  direction: rtl;
+  background: #f3f3f3;
+}
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 18px;
-    }
+/* شريط علوي */
+nav {
+  background: black;
+  padding: 15px;
+  text-align: center;
+}
 
-    section {
-      padding: 60px;
-      text-align: center;
-    }
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
 
-    .hero {
-      background: #f5f5f5;
-    }
+/* القسم الأول */
+.hero {
+  text-align: center;
+  padding: 50px;
+}
 
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+.hero img {
+  width: 250px;
+  border-radius: 10px;
+}
 
-    .card {
-      width: 250px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-    }
+/* الكروت */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 30px;
+}
 
-    input {
-      padding: 10px;
-      margin: 10px;
-      width: 200px;
-    }
+.card {
+  background: white;
+  width: 220px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
 
-    button {
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      border: none;
-    }
-  </style>
+/* تسجيل الدخول */
+.login {
+  text-align: center;
+  padding: 40px;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+}
+</style>
+
 </head>
 
 <body>
 
-  <nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#course">الدورة</a>
-    <a href="#login">تسجيل الدخول</a>
-  </nav>
+<nav>
+  <a href="#">الرئيسية</a>
+  <a href="#">الدورة</a>
+  <a href="#">تسجيل الدخول</a>
+</nav>
 
-  <section id="home" class="hero">
-    <h1>دورة لغة الجسد</h1>
-    <p>تعلم قراءة الناس وفهم الإشارات غير اللفظية</p>
-    <img src="body-language.jpg" width="300">
-  </section>
+<section class="hero">
+  <h1>دورة لغة الجسد</h1>
+  <p>تعلم قراءة الناس وفهم الإشارات غير اللفظية</p>
+  <img src="https://i.imgur.com/8Km9tLL.jpg">
+</section>
 
-  <section id="course">
-    <h2>محتوى الدورة</h2>
+<section class="cards">
+  <div class="card">
+    <h3>الإشارات الأساسية</h3>
+    <p>تعرف على الحركات</p>
+  </div>
 
-    <div class="cards">
-      <div class="card">
-        <h3>الإشارات الأساسية</h3>
-        <p>تعرف على الحركات الأساسية</p>
-      </div>
+  <div class="card">
+    <h3>تحليل الشخصية</h3>
+    <p>افهم الآخرين</p>
+  </div>
 
-      <div class="card">
-        <h3>تحليل الشخصية</h3>
-        <p>افهم تصرفات الآخرين</p>
-      </div>
+  <div class="card">
+    <h3>لغة الجسد</h3>
+    <p>طبقها في حياتك</p>
+  </div>
+</section>
 
-      <div class="card">
-        <h3>لغة الجسد في العمل</h3>
-        <p>استخدمها في حياتك اليومية</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="login">
-    <h2>تسجيل الدخول</h2>
-    <input type="text" placeholder="اسم المستخدم">
-    <br>
-    <input type="password" placeholder="كلمة المرور">
-    <br>
-    <button>دخول</button>
-  </section>
+<section class="login">
+  <h2>تسجيل الدخول</h2>
+  <input type="text" placeholder="اسم المستخدم">
+  <input type="password" placeholder="كلمة المرور">
+  <button>دخول</button>
+</section>
 
 </body>
 </html>
