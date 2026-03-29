@@ -2,95 +2,21 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>تسجيل الدخول | EXILO</title>
-
-  <!-- خط احترافي -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      width: 320px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #111;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #fbbf24;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #f59e0b;
-    }
-
-    .login {
-      background: #0ea5e9;
-      color: white;
-    }
-
-    .login:hover {
-      background: #0284c7;
-    }
-
-    .note {
-      margin-top: 15px;
-      font-size: 13px;
-      color: #666;
-    }
-  </style>
+  <title>تسجيل الدخول</title>
 </head>
 
 <body>
 
-  <div class="box">
-    <h2>مرحبًا بك في EXILO</h2>
+  <h2>تسجيل الدخول</h2>
 
-    <input type="email" id="email" placeholder="البريد الإلكتروني">
-    <input type="password" id="password" placeholder="كلمة المرور">
+  <input id="email" type="email" placeholder="البريد الإلكتروني"><br><br>
+  <input id="password" type="password" placeholder="كلمة المرور"><br><br>
 
-    <button onclick="registerUser()">إنشاء حساب</button>
-    <button class="login" onclick="loginUser()">تسجيل الدخول</button>
+  <button onclick="registerUser()">إنشاء حساب</button>
+  <button onclick="loginUser()">تسجيل الدخول</button>
 
-    <div class="note">ابدأ رحلتك نحو التوازن الآن</div>
-  </div>
-
-  <!-- 🔥 Firebase -->
   <script type="module">
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
@@ -106,25 +32,24 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    // إنشاء حساب
     window.registerUser = function () {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
       createUserWithEmailAndPassword(auth, email, password)
-        .then(() => alert("تم إنشاء الحساب بنجاح 🎉"))
+        .then(() => alert("تم إنشاء الحساب"))
         .catch((error) => alert(error.message));
     };
 
-    // تسجيل دخول
     window.loginUser = function () {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
       signInWithEmailAndPassword(auth, email, password)
-        .then(() => alert("تم تسجيل الدخول بنجاح ✅"))
+        .then(() => alert("تم تسجيل الدخول"))
         .catch((error) => alert(error.message));
     };
+
   </script>
 
 </body>
