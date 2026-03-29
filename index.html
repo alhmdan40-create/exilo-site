@@ -36,7 +36,6 @@
         .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; }
         .login-btn { background: var(--gold); color: var(--navy); padding: 7px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
 
-        /* تنسيق القائمة الجانبية (Sidebar) المحسن */
         .sidebar {
             position: fixed;
             top: 0;
@@ -48,15 +47,11 @@
             transition: transform 0.4s ease, opacity 0.4s ease;
             padding: 30px 20px;
             border-left: 2px solid var(--gold);
-            display: none; /* مخفية تماماً لمنع ظهور الخطوط الجانبية */
+            display: none;
             opacity: 0;
         }
 
-        .sidebar.active { 
-            display: block; 
-            right: 0;
-            opacity: 1;
-        }
+        .sidebar.active { display: block; right: 0; opacity: 1; }
 
         .overlay {
             position: fixed;
@@ -77,11 +72,11 @@
         .sidebar-links a { color: var(--text); text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: 0.3s; }
         .sidebar-links a i { color: var(--gold); margin-left: 15px; font-size: 1.2rem; width: 25px; text-align: center; }
 
-        /* --- تنسيق البنر الذي تم إطلاحه --- */
+        /* --- تعديل اسم البنر ليتوافق مع GitHub --- */
         .hero { 
             width: 100%; 
             height: 300px; 
-            background: url('banner.png%202.PNG') center/cover no-repeat; 
+            background: url('banner.png 2.PNG') center/cover no-repeat; 
             border-bottom: 4px solid var(--gold); 
         }
 
