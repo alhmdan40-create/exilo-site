@@ -10,13 +10,12 @@
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
         
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; } /* لجعل النزول لنموذج الدخول انسيابياً */
+        html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; } /* أضفنا خاصية النزول الانسيابي */
         body { 
             font-family: 'Tajawal', sans-serif; 
             background-color: var(--navy); 
             color: var(--text); 
             direction: rtl; 
-            margin: 0; padding: 0;
             display: flex; 
             flex-direction: column; 
             overflow-x: hidden;
@@ -36,70 +35,101 @@
         }
 
         .menu-btn { color: var(--gold); font-size: 1.6rem; cursor: pointer; }
-        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; text-decoration: none; }
+        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; }
         
-        /* تفعيل زر تسجيل الدخول في الهيدر */
-        .login-btn { 
-            background: var(--gold); 
-            color: var(--navy); 
-            padding: 7px 15px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 0.85rem; 
-            transition: 0.3s;
-        }
-        .login-btn:hover { opacity: 0.8; }
+        /* تفعيل زر تسجيل الدخول للربط بالأسفل */
+        .login-btn { background: var(--gold); color: var(--navy); padding: 7px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
 
         /* القائمة الجانبية */
         .sidebar {
-            position: fixed; top: 0; right: -300px; width: 280px; height: 100%;
-            background: var(--dark-grey); z-index: 3000; transition: 0.4s ease;
-            padding: 30px 20px; border-left: 2px solid var(--gold); display: none;
+            position: fixed;
+            top: 0;
+            right: -300px; 
+            width: 280px;
+            height: 100%;
+            background: var(--dark-grey);
+            z-index: 3000;
+            transition: 0.4s ease;
+            padding: 30px 20px;
+            border-left: 2px solid var(--gold);
+            display: none;
         }
         .sidebar.active { display: block; right: 0; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: none; z-index: 2000; }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 2000;
+        }
         .overlay.active { display: block; }
         .close-sidebar { color: var(--gold); font-size: 1.8rem; cursor: pointer; margin-bottom: 30px; }
 
         /* البنر */
         .hero { 
-            width: 100%; height: 350px; 
-            background: linear-gradient(rgba(5, 10, 20, 0.4), rgba(5, 10, 20, 0.4)), url('banner.png%202.PNG') center/cover no-repeat; 
+            width: 100%; 
+            height: 350px; 
+            background: url('banner.png%202.PNG') center/cover no-repeat; 
             border-bottom: 4px solid var(--gold); 
-            display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
-        /* قسم تسجيل الدخول الجديد */
-        .auth-section { padding: 60px 20px; background: var(--dark-grey); display: flex; justify-content: center; }
-        .auth-card { 
-            background: rgba(255,255,255,0.05); padding: 35px; border-radius: 20px; 
-            border: 1px solid var(--gold); width: 100%; max-width: 400px; text-align: center; 
+        /* قسم تسجيل الدخول الجديد بنفس هويتك البصرية */
+        .login-section {
+            padding: 60px 20px;
+            background: var(--dark-grey);
+            display: flex;
+            justify-content: center;
         }
-        .auth-card h2 { color: var(--gold); margin-bottom: 20px; }
-        .auth-card input { 
-            width: 100%; padding: 12px; margin: 10px 0; background: var(--navy); 
-            border: 1px solid rgba(197, 160, 89, 0.5); border-radius: 8px; color: white; text-align: center; 
+        .login-card {
+            background: rgba(255,255,255,0.03);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid var(--gold);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
         }
-        .auth-card button { 
-            width: 100%; padding: 12px; background: var(--gold); color: var(--navy); 
-            border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px;
+        .login-card h2 { color: var(--gold); margin-bottom: 20px; }
+        .login-card input {
+            width: 100%; padding: 12px; margin: 10px 0;
+            background: var(--navy); border: 1px solid rgba(197, 160, 89, 0.3);
+            border-radius: 8px; color: white; text-align: center; font-family: 'Tajawal';
         }
-        #auth-status { margin-top: 15px; font-size: 0.9rem; font-weight: bold; }
+        .login-card button {
+            width: 100%; padding: 12px; background: var(--gold); color: var(--navy);
+            border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
+            margin-top: 10px; font-family: 'Tajawal'; font-size: 1rem;
+        }
 
-        /* الشبكة والمحتوى */
+        /* المحتوى الرئيسي */
+        .content { flex: 1; }
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         .marketing { text-align: center; margin-bottom: 50px; }
         .marketing h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 15px; }
+        
         .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .card { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; }
-        .img-box { width: 100%; height: 250px; overflow: hidden; border-radius: 15px; background: #000; margin-bottom: 20px; }
+        .card { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; margin-bottom: 20px; }
+        .img-box { width: 100%; height: 250px; margin: 0 auto 20px; overflow: hidden; border-radius: 15px; background: #000; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         .btn { display: inline-block; width: 100%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; }
 
-        footer { background: var(--dark-grey); padding: 40px 20px; border-top: 2px solid var(--gold); text-align: center; }
-        .footer-socials a { color: var(--gold); font-size: 1.5rem; margin: 0 15px; }
-        .copyright { font-size: 0.85rem; color: #5a718a; margin-top: 20px; }
+        /* الفوتر */
+        footer { 
+            background: var(--dark-grey); 
+            padding: 40px 20px; 
+            border-top: 2px solid var(--gold); 
+            text-align: center; 
+            width: 100%;
+        }
+        .footer-socials { margin-bottom: 20px; }
+        .footer-socials a { color: var(--gold); font-size: 1.5rem; margin: 0 15px; text-decoration: none; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #8fa7c7; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
+        .copyright { font-size: 0.85rem; color: #5a718a; }
     </style>
 </head>
 <body>
@@ -108,68 +138,77 @@
 
     <header>
         <div class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
-        <a href="#" class="logo-text">EXILO</a>
-        <a href="#login-form" class="login-btn">تسجيل دخول</a>
+        <div class="logo-text">EXILO</div>
+        <a href="#login-area" class="login-btn">تسجيل دخول</a>
     </header>
 
     <div class="sidebar" id="sidebar">
         <div class="close-sidebar" onclick="toggleSidebar()"><i class="fas fa-times"></i></div>
         <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 20px;"><a href="#" style="color: var(--text); text-decoration: none;"><i class="fas fa-home" style="margin-left: 10px; color: var(--gold);"></i> الرئيسية</a></li>
-            <li style="margin-bottom: 20px;"><a href="#login-form" onclick="toggleSidebar()" style="color: var(--text); text-decoration: none;"><i class="fas fa-user" style="margin-left: 10px; color: var(--gold);"></i> حسابي</a></li>
+            <li style="margin-bottom: 20px;"><a href="index.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-home" style="margin-left: 10px; color: var(--gold);"></i> الرئيسية</a></li>
+            <li style="margin-bottom: 20px;"><a href="courses-details.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-graduation-cap" style="margin-left: 10px; color: var(--gold);"></i> الدورات الرقمية</a></li>
+            <li style="margin-bottom: 20px;"><a href="exelo-store.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-book" style="margin-left: 10px; color: var(--gold);"></i> المتجر الرقمي</a></li>
             <li style="margin-bottom: 20px;"><a href="https://wa.me/966538205304" style="color: var(--text); text-decoration: none;"><i class="fas fa-comments" style="margin-left: 10px; color: var(--gold);"></i> الاستشارات</a></li>
+            <li style="margin-bottom: 20px;"><a href="terms.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-file-contract" style="margin-left: 10px; color: var(--gold);"></i> الشروط والأحكام</a></li>
+            <li style="margin-bottom: 20px;"><a href="privacy.html" style="color: var(--text); text-decoration: none;"><i class="fas fa-shield-alt" style="margin-left: 10px; color: var(--gold);"></i> سياسة الخصوصية</a></li>
         </ul>
     </div>
 
-    <div class="hero">
-        <h1>مرحباً بك في إكسيلو</h1>
-    </div>
+    <div class="content">
+        <div class="hero"></div>
 
-    <section class="auth-section" id="login-form">
-        <div class="auth-card">
-            <h2>دخول الأعضاء</h2>
-            <input type="email" id="emailInput" placeholder="البريد الإلكتروني">
-            <input type="password" id="passInput" placeholder="كلمة المرور">
-            <button id="loginSubmit">دخول للمنصة</button>
-            <div id="auth-status"></div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="marketing">
-            <h2>لماذا إكسيلو؟</h2>
-            <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية.</p>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <div class="img-box"><img src="courses.png.PNG"></div>
-                <h3>الدورات الرقمية</h3>
-                <a href="#" class="btn">اكتشف برامجنا</a>
+        <section class="login-section" id="login-area">
+            <div class="login-card">
+                <h2>تسجيل الدخول</h2>
+                <input type="email" id="email" placeholder="البريد الإلكتروني">
+                <input type="password" id="pass" placeholder="كلمة المرور">
+                <button id="loginBtn">دخول للمنصة</button>
+                <div id="status" style="margin-top:15px; font-size:0.9rem;"></div>
             </div>
-            <div class="card">
-                <div class="img-box"><img src="sessions.png.PNG?v=2"></div>
-                <h3>الجلسات والاستشارات</h3>
-                <a href="https://wa.me/966538205304" class="btn">احجز استشارتك</a>
+        </section>
+
+        <div class="container">
+            <div class="marketing">
+                <h2>لماذا إكسيلو؟</h2>
+                <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="img-box"><img src="courses.png.PNG"></div>
+                    <h3>الدورات الرقمية</h3>
+                    <a href="courses-details.html" class="btn">اكتشف برامجنا</a>
+                </div>
+                <div class="card">
+                    <div class="img-box"><img src="sessions.png.PNG?v=2"></div>
+                    <h3>الجلسات والاستشارات</h3>
+                    <a href="https://wa.me/966538205304" class="btn">احجز استشارتك</a>
+                </div>
+                <div class="card">
+                    <div class="img-box"><img src="store.png.jpg"></div>
+                    <h3>المتجر الرقمي</h3>
+                    <a href="exelo-store.html" class="btn">تصفح المتجر</a>
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-socials">
-            <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
-            <a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@hanialhmdan" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank"><i class="fab fa-snapchat"></i></a>
+            <a href="https://wa.me/966538205304" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="terms.html">الشروط والأحكام</a> | <a href="privacy.html">سياسة الخصوصية</a>
         </div>
         <p class="copyright">&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
     </footer>
 
     <script type="module">
-        // استيراد Firebase
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        // إعدادات Firebase الخاصة بك
         const firebaseConfig = {
             apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAmsD5f05l_T7i",
             authDomain: "exilo-376f1.firebaseapp.com",
@@ -182,34 +221,31 @@
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
-        // برمجة زر تسجيل الدخول
-        document.getElementById('loginSubmit').onclick = () => {
-            const email = document.getElementById('emailInput').value.trim();
-            const pass = document.getElementById('passInput').value;
-            const status = document.getElementById('auth-status');
-
+        document.getElementById('loginBtn').onclick = () => {
+            const status = document.getElementById('status');
             status.style.color = "var(--gold)";
             status.innerHTML = "جاري التحقق...";
 
-            signInWithEmailAndPassword(auth, email, pass)
+            signInWithEmailAndPassword(auth, document.getElementById('email').value, document.getElementById('pass').value)
                 .then(() => {
                     status.style.color = "#34a853";
-                    status.innerHTML = "✅ تم الدخول بنجاح! أهلاً بك.";
+                    status.innerHTML = "✅ تم الدخول بنجاح!";
                 })
                 .catch((err) => {
                     status.style.color = "#ea4335";
-                    status.innerHTML = "❌ خطأ: البيانات غير صحيحة";
+                    status.innerHTML = "❌ خطأ في البيانات";
                 });
         };
+    </script>
 
-        // وظيفة القائمة الجانبية
-        window.toggleSidebar = function() {
+    <script>
+        function toggleSidebar() {
             const sb = document.getElementById('sidebar');
             const ov = document.getElementById('overlay');
-            if (sb.classList.contains('active')) {
+            if (sb.style.display === "block") {
+                sb.style.display = "none";
                 sb.classList.remove('active');
                 ov.classList.remove('active');
-                setTimeout(() => sb.style.display = "none", 400);
             } else {
                 sb.style.display = "block";
                 setTimeout(() => { sb.classList.add('active'); ov.classList.add('active'); }, 10);
