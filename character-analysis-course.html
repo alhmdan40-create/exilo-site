@@ -3,75 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تحليل الشخصيات (الجرافولوجي) | EXILO</title>
+    <title>تفاصيل الدورة | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; direction: rtl; line-height: 1.8; }
-        
-        /* قسم البنر العلوي */
-        .top-banner { 
-            width: 100%; 
-            height: 250px; 
-            background: url('banner.png 2.PNG') no-repeat center center; 
-            background-size: cover; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center; 
-            position: relative;
-            border-bottom: 3px solid var(--gold);
-        }
-        .top-banner::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 10, 20, 0.6); }
-        .banner-content { position: relative; z-index: 10; text-align: center; }
-        .banner-logo { font-size: 2.5rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; margin: 0; }
-        .back-link { position: absolute; top: 20px; right: 20px; z-index: 100; color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; }
 
-        .hero { padding: 60px 20px; text-align: center; }
-        .hero img { max-width: 400px; width: 100%; border-radius: 25px; border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        /* ✅ البنر الاحترافي (مطابق للرئيسية 100%) ✅ */
+        .header-banner {
+            width: 100%;
+            height: 380px; 
+            background-image: linear-gradient(rgba(5, 10, 20, 0.65), rgba(5, 10, 20, 0.65)), url('banner.png 2.PNG');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .back-nav { position: absolute; top: 20px; right: 20px; z-index: 100; }
+        .back-nav a { background: rgba(197, 160, 89, 0.2); color: var(--gold); padding: 8px 18px; border-radius: 10px; text-decoration: none; font-weight: bold; border: 1px solid var(--gold); font-size: 0.95rem; }
+
+        .logo-area { text-align: center; }
+        .logo-area h1 { color: var(--gold); font-size: 3.8rem; margin: 0; letter-spacing: 4px; font-weight: bold; }
+        .logo-area p { color: white; margin-top: 5px; font-size: 1.3rem; opacity: 0.9; }
+
+        .main-container { max-width: 650px; margin: -60px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
         
-        .content { max-width: 850px; margin: 0 auto; padding: 20px; }
-        h1 { color: var(--gold); font-size: 2.3rem; margin-top: 20px; }
-        h2 { color: var(--gold); border-right: 4px solid var(--gold); padding-right: 15px; margin-top: 40px; }
-        .benefit-box { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; margin: 25px 0; border: 1px solid rgba(197,160,89,0.1); }
-        .cta-card { text-align: center; padding: 50px; background: linear-gradient(135deg, var(--gold) 0%, #e0b86a 100%); color: var(--navy); border-radius: 30px; margin-top: 60px; }
-        .cta-btn { background: var(--navy); color: var(--gold); padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3rem; }
+        .content-card {
+            background: #0a111f;
+            border-radius: 35px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+        }
+
+        /* تنسيق الصورة التعريفية لتظهر كاملة */
+        .course-hero-img { width: 100%; height: auto; display: block; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+
+        .details-padding { padding: 40px 30px; }
+        .details-padding h2 { color: var(--gold); font-size: 2rem; margin: 0 0 20px 0; font-weight: bold; }
+        .details-padding p { color: #b0c4de; line-height: 1.9; font-size: 1.15rem; margin-bottom: 30px; }
+
+        /* ✅ صندوق الاشتراك الاحترافي ✅ */
+        .subscription-box {
+            background: linear-gradient(145deg, rgba(197, 160, 89, 0.15), rgba(5, 10, 20, 0.4));
+            border: 1px solid var(--gold);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .price-text { font-size: 3rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 20px; }
+        
+        .whatsapp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.4rem;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .whatsapp-link:hover { transform: scale(1.03); background: #e0b86a; box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4); }
+        
+        .guarantee { color: #8fa7c7; font-size: 0.95rem; margin-top: 15px; display: block; }
     </style>
 </head>
 <body>
 
-    <div class="top-banner">
-        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة للدورات</a>
-        <div class="banner-content">
-            <p class="banner-logo">EXILO</p>
-            <p style="color: white; margin-top: 5px;">إكسيلو | وعي، مهارة، تمكين</p>
+    <header class="header-banner">
+        <div class="back-nav">
+            <a href="courses-details.html"><i class="fas fa-arrow-right"></i> العودة للدورات</a>
+        </div>
+        <div class="logo-area">
+            <h1>EXILO</h1>
+            <p>وعي، مهارة، تمكين</p>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="content-card">
+            <img src="body.png.PNG" class="course-hero-img" alt="دورة لغة الجسد">
+            
+            <div class="details-padding">
+                <h2>أسرار لغة الجسد والكاريزما</h2>
+                <p>حقيبة تدريبية متكاملة (PowerPoint) مصممة باحترافية لتمنحك القدرة على قراءة الإيماءات، كشف الخداع، وفرض حضورك القوي في أي اجتماع أو مقابلة شخصية بلمسة المدرب هاني آل حمدان.</p>
+                
+                <div class="subscription-box">
+                    <span class="price-text">250 ريال</span>
+                    <a href="https://wa.me/966538205304" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i> اشترك الآن عبر الواتساب
+                    </a>
+                    <span class="guarantee"><i class="fas fa-bolt"></i> تسليم فوري للملفات بعد التحويل</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="hero">
-        <img src="analysis.png.PNG">
-        <h1>الجرافولوجي: علم كشف المستور خلف القلم</h1>
-    </div>
-
-    <div class="content">
-        <h2>هل تعلم أن خطك هو "بصمة دماغك"؟</h2>
-        <p>كل حرف تكتبه هو انعكاس مباشر للجهاز العصبي. علم الجرافولوجي هو أداة عميقة لفهم الذات والآخرين واكتشاف المواهب والمخاوف الكامنة.</p>
-
-        <div class="benefit-box">
-            <h3>ماذا ستتعلم في هذه الحقيبة؟</h3>
-            <ul>
-                <li><strong>شفرة التوقيع:</strong> اكتشف الطموح، الرغبة في الظهور، أو الميل للعزلة.</li>
-                <li><strong>سيكولوجية الخط:</strong> تحليل المسافات وضغط القلم لفهم التوازن النفسي.</li>
-                <li><strong>لغة الرسومات العفوية:</strong> فك رموز "الشخبطة" وما تعكسه من مشاعر.</li>
-            </ul>
-        </div>
-
-        <div class="cta-card">
-            <h2 style="color: var(--navy); border: none;">امتلك النظرة الثاقبة اليوم</h2>
-            <div style="font-size: 3rem; font-weight: bold; margin: 20px 0;">300 ريال</div>
-            <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+الجرافولوجي" class="cta-btn">احصل عليها الآن</a>
-        </div>
-    </div>
 </body>
 </html>
