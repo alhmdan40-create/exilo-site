@@ -7,25 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --navy: #050a14; /* كحلي داكن جداً للخلفية الأساسية */
-            --card-navy: #0d1b35; /* كحلي للبطاقات */
-            --gold: #c5a059; /* ذهبي ملكي */
-            --text-white: #e6f1ff; /* أبيض مريح للعين */
+            --navy: #050a14; 
+            --card-navy: #0d1b35; 
+            --gold: #c5a059; 
+            --text-white: #e6f1ff; 
         }
         body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--navy); color: var(--text-white); direction: rtl; }
 
-        /* منطقة البانر العلوية - تم الحفاظ على الاسم المرفوع على جيت هوب */
+        /* منطقة البانر العلوية - تظهر كاملة دون تداخل */
         .hero-banner {
             width: 100%;
-            height: 450px; /* زيادة الارتفاع لإبراز الصورة كاملة */
+            height: 450px; 
             background: url('banner.png 2.PNG') center/cover no-repeat;
             border-bottom: 5px solid var(--gold);
-            position: relative;
         }
 
-        .main-container { max-width: 950px; margin: 0 auto 60px; padding: 0 20px; position: relative; z-index: 10; }
+        .main-container { max-width: 1000px; margin: 0 auto 60px; padding: 0 20px; }
         
-        /* صندوق المحتوى الرئيسي - تم إلغاء التداخل (Margin: 0) */
         .welcome-card { 
             background: var(--card-navy); 
             padding: 50px 30px; 
@@ -33,34 +31,56 @@
             box-shadow: 0 30px 70px rgba(0,0,0,0.8); 
             text-align: center; 
             border: 1px solid rgba(197, 160, 89, 0.2);
-            /* إضافة هامش علوي بسيط ليفصل الصندوق عن حافة البنر */
-            margin-top: 30px; 
+            margin-top: 30px; /* لضمان عدم التداخل مع البنر */
         }
 
-        /* شعار الدرع الذهبي (مرسوم بالكود مباشرة لضمان الظهور) */
-        .logo-box { width: 130px; height: 130px; margin: 0 auto 25px; display: block; filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.4)); }
+        .logo-box { width: 120px; height: 120px; margin: 0 auto 25px; display: block; filter: drop-shadow(0 0 15px rgba(197, 160, 89, 0.4)); }
 
-        .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        .description { color: #b0c4de; line-height: 1.8; margin-bottom: 40px; font-size: 1.2rem; max-width: 750px; margin-left: auto; margin-right: auto; }
+        .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
+        .description { color: #b0c4de; line-height: 1.8; margin-bottom: 40px; font-size: 1.1rem; }
 
         .btn-booking { 
             display: inline-block; background: linear-gradient(45deg, var(--gold), #8e7033);
-            color: #050a14; padding: 20px 65px; border-radius: 60px; 
-            text-decoration: none; font-weight: bold; font-size: 1.3rem; 
-            box-shadow: 0 12px 30px rgba(197, 160, 89, 0.4);
-            transition: 0.3s ease;
+            color: #050a14; padding: 18px 60px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; font-size: 1.2rem; 
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.4);
+            margin-bottom: 50px;
+            transition: 0.3s;
         }
-        .btn-booking:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 15px 40px rgba(197, 160, 89, 0.6); }
+        .btn-booking:hover { transform: translateY(-3px); }
 
-        /* شبكة التصنيفات */
-        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
-        .section-item { background: rgba(255,255,255,0.03); padding: 35px 25px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.07); transition: 0.4s ease; }
-        .section-item:hover { transform: translateY(-8px); border-color: var(--gold); background: rgba(197, 160, 89, 0.08); }
-        .section-item h3 { color: var(--gold); margin-bottom: 20px; font-size: 1.5rem; }
-        .link-item { display: block; color: #fff; text-decoration: none; padding: 12px; margin-top: 10px; background: rgba(255,255,255,0.06); border-radius: 12px; font-size: 1rem; transition: 0.3s; }
-        .link-item:hover { background: var(--gold); color: #050a14; font-weight: bold; }
+        /* شبكة الأقسام */
+        .sections-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .section-item { 
+            background: rgba(255,255,255,0.03); 
+            padding: 35px 25px; 
+            border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.07); 
+            text-align: right;
+            transition: 0.3s;
+        }
+        .section-item:hover { border-color: var(--gold); transform: translateY(-5px); }
+        
+        .section-item h3 { color: var(--gold); font-size: 1.6rem; margin-top: 0; margin-bottom: 15px; }
+        .section-tagline { font-size: 1rem; color: #8fa7c7; margin-bottom: 25px; line-height: 1.7; }
 
-        footer { margin-top: 60px; opacity: 0.5; font-size: 0.9rem; text-align: center; padding-bottom: 30px; color: #b0c4de; }
+        .link-item { 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            color: #fff; 
+            text-decoration: none; 
+            padding: 15px; 
+            margin-top: 10px; 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 12px; 
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .link-item:hover { background: var(--gold); color: #050a14; }
+
+        footer { margin-top: 60px; text-align: center; padding-bottom: 30px; color: #5c7291; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -77,25 +97,31 @@
             </div>
             
             <h1 class="title">عالم إكسيلو الرقمي</h1>
-            <p class="description">بوابتك الرقمية الحصرية للارتقاء بالذات وتحقيق التوازن النفسي والمهني بإشراف المدرب هاني آل حمدان بأساليب مبتكرة تدعم جودة حياتك.</p>
+            <p class="description">استكشف أدواتك المعرفية لتعيش حياة أكثر توازناً وإنجازاً بإشراف المدرب هاني آل حمدان.</p>
             
-            <a href="https://wa.me/966503460060" class="btn-booking">احجز جلستك الآن</a>
+            <a href="https://wa.me/966503460060" class="btn-booking">تواصل معنا مباشرة</a>
 
             <div class="sections-grid">
                 <div class="section-item">
-                    <h3>الدورات التدريبية</h3>
-                    <a href="#" class="link-item">تطوير الذات</a>
-                    <a href="#" class="link-item">المهارات والقيادة</a>
+                    <h3>الدورات الرقمية</h3>
+                    <p class="section-tagline">
+                        هل أنت جاهز لفك شفرات النجاح؟ استثمر في ذاتك الآن عبر برامج مكثفة صُممت لتنقلك من الحيرة إلى التمكين الكامل.
+                    </p>
+                    <a href="courses-details.html" class="link-item">
+                         اكتشف عالمك الجديد من هنا ➔
+                    </a>
                 </div>
+
                 <div class="section-item">
-                    <h3>الجلسات الاستشارية</h3>
-                    <a href="#" class="link-item">جلسات خاصة</a>
-                    <a href="#" class="link-item">استرخاء وتنويم إيحائي</a>
+                    <h3>الجلسات والاستشارات</h3>
+                    <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة تتسم بالسرية والاحترافية العالية.</p>
+                    <a href="#" class="link-item">احجز استشارتك</a>
                 </div>
+
                 <div class="section-item">
-                    <h3>الكتب الرقمية</h3>
-                    <a href="#" class="link-item">كتب رقمية (PDF)</a>
-                    <a href="#" class="link-item">حقائب باور بوينت</a>
+                    <h3>المتجر الرقمي</h3>
+                    <p class="section-tagline">مكتبتك الرقمية المتنقلة.. كتب وحقائب تدريبية جاهزة لتكون رفيقتك في رحلة النجاح.</p>
+                    <a href="#" class="link-item">تصفح المتجر</a>
                 </div>
             </div>
         </section>
