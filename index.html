@@ -10,7 +10,7 @@
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
         
         * { box-sizing: border-box; }
-        html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; } /* أضفنا خاصية النزول الانسيابي */
+        html, body { height: 100%; margin: 0; padding: 0; }
         body { 
             font-family: 'Tajawal', sans-serif; 
             background-color: var(--navy); 
@@ -36,8 +36,6 @@
 
         .menu-btn { color: var(--gold); font-size: 1.6rem; cursor: pointer; }
         .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; }
-        
-        /* تفعيل زر تسجيل الدخول للربط بالأسفل */
         .login-btn { background: var(--gold); color: var(--navy); padding: 7px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
 
         /* القائمة الجانبية */
@@ -77,34 +75,6 @@
             border-bottom: 4px solid var(--gold); 
         }
 
-        /* قسم تسجيل الدخول الجديد بنفس هويتك البصرية */
-        .login-section {
-            padding: 60px 20px;
-            background: var(--dark-grey);
-            display: flex;
-            justify-content: center;
-        }
-        .login-card {
-            background: rgba(255,255,255,0.03);
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid var(--gold);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .login-card h2 { color: var(--gold); margin-bottom: 20px; }
-        .login-card input {
-            width: 100%; padding: 12px; margin: 10px 0;
-            background: var(--navy); border: 1px solid rgba(197, 160, 89, 0.3);
-            border-radius: 8px; color: white; text-align: center; font-family: 'Tajawal';
-        }
-        .login-card button {
-            width: 100%; padding: 12px; background: var(--gold); color: var(--navy);
-            border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
-            margin-top: 10px; font-family: 'Tajawal'; font-size: 1rem;
-        }
-
         /* المحتوى الرئيسي */
         .content { flex: 1; }
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
@@ -139,7 +109,7 @@
     <header>
         <div class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
         <div class="logo-text">EXILO</div>
-        <a href="#login-area" class="login-btn">تسجيل دخول</a>
+        <a href="#" class="login-btn">تسجيل دخول</a>
     </header>
 
     <div class="sidebar" id="sidebar">
@@ -156,16 +126,6 @@
 
     <div class="content">
         <div class="hero"></div>
-
-        <section class="login-section" id="login-area">
-            <div class="login-card">
-                <h2>تسجيل الدخول</h2>
-                <input type="email" id="email" placeholder="البريد الإلكتروني">
-                <input type="password" id="pass" placeholder="كلمة المرور">
-                <button id="loginBtn">دخول للمنصة</button>
-                <div id="status" style="margin-top:15px; font-size:0.9rem;"></div>
-            </div>
-        </section>
 
         <div class="container">
             <div class="marketing">
@@ -204,39 +164,6 @@
         </div>
         <p class="copyright">&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
     </footer>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAmsD5f05l_T7i",
-            authDomain: "exilo-376f1.firebaseapp.com",
-            projectId: "exilo-376f1",
-            storageBucket: "exilo-376f1.appspot.com",
-            messagingSenderId: "736619072060",
-            appId: "1:736619072060:web:286dc36624f3be2d2a9139"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        document.getElementById('loginBtn').onclick = () => {
-            const status = document.getElementById('status');
-            status.style.color = "var(--gold)";
-            status.innerHTML = "جاري التحقق...";
-
-            signInWithEmailAndPassword(auth, document.getElementById('email').value, document.getElementById('pass').value)
-                .then(() => {
-                    status.style.color = "#34a853";
-                    status.innerHTML = "✅ تم الدخول بنجاح!";
-                })
-                .catch((err) => {
-                    status.style.color = "#ea4335";
-                    status.innerHTML = "❌ خطأ في البيانات";
-                });
-        };
-    </script>
 
     <script>
         function toggleSidebar() {
