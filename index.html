@@ -9,7 +9,7 @@
     <style>
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
         
-        html, body { height: 100%; margin: 0; }
+        html, body { height: 100%; margin: 0; padding: 0; }
         body { 
             font-family: 'Tajawal', sans-serif; 
             background-color: var(--navy); 
@@ -20,133 +20,142 @@
             overflow-x: hidden;
         }
 
-        /* --- الهيدر وأيقونة القائمة --- */
+        /* --- الهيدر العلوي --- */
         header {
-            background: rgba(5, 10, 20, 0.95);
-            padding: 15px 25px;
+            background: var(--navy);
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            border-bottom: 2px solid var(--gold);
         }
 
-        .menu-btn { color: var(--gold); font-size: 1.5rem; cursor: pointer; }
-        .login-top-btn { 
-            background: var(--gold); color: var(--navy); 
-            padding: 8px 20px; border-radius: 8px; 
-            text-decoration: none; font-weight: bold; font-size: 0.9rem;
-        }
+        .menu-btn { color: var(--gold); font-size: 1.6rem; cursor: pointer; }
+        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.4rem; letter-spacing: 2px; }
+        .login-btn { background: var(--gold); color: var(--navy); padding: 7px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
 
-        /* --- القائمة الجانبية --- */
+        /* --- القائمة الجانبية (Sidebar) --- */
         .sidebar {
             position: fixed;
             top: 0;
-            right: -280px; /* مخفية في البداية */
+            right: -300px; /* مخفية تماماً */
             width: 280px;
             height: 100%;
             background: var(--dark-grey);
-            z-index: 2000;
-            transition: 0.4s ease;
-            padding: 40px 20px;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+            z-index: 3000;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 30px 20px;
             border-left: 2px solid var(--gold);
         }
 
         .sidebar.active { right: 0; }
 
-        .close-btn { color: var(--gold); font-size: 1.8rem; cursor: pointer; display: block; margin-bottom: 40px; }
+        /* طبقة التظليل عند فتح القائمة */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 2000;
+        }
+        .overlay.active { display: block; }
+
+        .close-sidebar { color: var(--gold); font-size: 1.8rem; cursor: pointer; text-align: left; margin-bottom: 30px; }
         
-        .sidebar-links { list-style: none; padding: 0; }
-        .sidebar-links li { margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
-        .sidebar-links a { color: var(--text); text-decoration: none; font-size: 1.1rem; display: block; }
-        .sidebar-links a i { color: var(--gold); margin-left: 10px; width: 25px; }
-        .sidebar-links a:hover { color: var(--gold); }
+        .sidebar-links { list-style: none; padding: 0; margin: 0; }
+        .sidebar-links li { margin-bottom: 20px; }
+        .sidebar-links a { 
+            color: var(--text); 
+            text-decoration: none; 
+            font-size: 1.1rem; 
+            display: flex; 
+            align-items: center; 
+            padding: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .sidebar-links a i { color: var(--gold); margin-left: 15px; font-size: 1.2rem; width: 25px; text-align: center; }
+        .sidebar-links a:hover { background: rgba(197, 160, 89, 0.1); color: var(--gold); }
 
-        /* --- باقي محتوى الصفحة --- */
-        .content-wrapper { flex: 1; }
-        .hero-banner { width: 100%; height: 300px; background: url('banner.png%202.PNG') center/cover no-repeat; border-bottom: 4px solid var(--gold); }
-        .main-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .marketing-header { text-align: center; margin-bottom: 50px; }
-        .marketing-header h2 { color: var(--gold); font-size: 2.2rem; }
-        .sections-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .section-item { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; }
-        .img-wrapper { width: 250px; height: 250px; margin: 0 auto 20px; overflow: hidden; border-radius: 15px; background: #000; display: flex; align-items: center; justify-content: center; }
-        .section-img { width: 100%; height: 100%; object-fit: cover; }
-        .link-item { display: inline-block; width: 90%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; }
+        /* --- محتوى الصفحة --- */
+        .hero { width: 100%; height: 300px; background: url('banner.png%202.PNG') center/cover no-repeat; border-bottom: 4px solid var(--gold); }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; flex: 1; }
+        .marketing { text-align: center; margin-bottom: 50px; }
+        .marketing h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 15px; }
+        
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .card { background: rgba(255,255,255,0.03); width: 310px; padding: 25px; border-radius: 20px; border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; }
+        .img-box { width: 250px; height: 250px; margin: 0 auto 20px; overflow: hidden; border-radius: 15px; background: #000; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .btn { display: inline-block; width: 90%; color: #050a14; text-decoration: none; padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; }
 
-        footer { background-color: var(--dark-grey); padding: 40px 20px; border-top: 2px solid var(--gold); text-align: center; margin-top: auto; }
-        .footer-socials a { color: var(--gold); font-size: 2rem; margin: 0 15px; text-decoration: none; }
+        footer { background: var(--dark-grey); padding: 40px 20px; border-top: 2px solid var(--gold); text-align: center; }
     </style>
 </head>
 <body>
 
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
     <header>
         <div class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
-        <div style="color: var(--gold); font-weight: bold; font-size: 1.3rem;">EXILO</div>
-        <a href="#" class="login-top-btn">تسجيل دخول</a>
+        <div class="logo-text">EXILO</div>
+        <a href="#" class="login-btn">تسجيل دخول</a>
     </header>
 
-    <div class="sidebar" id="mySidebar">
-        <div class="close-btn" onclick="toggleSidebar()"><i class="fas fa-times"></i></div>
+    <div class="sidebar" id="sidebar">
+        <div class="close-sidebar" onclick="toggleSidebar()"><i class="fas fa-times"></i></div>
         <ul class="sidebar-links">
             <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
             <li><a href="courses-details.html"><i class="fas fa-graduation-cap"></i> الدورات الرقمية</a></li>
             <li><a href="https://wa.me/966538205304"><i class="fas fa-comments"></i> الجلسات والاستشارات</a></li>
-            <li><a href="#"><i class="fas fa-store"></i> المتجر الرقمي</a></li>
+            <li><a href="https://wa.me/966538205304"><i class="fas fa-store"></i> المتجر الرقمي</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> الشروط والأحكام</a></li>
-            <li style="margin-top: 40px;">
-                <a href="#" style="color: var(--gold); font-weight: bold;">
-                    <i class="fas fa-sign-in-alt"></i> تسجيل دخول المتدربين
-                </a>
-            </li>
+            <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a></li>
         </ul>
     </div>
 
-    <div class="content-wrapper">
-        <div class="hero-banner"></div>
-        <div class="main-container">
-            <div class="marketing-header">
-                <h2>لماذا إكسيلو؟</h2>
-                <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية لتكتشف القوة الكامنة في عقلك الباطن.</p>
+    <div class="hero"></div>
+
+    <div class="container">
+        <div class="marketing">
+            <h2>لماذا إكسيلو؟</h2>
+            <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية لتكتشف القوة الكامنة في عقلك الباطن وتصنع مستقبلاً يتسم بالاتزان والنجاح.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="img-box"><img src="courses.png.PNG"></div>
+                <h3>الدورات الرقمية</h3>
+                <a href="courses-details.html" class="btn">اكتشف برامجنا</a>
             </div>
-            <div class="sections-grid">
-                <div class="section-item">
-                    <div class="img-wrapper"><img src="courses.png.PNG" class="section-img"></div>
-                    <h3>الدورات الرقمية</h3>
-                    <a href="courses-details.html" class="link-item">اكتشف برامجنا</a>
-                </div>
-                <div class="section-item">
-                    <div class="img-wrapper"><img src="sessions.png.PNG" class="section-img"></div>
-                    <h3>الجلسات والاستشارات</h3>
-                    <a href="https://wa.me/966538205304" class="link-item">احجز استشارتك الآن</a>
-                </div>
-                <div class="section-item">
-                    <div class="img-wrapper"><img src="store.png.jpg" class="section-img"></div>
-                    <h3>المتجر الرقمي</h3>
-                    <a href="https://wa.me/966538205304" class="link-item">تصفح المتجر</a>
-                </div>
+            <div class="card">
+                <div class="img-box"><img src="sessions.png.PNG"></div>
+                <h3>الجلسات والاستشارات</h3>
+                <a href="https://wa.me/966538205304" class="btn">احجز استشارتك</a>
+            </div>
+            <div class="card">
+                <div class="img-box"><img src="store.png.jpg"></div>
+                <h3>المتجر الرقمي</h3>
+                <a href="https://wa.me/966538205304" class="btn">تصفح المتجر</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-socials">
-            <a href="https://www.tiktok.com/@hanialhmdan" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank"><i class="fab fa-snapchat"></i></a>
-            <a href="https://wa.me/966538205304" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <div class="copyright">&copy; 2026 إكسيلو | EXILO. جميع الحقوق محفوظة لـ هاني آل حمدان</div>
+        <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
     </footer>
 
     <script>
         function toggleSidebar() {
-            const sidebar = document.getElementById('mySidebar');
-            sidebar.classList.toggle('active');
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
         }
     </script>
-
 </body>
 </html>
