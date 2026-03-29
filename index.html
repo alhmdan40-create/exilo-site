@@ -9,14 +9,11 @@
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
         body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--navy); color: var(--text); direction: rtl; }
 
-        /* منطقة البانر العلوية */
         .hero-banner {
             width: 100%;
             height: 380px; 
-            background-image: url('./banner.png%202.PNG'); /* المسار المباشر للبنر */
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            /* تم كتابة المسافة هنا كـ %20 ليفهمها المتصفح */
+            background: url('banner.png%202.PNG') center/cover no-repeat;
             border-bottom: 4px solid var(--gold);
         }
 
@@ -32,11 +29,9 @@
             border-radius: 25px; 
             border: 1px solid rgba(197, 160, 89, 0.15); 
             transition: 0.4s ease;
-            text-align: center;
         }
         .section-item:hover { transform: translateY(-12px); border-color: var(--gold); background: rgba(197, 160, 89, 0.08); }
 
-        /* تنسيق الصور لضمان الظهور */
         .section-img { 
             width: 100%; 
             height: 260px; 
@@ -54,7 +49,7 @@
             padding: 15px; background: var(--gold); border-radius: 12px; font-weight: bold; 
             transition: 0.3s; font-size: 1.1rem;
         }
-        .link-item:hover { background: #b59410; transform: scale(1.02); }
+        .link-item:hover { background: #b59410; }
     </style>
 </head>
 <body>
@@ -71,27 +66,27 @@
             </div>
             
             <h1 class="title">عالم إكسيلو الرقمي</h1>
-            <p style="color: #b0c4de; font-size: 1.2rem; margin-bottom: 20px;">بإشراف المدرب هاني آل حمدان</p>
+            <p style="color: #b0c4de;">بإشراف المدرب هاني آل حمدان</p>
 
             <div class="sections-grid">
                 <div class="section-item">
-                    <img src="./courses.png.PNG" alt="الدورات الرقمية" class="section-img">
+                    <img src="courses.png.PNG" alt="الدورات" class="section-img">
                     <h3>الدورات الرقمية</h3>
-                    <p class="section-tagline">برامج تدريبية احترافية تنقلك لمستوى جديد من الوعي والتمكين.</p>
+                    <p class="section-tagline">برامج تدريبية احترافية تنقلك لمستوى جديد من الوعي.</p>
                     <a href="courses-details.html" class="link-item">اكتشف برامجنا ➔</a>
                 </div>
 
                 <div class="section-item">
-                    <img src="./sessions.png.PNG" alt="الجلسات والاستشارات" class="section-img">
+                    <img src="sessions.png.PNG" alt="الجلسات" class="section-img">
                     <h3>الجلسات والاستشارات</h3>
                     <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة واحترافية.</p>
                     <a href="https://wa.me/966503460060" class="link-item">احجز استشارتك الآن</a>
                 </div>
 
                 <div class="section-item">
-                    <img src="./store.png.PNG" alt="المتجر الرقمي" class="section-img">
+                    <img src="store.png.PNG" alt="المتجر" class="section-img">
                     <h3>المتجر الرقمي</h3>
-                    <p class="section-tagline">مكتبتك المعرفية.. حقائب تدريبية وكتب رقمية جاهزة للتحميل.</p>
+                    <p class="section-tagline">مكتبتك المعرفية.. حقائب تدريبية وكتب رقمية جاهزة.</p>
                     <a href="#" class="link-item">تصفح المتجر</a>
                 </div>
             </div>
