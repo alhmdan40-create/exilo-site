@@ -7,145 +7,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
-        
-        body { 
-            font-family: 'Tajawal', sans-serif; 
-            background-color: var(--navy); 
-            color: var(--text); 
-            margin: 0; 
-            direction: rtl; 
-            overflow-x: hidden;
-        }
-
-        header {
-            background: var(--navy);
-            padding: 15px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .back-btn { color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.3rem; letter-spacing: 1px; }
-
+        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; direction: rtl; }
+        header { background: var(--navy); padding: 15px 25px; display: flex; justify-content: space-between; border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000; }
+        .back-btn { color: var(--gold); text-decoration: none; font-weight: bold; }
         .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-
-        .course-header { text-align: center; margin-bottom: 50px; }
-        .course-header h1 { color: var(--gold); font-size: 2.2rem; }
-
-        .course-card { 
-            background: rgba(255,255,255,0.03); 
-            border: 1px solid rgba(197, 160, 89, 0.2); 
-            border-radius: 20px; 
-            overflow: hidden; 
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media (min-width: 768px) {
-            .course-card { flex-direction: row; }
-            .course-img { width: 45%; }
-            .course-info { width: 55%; }
-        }
-
-        /* التصحيح الجوهري هنا لظهور كامل الصورة */
-        .course-img { 
-            background: #000; 
-            height: 450px; /* زيادة الارتفاع ليتناسب مع أبعاد صورك */
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-        }
-        .course-img img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: contain; /* يضمن ظهور كامل الصورة دون قص الأطراف */
-        }
-
-        .course-info { padding: 30px; display: flex; flex-direction: column; justify-content: center; }
-        .course-info h2 { color: var(--gold); margin-top: 0; font-size: 1.6rem; }
-        .course-info p { line-height: 1.8; color: #cbd5e1; margin-bottom: 20px; }
-
-        .features { list-style: none; padding: 0; margin-bottom: 25px; }
-        .features li { margin-bottom: 12px; display: flex; align-items: center; }
-        .features li i { color: var(--gold); margin-left: 12px; }
-
+        .course-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 20px; overflow: hidden; margin-bottom: 40px; display: flex; flex-direction: column; }
+        @media (min-width: 768px) { .course-card { flex-direction: row; } .course-img { width: 45%; } .course-info { width: 55%; } }
+        .course-img { background: #000; height: 350px; display: flex; align-items: center; justify-content: center; }
+        .course-img img { width: 100%; height: 100%; object-fit: contain; }
+        .course-info { padding: 30px; display: flex; flex-direction: column; }
+        .course-info h2 { color: var(--gold); margin-top: 0; }
         .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid rgba(197, 160, 89, 0.1); padding-top: 20px; }
-        .price-tag { font-size: 1.6rem; color: var(--gold); font-weight: bold; }
-
-        .buy-btn { 
-            background: var(--gold); 
-            color: var(--navy); 
-            padding: 12px 25px; 
-            border-radius: 10px; 
-            text-decoration: none; 
-            font-weight: bold; 
-        }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(197, 160, 89, 0.1); }
+        .price-tag { font-size: 1.5rem; color: var(--gold); font-weight: bold; }
+        .buy-btn { background: var(--gold); color: var(--navy); padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .buy-btn:hover { background: #e0b86a; }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
-        <div class="logo-text">EXILO</div>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> الرئيسية</a>
+        <div style="color: var(--gold); font-weight: bold;">EXILO</div>
     </header>
 
     <div class="container">
-        <div class="course-header">
-            <h1>برامجنا التدريبية الرقمية</h1>
-            <p>حلول عملية مبرمجة لخدمة وعيك وتطوير قدراتك.</p>
-        </div>
-
+        <h1 style="text-align: center; color: var(--gold);">حقائبنا التدريبية الرقمية</h1>
+        
         <div class="course-card">
-            <div class="course-img">
-                <img src="body.png.PNG" alt="دورة لغة الجسد">
-            </div>
+            <div class="course-img"><img src="body.png.PNG"></div>
             <div class="course-info">
-                <h2>دورة لغة الجسد (فنون التواصل)</h2>
-                <p>تعلم كيف تقرأ الآخرين ككتاب مفتوح واكتشف معاني الإيماءات ونبرات الصوت لفرض حضورك وإقناع من حولك.</p>
-                <ul class="features">
-                    <li><i class="fas fa-eye"></i> فك رموز الإيماءات</li>
-                    <li><i class="fas fa-hand-paper"></i> تحليل حركات اليدين</li>
-                    <li><i class="fas fa-certificate"></i> شهادة رقمية معتمدة</li>
-                </ul>
+                <h2>دورة لغة الجسد</h2>
+                <p>امتلك مهارة قراءة الأفكار عبر الجسد. حقيبة تدريبية احترافية بصيغة PowerPoint.</p>
                 <div class="price-row">
                     <span class="price-tag">250 ريال</span>
-                    <a href="https://wa.me/966538205304" class="buy-btn">اشترك الآن</a>
+                    <a href="body-language-course.html" class="buy-btn">احصل عليها الآن</a>
                 </div>
             </div>
         </div>
 
         <div class="course-card">
-            <div class="course-img">
-                <img src="analysis.png.PNG" alt="تحليل الشخصيات">
-            </div>
+            <div class="course-img"><img src="analysis.png.PNG"></div>
             <div class="course-info">
-                <h2>تحليل الشخصيات (الكتابة والتوقيع)</h2>
-                <p>تعلم كيف تحلل الشخصية بدقة من خلال طريقة الكتابة اليدوية، وحجم الخط، وميلان الكلمات، وشكل التوقيع.</p>
-                <ul class="features">
-                    <li><i class="fas fa-signature"></i> تحليل التوقيع</li>
-                    <li><i class="fas fa-pen-nib"></i> علم الجرافولوجي</li>
-                    <li><i class="fas fa-chart-line"></i> تطبيقات عملية</li>
-                </ul>
+                <h2>تحليل الشخصيات (الجرافولوجي)</h2>
+                <p>افهم خفايا النفس من خلال الخط والتوقيع. عرض تقديمي شامل ومتكامل.</p>
                 <div class="price-row">
                     <span class="price-tag">300 ريال</span>
-                    <a href="https://wa.me/966538205304" class="buy-btn">اشترك الآن</a>
+                    <a href="character-analysis-course.html" class="buy-btn">احصل عليها الآن</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
-    </footer>
-
 </body>
 </html>
