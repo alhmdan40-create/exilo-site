@@ -3,202 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لغة الجسد | EXILO</title>
+    <title>أسرار لغة الجسد | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; line-height: 1.8; }
 
-        /* ✅ البنر العلوي: منع التداخل نهائياً ✅ */
-        .header-fixed {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.7)), url('banner.png 2.PNG');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 3px solid var(--gold);
-            z-index: 100; /* لضمان بقائه في الخلف */
-        }
+        .nav-header { padding: 20px; display: flex; justify-content: flex-end; }
+        .back-link { color: var(--gold); text-decoration: none; font-weight: bold; border: 1px solid var(--gold); padding: 8px 20px; border-radius: 10px; background: rgba(197, 160, 89, 0.1); }
 
-        .back-btn { position: absolute; top: 20px; right: 20px; z-index: 200; }
-        .back-btn a { background: rgba(197, 160, 89, 0.2); color: var(--gold); padding: 8px 15px; border-radius: 8px; text-decoration: none; border: 1px solid var(--gold); }
+        .main-container { max-width: 800px; margin: 20px auto; padding: 20px; }
+        
+        /* تصميم الصورة التعريفية */
+        .hero-img-box { text-align: center; margin-bottom: 40px; }
+        .hero-img-box img { width: 100%; max-width: 500px; border-radius: 30px; border: 2px solid var(--gold); box-shadow: 0 15px 45px rgba(0,0,0,0.6); }
 
-        .logo-box h1 { color: var(--gold); font-size: 3.5rem; margin: 0; font-weight: bold; }
-        .logo-box p { color: white; margin: 5px 0 0; font-size: 1.2rem; }
+        /* المحتوى التسويقي */
+        .marketing-content h1 { color: var(--gold); font-size: 2.5rem; text-align: center; margin-bottom: 30px; }
+        .description-text { font-size: 1.2rem; color: #b0c4de; text-align: justify; }
+        .highlight-box { background: rgba(255, 255, 255, 0.05); border-right: 5px solid var(--gold); padding: 25px; margin: 30px 0; border-radius: 0 15px 15px 0; }
+        
+        .features-list { list-style: none; padding: 0; }
+        .features-list li { margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px; font-size: 1.1rem; }
+        .features-list i { color: var(--gold); margin-top: 5px; }
 
-        /* ✅ منطقة المحتوى: دفعها للأسفل لمنع تداخل صورة اليد ✅ */
-        .main-content { 
-            max-width: 600px; 
-            margin: 40px auto; /* مسافة أمان كافية أسفل البنر */
-            padding: 0 20px; 
-        }
-
-        .card {
-            background: #0a111f;
-            border-radius: 25px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        }
-
-        /* تنسيق صورة اليد لتكون داخل الكرت فقط */
-        .card-img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--gold); }
-
-        .card-body { padding: 30px; }
-        .card-body h2 { color: var(--gold); margin: 0 0 15px; }
-        .card-body p { color: #b0c4de; line-height: 1.8; font-size: 1.1rem; }
-
-        /* ✅ زر الاشتراك الموحد ✅ */
-        .price-box {
-            background: rgba(197, 160, 89, 0.1);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price-val { font-size: 2rem; font-weight: bold; color: var(--gold); }
-        .order-btn { 
-            background: var(--gold); color: var(--navy); 
-            padding: 12px 25px; border-radius: 12px; 
-            text-decoration: none; font-weight: bold; 
-        }
+        /* صندوق الشراء */
+        .purchase-card { background: linear-gradient(145deg, #0a111f, #101a2d); border: 2px solid var(--gold); border-radius: 25px; padding: 40px; text-align: center; margin-top: 50px; }
+        .price-tag { font-size: 3.5rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 10px; }
+        .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 15px; background: var(--gold); color: var(--navy); padding: 20px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 1.5rem; transition: 0.3s; }
+        .whatsapp-btn:hover { background: #e0b86a; transform: scale(1.02); }
     </style>
 </head>
 <body>
 
-    <header class="header-fixed">
-        <div class="back-btn"><a href="courses-details.html">العودة</a></div>
-        <div class="logo-box">
-            
-        </div><!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لغة الجسد | EXILO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; padding: 0; direction: rtl; }
+    <div class="nav-header">
+        <a href="courses-details.html" class="back-link">العودة للدورات</a>
+    </div>
 
-        /* ✅ البنر العلوي: منع التداخل نهائياً ✅ */
-        .header-fixed {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.7)), url('banner.png 2.PNG');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 3px solid var(--gold);
-            z-index: 100; /* لضمان بقائه في الخلف */
-        }
-
-        .back-btn { position: absolute; top: 20px; right: 20px; z-index: 200; }
-        .back-btn a { background: rgba(197, 160, 89, 0.2); color: var(--gold); padding: 8px 15px; border-radius: 8px; text-decoration: none; border: 1px solid var(--gold); }
-
-        .logo-box h1 { color: var(--gold); font-size: 3.5rem; margin: 0; font-weight: bold; }
-        .logo-box p { color: white; margin: 5px 0 0; font-size: 1.2rem; }
-
-        /* ✅ منطقة المحتوى: دفعها للأسفل لمنع تداخل صورة اليد ✅ */
-        .main-content { 
-            max-width: 600px; 
-            margin: 40px auto; /* مسافة أمان كافية أسفل البنر */
-            padding: 0 20px; 
-        }
-
-        .card {
-            background: #0a111f;
-            border-radius: 25px;
-            border: 1px solid rgba(197, 160, 89, 0.3);
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        }
-
-        /* تنسيق صورة اليد لتكون داخل الكرت فقط */
-        .card-img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--gold); }
-
-        .card-body { padding: 30px; }
-        .card-body h2 { color: var(--gold); margin: 0 0 15px; }
-        .card-body p { color: #b0c4de; line-height: 1.8; font-size: 1.1rem; }
-
-        /* ✅ زر الاشتراك الموحد ✅ */
-        .price-box {
-            background: rgba(197, 160, 89, 0.1);
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price-val { font-size: 2rem; font-weight: bold; color: var(--gold); }
-        .order-btn { 
-            background: var(--gold); color: var(--navy); 
-            padding: 12px 25px; border-radius: 12px; 
-            text-decoration: none; font-weight: bold; 
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header-fixed">
-        <div class="back-btn"><a href="courses-details.html">العودة</a></div>
-        <div class="logo-box">
-            
+    <div class="main-container">
+        <div class="hero-img-box">
+            <img src="body.png.PNG" alt="دورة لغة الجسد">
         </div>
-    </header>
 
-    <div class="main-content">
-        <div class="card">
-            <img src="body.png.PNG" class="card-img" alt="دورة لغة الجسد">
+        <div class="marketing-content">
+            <h1>حقيبة أسرار لغة الجسد والكاريزما</h1>
             
-            <div class="card-body">
-                <h2>أسرار لغة الجسد والكاريزما</h2>
-                <p>حقيبة تدريبية متكاملة تمنحك القوة في التواصل غير اللفظي وفهم إيماءات الآخرين بذكاء.</p>
-                
-                <div class="price-box">
-                    <span class="price-val">250 ريال</span>
-                    <a href="https://wa.me/966538205304" class="order-btn">اشترك الآن</a>
-                </div>
+            <div class="description-text">
+                <p>هل شعرت يوماً أن هناك رسائل خفية تُقال لك دون كلمات؟ هل تتمنى أن تملك القدرة على قراءة أفكار من حولك بمجرد النظر إلى حركاتهم؟</p>
+                <p>نقدم لك <strong>الحقيبة التدريبية المتكاملة (PowerPoint)</strong> التي تلخص سنوات من الخبرة في تحليل السلوك الإنساني بلمسة المدرب <strong>هاني آل حمدان</strong>. هذه ليست مجرد معلومات نظرية، بل هي أدوات عملية تجعلك الشخص الأكثر تأثيراً في أي مكان تتواجد فيه.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>لماذا هذه الحقيبة هي خيارك الأفضل؟</h3>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>تحليل الإيماءات:</strong> تعلم كيف تفرق بين الابتسامة الصادقة والمزيفة بذكاء.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>كشف الخداع:</strong> تعرف على العلامات الجسدية التي تظهر عند محاولة إخفاء الحقيقة.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>بناء الهيبة:</strong> اكتشف وضعيات الجسد التي تمنحك كاريزما القيادة والثقة الفورية في الاجتماعات.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>لغة العيون:</strong> افهم اتجاهات النظر وما تعكسه من مشاعر داخلية دفينة.</li>
+                </ul>
+            </div>
+
+            <p class="description-text">هذه الحقيبة مصممة لتكون مرجعك الدائم، سواء كنت مدرباً يبحث عن مادة علمية رصينة، أو فرداً يسعى لتطوير مهاراته الاجتماعية والمهنية. الملف جاهز للعرض والمراجعة في أي وقت وبجودة عالية جداً.</p>
+
+            <div class="purchase-card">
+                <span style="color: #8fa7c7; font-size: 1.1rem;">احصل على الحقيبة الآن بسعر</span>
+                <span class="price-tag">250 ريال</span>
+                <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+لغة+الجسد" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> اطلبها الآن عبر الواتساب
+                </a>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #8fa7c7;">يتم إرسال الملفات إليك مباشرة بعد إتمام عملية الدفع.</p>
             </div>
         </div>
     </div>
 
-</body>
-</html>
-ض
-    </header>
-
-    <div class="main-content">
-        <div class="card">
-            <img src="body.png.PNG" class="card-img" alt="دورة لغة الجسد">
-            
-            <div class="card-body">
-                <h2>أسرار لغة الجسد والكاريزما</h2>
-                <p>حقيبة تدريبية متكاملة تمنحك القوة في التواصل غير اللفظي وفهم إيماءات الآخرين بذكاء.</p>
-                
-                <div class="price-box">
-                    <span class="price-val">250 ريال</span>
-                    <a href="https://wa.me/966538205304" class="order-btn">اشترك الآن</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <footer style="text-align: center; padding: 40px; color: #8fa7c7; opacity: 0.6;">
+        &copy; 2026 EXILO - المدرب هاني آل حمدان
+    </footer>
 
 </body>
 </html>
