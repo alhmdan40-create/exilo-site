@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | EXILO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
+        
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            background-color: var(--navy); 
+            color: var(--text); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0;
+            background-image: radial-gradient(circle at center, #0a1528 0%, #050a14 100%);
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.03);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo-text { 
+            color: var(--gold); 
+            font-weight: bold; 
+            font-size: 2.5rem; 
+            letter-spacing: 4px; 
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        h2 { color: #fff; margin-bottom: 30px; font-weight: 400; font-size: 1.2rem; }
+
+        .input-group { position: relative; margin-bottom: 20px; text-align: right; }
+        .input-group i { position: absolute; right: 15px; top: 40px; color: var(--gold); }
+
+        label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--gold); }
+
+        input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            border-radius: 10px;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus { border-color: var(--gold); background: rgba(255, 255, 255, 0.08); }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover { background: #d4b477; transform: translateY(-2px); }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+
+        .options a { color: #8fa7c7; text-decoration: none; transition: 0.3s; }
+        .options a:hover { color: var(--gold); }
+
+        .back-home { margin-top: 30px; display: block; color: var(--gold); text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <a href="index.html" class="logo-text">EXILO</a>
+        <h2>تسجيل الدخول إلى حسابك</h2>
+
+        <form>
+            <div class="input-group">
+                <label>البريد الإلكتروني</label>
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="example@mail.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>كلمة المرور</label>
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="********" required>
+            </div>
+
+            <button type="submit" class="login-btn">دخول</button>
+        </form>
+
+        <div class="options">
+            <a href="#">نسيت كلمة المرور؟</a>
+            <a href="#">إنشاء حساب جديد</a>
+        </div>
+
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-right" style="margin-left: 5px;"></i> العودة للرئيسية</a>
+    </div>
+
+</body>
+</html>
