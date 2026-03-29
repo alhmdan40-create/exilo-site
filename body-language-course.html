@@ -10,67 +10,51 @@
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
         body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; direction: rtl; line-height: 1.8; }
         
-        /* قسم البنر العلوي */
         .top-banner { 
-            width: 100%; 
-            height: 250px; 
+            width: 100%; height: 280px; 
             background: url('banner.png 2.PNG') no-repeat center center; 
-            background-size: cover; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center; 
-            position: relative;
-            border-bottom: 3px solid var(--gold);
+            background-size: cover; display: flex; align-items: center; justify-content: center; position: relative;
         }
-        .top-banner::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 10, 20, 0.6); }
+        .top-banner::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 10, 20, 0.7); z-index: 1; }
         .banner-content { position: relative; z-index: 10; text-align: center; }
-        .banner-logo { font-size: 2.5rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; margin: 0; }
-        .back-link { position: absolute; top: 20px; right: 20px; z-index: 100; color: var(--gold); text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        .banner-logo { font-size: 3rem; font-weight: bold; color: var(--gold); margin: 0; }
+        .back-link { position: absolute; top: 20px; right: 20px; z-index: 100; color: var(--gold); text-decoration: none; font-weight: bold; background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 8px; }
 
-        .hero { padding: 60px 20px; text-align: center; }
-        .hero img { max-width: 400px; width: 100%; border-radius: 25px; border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .content { max-width: 700px; margin: 40px auto; padding: 20px; }
+        h1 { color: var(--gold); text-align: center; font-size: 2.2rem; }
+        .benefit-box { background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; border: 1px solid rgba(197,160,89,0.1); margin: 30px 0; }
         
-        .content { max-width: 850px; margin: 0 auto; padding: 20px; }
-        h1 { color: var(--gold); font-size: 2.3rem; margin-top: 20px; }
-        h2 { color: var(--gold); border-right: 4px solid var(--gold); padding-right: 15px; margin-top: 40px; }
-        .benefit-box { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 20px; margin: 25px 0; border: 1px solid rgba(197,160,89,0.1); }
-        .cta-card { text-align: center; padding: 50px; background: linear-gradient(135deg, var(--gold) 0%, #e0b86a 100%); color: var(--navy); border-radius: 30px; margin-top: 60px; }
-        .cta-btn { background: var(--navy); color: var(--gold); padding: 18px 50px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1.3rem; }
+        /* ✅ كرت الاشتراك الموحد ✅ */
+        .action-card { background: rgba(197, 160, 89, 0.08); border: 2px solid var(--gold); border-radius: 25px; padding: 30px; text-align: center; margin-top: 40px; }
+        .price-tag { font-size: 3rem; font-weight: bold; color: var(--gold); display: block; margin-bottom: 20px; }
+        .whatsapp-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: var(--gold); color: var(--navy); padding: 18px; border-radius: 15px; text-decoration: none; font-weight: bold; font-size: 1.3rem; transition: 0.3s; }
+        .whatsapp-btn:hover { background: #e0b86a; transform: scale(1.02); }
     </style>
 </head>
 <body>
-
     <div class="top-banner">
-        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة للدورات</a>
-        <div class="banner-content">
-            <p class="banner-logo">EXILO</p>
-            <p style="color: white; margin-top: 5px;">إكسيلو | وعي، مهارة، تمكين</p>
-        </div>
-    </div>
-
-    <div class="hero">
-        <img src="body.png.PNG">
-        <h1>لغة الجسد: سلاحك الخفي للنجاح</h1>
+        <a href="courses-details.html" class="back-link"><i class="fas fa-arrow-right"></i> الدورات</a>
+        <div class="banner-content"><h1 class="banner-logo">EXILO</h1><p style="color:white">وعي، مهارة، تمكين</p></div>
     </div>
 
     <div class="content">
-        <h2>لماذا يفشل الكثيرون في الإقناع؟</h2>
-        <p>السر يكمن في "الرسائل غير المرئية". الجسد يرسل آلاف الإشارات في الدقيقة الواحدة، وإذا لم تكن تتقن قراءتها وإرسالها، فأنت تخسر نصف المعركة التواصلية.</p>
-
+        <h1>لغة الجسد: سلاحك الخفي</h1>
+        <p>تعلم فنون التأثير غير اللفظي وكشف الخداع من خلال حركات الجسد والعيون.</p>
+        
         <div class="benefit-box">
-            <h3>ماذا ستحقق بعد اقتناء هذه الحقيبة؟</h3>
-            <ul>
-                <li><strong>كشف المستور:</strong> تعلم كيف تميز بين الابتسامة الحقيقية والمزيفة.</li>
-                <li><strong>صناعة الكاريزما:</strong> تدرب على وضعيات الجسد التي تعطي انطباعاً فورياً بالثقة والقوة.</li>
-                <li><strong>قراءة لغة العيون:</strong> فهم اتجاهات النظر ومعاني اتساع حدقة العين.</li>
+            <h3>ماذا ستتعلم؟</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><i class="fas fa-check-circle" style="color:var(--gold)"></i> كشف الكذب وحركات اليدين.</li>
+                <li><i class="fas fa-check-circle" style="color:var(--gold)"></i> بناء كاريزما قوية في المقابلات.</li>
+                <li><i class="fas fa-check-circle" style="color:var(--gold)"></i> فهم إيماءات العيون ونظرات الثقة.</li>
             </ul>
         </div>
 
-        <div class="cta-card">
-            <h2 style="color: var(--navy); border: none;">لا تدع الفرص تفوتك</h2>
-            <div style="font-size: 3rem; font-weight: bold; margin: 20px 0;">250 ريال</div>
-            <a href="https://wa.me/966538205304?text=أرغب+في+الحصول+على+حقيبة+لغة+الجسد" class="cta-btn">احصل عليها الآن</a>
+        <div class="action-card">
+            <span class="price-tag">250 ريال</span>
+            <a href="https://wa.me/966538205304?text=أرغب+في+دورة+لغة+الجسد" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> اشترك الآن عبر الواتساب
+            </a>
         </div>
     </div>
 </body>
