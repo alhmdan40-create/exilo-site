@@ -1,194 +1,110 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>دورة لغة الجسد</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      direction: rtl;
+    }
 
-<title>إكسيلو | EXILO</title>
+    nav {
+      background: #222;
+      padding: 15px;
+      text-align: center;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-<style>
+    section {
+      padding: 60px;
+      text-align: center;
+    }
 
-body{
-    margin:0;
-    font-family:'Cairo',sans-serif;
-    background:#0f2747;
-    color:white;
-    overflow-x:hidden;
-}
+    .hero {
+      background: #f5f5f5;
+    }
 
-/* البنر */
-.banner img{
-    width:100%;
-    display:block;
-}
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-/* العنوان */
-h1{
-    text-align:center;
-    color:#d4af37;
-    margin:30px 0;
-}
+    .card {
+      width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
 
-/* الشبكة */
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    padding:15px;
-    width:100%;
-    box-sizing:border-box;
-}
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
 
-/* المربعات */
-.card{
-    background:linear-gradient(135deg,#d4af37,#f5e6a0);
-    color:black;
-    padding:18px;
-    border-radius:16px;
-    text-align:center;
-    font-weight:800;
-    font-size:16px;
-    min-height:110px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    line-height:1.6;
-}
-
-/* القائمة */
-.menu-btn{
-    position:fixed;
-    top:20px;
-    right:20px;
-    background:rgba(0,0,0,0.6);
-    padding:12px;
-    border-radius:12px;
-    z-index:1001;
-    cursor:pointer;
-}
-
-/* القائمة الجانبية */
-.sidebar{
-    position:fixed;
-    top:0;
-    right:-260px;
-    width:260px;
-    height:100%;
-    background:#0b1f3a;
-    padding:20px;
-    transition:0.3s;
-    z-index:1002;
-}
-
-.sidebar.active{
-    right:0;
-}
-
-.close{
-    font-size:25px;
-    cursor:pointer;
-    margin-bottom:20px;
-}
-
-.sidebar a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    margin:15px 0;
-}
-
-/* الخلفية */
-.overlay{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-    display:none;
-    z-index:1000;
-}
-
-.overlay.active{
-    display:block;
-}
-
-/* الجلسات */
-.sessions{
-    text-align:center;
-    padding:20px;
-}
-
-.sessions img{
-    width:90%;
-    border-radius:20px;
-}
-
-/* الفوتر */
-.footer{
-    text-align:center;
-    padding:20px;
-    color:#aaa;
-}
-
-</style>
+    button {
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- زر القائمة -->
-<div class="menu-btn" onclick="openMenu()">☰</div>
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#course">الدورة</a>
+    <a href="#login">تسجيل الدخول</a>
+  </nav>
 
-<!-- القائمة -->
-<div class="sidebar" id="menu">
-    <div class="close" onclick="closeMenu()">✕</div>
-    <a href="index.html">الرئيسية</a>
-    <a href="courses.html">الدورات</a>
-    <a href="sessions.html">الجلسات</a>
-</div>
+  <section id="home" class="hero">
+    <h1>دورة لغة الجسد</h1>
+    <p>تعلم قراءة الناس وفهم الإشارات غير اللفظية</p>
+    <img src="body-language.jpg" width="300">
+  </section>
 
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+  <section id="course">
+    <h2>محتوى الدورة</h2>
 
-<!-- البنر -->
-<div class="banner">
-    <img src="banner-new.png.PNG">
-</div>
+    <div class="cards">
+      <div class="card">
+        <h3>الإشارات الأساسية</h3>
+        <p>تعرف على الحركات الأساسية</p>
+      </div>
 
-<h1>لماذا إكسيلو؟</h1>
+      <div class="card">
+        <h3>تحليل الشخصية</h3>
+        <p>افهم تصرفات الآخرين</p>
+      </div>
 
-<div class="grid">
-    <div class="card">🚀 نصنع تحول حقيقي في حياتك</div>
-    <div class="card">🧠 نمنحك فهم عميق لنفسك والآخرين</div>
-    <div class="card">🎯 نساعدك توضح مسارك وتحقق أهدافك</div>
-    <div class="card">🔥 نوصلك لمرحلة التغيير الحقيقي</div>
-</div>
+      <div class="card">
+        <h3>لغة الجسد في العمل</h3>
+        <p>استخدمها في حياتك اليومية</p>
+      </div>
+    </div>
+  </section>
 
-<!-- الجلسات -->
-<div class="sessions">
-    <h1>الجلسات</h1>
-    <p>ابدأ رحلتك نحو التوازن النفسي والتطوير الحقيقي</p>
-    <img src="body.png.PNG">
-</div>
-
-<div class="footer">
-© جميع الحقوق محفوظة - إكسيلو
-</div>
-
-<script>
-
-function openMenu(){
-    document.getElementById("menu").classList.add("active");
-    document.getElementById("overlay").classList.add("active");
-}
-
-function closeMenu(){
-    document.getElementById("menu").classList.remove("active");
-    document.getElementById("overlay").classList.remove("active");
-}
-
-</script>
+  <section id="login">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" placeholder="اسم المستخدم">
+    <br>
+    <input type="password" placeholder="كلمة المرور">
+    <br>
+    <button>دخول</button>
+  </section>
 
 </body>
 </html>
