@@ -17,11 +17,13 @@
 
   <script type="module">
 
+    // استيراد Firebase
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+    // إعدادات Firebase (انتبه للفواصل)
     const firebaseConfig = {
-      apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnlu9c0Dzo"
+      apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnlu9c0Dzo",
       authDomain: "exilo-376f1.firebaseapp.com",
       projectId: "exilo-376f1",
       storageBucket: "exilo-376f1.appspot.com",
@@ -29,25 +31,36 @@
       appId: "1:736619072060:web:286dc36624f3be2d2a9139"
     };
 
+    // تشغيل Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    // إنشاء حساب
     window.registerUser = function () {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
       createUserWithEmailAndPassword(auth, email, password)
-        .then(() => alert("تم إنشاء الحساب"))
-        .catch((error) => alert(error.message));
+        .then(() => {
+          alert("تم إنشاء الحساب بنجاح ✅");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
     };
 
+    // تسجيل الدخول
     window.loginUser = function () {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
       signInWithEmailAndPassword(auth, email, password)
-        .then(() => alert("تم تسجيل الدخول"))
-        .catch((error) => alert(error.message));
+        .then(() => {
+          alert("تم تسجيل الدخول بنجاح ✅");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
     };
 
   </script>
