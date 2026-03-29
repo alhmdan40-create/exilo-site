@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدورات الرقمية | إكسيلو</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
+        
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            background-color: var(--navy); 
+            color: var(--text); 
+            margin: 0; 
+            direction: rtl; 
+        }
+
+        header {
+            background: var(--navy);
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .back-btn { color: var(--gold); text-decoration: none; font-weight: bold; }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+
+        .course-header { text-align: center; margin-bottom: 50px; }
+        .course-header h1 { color: var(--gold); font-size: 2.5rem; }
+
+        .course-card { 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid rgba(197, 160, 89, 0.2); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .course-card { flex-direction: row; }
+            .course-img { width: 40%; }
+            .course-info { width: 60%; }
+        }
+
+        .course-img { background: #000; height: 300px; }
+        .course-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .course-info { padding: 30px; }
+        .course-info h2 { color: var(--gold); margin-top: 0; }
+        .course-info p { line-height: 1.8; color: #cbd5e1; }
+
+        .features { list-style: none; padding: 0; margin: 20px 0; }
+        .features li { margin-bottom: 10px; display: flex; align-items: center; }
+        .features li i { color: var(--gold); margin-left: 10px; }
+
+        .price-tag { font-size: 1.5rem; color: var(--gold); font-weight: bold; margin: 20px 0; display: block; }
+
+        .buy-btn { 
+            display: inline-block; 
+            background: var(--gold); 
+            color: var(--navy); 
+            padding: 12px 30px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            width: 100%;
+            text-align: center;
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> العودة للرئيسية</a>
+        <div style="color: var(--gold); font-weight: bold;">EXILO</div>
+    </header>
+
+    <div class="container">
+        <div class="course-header">
+            <h1>برامجنا التدريبية الرقمية</h1>
+            <p>حلول عملية مبرمجة لخدمة وعيك وتطوير قدراتك النفسية والذهنية.</p>
+        </div>
+
+        <div class="course-card">
+            <div class="course-img">
+                <img src="courses.png.PNG" alt="دليل الصفاء">
+            </div>
+            <div class="course-info">
+                <h2>دليل الصفاء (الاسترخاء الذهني)</h2>
+                <p>رحلة متكاملة للتحرر من ضغوط الحياة اليومية، نستخدم فيها تقنيات التنفس العميق واليقظة الذهنية للوصول لحالة اتزان قصوى.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> ملفات صوتية بجودة عالية</li>
+                    <li><i class="fas fa-check-circle"></i> تمارين عملية يومية</li>
+                    <li><i class="fas fa-check-circle"></i> وصول مدى الحياة</li>
+                </ul>
+                <span class="price-tag">199 ريال</span>
+                <a href="https://wa.me/966538205304" class="buy-btn">اشترك الآن عبر الواتساب</a>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-img">
+                <img src="store.png.jpg" alt="الإيحاء الذاتي">
+            </div>
+            <div class="course-info">
+                <h2>كود العقل الباطن (تطبيقات الإيحاء)</h2>
+                <p>تعلم كيف تخاطب عقلك الباطن لبرمجة عاداتك وأهدافك. هذه الدورة هي خلاصة ممارسة التنويم الإيحائي العملي.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> أسرار التحدث مع الذات</li>
+                    <li><i class="fas fa-check-circle"></i> تقنيات التغيير السريع</li>
+                    <li><i class="fas fa-check-circle"></i> شهادة إتمام رقمية</li>
+                </ul>
+                <span class="price-tag">250 ريال</span>
+                <a href="https://wa.me/966538205304" class="buy-btn">اشترك الآن عبر الواتساب</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان</p>
+    </footer>
+
+</body>
+</html>
