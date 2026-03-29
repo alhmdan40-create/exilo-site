@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إكسيلو | EXILO</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; }
-        body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--navy); color: var(--text); direction: rtl; }
+        :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #1a1f2b; }
+        body { font-family: 'Tajawal', sans-serif; margin: 0; background-color: var(--navy); color: var(--text); direction: rtl; display: flex; flex-direction: column; min-height: 100vh; }
 
         .hero-banner {
             width: 100%;
@@ -16,67 +17,69 @@
             border-bottom: 4px solid var(--gold);
         }
 
-        .main-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .main-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; flex: 1; }
         
-        /* تنسيق القسم التسويقي الجديد */
         .marketing-header { text-align: center; margin-bottom: 50px; }
         .marketing-header h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
-        .marketing-header p { 
-            color: #b0c4de; 
-            font-size: 1.2rem; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            line-height: 1.8; 
-        }
+        .marketing-header p { color: #b0c4de; font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
         
-        .sections-grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 30px; 
-        }
+        .sections-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 
         .section-item { 
             background: rgba(255,255,255,0.03); 
-            width: 320px; 
-            padding: 25px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(197, 160, 89, 0.15); 
-            text-align: center;
-            transition: 0.4s ease;
+            width: 320px; padding: 25px; border-radius: 20px; 
+            border: 1px solid rgba(197, 160, 89, 0.15); text-align: center; transition: 0.4s ease;
         }
         .section-item:hover { transform: translateY(-10px); border-color: var(--gold); }
 
         .img-wrapper {
-            width: 250px; 
-            height: 250px; 
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border-radius: 15px;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 250px; height: 250px; margin: 0 auto 20px; overflow: hidden;
+            border-radius: 15px; background: #000; display: flex; align-items: center; justify-content: center;
         }
 
-        .section-img { 
-            width: 100% !important; 
-            height: 100% !important; 
-            object-fit: cover !important; 
-        }
+        .section-img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
         
         .section-item h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
         .section-tagline { font-size: 0.95rem; color: #8fa7c7; line-height: 1.6; margin-bottom: 20px; min-height: 50px;}
 
         .link-item { 
-            display: inline-block;
-            width: 90%; 
-            color: #050a14; 
-            text-decoration: none; 
-            padding: 12px; 
-            background: var(--gold); 
-            border-radius: 10px; 
-            font-weight: bold; 
+            display: inline-block; width: 90%; color: #050a14; text-decoration: none; 
+            padding: 12px; background: var(--gold); border-radius: 10px; font-weight: bold; 
+        }
+
+        /* --- تنسيق الفوتر الجديد --- */
+        footer {
+            background-color: var(--dark-grey);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+            border-top: 2px solid var(--gold);
+            text-align: center;
+        }
+
+        .footer-socials { margin-bottom: 25px; }
+        .footer-socials a {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer-socials a:hover { color: #fff; transform: scale(1.1); }
+
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a {
+            color: #8fa7c7;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover { color: var(--gold); }
+
+        .copyright {
+            color: #5a6b82;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -85,45 +88,54 @@
     <div class="hero-banner"></div>
 
     <div class="main-container">
-        
         <div class="marketing-header">
             <h2>لماذا إكسيلو؟</h2>
             <p>
-                نحن لا نقدم مجرد محتوى، بل نصمم لك **رحلة تحول حقيقية**. 
-                في إكسيلو، ندمج أحدث تقنيات التطوير الذاتي مع أدوات عملية تلمس واقعك، 
-                لتكتشف القوة الكامنة في عقلك الباطن وتصنع مستقبلاً يتسم بالاتزان والنجاح.
+                نحن لا نقدم مجرد محتوى، بل نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي 
+                بأدوات عملية لتكتشف القوة الكامنة في عقلك الباطن وتصنع مستقبلاً يتسم بالاتزان.
             </p>
         </div>
 
         <div class="sections-grid">
             <div class="section-item">
-                <div class="img-wrapper">
-                    <img src="courses.png.PNG?v=1" class="section-img">
-                </div>
+                <div class="img-wrapper"><img src="courses.png.PNG?v=1" class="section-img"></div>
                 <h3>الدورات الرقمية</h3>
                 <p class="section-tagline">برامج تدريبية احترافية تنقلك لمستوى جديد من الوعي والتمكين.</p>
                 <a href="courses-details.html" class="link-item">اكتشف برامجنا</a>
             </div>
 
             <div class="section-item">
-                <div class="img-wrapper">
-                    <img src="sessions.png.PNG?v=1" class="section-img">
-                </div>
+                <div class="img-wrapper"><img src="sessions.png.PNG?v=1" class="section-img"></div>
                 <h3>الجلسات والاستشارات</h3>
                 <p class="section-tagline">استعادة توازنك النفسي تبدأ بقرار.. جلسات خاصة واحترافية.</p>
                 <a href="https://wa.me/966503460060" class="link-item">احجز استشارتك الآن</a>
             </div>
 
             <div class="section-item">
-                <div class="img-wrapper">
-                    <img src="store.png.jpg?v=1" class="section-img">
-                </div>
+                <div class="img-wrapper"><img src="store.png.jpg?v=1" class="section-img"></div>
                 <h3>المتجر الرقمي</h3>
                 <p class="section-tagline">مكتبتك المعرفية.. حقائب تدريبية وكتب رقمية جاهزة للتحميل.</p>
                 <a href="#" class="link-item">تصفح المتجر</a>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-socials">
+            <a href="https://www.tiktok.com/@hanialhamdan" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.snapchat.com/add/hanialhamdan" title="سناب شات"><i class="fab fa-snapchat"></i></a>
+        </div>
+        
+        <div class="footer-links">
+            <a href="terms.html">الشروط والأحكام</a> | 
+            <a href="privacy.html">سياسة الخصوصية</a> | 
+            <a href="https://wa.me/966503460060">اتصل بنا</a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 إكسيلو | EXILO. جميع الحقوق محفوظة لـ هاني آل حمدان.
+        </div>
+    </footer>
 
 </body>
 </html>
