@@ -1,156 +1,41 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>تسجيل الدخول | EXILO</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-:root { --navy:#050a14; --gold:#c5a059; --text:#e6f1ff; }
-
-body {
-  margin:0;
-  font-family:'Tajawal',sans-serif;
-  background:#050a14;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
-
-/* البنر */
-.bg {
-  position:fixed;
-  top:0; right:0; left:0;
-  height:100%;
-  background:url('banner.png%202.PNG?v=100') center/cover no-repeat;
-  opacity:0.25;
-  z-index:-1;
-}
-
-/* مربع تسجيل الدخول */
-.box {
-  width:90%;
-  max-width:380px;
-  padding:30px;
-  background:rgba(5,10,20,0.95);
-  border:2px solid var(--gold);
-  border-radius:15px;
-  text-align:center;
-}
-
-/* العنوان */
-h2 {
-  color:var(--gold);
-  margin-bottom:20px;
-}
-
-/* الحقول */
-input {
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border:none;
-  border-radius:8px;
-  font-family:'Tajawal';
-}
-
-/* الأزرار */
-button {
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border:none;
-  border-radius:8px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.btn-login {
-  background:var(--gold);
-  color:#050a14;
-}
-
-.btn-register {
-  background:transparent;
-  border:1px solid var(--gold);
-  color:var(--gold);
-}
-</style>
+<title>Login</title>
 </head>
 
 <body>
 
-<div class="bg"></div>
+<input id="email" placeholder="email"><br>
+<input id="password" type="password" placeholder="password"><br>
 
-<div class="box">
-  <h2>تسجيل الدخول</h2>
-
-  <input id="email" type="email" placeholder="البريد الإلكتروني">
-  <input id="password" type="password" placeholder="كلمة المرور">
-
-  <button class="btn-login" onclick="loginUser()">دخول</button>
-  <button class="btn-register" onclick="registerUser()">إنشاء حساب</button>
-</div>
+<button onclick="login()">دخول</button>
 
 <script type="module">
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-/* بياناتك */
 const firebaseConfig = {
-  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
-  authDomain: "exilo-376f1.firebaseapp.com",
-  projectId: "exilo-376f1",
-  storageBucket: "exilo-376f1.appspot.com",
-  messagingSenderId: "736619072060",
-  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnlu9c0Dzo",
+authDomain: "exilo-376f1.firebaseapp.com",
+projectId: "exilo-376f1",
+storageBucket: "exilo-376f1.appspot.com",
+messagingSenderId: "736619072060",
+appId: "1:736619072060:web:286dc36624f3be2d2a9139"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-/* إنشاء حساب */
-window.registerUser = function () {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+window.login=function(){
+const email=email.value;
+const password=password.value;
 
-  if (!email || !password) {
-    alert("أدخل البريد وكلمة المرور");
-    return;
-  }
-
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("تم إنشاء الحساب 🎉");
-      window.location.href = "index.html";
-    })
-    .catch((error) => alert(error.message));
-};
-
-/* تسجيل دخول */
-window.loginUser = function () {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  if (!email || !password) {
-    alert("أدخل البريد وكلمة المرور");
-    return;
-  }
-
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("تم تسجيل الدخول ✅");
-      window.location.href = "index.html";
-    })
-    .catch((error) => alert(error.message));
-};
-
+signInWithEmailAndPassword(auth,email,password)
+.then(()=>{window.location.href="index.html"})
+.catch(e=>alert(e.message));
+}
 </script>
 
 </body>
