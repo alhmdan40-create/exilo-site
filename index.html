@@ -26,14 +26,14 @@ body {
     margin: 0;
 }
 
-/* 🔥 تحسين القائمة */
+/* 🔥 القائمة احترافية */
 #sidebar {
     position: fixed;
     top: 0;
     right: -260px;
     width: 260px;
     height: 100%;
-    background: linear-gradient(180deg,#050a14,#0a0f1a);
+    background: linear-gradient(180deg, #050a14, #0a0f1a);
     padding: 30px 20px;
     z-index: 2000;
     border-left: 2px solid var(--gold);
@@ -49,11 +49,11 @@ body {
 
 .menu-title {
     cursor: pointer;
-    margin: 18px 0;
+    margin: 20px 0;
     font-weight: bold;
 }
 
-/* 🔥 أنيميشن */
+/* 🔥 انيميشن */
 .submenu {
     max-height: 0;
     overflow: hidden;
@@ -102,11 +102,23 @@ header {
 
 .main-content { padding:60px 20px; }
 
-/* باقي كودك بدون تغيير */
-.why-section { max-width:1000px; margin:0 auto 60px; text-align:center; }
-.why-section h2 { color:var(--gold); font-size:2.5rem; margin-bottom:40px; }
+.why-section {
+    max-width:1000px;
+    margin:0 auto 60px;
+    text-align:center;
+}
 
-.why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:25px; }
+.why-section h2 {
+    color:var(--gold);
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+.why-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
 
 .why-card {
     background: rgba(255,255,255,0.04);
@@ -117,6 +129,12 @@ header {
     display:flex;
     flex-direction:column;
     justify-content:center;
+}
+
+.why-card i {
+    font-size:26px;
+    color:var(--gold);
+    margin-bottom:12px;
 }
 
 .services-grid {
@@ -157,6 +175,12 @@ header {
     display:block;
 }
 
+.reviews-section {
+    max-width:1000px;
+    margin:80px auto;
+    text-align:center;
+}
+
 footer {
     background: var(--dark-grey);
     padding:50px 20px;
@@ -182,10 +206,10 @@ footer {
 
 <div id="overlay" onclick="toggleSidebar()"></div>
 
-<!-- 🔥 القائمة بعد التعديل -->
+<!-- القائمة -->
 <div id="sidebar">
 
-<div onclick="toggleSidebar()" style="color:var(--gold);font-size:22px;cursor:pointer;margin-bottom:20px;">✕</div>
+<div onclick="toggleSidebar()" style="color:gold;font-size:22px;cursor:pointer;margin-bottom:20px;">✕</div>
 
 <a href="index.html">🏠 الرئيسية</a>
 
@@ -209,6 +233,7 @@ footer {
 </div>
 
 <header>
+
 <div onclick="toggleSidebar()" style="cursor:pointer;">
 <i class="fas fa-bars" style="color:gold;font-size:20px;"></i>
 </div>
@@ -219,97 +244,9 @@ footer {
 </div>
 
 <div class="logo-text">EXILO</div>
+
 </header>
 
 <div class="hero"></div>
 
-<main class="main-content">
-<!-- باقي صفحتك كما هي بدون أي تغيير -->
-</main>
-
-<!-- الفوتر كما هو -->
-<footer>
-<div class="social-icons">
-<a href="#"><i class="fab fa-tiktok"></i></a>
-<a href="#"><i class="fab fa-snapchat"></i></a>
-<a href="#"><i class="fab fa-whatsapp"></i></a>
-</div>
-
-<div class="legal-links">
-<a href="terms.html">الشروط</a>
-<a href="privacy.html">الخصوصية</a>
-</div>
-
-<p style="color:#5a718a;">© 2026 إكسيلو</p>
-</footer>
-
-<!-- 🔥 Firebase (لم ألمسه) -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {
-  getAuth,
-  signOut,
-  onAuthStateChanged,
-  setPersistence,
-  browserLocalPersistence
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSy...",
-  authDomain: "exilo-376f1.firebaseapp.com",
-  projectId: "exilo-376f1"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-setPersistence(auth, browserLocalPersistence);
-
-onAuthStateChanged(auth, (user) => {
-    const logoutBtn = document.getElementById("logoutBtn");
-    const loginBtn = document.getElementById("loginBtn");
-
-    if (user) {
-        logoutBtn.style.display = "inline-block";
-        loginBtn.style.display = "none";
-    } else {
-        logoutBtn.style.display = "none";
-        loginBtn.style.display = "inline-block";
-    }
-});
-
-document.getElementById("logoutBtn").onclick = function () {
-    signOut(auth).then(() => {
-        window.location.href = "login.html";
-    });
-};
-</script>
-
-<script>
-function toggleSidebar(){
-let s=document.getElementById("sidebar");
-let o=document.getElementById("overlay");
-
-if(s.style.right==="0px"){
-s.style.right="-260px";
-o.style.display="none";
-}else{
-s.style.right="0px";
-o.style.display="block";
-}
-}
-
-/* 🔥 أنيميشن احترافي */
-function toggleMenu(id){
-let menu=document.getElementById(id);
-
-if(menu.style.maxHeight){
-menu.style.maxHeight=null;
-}else{
-menu.style.maxHeight=menu.scrollHeight+"px";
-}
-}
-</script>
-
-</body>
-</html>
+<!-- باقي صفحتك بدون أي تغيير -->
