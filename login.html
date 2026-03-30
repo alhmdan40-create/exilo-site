@@ -19,6 +19,7 @@ body {
   font-family: 'Tajawal', sans-serif;
   background: var(--navy);
   color: var(--text);
+  overflow-x: hidden; /* 👈 يمنع السحب */
 }
 
 /* البنر */
@@ -31,14 +32,14 @@ body {
 
 /* المربع */
 .login-box {
-  background: rgba(255,255,255,0.05);
-  margin-top: -60px;
-  margin-right: 5%;   /* 👈 تحريك لليمين */
-  padding: 40px;
+  width: 100%;
+  max-width: 340px; /* 👈 تثبيت الحجم */
+  margin: -60px auto 0;
+  transform: translateX(25px); /* 👈 ميل لليمين */
+  padding: 35px;
   border-radius: 20px;
-  width: 85%;
-  max-width: 360px;
   text-align: center;
+  background: rgba(255,255,255,0.05);
   border: 1px solid rgba(197,160,89,0.3);
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -59,6 +60,7 @@ input {
   border: none;
   background: #0f1625;
   color: white;
+  font-size: 15px;
 }
 
 /* الأزرار */
@@ -72,6 +74,7 @@ button {
   color: #000;
   font-weight: bold;
   cursor: pointer;
+  font-size: 15px;
 }
 
 .secondary {
@@ -84,8 +87,10 @@ button {
 
 <body>
 
+<!-- البنر -->
 <div class="hero"></div>
 
+<!-- تسجيل الدخول -->
 <div class="login-box">
   <h2>تسجيل الدخول</h2>
 
@@ -112,7 +117,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// تسجيل
+/* إنشاء حساب */
 window.registerUser = function () {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -122,12 +127,22 @@ window.registerUser = function () {
     return;
   }
 
+  if (!email.includes("@")) {
+    alert("البريد الإلكتروني غير صحيح ❌");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("كلمة المرور لازم تكون 6 أحرف على الأقل 🔒");
+    return;
+  }
+
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => alert("تم إنشاء الحساب 🎉"))
     .catch((error) => alert(error.message));
 };
 
-// دخول
+/* تسجيل دخول */
 window.loginUser = function () {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -138,7 +153,9 @@ window.loginUser = function () {
   }
 
   signInWithEmailAndPassword(auth, email, password)
-    .then(() => window.location.href = "account.html")
+    .then(() => {
+      window.location.href = "index.html";
+    })
     .catch((error) => alert(error.message));
 };
 </script>
