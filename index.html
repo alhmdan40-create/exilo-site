@@ -79,6 +79,18 @@
             text-decoration: none;
         }
 
+        /* 🔥 القوائم الفرعية */
+        .submenu {
+            display: none;
+            padding-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .menu-title {
+            cursor: pointer;
+            margin: 15px 0;
+        }
+
         #overlay {
             position: fixed;
             top: 0;
@@ -167,12 +179,41 @@
 
 <div id="overlay" onclick="toggleSidebar()"></div>
 
+<!-- 🔥 القائمة الجديدة -->
 <div id="sidebar">
     <div onclick="toggleSidebar()" style="cursor:pointer; color:var(--gold); font-size:20px;">✕</div>
-    <a href="index.html">الرئيسية</a>
-    <a href="courses-details.html">الدورات</a>
-    <a href="exelo-store.html">المتجر</a>
-    <a href="terms.html">الشروط</a>
+
+    <a href="index.html">🏠 الرئيسية</a>
+
+    <div class="menu-title" onclick="toggleMenu('coursesMenu')">
+        🎓 الدورات ▾
+    </div>
+    <div class="submenu" id="coursesMenu">
+        <a href="#">لغة الجسد</a>
+        <a href="#">تحليل الشخصيات</a>
+        <a href="courses-details.html">عرض الكل</a>
+    </div>
+
+    <a href="https://wa.me/966538205304">💬 الجلسات</a>
+
+    <div class="menu-title" onclick="toggleMenu('storeMenu')">
+        🛒 المتجر ▾
+    </div>
+    <div class="submenu" id="storeMenu">
+        <a href="#">الكتب</a>
+        <a href="exelo-store.html">عرض المتجر</a>
+    </div>
+
+    <hr>
+
+    <a href="#">👤 من نحن</a>
+    <a href="#">⭐ آراء العملاء</a>
+    <a href="https://wa.me/966538205304">📞 تواصل معنا</a>
+
+    <hr>
+
+    <a href="terms.html">📄 الشروط</a>
+    <a href="privacy.html">🔒 الخصوصية</a>
 </div>
 
 <header>
@@ -257,6 +298,12 @@ function toggleSidebar() {
         sidebar.style.right = "0px";
         overlay.style.display = "block";
     }
+}
+
+/* 🔥 الجديد */
+function toggleMenu(id) {
+    const menu = document.getElementById(id);
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 </script>
 
