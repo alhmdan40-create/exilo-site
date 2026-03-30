@@ -309,6 +309,43 @@
         &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان
     </p>
 </footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+  storageBucket: "exilo-376f1.appspot.com",
+  messagingSenderId: "736619072060",
+  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    const email = document.getElementById("userEmail");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (user) {
+        email.textContent = user.email;
+        logoutBtn.style.display = "inline-block";
+        loginBtn.style.display = "none";
+    } else {
+        email.textContent = "";
+        logoutBtn.style.display = "none";
+        loginBtn.style.display = "inline-block";
+    }
+});
+
+window.logout = function () {
+    signOut(auth).then(() => {
+        window.location.href = "login.html";
+    });
+};
+</script>
 </body>
 </html>
