@@ -37,7 +37,12 @@
             position: sticky; top: 0; z-index: 1000;
         }
         
-        .user-section { display: flex; align-items: center; gap: 15px; }
+        .user-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 10px;
+}
         .user-email { color: var(--gold); font-size: 0.9rem; font-weight: 500; }
         .logout-btn { 
             background: var(--gold); color: var(--navy); 
@@ -166,15 +171,14 @@
 
 <header>
     <!-- 🔥 تم التعديل هنا فقط -->
-    <div onclick="toggleSidebar()" style="cursor: pointer;">
+    <div onclick="toggleSidebar()" style="cursor: pointer; margin-right:10px;">
         <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i>
     </div>
     
     <div class="user-section">
-        <button class="logout-btn">خروج</button>
-        <span class="user-email">alhmdan40@gmail.com</span>
-        <i class="fas fa-user-circle" style="font-size: 1.6rem; color: var(--gold);"></i>
-    </div>
+    <span class="user-email">alhmdan40@gmail.com</span>
+    <button class="logout-btn" onclick="logout()">خروج</button>
+</div>
     
     <div class="logo-text">EXILO</div>
 </header>
