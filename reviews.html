@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آراء العملاء | EXILO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+body {
+    font-family: 'Tajawal', sans-serif;
+    background: #050a14;
+    color: #fff;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #c5a059;
+    margin-bottom: 30px;
+}
+
+/* النموذج */
+.form-box {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+    background: #c5a059;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* النجوم */
+.stars i {
+    font-size: 22px;
+    cursor: pointer;
+    color: gray;
+}
+
+.stars i.active {
+    color: gold;
+}
+
+/* التعليقات */
+.review {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.review .stars {
+    margin-bottom: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⭐ آراء العملاء</h1>
+
+<!-- النموذج -->
+<div class="form-box">
+    <div class="stars" id="stars">
+        <i class="fa fa-star" data-value="1"></i>
+        <i class="fa fa-star" data-value="2"></i>
+        <i class="fa fa-star" data-value="3"></i>
+        <i class="fa fa-star" data-value="4"></i>
+        <i class="fa fa-star" data-value="5"></i>
+    </div>
+
+    <textarea id="comment" placeholder="اكتب رأيك هنا..."></textarea>
+    <button onclick="submitReview()">إرسال</button>
+</div>
+
+<!-- عرض التقييمات -->
+<div id="reviewsList"></div>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  orderBy,
+  query
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+let selectedRating = 0;
+
+/* ⭐ اختيار النجوم */
+document.querySelectorAll("#stars i").forEach(star => {
+    star.onclick = () => {
+        selectedRating = star.dataset.value;
+        document.querySelectorAll("#stars i").forEach(s => s.classList.remove("active"));
+        for (let i = 0; i < selectedRating; i++) {
+            document.querySelectorAll("#stars i")[i].classList.add("active");
+        }
+    }
+});
+
+/* 🔥 إرسال التقييم */
+window.submitReview = async function () {
+    const user = auth.currentUser;
+    const comment = document.getElementById("comment").value;
+
+    if (!user) {
+        alert("لازم تسجل دخول أول");
+        return;
+    }
+
+    if (!comment || selectedRating == 0) {
+        alert("اكتب تعليق واختر تقييم");
+        return;
+    }
+
+    await addDoc(collection(db, "reviews"), {
+        email: user.email,
+        comment: comment,
+        rating: selectedRating,
+        date: Date.now()
+    });
+
+    alert("تم إضافة تقييمك 🔥");
+    location.reload();
+};
+
+/* 📥 عرض التقييمات */
+async function loadReviews() {
+    const q = query(collection(db, "reviews"), orderBy("date", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    const container = document.getElementById("reviewsList");
+    container.innerHTML = "";
+
+    querySnapshot.forEach(doc => {
+        const data = doc.data();
+
+        let starsHTML = "";
+        for (let i = 0; i < data.rating; i++) {
+            starsHTML += "⭐";
+        }
+
+        container.innerHTML += `
+            <div class="review">
+                <div class="stars">${starsHTML}</div>
+                <p>${data.comment}</p>
+                <small>${data.email}</small>
+            </div>
+        `;
+    });
+}
+
+loadReviews();
+</script>
+
+</body>
+</html>
