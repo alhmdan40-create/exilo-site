@@ -79,6 +79,7 @@
             text-decoration: none;
         }
 
+        /* 🔥 القوائم الفرعية */
         .submenu {
             display: none;
             padding-right: 15px;
@@ -158,33 +159,6 @@
             font-weight: bold;
         }
 
-        /* ⭐ التقييم */
-        .testimonials {
-            max-width: 1100px;
-            margin: 80px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            color: var(--gold);
-            font-size: 2.3rem;
-            margin-bottom: 40px;
-        }
-
-        .testimonial-box {
-            background: var(--card-bg);
-            border: 1px solid rgba(197,160,89,0.2);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        .stars {
-            color: gold;
-            margin-bottom: 10px;
-        }
-
         footer { 
             background: var(--dark-grey); 
             padding: 50px 20px; 
@@ -205,93 +179,168 @@
 
 <div id="overlay" onclick="toggleSidebar()"></div>
 
+<!-- 🔥 القائمة الجديدة -->
 <div id="sidebar">
     <div onclick="toggleSidebar()" style="cursor:pointer; color:var(--gold); font-size:20px;">✕</div>
 
     <a href="index.html">🏠 الرئيسية</a>
 
-    <div class="menu-title" onclick="toggleMenu('coursesMenu')">🎓 الدورات ▾</div>
+    <div class="menu-title" onclick="toggleMenu('coursesMenu')">
+        🎓 الدورات ▾
+    </div>
     <div class="submenu" id="coursesMenu">
         <a href="body-language-course.html">لغة الجسد</a>
-        <a href="character-analysis-course.html">تحليل الشخصيات</a>
+<a href="character-analysis-course.html">تحليل الشخصيات</a>
         <a href="courses-details.html">عرض الكل</a>
     </div>
 
     <a href="https://wa.me/966538205304">💬 الجلسات</a>
 
-    <div class="menu-title" onclick="toggleMenu('storeMenu')">🛒 المتجر ▾</div>
+    <div class="menu-title" onclick="toggleMenu('storeMenu')">
+        🛒 المتجر ▾
+    </div>
     <div class="submenu" id="storeMenu">
         <a href="exelo-store.html">الكتب</a>
         <a href="exelo-store.html">عرض المتجر</a>
     </div>
+
+    <hr>
+
+    <a href="#">👤 من نحن</a>
+    <a href="#">⭐ آراء العملاء</a>
+    <a href="https://wa.me/966538205304">📞 تواصل معنا</a>
+
+    <hr>
+
+    <a href="terms.html">📄 الشروط</a>
+    <a href="privacy.html">🔒 الخصوصية</a>
 </div>
 
 <header>
-    <div onclick="toggleSidebar()" style="cursor: pointer;">
+    <div onclick="toggleSidebar()" style="cursor: pointer; margin-right:10px;">
         <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i>
     </div>
-
+    
     <div class="user-section">
-        <span id="userEmail"></span>
-        <button id="logoutBtn" onclick="logout()">خروج</button>
-        <a href="login.html" id="loginBtn" style="display:none;">تسجيل الدخول</a>
-    </div>
+        <span class="user-email" id="userEmail"></span>
 
+        <button class="logout-btn" id="logoutBtn" onclick="logout()">خروج</button>
+
+        <a href="login.html" class="logout-btn" id="loginBtn" style="display:none;">
+            تسجيل الدخول
+        </a>
+    </div>
+    
     <div class="logo-text">EXILO</div>
 </header>
 
 <div class="hero"></div>
 
 <main class="main-content">
-
-<div class="section-intro">
-    <h2>لماذا إكسيلو؟</h2>
-    <p>رحلة تطوير حقيقية بأسلوب عملي ومباشر</p>
-</div>
-
-<div class="services-grid">
-    <div class="service-card">
-        <div class="image-container"><img src="courses.png.PNG"></div>
-        <h3>الدورات</h3>
-        <a href="courses-details.html" class="action-btn">ابدأ الآن</a>
+    <div class="section-intro">
+        <h2>لماذا إكسيلو؟</h2>
+        <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية تساعدك على تحقيق التوازن النفسي والمهني في حياتك.</p>
     </div>
 
-    <div class="service-card">
-        <div class="image-container"><img src="sessions.png.PNG"></div>
-        <h3>الجلسات</h3>
-        <a href="#" class="action-btn">احجز الآن</a>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="image-container">
+                <img src="courses.png.PNG">
+            </div>
+            <h3>الدورات الرقمية</h3>
+            <a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
+        </div>
+
+        <div class="service-card">
+            <div class="image-container">
+                <img src="sessions.png.PNG?v=2">
+            </div>
+            <h3>الجلسات والاستشارات</h3>
+            <a href="https://wa.me/966538205304" class="action-btn">احجز استشارتك</a>
+        </div>
+
+        <div class="service-card">
+            <div class="image-container">
+                <img src="store.png.jpg">
+            </div>
+            <h3>المتجر الرقمي</h3>
+            <a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
+        </div>
     </div>
-
-    <div class="service-card">
-        <div class="image-container"><img src="store.png.jpg"></div>
-        <h3>المتجر</h3>
-        <a href="exelo-store.html" class="action-btn">تصفح</a>
-    </div>
-</div>
-
-<!-- ⭐ آراء العملاء -->
-<div class="testimonials">
-    <h2>⭐ آراء العملاء</h2>
-
-    <div class="testimonial-box">
-        <div class="stars">★★★★★</div>
-        <p>غيرت حياتي فعلاً 🔥</p>
-        <strong>- أحمد</strong>
-    </div>
-
-    <div class="testimonial-box">
-        <div class="stars">★★★★★</div>
-        <p>أفضل محتوى دخلته</p>
-        <strong>- خالد</strong>
-    </div>
-
-</div>
-
 </main>
 
 <footer>
-    <p>© EXILO</p>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
+        <a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <div class="legal-links">
+        <a href="terms.html">الشروط والأحكام</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+    </div>
+
+    <p class="copyright">
+        &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان
+    </p>
 </footer>
 
-</body>
-</html>
+<script>
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    if (sidebar.style.right === "0px") {
+        sidebar.style.right = "-260px";
+        overlay.style.display = "none";
+    } else {
+        sidebar.style.right = "0px";
+        overlay.style.display = "block";
+    }
+}
+
+/* 🔥 الجديد */
+function toggleMenu(id) {
+    const menu = document.getElementById(id);
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+  storageBucket: "exilo-376f1.appspot.com",
+  messagingSenderId: "736619072060",
+  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    const email = document.getElementById("userEmail");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (user) {
+        email.textContent = user.email;
+        logoutBtn.style.display = "inline-block";
+        loginBtn.style.display = "none";
+    } else {
+        email.textContent = "";
+        logoutBtn.style.display = "none";
+        loginBtn.style.display = "inline-block";
+    }
+});
+
+window.logout = function () {
+    signOut(auth).then(() => {
+        location.reload();
+    });
+};
