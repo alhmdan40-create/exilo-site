@@ -36,9 +36,6 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--gold);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .user-section {
@@ -72,7 +69,6 @@ header {
 
 .main-content { padding: 60px 20px; }
 
-/* 🔥 WHY SECTION (معدل بالكامل) */
 .why-section {
     max-width: 1000px;
     margin: 0 auto 60px;
@@ -95,11 +91,8 @@ header {
     background: rgba(255,255,255,0.04);
     border-radius: 20px;
     border: 1px solid rgba(197,160,89,0.3);
-
     padding: 25px 20px;
-    text-align: center;
     min-height: 180px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,17 +107,12 @@ header {
 .why-card p {
     line-height: 1.8;
     font-size: 1.05rem;
-    color: #d1d9e6;
 }
 
-/* 📱 للجوال */
 @media (max-width: 768px) {
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
+    .why-grid { grid-template-columns: 1fr; }
 }
 
-/* الخدمات */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
@@ -163,7 +151,6 @@ header {
     display: block;
 }
 
-/* الفوتر */
 footer {
     background: var(--dark-grey);
     padding: 50px 20px;
@@ -182,8 +169,6 @@ footer {
     margin: 0 15px;
     text-decoration: none;
 }
-
-.copyright { color: #5a718a; }
 </style>
 </head>
 
@@ -192,8 +177,13 @@ footer {
 <header>
 <div class="user-section">
 <span id="userEmail"></span>
-<button class="logout-btn">خروج</button>
-<a href="login.html" class="logout-btn">تسجيل الدخول</a>
+
+<button id="logoutBtn" class="logout-btn" onclick="logout()">خروج</button>
+
+<a href="login.html" id="loginBtn" class="logout-btn" style="display:none;">
+تسجيل الدخول
+</a>
+
 </div>
 <div class="logo-text">EXILO</div>
 </header>
@@ -209,28 +199,29 @@ footer {
 
 <div class="why-card">
 <i class="fas fa-brain"></i>
-<p>افهم نفسك بعمق واقرأ الآخرين بذكاء لتتحكم في قراراتك بثقة ووعي كامل</p>
+<p>افهم نفسك بعمق واقرأ الآخرين بذكاء لتتحكم في قراراتك بثقة</p>
 </div>
 
 <div class="why-card">
 <i class="fas fa-bullseye"></i>
-<p>سيطرة حقيقية على مشاعرك وردود أفعالك مهما كانت الضغوط من حولك</p>
+<p>سيطرة كاملة على مشاعرك وردود أفعالك مهما كانت الضغوط</p>
 </div>
 
 <div class="why-card">
 <i class="fas fa-tools"></i>
-<p>أدوات عملية واضحة تطبقها مباشرة وتلاحظ الفرق الحقيقي في حياتك اليومية</p>
+<p>أدوات عملية تطبقها فوراً وتلاحظ الفرق الحقيقي في حياتك</p>
 </div>
 
 <div class="why-card">
 <i class="fas fa-rocket"></i>
-<p>نتائج سريعة تنقلك لمستوى أعلى في حياتك الشخصية والمهنية بثقة</p>
+<p>نتائج سريعة تنقلك لمستوى أعلى في حياتك الشخصية والمهنية</p>
 </div>
 
 </div>
 </div>
 
 <div class="services-grid">
+
 <div class="service-card">
 <div class="image-container">
 <img src="courses.png.PNG">
@@ -254,6 +245,7 @@ footer {
 <h3>المتجر الرقمي</h3>
 <a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
 </div>
+
 </div>
 
 </main>
@@ -270,10 +262,61 @@ footer {
 <a href="privacy.html">سياسة الخصوصية</a>
 </div>
 
-<p class="copyright">
-&copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان
+<p style="color:#5a718a;">
+&copy; 2026 إكسيلو | جميع الحقوق محفوظة
 </p>
 </footer>
+
+<!-- 🔥 Firebase FIX -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  signOut,
+  onAuthStateChanged,
+  setPersistence,
+  browserLocalPersistence
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+  storageBucket: "exilo-376f1.appspot.com",
+  messagingSenderId: "736619072060",
+  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+/* 🔥 يحفظ تسجيل الدخول */
+setPersistence(auth, browserLocalPersistence);
+
+/* 🔥 التحكم بالأزرار */
+onAuthStateChanged(auth, (user) => {
+    const email = document.getElementById("userEmail");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (user) {
+        email.textContent = user.email;
+        logoutBtn.style.display = "inline-block";
+        loginBtn.style.display = "none";
+    } else {
+        email.textContent = "";
+        logoutBtn.style.display = "none";
+        loginBtn.style.display = "inline-block";
+    }
+});
+
+/* 🔥 خروج */
+window.logout = function () {
+    signOut(auth).then(() => {
+        location.reload();
+    });
+};
+</script>
 
 </body>
 </html>
