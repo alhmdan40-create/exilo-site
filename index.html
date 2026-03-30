@@ -29,7 +29,6 @@
             line-height: 1.6;
         }
 
-        /* الهيدر (Header) */
         header {
             background: var(--navy); 
             padding: 15px 5%;
@@ -48,7 +47,6 @@
         }
         .logo-text { color: var(--gold); font-weight: bold; font-size: 1.6rem; letter-spacing: 2px; }
 
-        /* قسم البانر (Hero Section) */
         .hero { 
             width: 100%; height: 400px; 
             background: linear-gradient(rgba(5, 10, 20, 0.4), rgba(5, 10, 20, 0.4)), url('banner.png%202.PNG'); 
@@ -57,7 +55,6 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* حاوية المحتوى الرئيسي */
         .main-content { flex: 1; padding: 60px 20px; }
         
         .section-intro { 
@@ -70,7 +67,6 @@
         .section-intro h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; }
         .section-intro p { font-size: 1.2rem; opacity: 0.85; }
 
-        /* شبكة الكروت (Grid) */
         .services-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -120,7 +116,6 @@
         
         .action-btn:hover { background: #b08d4a; }
 
-        /* الفوتر (Footer) المستعاد بالكامل */
         footer { 
             background: var(--dark-grey); 
             padding: 50px 20px; 
@@ -144,87 +139,110 @@
             margin: 0 15px; 
             font-size: 1rem; 
         }
-        .legal-links a:hover { color: var(--gold); }
         
         .copyright { color: #5a718a; font-size: 0.9rem; margin-top: 15px; }
 
-        /* استجابة الجوال */
         @media (max-width: 768px) {
             .hero { height: 250px; }
             .section-intro h2 { font-size: 2rem; }
             header { padding: 15px 20px; }
-            .user-email { display: none; } /* إخفاء الإيميل في الشاشات الصغيرة جداً لتوفير مساحة */
+            .user-email { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div style="cursor: pointer;"><i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i></div>
+<header>
+    <div style="cursor: pointer;"><i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i></div>
+    
+    <div class="user-section">
+        <button class="logout-btn" onclick="logout()">خروج</button>
+        <span class="user-email">alhmdan40@gmail.com</span>
+        <i class="fas fa-user-circle" style="font-size: 1.6rem; color: var(--gold);"></i>
+    </div>
+    
+    <div class="logo-text">EXILO</div>
+</header>
+
+<div class="hero"></div>
+
+<main class="main-content">
+    <div class="section-intro">
+        <h2>لماذا إكسيلو؟</h2>
+        <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية تساعدك على تحقيق التوازن النفسي والمهني في حياتك.</p>
+    </div>
+
+    <div class="services-grid">
         
-        <div class="user-section">
-            <button class="logout-btn">خروج</button>
-            <span class="user-email">alhmdan40@gmail.com</span>
-            <i class="fas fa-user-circle" style="font-size: 1.6rem; color: var(--gold);"></i>
-        </div>
-        
-        <div class="logo-text">EXILO</div>
-    </header>
-
-    <div class="hero"></div>
-
-    <main class="main-content">
-        <div class="section-intro">
-            <h2>لماذا إكسيلو؟</h2>
-            <p>نحن نصمم لك رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية تساعدك على تحقيق التوازن النفسي والمهني في حياتك.</p>
-        </div>
-
-        <div class="services-grid">
-            
-            <div class="service-card">
-                <div class="image-container">
-                    <img src="courses.png.PNG" alt="الدورات الرقمية">
-                </div>
-                <h3>الدورات الرقمية</h3>
-                <a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
+        <div class="service-card">
+            <div class="image-container">
+                <img src="courses.png.PNG">
             </div>
+            <h3>الدورات الرقمية</h3>
+            <a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
+        </div>
 
-            <div class="service-card">
-                <div class="image-container">
-                    <img src="sessions.png.PNG?v=2" alt="الجلسات والاستشارات">
-                </div>
-                <h3>الجلسات والاستشارات</h3>
-                <a href="https://wa.me/966538205304" class="action-btn">احجز استشارتك</a>
+        <div class="service-card">
+            <div class="image-container">
+                <img src="sessions.png.PNG?v=2">
             </div>
+            <h3>الجلسات والاستشارات</h3>
+            <a href="https://wa.me/966538205304" class="action-btn">احجز استشارتك</a>
+        </div>
 
-            <div class="service-card">
-                <div class="image-container">
-                    <img src="store.png.jpg" alt="المتجر الرقمي">
-                </div>
-                <h3>المتجر الرقمي</h3>
-                <a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
+        <div class="service-card">
+            <div class="image-container">
+                <img src="store.png.jpg">
             </div>
+            <h3>المتجر الرقمي</h3>
+            <a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
+        </div>
 
-        </div>
-    </main>
+    </div>
+</main>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.tiktok.com/@hanialhmdan" target="_blank" title="تيك توك"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank" title="سناب شات"><i class="fab fa-snapchat"></i></a>
-            <a href="https://wa.me/966538205304" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        
-        <div class="legal-links">
-            <a href="terms.html">الشروط والأحكام</a>
-            <span style="color: var(--gold);">|</span>
-            <a href="privacy.html">سياسة الخصوصية</a>
-        </div>
-        
-        <p class="copyright">
-            &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ <strong>هاني آل حمدان</strong>
-        </p>
-    </footer>
+<footer>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@hanialhmdan" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank"><i class="fab fa-snapchat"></i></a>
+        <a href="https://wa.me/966538205304" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <div class="legal-links">
+        <a href="terms.html">الشروط والأحكام</a>
+        <span style="color: var(--gold);">|</span>
+        <a href="privacy.html">سياسة الخصوصية</a>
+    </div>
+    
+    <p class="copyright">
+        &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ <strong>هاني آل حمدان</strong>
+    </p>
+</footer>
+
+<!-- 🔥 فقط هذا الجزء تمت إضافته -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+  storageBucket: "exilo-376f1.appspot.com",
+  messagingSenderId: "736619072060",
+  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.logout = function(){
+  signOut(auth).then(()=>{
+    alert("تم تسجيل الخروج");
+    window.location.href = "login.html";
+  });
+}
+</script>
 
 </body>
 </html>
