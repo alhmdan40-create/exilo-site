@@ -17,33 +17,33 @@
 body {
     margin: 0;
     font-family: 'Tajawal', sans-serif;
+    background: var(--navy);
+}
+
+/* البنر */
+.hero {
+    width: 100%;
+    height: 200px;
     background: url('banner.png%202.PNG') center/cover no-repeat;
+    border-bottom: 3px solid var(--gold);
+}
+
+/* الحاوية */
+.container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    padding: 40px 20px;
 }
 
-/* تغميق الخلفية */
-body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(5,10,20,0.7);
-}
-
-/* مربع تسجيل */
+/* مربع تسجيل الدخول */
 .login-box {
-    position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 380px;
     padding: 25px;
     border-radius: 18px;
     border: 2px solid var(--gold);
-    background: rgba(5,10,20,0.9);
+    background: rgba(5,10,20,0.95);
     text-align: center;
-    z-index: 2;
 }
 
 h2 {
@@ -85,14 +85,20 @@ button {
 
 <body>
 
-<div class="login-box">
-    <h2>تسجيل الدخول</h2>
+<!-- البنر -->
+<div class="hero"></div>
 
-    <input type="email" id="email" placeholder="البريد الإلكتروني">
-    <input type="password" id="password" placeholder="كلمة المرور">
+<!-- الفورم -->
+<div class="container">
+    <div class="login-box">
+        <h2>تسجيل الدخول</h2>
 
-    <button class="login-btn" onclick="login()">دخول</button>
-    <button class="signup-btn" onclick="signup()">إنشاء حساب</button>
+        <input type="email" id="email" placeholder="البريد الإلكتروني">
+        <input type="password" id="password" placeholder="كلمة المرور">
+
+        <button class="login-btn" onclick="login()">دخول</button>
+        <button class="signup-btn" onclick="signup()">إنشاء حساب</button>
+    </div>
 </div>
 
 <script type="module">
@@ -112,7 +118,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-/* دخول */
 window.login = function() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
@@ -126,7 +131,6 @@ window.login = function() {
     });
 }
 
-/* إنشاء حساب */
 window.signup = function() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
