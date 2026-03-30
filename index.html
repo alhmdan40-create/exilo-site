@@ -16,7 +16,10 @@
     --dark-grey: #0a0f1a;
     --card-bg: rgba(255, 255, 255, 0.05);
 }
-
+.logout-btn {
+    position: relative;
+    z-index: 4000;
+}
 * { box-sizing: border-box; transition: all 0.3s ease; }
 
 body {
@@ -197,6 +200,20 @@ footer {
     color: #8fa7c7;
     margin: 0 15px;
     text-decoration: none;
+}
+    /* حل مشكلة زر الخروج */
+header {
+    position: relative;
+    z-index: 3000;
+}
+
+.logout-btn {
+    position: relative;
+    z-index: 4000;
+}
+
+#overlay {
+    pointer-events: none;
 }
 </style>
 </head>
