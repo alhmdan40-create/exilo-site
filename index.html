@@ -11,10 +11,8 @@
         
         * { box-sizing: border-box; }
         body { 
-            font-family: 'Tajawal', sans-serif; 
-            background-color: var(--navy); 
-            color: var(--text); 
-            margin: 0; padding: 0;
+            font-family: 'Tajawal', sans-serif; background-color: var(--navy); 
+            color: var(--text); margin: 0; padding: 0;
             display: flex; flex-direction: column; min-height: 100vh;
         }
 
@@ -23,48 +21,40 @@
             display: flex; justify-content: space-between; align-items: center;
             border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 1000;
         }
-
-        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.5rem; }
+        .logo-text { color: var(--gold); font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
         .login-btn { background: var(--gold); color: var(--navy); padding: 8px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
 
-        /* تعديل حجم الصور والكروت لضمان الظهور الكبير */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; flex: 1; }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; justify-items: center;
+        .hero { 
+            width: 100%; height: 350px; 
+            background: url('banner.png%202.PNG') center/cover no-repeat; 
+            border-bottom: 4px solid var(--gold); 
         }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; flex: 1; }
+        
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
         
         .card { 
-            background: rgba(255,255,255,0.05); 
-            border-radius: 20px; border: 1px solid var(--gold); 
-            padding: 20px; text-align: center; width: 100% !important; max-width: 360px !important;
+            background: rgba(255,255,255,0.05); border-radius: 20px; 
+            border: 1px solid rgba(197, 160, 89, 0.2); padding: 20px; 
+            text-align: center; width: 340px;
         }
-
-        .img-box { 
-            width: 100% !important; height: 300px !important; /* تكبير قسري للصورة */
-            border-radius: 15px; overflow: hidden; margin-bottom: 20px;
-        }
+        .img-box { width: 100%; height: 280px; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
-
         .btn { 
             display: block; background: var(--gold); color: var(--navy); 
-            padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold;
+            padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 10px;
         }
 
-        /* إصلاح الفوتر والروابط */
         footer { 
             background: var(--dark-grey); padding: 40px 20px; 
-            border-top: 2px solid var(--gold); text-align: center; margin-top: auto;
+            border-top: 2px solid var(--gold); text-align: center; margin-top: 50px;
         }
-        
-        .footer-socials { margin-bottom: 20px; visibility: visible !important; display: block !important; }
-        .footer-socials a { color: var(--gold) !important; font-size: 2rem !important; margin: 0 15px; text-decoration: none; }
-        
+        .footer-socials { margin-bottom: 20px; }
+        .footer-socials a { color: var(--gold); font-size: 1.8rem; margin: 0 15px; text-decoration: none; }
         .footer-links { margin-bottom: 15px; }
         .footer-links a { color: #8fa7c7; text-decoration: none; margin: 0 10px; font-size: 0.9rem; }
-        
-        .copyright { color: #5a718a; font-size: 0.8rem; }
+        .copyright { color: #5a718a; font-size: 0.8rem; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -75,26 +65,31 @@
         <a href="login.html" class="login-btn">تسجيل دخول</a>
     </header>
 
-    <div class="container">
-        <div style="text-align:center; margin-bottom:40px;">
-            <h2 style="color:var(--gold); font-size: 2.2rem;">لماذا إكسيلو؟</h2>
-        </div>
+    <div class="content">
+        <div class="hero"></div>
 
-        <div class="grid">
-            <div class="card">
-                <div class="img-box"><img src="courses.png.PNG"></div>
-                <h3>الدورات الرقمية</h3>
-                <a href="courses-details.html" class="btn">اكتشف برامجنا</a>
+        <div class="container">
+            <div style="text-align:center; margin-bottom:40px;">
+                <h2 style="color:var(--gold); font-size: 2.2rem;">لماذا إكسيلو؟</h2>
+                <p>رحلة تحول حقيقية تدمج تقنيات التطوير الذاتي بأدوات عملية.</p>
             </div>
-            <div class="card">
-                <div class="img-box"><img src="sessions.png.PNG"></div>
-                <h3>الجلسات والاستشارات</h3>
-                <a href="https://wa.me/966538205304" class="btn">احجز استشارتك</a>
-            </div>
-            <div class="card">
-                <div class="img-box"><img src="store.png.jpg"></div>
-                <h3>المتجر الرقمي</h3>
-                <a href="exelo-store.html" class="btn">تصفح المتجر</a>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="img-box"><img src="courses.png.PNG"></div>
+                    <h3>الدورات الرقمية</h3>
+                    <a href="courses-details.html" class="btn">اكتشف برامجنا</a>
+                </div>
+                <div class="card">
+                    <div class="img-box"><img src="image_3.png"></div>
+                    <h3>الجلسات والاستشارات</h3>
+                    <a href="https://wa.me/966538205304" class="btn">احجز استشارتك</a>
+                </div>
+                <div class="card">
+                    <div class="img-box"><img src="store.png.jpg"></div>
+                    <h3>المتجر الرقمي</h3>
+                    <a href="exelo-store.html" class="btn">تصفح المتجر</a>
+                </div>
             </div>
         </div>
     </div>
