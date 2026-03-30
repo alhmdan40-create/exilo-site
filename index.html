@@ -169,6 +169,31 @@ footer {
     margin: 0 15px;
     text-decoration: none;
 }
+    .reviews-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    color: var(--gold);
+    font-size: 2.3rem;
+    margin-bottom: 30px;
+}
+
+.review-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(197,160,89,0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.review-stars {
+    color: gold;
+    margin-bottom: 8px;
+}
 </style>
 </head>
 
@@ -321,6 +346,50 @@ window.logout = function () {
     });
 };
 </script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  orderBy,
+  query
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadReviews() {
+    const q = query(collection(db, "reviews"), orderBy("date", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    const container = document.getElementById("reviewsContainer");
+
+    querySnapshot.forEach(doc => {
+        const data = doc.data();
+
+        let stars = "";
+        for (let i = 0; i < data.rating; i++) {
+            stars += "⭐";
+        }
+
+        container.innerHTML += `
+            <div class="review-card">
+                <div class="review-stars">${stars}</div>
+                <p>${data.comment}</p>
+                <small>${data.email}</small>
+            </div>
+        `;
+    });
+}
+
+loadReviews();
+</script>
 </body>
 </html>
