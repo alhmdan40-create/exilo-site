@@ -26,7 +26,7 @@ body {
     margin: 0;
 }
 
-/* 🔥 القائمة احترافية */
+/* القائمة الجانبية */
 #sidebar {
     position: fixed;
     top: 0;
@@ -44,16 +44,15 @@ body {
     color: var(--text);
     margin: 18px 0;
     text-decoration: none;
-    font-size: 1.05rem;
 }
 
-.menu-title {
-    cursor: pointer;
+.menu-title { 
+    cursor: pointer; 
     margin: 20px 0;
     font-weight: bold;
 }
 
-/* 🔥 انيميشن */
+/* 🔥 حركة القائمة */
 .submenu {
     max-height: 0;
     overflow: hidden;
@@ -208,8 +207,7 @@ footer {
 
 <!-- القائمة -->
 <div id="sidebar">
-
-<div onclick="toggleSidebar()" style="color:gold;font-size:22px;cursor:pointer;margin-bottom:20px;">✕</div>
+<div onclick="toggleSidebar()" style="color:var(--gold);font-size:22px;cursor:pointer;">✕</div>
 
 <a href="index.html">🏠 الرئيسية</a>
 
@@ -221,7 +219,7 @@ footer {
 
 <a href="sessions.html">💬 الجلسات</a>
 
-<!-- 🔥 المتجر صار Dropdown -->
+<!-- 🔥 المتجر الجديد -->
 <div class="menu-title" onclick="toggleMenu('storeMenu')">🛒 المتجر ▾</div>
 <div class="submenu" id="storeMenu">
 <a href="exelo-store.html">📚 الكتب</a>
@@ -229,7 +227,6 @@ footer {
 </div>
 
 <a href="reviews.html">⭐ آراء العملاء</a>
-
 </div>
 
 <header>
@@ -249,4 +246,115 @@ footer {
 
 <div class="hero"></div>
 
-<!-- باقي صفحتك بدون أي تغيير -->
+<main class="main-content">
+
+<!-- لماذا -->
+<div class="why-section">
+<h2>لماذا إكسيلو؟</h2>
+<div class="why-grid">
+
+<div class="why-card">
+<i class="fas fa-brain"></i>
+<p>افهم نفسك بعمق واقرأ الآخرين بذكاء لتتحكم في قراراتك بثقة</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-bullseye"></i>
+<p>سيطرة كاملة على مشاعرك مهما كانت الضغوط</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-tools"></i>
+<p>أدوات عملية تطبقها فوراً وتلاحظ الفرق</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-rocket"></i>
+<p>نتائج سريعة تنقلك لمستوى أعلى</p>
+</div>
+
+</div>
+</div>
+
+<!-- الخدمات -->
+<div class="services-grid">
+
+<div class="service-card">
+<div class="image-container">
+<img src="courses.png.PNG">
+</div>
+<h3>الدورات الرقمية</h3>
+<a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
+</div>
+
+<div class="service-card">
+<div class="image-container">
+<img src="sessions.png.PNG?v=2">
+</div>
+<h3>الجلسات والاستشارات</h3>
+<a href="sessions.html" class="action-btn">احجز الآن</a>
+</div>
+
+<div class="service-card">
+<div class="image-container">
+<img src="store.png.jpg">
+</div>
+<h3>المتجر الرقمي</h3>
+<a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
+</div>
+
+</div>
+
+<!-- التقييمات -->
+<section class="reviews-section">
+<a href="reviews.html">
+<h2 style="color:var(--gold);">ماذا قال عملاؤنا</h2>
+</a>
+<div id="reviewsContainer"></div>
+</section>
+
+</main>
+
+<footer>
+<div class="social-icons">
+<a href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.snapchat.com"><i class="fab fa-snapchat"></i></a>
+<a href="https://wa.me/966000000000"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<div class="legal-links">
+<a href="terms.html">الشروط والأحكام</a>
+<a href="privacy.html">سياسة الخصوصية</a>
+</div>
+
+<p style="color:#5a718a;">
+© 2026 إكسيلو | جميع الحقوق محفوظة
+</p>
+</footer>
+
+<script>
+function toggleSidebar(){
+let s=document.getElementById("sidebar");
+let o=document.getElementById("overlay");
+
+if(s.style.right==="0px"){
+s.style.right="-260px";
+o.style.display="none";
+}else{
+s.style.right="0px";
+o.style.display="block";
+}
+}
+
+function toggleMenu(id){
+let menu=document.getElementById(id);
+if(menu.style.maxHeight){
+menu.style.maxHeight=null;
+}else{
+menu.style.maxHeight=menu.scrollHeight+"px";
+}
+}
+</script>
+
+</body>
+</html>
