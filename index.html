@@ -51,7 +51,6 @@
             color: var(--navy); 
             padding: 7px 18px; 
             border-radius: 8px; 
-            text-decoration: none; 
             font-weight: bold; 
             border: none; 
             cursor: pointer;
@@ -248,11 +247,22 @@ function toggleSidebar() {
         overlay.style.display = "block";
     }
 }
+</script>
 
-/* 🔥 هذا هو التعديل الوحيد */
-function logout() {
-    localStorage.clear();
-    location.reload();
+<!-- 🔥 هذا هو التعديل الوحيد -->
+<script type="module">
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const auth = getAuth();
+
+window.logout = function() {
+    signOut(auth)
+    .then(() => {
+        location.reload();
+    })
+    .catch(() => {
+        alert("خطأ في تسجيل الخروج");
+    });
 }
 </script>
 
