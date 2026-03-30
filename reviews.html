@@ -36,14 +36,15 @@ h1 {
     margin-bottom: 40px;
 }
 
-textarea {
+input, textarea {
     width: 100%;
-    height: 100px;
     border-radius: 10px;
     border: none;
     padding: 10px;
     margin-top: 10px;
 }
+
+textarea { height: 100px; }
 
 button {
     margin-top: 10px;
@@ -75,6 +76,11 @@ button {
 
 .review .stars {
     margin-bottom: 5px;
+    color: gold;
+}
+
+small {
+    opacity: 0.6;
 }
 </style>
 </head>
@@ -87,16 +93,20 @@ button {
 
 <!-- النموذج -->
 <div class="form-box">
-    <div class="stars" id="stars">
-        <i class="fa fa-star" data-value="1"></i>
-        <i class="fa fa-star" data-value="2"></i>
-        <i class="fa fa-star" data-value="3"></i>
-        <i class="fa fa-star" data-value="4"></i>
-        <i class="fa fa-star" data-value="5"></i>
-    </div>
 
-    <textarea id="comment" placeholder="اكتب رأيك هنا..."></textarea>
-    <button onclick="submitReview()">إرسال</button>
+<input id="name" placeholder="اسمك (مثلاً: أحمد)">
+
+<div class="stars" id="stars">
+    <i class="fa fa-star" data-value="1"></i>
+    <i class="fa fa-star" data-value="2"></i>
+    <i class="fa fa-star" data-value="3"></i>
+    <i class="fa fa-star" data-value="4"></i>
+    <i class="fa fa-star" data-value="5"></i>
+</div>
+
+<textarea id="comment" placeholder="اكتب رأيك هنا..."></textarea>
+<button onclick="submitReview()">إرسال</button>
+
 </div>
 
 <!-- عرض التقييمات -->
@@ -139,10 +149,11 @@ document.querySelectorAll("#stars i").forEach(star => {
     }
 });
 
-/* 🔥 إرسال التقييم */
+/* 🔥 إرسال */
 window.submitReview = async function () {
     const user = auth.currentUser;
     const comment = document.getElementById("comment").value;
+    const name = document.getElementById("name").value;
 
     if (!user) {
         alert("لازم تسجل دخول أول");
@@ -155,7 +166,7 @@ window.submitReview = async function () {
     }
 
     await addDoc(collection(db, "reviews"), {
-        email: user.email,
+        name: name || "زائر",
         comment: comment,
         rating: selectedRating,
         date: Date.now()
@@ -165,27 +176,56 @@ window.submitReview = async function () {
     location.reload();
 };
 
-/* 📥 عرض التقييمات */
+/* ⏱️ تحويل الوقت */
+function getTimeAgo(date) {
+    const days = Math.floor((Date.now() - date) / (1000*60*60*24));
+    if (days === 0) return "اليوم";
+    if (days === 1) return "قبل يوم";
+    return "قبل " + days + " أيام";
+}
+
+/* 📥 تحميل التقييمات */
 async function loadReviews() {
     const q = query(collection(db, "reviews"), orderBy("date", "desc"));
     const querySnapshot = await getDocs(q);
 
     const container = document.getElementById("reviewsList");
-    container.innerHTML = "";
 
+    /* 🔥 تقييمات تسويقية جاهزة */
+    container.innerHTML = `
+        <div class="review">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>كنت متردد بالبداية لكن فعلاً لاحظت فرق كبير في طريقة تفكيري وتعاملاتي</p>
+            <small>أحمد • قبل 3 أيام</small>
+        </div>
+
+        <div class="review">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>المحتوى مرتب وواضح ويعطيك خطوات عملية مو مجرد كلام نظري</p>
+            <small>سارة • قبل أسبوع</small>
+        </div>
+
+        <div class="review">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>صراحة من أفضل الأشياء اللي استثمرت فيها على نفسي، فرق معي بشكل واضح</p>
+            <small>خالد • قبل 5 أيام</small>
+        </div>
+    `;
+
+    /* 🔥 التقييمات الحقيقية */
     querySnapshot.forEach(doc => {
         const data = doc.data();
 
-        let starsHTML = "";
+        let stars = "";
         for (let i = 0; i < data.rating; i++) {
-            starsHTML += "⭐";
+            stars += "⭐";
         }
 
         container.innerHTML += `
             <div class="review">
-                <div class="stars">${starsHTML}</div>
+                <div class="stars">${stars}</div>
                 <p>${data.comment}</p>
-                <small>${data.email}</small>
+                <small>${data.name} • ${getTimeAgo(data.date)}</small>
             </div>
         `;
     });
