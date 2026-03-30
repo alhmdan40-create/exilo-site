@@ -90,7 +90,103 @@ header {
 
 .main-content { padding:60px 20px; }
 
-/* باقي التصميم كما هو */
+.why-section {
+    max-width:1000px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.why-section h2 {
+    color:var(--gold);
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+.why-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.why-card {
+    background: rgba(255,255,255,0.04);
+    border-radius:20px;
+    border:1px solid rgba(197,160,89,0.3);
+    padding:25px 20px;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.why-card i {
+    font-size:26px;
+    color:var(--gold);
+    margin-bottom:12px;
+}
+
+.services-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+}
+
+.image-container {
+    height:280px;
+    border-radius:18px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.image-container img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.action-btn {
+    background: var(--gold);
+    color: var(--navy);
+    padding:14px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    display:block;
+}
+
+.reviews-section {
+    max-width:1000px;
+    margin:80px auto;
+    text-align:center;
+}
+
+footer {
+    background: var(--dark-grey);
+    padding:50px 20px;
+    border-top:2px solid var(--gold);
+    text-align:center;
+}
+
+.social-icons a {
+    color: var(--gold);
+    font-size: 2.2rem;
+    margin: 0 20px;
+}
+
+.legal-links a {
+    color: #8fa7c7;
+    margin: 0 15px;
+    text-decoration: none;
+}
 </style>
 </head>
 
@@ -122,7 +218,7 @@ header {
 </div>
 
 <div>
-<button id="logoutBtn" class="logout-btn" onclick="logout()">خروج</button>
+<button id="logoutBtn" class="logout-btn">خروج</button>
 <a href="login.html" id="loginBtn" class="logout-btn" style="display:none;">تسجيل الدخول</a>
 </div>
 
@@ -134,15 +230,94 @@ header {
 
 <main class="main-content">
 
-<!-- باقي الصفحة كما هي (لم أعدل عليها) -->
+<!-- لماذا -->
+<div class="why-section">
+<h2>لماذا إكسيلو؟</h2>
+<div class="why-grid">
+
+<div class="why-card">
+<i class="fas fa-brain"></i>
+<p>افهم نفسك بعمق واقرأ الآخرين بذكاء لتتحكم في قراراتك بثقة</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-bullseye"></i>
+<p>سيطرة كاملة على مشاعرك مهما كانت الضغوط</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-tools"></i>
+<p>أدوات عملية تطبقها فوراً وتلاحظ الفرق</p>
+</div>
+
+<div class="why-card">
+<i class="fas fa-rocket"></i>
+<p>نتائج سريعة تنقلك لمستوى أعلى</p>
+</div>
+
+</div>
+</div>
+
+<!-- الخدمات -->
+<div class="services-grid">
+
+<div class="service-card">
+<div class="image-container">
+<img src="courses.png.PNG">
+</div>
+<h3>الدورات الرقمية</h3>
+<a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
+</div>
+
+<div class="service-card">
+<div class="image-container">
+<img src="sessions.png.PNG?v=2">
+</div>
+<h3>الجلسات والاستشارات</h3>
+<a href="sessions.html" class="action-btn">احجز الآن</a>
+</div>
+
+<div class="service-card">
+<div class="image-container">
+<img src="store.png.jpg">
+</div>
+<h3>المتجر الرقمي</h3>
+<a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
+</div>
+
+</div>
+
+<!-- التقييمات -->
+<section class="reviews-section">
+<a href="reviews.html">
+<h2 style="color:var(--gold);">ماذا قال عملاؤنا</h2>
+</a>
+<div id="reviewsContainer"></div>
+</section>
 
 </main>
 
+<!-- 🔥 الفوتر -->
 <footer>
-<p style="color:#5a718a;">© 2026 إكسيلو</p>
+
+<div class="social-icons">
+<a href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.snapchat.com"><i class="fab fa-snapchat"></i></a>
+<a href="https://wa.me/966000000000"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<div class="legal-links">
+<a href="terms.html">الشروط والأحكام</a>
+<a href="privacy.html">سياسة الخصوصية</a>
+</div>
+
+<p style="color:#5a718a;">
+© 2026 إكسيلو | جميع الحقوق محفوظة
+</p>
+
 </footer>
 
-<!-- 🔥 Firebase (الخروج + التحكم) -->
+<!-- 🔥 Firebase -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
@@ -154,9 +329,9 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_ID"
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -177,7 +352,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-window.logout = function () {
+document.getElementById("logoutBtn").onclick = function () {
     signOut(auth).then(() => {
         window.location.href = "login.html";
     });
