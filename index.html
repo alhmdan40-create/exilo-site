@@ -38,21 +38,27 @@
         }
         
         .user-section {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-left: 10px;
-}
-        .user-email { color: var(--gold); font-size: 0.9rem; font-weight: 500; }
-        .logout-btn { 
-            background: var(--gold); color: var(--navy); 
-            padding: 7px 18px; border-radius: 8px; 
-            text-decoration: none; font-weight: bold; 
-            border: none; cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: 10px;
         }
+
+        .user-email { color: var(--gold); font-size: 0.9rem; font-weight: 500; }
+
+        .logout-btn { 
+            background: var(--gold); 
+            color: var(--navy); 
+            padding: 7px 18px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border: none; 
+            cursor: pointer;
+        }
+
         .logo-text { color: var(--gold); font-weight: bold; font-size: 1.6rem; letter-spacing: 2px; }
 
-        /* 🔥 القائمة الجانبية */
         #sidebar {
             position: fixed;
             top: 0;
@@ -92,7 +98,7 @@
         }
 
         .main-content { flex: 1; padding: 60px 20px; }
-        
+
         .section-intro { 
             text-align: center; 
             margin-bottom: 60px; 
@@ -147,20 +153,15 @@
         }
 
         .social-icons a { color: var(--gold); font-size: 2.2rem; margin: 0 20px; }
-
         .legal-links a { color: #8fa7c7; margin: 0 15px; text-decoration: none; }
-
         .copyright { color: #5a718a; }
-
     </style>
 </head>
 
 <body>
 
-<!-- overlay -->
 <div id="overlay" onclick="toggleSidebar()"></div>
 
-<!-- القائمة -->
 <div id="sidebar">
     <div onclick="toggleSidebar()" style="cursor:pointer; color:var(--gold); font-size:20px;">✕</div>
     <a href="index.html">الرئيسية</a>
@@ -170,15 +171,14 @@
 </div>
 
 <header>
-    <!-- 🔥 تم التعديل هنا فقط -->
     <div onclick="toggleSidebar()" style="cursor: pointer; margin-right:10px;">
         <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i>
     </div>
     
     <div class="user-section">
-    <span class="user-email">alhmdan40@gmail.com</span>
-    <button class="logout-btn" onclick="logout()">خروج</button>
-</div>
+        <span class="user-email">alhmdan40@gmail.com</span>
+        <button class="logout-btn" onclick="logout()">خروج</button>
+    </div>
     
     <div class="logo-text">EXILO</div>
 </header>
@@ -235,7 +235,6 @@
     </p>
 </footer>
 
-<!-- 🔥 هذا هو المهم -->
 <script>
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
@@ -248,6 +247,12 @@ function toggleSidebar() {
         sidebar.style.right = "0px";
         overlay.style.display = "block";
     }
+}
+
+/* 🔥 هذا هو التعديل الوحيد */
+function logout() {
+    localStorage.clear();
+    location.reload();
 }
 </script>
 
