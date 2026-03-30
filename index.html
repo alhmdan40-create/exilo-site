@@ -47,12 +47,43 @@
         }
         .logo-text { color: var(--gold); font-weight: bold; font-size: 1.6rem; letter-spacing: 2px; }
 
+        /* 🔥 القائمة الجانبية */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            right: -260px;
+            width: 260px;
+            height: 100%;
+            background: var(--dark-grey);
+            padding: 25px;
+            transition: 0.3s;
+            z-index: 2000;
+            border-left: 2px solid var(--gold);
+        }
+
+        #sidebar a {
+            display: block;
+            color: var(--text);
+            margin: 15px 0;
+            text-decoration: none;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            z-index: 1500;
+        }
+
         .hero { 
             width: 100%; height: 400px; 
             background: linear-gradient(rgba(5, 10, 20, 0.4), rgba(5, 10, 20, 0.4)), url('banner.png%202.PNG'); 
             background-size: cover; background-position: center;
             border-bottom: 4px solid var(--gold);
-            display: flex; align-items: center; justify-content: center;
         }
 
         .main-content { flex: 1; padding: 60px 20px; }
@@ -81,14 +112,6 @@
             border: 1px solid rgba(197, 160, 89, 0.2); 
             padding: 25px; 
             text-align: center;
-            display: flex; flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .service-card:hover { 
-            transform: translateY(-10px); 
-            border-color: var(--gold); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
         }
 
         .image-container { 
@@ -101,8 +124,6 @@
         
         .image-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .service-card h3 { font-size: 1.6rem; color: #fff; margin-bottom: 15px; }
-
         .action-btn { 
             display: block; 
             background: var(--gold); 
@@ -110,11 +131,8 @@
             padding: 14px; 
             border-radius: 12px; 
             text-decoration: none; 
-            font-weight: bold; 
-            font-size: 1.1rem;
+            font-weight: bold;
         }
-        
-        .action-btn:hover { background: #b08d4a; }
 
         footer { 
             background: var(--dark-grey); 
@@ -122,41 +140,38 @@
             border-top: 2px solid var(--gold); 
             text-align: center; 
         }
-        
-        .social-icons { margin-bottom: 30px; }
-        .social-icons a { 
-            color: var(--gold); 
-            font-size: 2.2rem; 
-            margin: 0 20px; 
-            text-decoration: none; 
-            display: inline-block;
-        }
-        
-        .legal-links { margin-bottom: 20px; }
-        .legal_links a { 
-            color: #8fa7c7; 
-            text-decoration: none; 
-            margin: 0 15px; 
-            font-size: 1rem; 
-        }
-        
-        .copyright { color: #5a718a; font-size: 0.9rem; margin-top: 15px; }
 
-        @media (max-width: 768px) {
-            .hero { height: 250px; }
-            .section-intro h2 { font-size: 2rem; }
-            header { padding: 15px 20px; }
-            .user-email { display: none; }
-        }
+        .social-icons a { color: var(--gold); font-size: 2.2rem; margin: 0 20px; }
+
+        .legal-links a { color: #8fa7c7; margin: 0 15px; text-decoration: none; }
+
+        .copyright { color: #5a718a; }
+
     </style>
 </head>
+
 <body>
 
+<!-- overlay -->
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- القائمة -->
+<div id="sidebar">
+    <div onclick="toggleSidebar()" style="cursor:pointer; color:var(--gold); font-size:20px;">✕</div>
+    <a href="index.html">الرئيسية</a>
+    <a href="courses-details.html">الدورات</a>
+    <a href="exelo-store.html">المتجر</a>
+    <a href="terms.html">الشروط</a>
+</div>
+
 <header>
-    <div style="cursor: pointer;"><i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i></div>
+    <!-- 🔥 تم التعديل هنا فقط -->
+    <div onclick="toggleSidebar()" style="cursor: pointer;">
+        <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i>
+    </div>
     
     <div class="user-section">
-        <button class="logout-btn" onclick="logout()">خروج</button>
+        <button class="logout-btn">خروج</button>
         <span class="user-email">alhmdan40@gmail.com</span>
         <i class="fas fa-user-circle" style="font-size: 1.6rem; color: var(--gold);"></i>
     </div>
@@ -173,10 +188,9 @@
     </div>
 
     <div class="services-grid">
-        
         <div class="service-card">
             <div class="image-container">
-                <img src="courses.png.PNG" alt="الدورات الرقمية">
+                <img src="courses.png.PNG">
             </div>
             <h3>الدورات الرقمية</h3>
             <a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
@@ -184,7 +198,7 @@
 
         <div class="service-card">
             <div class="image-container">
-                <img src="sessions.png.PNG?v=2" alt="الجلسات والاستشارات">
+                <img src="sessions.png.PNG?v=2">
             </div>
             <h3>الجلسات والاستشارات</h3>
             <a href="https://wa.me/966538205304" class="action-btn">احجز استشارتك</a>
@@ -192,55 +206,44 @@
 
         <div class="service-card">
             <div class="image-container">
-                <img src="store.png.jpg" alt="المتجر الرقمي">
+                <img src="store.png.jpg">
             </div>
             <h3>المتجر الرقمي</h3>
             <a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
         </div>
-
     </div>
 </main>
 
 <footer>
     <div class="social-icons">
-        <a href="https://www.tiktok.com/@hanialhmdan" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.snapchat.com/add/hanialhmdan" target="_blank"><i class="fab fa-snapchat"></i></a>
-        <a href="https://wa.me/966538205304" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
+        <a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
     </div>
-    
+
     <div class="legal-links">
         <a href="terms.html">الشروط والأحكام</a>
-        <span style="color: var(--gold);">|</span>
         <a href="privacy.html">سياسة الخصوصية</a>
     </div>
-    
+
     <p class="copyright">
-        &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ <strong>هاني آل حمدان</strong>
+        &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان
     </p>
 </footer>
 
-<!-- فقط هذا الجزء الجديد -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+<!-- 🔥 هذا هو المهم -->
+<script>
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
-  authDomain: "exilo-376f1.firebaseapp.com",
-  projectId: "exilo-376f1",
-  storageBucket: "exilo-376f1.appspot.com",
-  messagingSenderId: "736619072060",
-  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-window.logout = function(){
-  signOut(auth).then(()=>{
-    alert("تم تسجيل الخروج");
-    window.location.href = "login.html";
-  });
+    if (sidebar.style.right === "0px") {
+        sidebar.style.right = "-260px";
+        overlay.style.display = "none";
+    } else {
+        sidebar.style.right = "0px";
+        overlay.style.display = "block";
+    }
 }
 </script>
 
