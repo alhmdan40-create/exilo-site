@@ -158,10 +158,11 @@
             font-weight: bold;
         }
 
-        /* 🔥 آراء العملاء */
+        /* ⭐ التقييم */
         .testimonials {
             max-width: 1100px;
             margin: 80px auto;
+            padding: 0 20px;
             text-align: center;
         }
 
@@ -171,17 +172,12 @@
             margin-bottom: 40px;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
+        .testimonial-box {
             background: var(--card-bg);
-            border: 1px solid rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197,160,89,0.2);
             border-radius: 20px;
             padding: 25px;
+            margin-bottom: 25px;
         }
 
         .stars {
@@ -196,55 +192,106 @@
             text-align: center; 
         }
 
+        .social-icons a { color: var(--gold); font-size: 2.2rem; margin: 0 20px; }
+
+        .legal-links a { color: #8fa7c7; margin: 0 15px; text-decoration: none; }
+
+        .copyright { color: #5a718a; }
+
     </style>
 </head>
 
 <body>
 
-<!-- (القائمة + الهيدر بدون تغيير) -->
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<div id="sidebar">
+    <div onclick="toggleSidebar()" style="cursor:pointer; color:var(--gold); font-size:20px;">✕</div>
+
+    <a href="index.html">🏠 الرئيسية</a>
+
+    <div class="menu-title" onclick="toggleMenu('coursesMenu')">🎓 الدورات ▾</div>
+    <div class="submenu" id="coursesMenu">
+        <a href="body-language-course.html">لغة الجسد</a>
+        <a href="character-analysis-course.html">تحليل الشخصيات</a>
+        <a href="courses-details.html">عرض الكل</a>
+    </div>
+
+    <a href="https://wa.me/966538205304">💬 الجلسات</a>
+
+    <div class="menu-title" onclick="toggleMenu('storeMenu')">🛒 المتجر ▾</div>
+    <div class="submenu" id="storeMenu">
+        <a href="exelo-store.html">الكتب</a>
+        <a href="exelo-store.html">عرض المتجر</a>
+    </div>
+</div>
+
+<header>
+    <div onclick="toggleSidebar()" style="cursor: pointer;">
+        <i class="fas fa-bars" style="font-size: 1.5rem; color: var(--gold);"></i>
+    </div>
+
+    <div class="user-section">
+        <span id="userEmail"></span>
+        <button id="logoutBtn" onclick="logout()">خروج</button>
+        <a href="login.html" id="loginBtn" style="display:none;">تسجيل الدخول</a>
+    </div>
+
+    <div class="logo-text">EXILO</div>
+</header>
 
 <div class="hero"></div>
 
 <main class="main-content">
-    <div class="section-intro">
-        <h2>لماذا إكسيلو؟</h2>
-        <p>نحن نصمم لك رحلة تحول حقيقية...</p>
+
+<div class="section-intro">
+    <h2>لماذا إكسيلو؟</h2>
+    <p>رحلة تطوير حقيقية بأسلوب عملي ومباشر</p>
+</div>
+
+<div class="services-grid">
+    <div class="service-card">
+        <div class="image-container"><img src="courses.png.PNG"></div>
+        <h3>الدورات</h3>
+        <a href="courses-details.html" class="action-btn">ابدأ الآن</a>
     </div>
 
-    <div class="services-grid">
-        <!-- نفس الكروت بدون تغيير -->
+    <div class="service-card">
+        <div class="image-container"><img src="sessions.png.PNG"></div>
+        <h3>الجلسات</h3>
+        <a href="#" class="action-btn">احجز الآن</a>
     </div>
 
-    <!-- 🔥 آراء العملاء -->
-    <section class="testimonials">
-        <h2>⭐ آراء العملاء</h2>
+    <div class="service-card">
+        <div class="image-container"><img src="store.png.jpg"></div>
+        <h3>المتجر</h3>
+        <a href="exelo-store.html" class="action-btn">تصفح</a>
+    </div>
+</div>
 
-        <div class="testimonials-grid">
+<!-- ⭐ آراء العملاء -->
+<div class="testimonials">
+    <h2>⭐ آراء العملاء</h2>
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>الدورات غيرت تفكيري بالكامل، فعلاً محتوى قوي 🔥</p>
-                <strong>– محمد</strong>
-            </div>
+    <div class="testimonial-box">
+        <div class="stars">★★★★★</div>
+        <p>غيرت حياتي فعلاً 🔥</p>
+        <strong>- أحمد</strong>
+    </div>
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>أفضل استثمار سويته في نفسي، أنصح الجميع فيه</p>
-                <strong>– سارة</strong>
-            </div>
+    <div class="testimonial-box">
+        <div class="stars">★★★★★</div>
+        <p>أفضل محتوى دخلته</p>
+        <strong>- خالد</strong>
+    </div>
 
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>الكتب بسيطة وعميقة بنفس الوقت، استفدت كثير</p>
-                <strong>– خالد</strong>
-            </div>
-
-        </div>
-    </section>
+</div>
 
 </main>
 
-<!-- الفوتر + السكربتات بدون تغيير -->
+<footer>
+    <p>© EXILO</p>
+</footer>
 
 </body>
 </html>
