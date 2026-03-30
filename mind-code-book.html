@@ -4,59 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شفرة العقل الباطن | المدرب هاني آل حمدان</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         :root { --navy: #050a14; --gold: #c5a059; --text: #e6f1ff; --dark-grey: #0a0f1a; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--navy); color: var(--text); margin: 0; line-height: 1.8; }
-        header { background: var(--navy); padding: 20px; text-align: center; border-bottom: 2px solid var(--gold); }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .book-img { width: 100%; max-width: 400px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.8); display: block; margin: 0 auto 30px; border: 1px solid var(--gold); }
-        h1 { color: var(--gold); font-size: 2.5rem; text-align: center; margin-bottom: 10px; }
-        .tagline { color: #8fa7c7; font-size: 1.4rem; text-align: center; margin-bottom: 40px; display: block; }
-        .content-box { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-right: 5px solid var(--gold); margin-bottom: 40px; }
-        h2 { color: var(--gold); font-size: 1.8rem; margin-top: 0; }
-        p { font-size: 1.25rem; color: #d1d9e6; }
-        ul { padding-right: 20px; }
-        ul li { font-size: 1.2rem; margin-bottom: 15px; color: #e6f1ff; list-style-type: none; position: relative; }
-        ul li::before { content: "✔"; color: var(--gold); position: absolute; right: -25px; }
-        .cta-button { display: block; background: var(--gold); color: var(--navy); text-align: center; padding: 22px; border-radius: 15px; font-size: 1.5rem; font-weight: bold; text-decoration: none; transition: 0.3s; box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3); }
-        .cta-button:hover { transform: scale(1.02); background: #d4b477; }
-        footer { text-align: center; padding: 40px; color: #5a718a; border-top: 1px solid rgba(197, 160, 89, 0.2); }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--navy);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* 🔥 البنر */
+        .top-banner {
+            width: 100%;
+            height: 220px;
+            background: url('banner.png 2.PNG') center/cover no-repeat;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        header {
+            background: var(--navy);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .book-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+            display: block;
+            margin: 0 auto 30px;
+            border: 1px solid var(--gold);
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #8fa7c7;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 40px;
+            display: block;
+        }
+
+        .content-box {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 25px;
+            border-right: 5px solid var(--gold);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #d1d9e6;
+        }
+
+        ul {
+            padding-right: 20px;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #e6f1ff;
+            list-style-type: none;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✔";
+            color: var(--gold);
+            position: absolute;
+            right: -25px;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--gold);
+            color: var(--navy);
+            text-align: center;
+            padding: 22px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.02);
+            background: #d4b477;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #5a718a;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+        }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div style="color: var(--gold); font-weight: bold; font-size: 1.5rem;">EXILO</div>
-    </header>
+<!-- 🔥 البنر -->
+<div class="top-banner"></div>
 
-    <div class="container">
-        <img src="mind-code.png.jpg" class="book-img" alt="شفرة العقل الباطن">
+<header>
+    <div style="color: var(--gold); font-weight: bold; font-size: 1.5rem;">EXILO</div>
+</header>
+
+<div class="container">
+    <img src="mind-code.png.jpg" class="book-img" alt="شفرة العقل الباطن">
+    
+    <h1>شفرة العقل الباطن</h1>
+    <span class="tagline">الدليل العملي لاحتراف التنويم الإيحائي</span>
+
+    <div class="content-box">
+        <h2>هل تشعر أن هناك "قوة خفية" تعيق نجاحك؟</h2>
+        <p>خلف كل قرار نتخذه وكل شعور نشعر به، يقبع <strong>العقل الباطن</strong>. هذا الكتاب الرقمي (PDF) هو "دليل التشغيل" الذي طالما بحثت عنه لتمتلك زمام الأمور وتبرمج حياتك نحو النجاح.</p>
         
-        <h1>شفرة العقل الباطن</h1>
-        <span class="tagline">الدليل العملي لاحتراف التنويم الإيحائي</span>
-
-        <div class="content-box">
-            <h2>هل تشعر أن هناك "قوة خفية" تعيق نجاحك؟</h2>
-            <p>خلف كل قرار نتخذه وكل شعور نشعر به، يقبع <strong>العقل الباطن</strong>. هذا الكتاب الرقمي (PDF) هو "دليل التشغيل" الذي طالما بحثت عنه لتمتلك زمام الأمور وتبرمج حياتك نحو النجاح.</p>
-            
-            <h2>لماذا تحتاج هذا الكتاب الآن؟</h2>
-            <ul>
-                <li><strong>لغة العقل الباطن:</strong> اكتشف كيف تخاطب عقلك باللغة التي يفهمها ليحقق لك أهدافك العميقة.</li>
-                <li><strong>تغيير القناعات:</strong> تقنيات التنويم الذاتي لاقتلاع المعتقدات المعيقة وزرع ثقة لا تهتز.</li>
-                <li><strong>فن الإيحاء:</strong> كيف تصيغ رسائل إيجابية قوية تؤثر في نفسك وفيمن حولك باحترافية عالية.</li>
-                <li><strong>تطبيقات عملية:</strong> تمارين وخطوات ذهنية مركزة لتطبيق التنويم الإيحائي في حياتك اليومية بكل سهولة.</li>
-            </ul>
-            <p style="text-align: center; color: var(--gold); font-weight: bold; font-size: 1.3rem;">"أمسك بمفاتيح عقلك.. وغير واقعك اليوم."</p>
-        </div>
-
-        <a href="https://wa.me/966538205304?text=أريد+شراء+كتاب+شفرة+العقل+الباطن" class="cta-button">امتلك الشفرة وفك القيود الآن <i class="fab fa-whatsapp"></i></a>
+        <h2>لماذا تحتاج هذا الكتاب الآن؟</h2>
+        <ul>
+            <li><strong>لغة العقل الباطن:</strong> اكتشف كيف تخاطب عقلك باللغة التي يفهمها ليحقق لك أهدافك العميقة.</li>
+            <li><strong>تغيير القناعات:</strong> تقنيات التنويم الذاتي لاقتلاع المعتقدات المعيقة وزرع ثقة لا تهتز.</li>
+            <li><strong>فن الإيحاء:</strong> كيف تصيغ رسائل إيجابية قوية تؤثر في نفسك وفيمن حولك باحترافية عالية.</li>
+            <li><strong>تطبيقات عملية:</strong> تمارين وخطوات ذهنية مركزة لتطبيق التنويم الإيحائي في حياتك اليومية بكل سهولة.</li>
+        </ul>
+        <p style="text-align: center; color: var(--gold); font-weight: bold; font-size: 1.3rem;">
+        "أمسك بمفاتيح عقلك.. وغير واقعك اليوم."
+        </p>
     </div>
 
-    <footer>
-        <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة للمدرب هاني آل حمدان</p>
-    </footer>
+    <a href="https://wa.me/966538205304?text=أريد+شراء+كتاب+شفرة+العقل+الباطن" class="cta-button">
+        امتلك الشفرة وفك القيود الآن <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<footer>
+    <p>&copy; 2026 إكسيلو | جميع الحقوق محفوظة للمدرب هاني آل حمدان</p>
+</footer>
 
 </body>
 </html>
