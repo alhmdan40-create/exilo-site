@@ -92,17 +92,19 @@
         .hero { 
             width: 100%; height: 400px; 
             background: linear-gradient(rgba(5, 10, 20, 0.4), rgba(5, 10, 20, 0.4)), url('banner.png%202.PNG'); 
-            background-size: cover; background-position: center;
+            background-size: cover; 
+            background-position: center;
             border-bottom: 4px solid var(--gold);
         }
 
         .main-content { flex: 1; padding: 60px 20px; }
-
+        
         .section-intro { 
             text-align: center; 
             margin-bottom: 60px; 
             max-width: 800px; 
-            margin-left: auto; margin-right: auto; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
         
         .section-intro h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; }
@@ -152,8 +154,11 @@
         }
 
         .social-icons a { color: var(--gold); font-size: 2.2rem; margin: 0 20px; }
+
         .legal-links a { color: #8fa7c7; margin: 0 15px; text-decoration: none; }
+
         .copyright { color: #5a718a; }
+
     </style>
 </head>
 
@@ -249,21 +254,32 @@ function toggleSidebar() {
 }
 </script>
 
-<!-- 🔥 هذا هو التعديل الوحيد -->
+<!-- 🔥 إضافة Firebase فقط -->
 <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-const auth = getAuth();
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+  storageBucket: "exilo-376f1.appspot.com",
+  messagingSenderId: "736619072060",
+  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+};
 
-window.logout = function() {
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.logout = function () {
     signOut(auth)
     .then(() => {
-        location.reload();
+        window.location.href = "login.html";
     })
-    .catch(() => {
-        alert("خطأ في تسجيل الخروج");
+    .catch((error) => {
+        alert(error.message);
     });
-}
+};
 </script>
 
 </body>
