@@ -9,26 +9,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
-:root {
-    --navy:#050a14;
-    --gold:#c5a059;
-    --text:#e6f1ff;
+:root{
+--navy:#050a14;
+--gold:#c5a059;
+--text:#e6f1ff;
 }
 
 body{
-    margin:0;
-    font-family:'Tajawal',sans-serif;
-    background:var(--navy);
-    color:var(--text);
+margin:0;
+font-family:'Tajawal',sans-serif;
+background:var(--navy);
+color:var(--text);
 }
 
 /* الهيدر */
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
-    border-bottom:2px solid var(--gold);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+border-bottom:2px solid var(--gold);
 }
 
 .logo-text{color:var(--gold);font-size:1.5rem;font-weight:bold;}
@@ -36,120 +36,120 @@ header{
 .user-section{display:flex;align-items:center;gap:10px;}
 
 .logout-btn{
-    background:var(--gold);
-    border:none;
-    padding:6px 15px;
-    border-radius:8px;
-    cursor:pointer;
+background:var(--gold);
+border:none;
+padding:6px 15px;
+border-radius:8px;
+cursor:pointer;
 }
 
 /* القائمة الجانبية */
 .sidebar{
-    position:fixed;
-    right:-260px;
-    top:0;
-    width:250px;
-    height:100%;
-    background:#0a0f1a;
-    padding:20px;
-    transition:.3s;
-    z-index:999;
+position:fixed;
+right:-260px;
+top:0;
+width:250px;
+height:100%;
+background:#0a0f1a;
+padding:20px;
+transition:.3s;
+z-index:999;
 }
 .sidebar.active{right:0;}
 
 .overlay{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.6);
-    display:none;
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:none;
 }
 .overlay.active{display:block;}
 
 .sidebar a{
-    display:block;
-    margin:15px 0;
-    color:#fff;
-    text-decoration:none;
+display:block;
+margin:15px 0;
+color:#fff;
+text-decoration:none;
 }
 
 /* البنر */
 .hero{
-    height:300px;
-    background:url('banner.png 2.PNG') center/cover no-repeat;
-    border-bottom:3px solid var(--gold);
+height:300px;
+background:url('banner.png 2.PNG?v=5') center/cover no-repeat;
+border-bottom:3px solid var(--gold);
 }
 
 /* الكروت */
 .container{padding:40px 20px;}
 
 .card{
-    background:rgba(255,255,255,0.05);
-    padding:20px;
-    border-radius:20px;
-    margin-bottom:30px;
-    text-align:center;
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:20px;
+margin-bottom:30px;
+text-align:center;
 }
 
 .card img{
-    width:100%;
-    border-radius:15px;
+width:100%;
+border-radius:15px;
 }
 
 .btn{
-    display:block;
-    background:var(--gold);
-    color:#000;
-    padding:12px;
-    border-radius:10px;
-    margin-top:15px;
-    text-decoration:none;
+display:block;
+background:var(--gold);
+color:#000;
+padding:12px;
+border-radius:10px;
+margin-top:15px;
+text-decoration:none;
 }
 
-/* الفوتر القديم */
+/* الفوتر */
 .footer {
-    background: #050a14;
-    padding: 40px 20px 60px;
-    text-align: center;
+background: #050a14;
+padding: 40px 20px 60px;
+text-align: center;
 }
 
 .footer-line {
-    width: 100%;
-    height: 2px;
-    background: #c5a059;
-    margin-bottom: 30px;
+width: 100%;
+height: 2px;
+background: #c5a059;
+margin-bottom: 30px;
 }
 
 .footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 25px;
+display: flex;
+justify-content: center;
+gap: 40px;
+margin-bottom: 25px;
 }
 
 .footer-icons a {
-    color: #c5a059;
-    font-size: 32px;
+color: #c5a059;
+font-size: 32px;
 }
 
 .footer-links {
-    margin-bottom: 20px;
-    color: #8fa7c7;
+margin-bottom: 20px;
+color: #8fa7c7;
 }
 
 .footer-links a {
-    color: #8fa7c7;
-    text-decoration: none;
-    margin: 0 10px;
+color: #8fa7c7;
+text-decoration: none;
+margin: 0 10px;
 }
 
 .footer-links span {
-    color: #c5a059;
+color: #c5a059;
 }
 
 .footer-copy {
-    color: #6f859e;
-    font-size: 14px;
+color: #6f859e;
+font-size: 14px;
 }
 </style>
 </head>
@@ -159,60 +159,62 @@ header{
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <header>
-    <i class="fas fa-bars" onclick="toggleMenu()" style="cursor:pointer;color:var(--gold)"></i>
+<i class="fas fa-bars" onclick="toggleMenu()" style="cursor:pointer;color:var(--gold)"></i>
 
-    <div class="user-section">
-        <button class="logout-btn" onclick="logout()">خروج</button>
-        <span id="userEmail"></span>
-        <i class="fas fa-user-circle" style="color:var(--gold)"></i>
-    </div>
+<div class="user-section">
+<button class="logout-btn" onclick="logout()">خروج</button>
+<span id="userEmail"></span>
+<i class="fas fa-user-circle" style="color:var(--gold)"></i>
+</div>
 
-    <div class="logo-text">EXILO</div>
+<div class="logo-text">EXILO</div>
 </header>
 
 <div class="sidebar" id="sidebar">
-    <a href="#">الرئيسية</a>
-    <a href="courses-details.html">الدورات</a>
-    <a href="exelo-store.html">المتجر</a>
+<a href="#">الرئيسية</a>
+<a href="courses-details.html">الدورات</a>
+<a href="exelo-store.html">المتجر</a>
 </div>
 
 <div class="hero"></div>
 
 <div class="container">
 
-    <div class="card">
-        <img src="sessions.png.PNG">
-        <h2>الجلسات</h2>
-        <a href="https://wa.me/966538205304" class="btn">احجز</a>
-    </div>
+<div class="card">
+<img src="sessions.png.PNG?v=5">
+<h2>الجلسات</h2>
+<a href="https://wa.me/966538205304" class="btn">احجز</a>
+</div>
 
-    <div class="card">
-        <img src="store.png.jpg">
-        <h2>المتجر الرقمي</h2>
-        <a href="exelo-store.html" class="btn">تصفح</a>
-    </div>
+<div class="card">
+<img src="store.png.jpg?v=5">
+<h2>المتجر الرقمي</h2>
+<a href="exelo-store.html" class="btn">تصفح</a>
+</div>
 
 </div>
 
 <!-- الفوتر -->
 <footer class="footer">
-    <div class="footer-line"></div>
 
-    <div class="footer-icons">
-        <a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
-        <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
-    </div>
+<div class="footer-line"></div>
 
-    <div class="footer-links">
-        <a href="terms.html">الشروط</a>
-        <span>|</span>
-        <a href="privacy.html">الخصوصية</a>
-    </div>
+<div class="footer-icons">
+<a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
+<a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
+</div>
 
-    <div class="footer-copy">
-        © 2026 إكسيلو
-    </div>
+<div class="footer-links">
+<a href="terms.html">الشروط والأحكام</a>
+<span>|</span>
+<a href="privacy.html">سياسة الخصوصية</a>
+</div>
+
+<div class="footer-copy">
+© 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان
+</div>
+
 </footer>
 
 <!-- Firebase -->
@@ -233,24 +235,24 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 onAuthStateChanged(auth,(user)=>{
-    if(user){
-        document.getElementById("userEmail").textContent=user.email;
-    }else{
-        window.location.href="login.html";
-    }
+if(user){
+document.getElementById("userEmail").textContent=user.email;
+}else{
+window.location.href="login.html";
+}
 });
 
 window.logout=function(){
-    signOut(auth).then(()=>{
-        window.location.href="login.html";
-    });
+signOut(auth).then(()=>{
+window.location.href="login.html";
+});
 };
 </script>
 
 <script>
 function toggleMenu(){
-    document.getElementById("sidebar").classList.toggle("active");
-    document.getElementById("overlay").classList.toggle("active");
+document.getElementById("sidebar").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
 }
 </script>
 
