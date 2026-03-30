@@ -1,110 +1,155 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>تسجيل الدخول</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول | EXILO</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #050a14;
-      color: white;
-      padding-top: 80px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
-    input {
-      width: 250px;
-      padding: 12px;
-      margin: 10px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
+<style>
+:root {
+  --navy: #050a14;
+  --gold: #c5a059;
+  --text: #e6f1ff;
+}
 
-    button {
-      padding: 12px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #c5a059;
-      color: black;
-      font-size: 16px;
-      cursor: pointer;
-    }
+* { box-sizing: border-box; }
 
-    button:hover {
-      opacity: 0.8;
-    }
-  </style>
+body {
+  margin: 0;
+  font-family: 'Tajawal', sans-serif;
+  background: linear-gradient(180deg, #050a14, #0a0f1a);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* الكارد */
+.login-box {
+  background: rgba(255,255,255,0.03);
+  padding: 40px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  border: 1px solid rgba(197,160,89,0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* العنوان */
+.login-box h2 {
+  color: var(--gold);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+/* الحقول */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: #0f1625;
+  color: white;
+}
+
+/* الأزرار */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background: var(--gold);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* زر ثانوي */
+.secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+</style>
 </head>
 
 <body>
 
-  <h2>تسجيل الدخول / إنشاء حساب</h2>
+<div class="login-box">
 
-  <input id="email" type="email" placeholder="البريد الإلكتروني"><br>
-  <input id="password" type="password" placeholder="كلمة المرور"><br>
+  <h2>تسجيل الدخول</h2>
 
-  <button onclick="registerUser()">إنشاء حساب</button>
+  <input id="email" type="email" placeholder="البريد الإلكتروني">
+  <input id="password" type="password" placeholder="كلمة المرور">
+
   <button onclick="loginUser()">تسجيل الدخول</button>
+  <button class="secondary" onclick="registerUser()">إنشاء حساب جديد</button>
 
-  <script type="module">
+</div>
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+<script type="module">
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
-      authDomain: "exilo-376f1.firebaseapp.com",
-      projectId: "exilo-376f1",
-      storageBucket: "exilo-376f1.appspot.com",
-      messagingSenderId: "736619072060",
-      appId: "1:736619072060:web:286dc36624f3be2d2a9139"
-    };
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+const firebaseConfig = {
+  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+  authDomain: "exilo-376f1.firebaseapp.com",
+  projectId: "exilo-376f1",
+  storageBucket: "exilo-376f1.appspot.com",
+  messagingSenderId: "736619072060",
+  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
+};
 
-    // إنشاء حساب
-    window.registerUser = function () {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-      if (email === "" || password === "") {
-        alert("اكتب الإيميل وكلمة المرور أولاً ⚠️");
-        return;
-      }
+// تسجيل
+window.registerUser = function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-      createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          alert("تم إنشاء الحساب بنجاح 🎉");
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    };
+  if (email === "" || password === "") {
+    alert("اكتب البيانات أولاً ⚠️");
+    return;
+  }
 
-    // تسجيل الدخول
-    window.loginUser = function () {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => alert("تم إنشاء الحساب 🎉"))
+    .catch((error) => alert(error.message));
+};
 
-      if (email === "" || password === "") {
-        alert("اكتب الإيميل وكلمة المرور أولاً ⚠️");
-        return;
-      }
+// دخول
+window.loginUser = function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          window.location.href = "account.html";
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    };
+  if (email === "" || password === "") {
+    alert("اكتب البيانات أولاً ⚠️");
+    return;
+  }
 
-  </script>
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      window.location.href = "account.html";
+    })
+    .catch((error) => alert(error.message));
+};
+
+</script>
 
 </body>
 </html>
