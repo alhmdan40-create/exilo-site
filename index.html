@@ -17,8 +17,6 @@
     --card-bg: rgba(255, 255, 255, 0.05);
 }
 
-* { box-sizing: border-box; transition: all 0.3s ease; }
-
 body {
     font-family: 'Tajawal', sans-serif;
     background-color: var(--navy);
@@ -26,177 +24,81 @@ body {
     margin: 0;
 }
 
-/* القائمة الجانبية */
+/* القائمة */
 #sidebar {
     position: fixed;
-    top: 0;
     right: -260px;
+    top: 0;
     width: 260px;
     height: 100%;
-    background: linear-gradient(180deg, #050a14, #0a0f1a);
-    padding: 30px 20px;
+    background: var(--dark-grey);
+    padding: 25px;
     z-index: 2000;
     border-left: 2px solid var(--gold);
 }
 
 #sidebar a {
     display: block;
-    color: var(--text);
-    margin: 18px 0;
+    margin: 15px 0;
+    color: white;
     text-decoration: none;
 }
 
-.menu-title { 
-    cursor: pointer; 
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-/* 🔥 حركة القائمة */
-.submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    padding-right: 15px;
-}
+.menu-title { cursor: pointer; }
+.submenu { display:none; padding-right:15px; }
 
 #overlay {
     position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
+    width:100%;
+    height:100%;
     background:rgba(0,0,0,0.6);
     display:none;
-    z-index:1500;
 }
 
+/* الهيدر */
 header {
-    background: var(--navy);
-    padding: 15px 5%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:15px;
     border-bottom:2px solid var(--gold);
 }
 
 .logout-btn {
     background: var(--gold);
-    color: var(--navy);
-    padding:7px 18px;
-    border-radius:8px;
-    font-weight:bold;
+    color: black;
+    padding:8px 18px;
+    border-radius:10px;
     border:none;
     cursor:pointer;
-    text-decoration:none;
 }
-
-.logo-text { color: var(--gold); font-weight:bold; }
 
 .hero {
-    height: 400px;
-    background: linear-gradient(rgba(5,10,20,0.4), rgba(5,10,20,0.4)), url('banner.png%202.PNG');
-    background-size: cover;
-    background-position: center;
-    border-bottom: 4px solid var(--gold);
+    height:400px;
+    background:url('banner.png%202.PNG') center/cover;
 }
 
-.main-content { padding:60px 20px; }
-
-.why-section {
-    max-width:1000px;
-    margin:0 auto 60px;
-    text-align:center;
-}
-
-.why-section h2 {
-    color:var(--gold);
-    font-size:2.5rem;
-    margin-bottom:40px;
-}
+/* المحتوى */
+.main-content { padding:50px 20px; }
 
 .why-grid {
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    gap:20px;
 }
 
 .why-card {
-    background: rgba(255,255,255,0.04);
-    border-radius:20px;
-    border:1px solid rgba(197,160,89,0.3);
-    padding:25px 20px;
-    min-height:180px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    background: rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
 }
 
-.why-card i {
-    font-size:26px;
-    color:var(--gold);
-    margin-bottom:12px;
-}
-
-.services-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:40px;
-    max-width:1200px;
-    margin:0 auto;
-}
-
-.service-card {
-    background: var(--card-bg);
-    border-radius:25px;
-    padding:25px;
-    text-align:center;
-}
-
-.image-container {
-    height:280px;
-    border-radius:18px;
-    overflow:hidden;
-    margin-bottom:20px;
-}
-
-.image-container img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.action-btn {
-    background: var(--gold);
-    color: var(--navy);
-    padding:14px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:bold;
-    display:block;
-}
-
-.reviews-section {
-    max-width:1000px;
-    margin:80px auto;
-    text-align:center;
-}
-
+/* الفوتر */
 footer {
-    background: var(--dark-grey);
-    padding:50px 20px;
-    border-top:2px solid var(--gold);
+    background:#0a0f1a;
     text-align:center;
-}
-
-.social-icons a {
-    color: var(--gold);
-    font-size: 2.2rem;
-    margin: 0 20px;
-}
-
-.legal-links a {
-    color: #8fa7c7;
-    margin: 0 15px;
-    text-decoration: none;
+    padding:30px;
+    margin-top:50px;
 }
 </style>
 </head>
@@ -208,58 +110,38 @@ footer {
 <!-- القائمة -->
 <div id="sidebar">
 
-<div onclick="toggleSidebar()" style="color:var(--gold);font-size:22px;cursor:pointer;margin-bottom:20px;">✕</div>
+<div onclick="toggleSidebar()">✕</div>
 
 <a href="index.html">🏠 الرئيسية</a>
 
-<div class="menu-title" onclick="toggleMenu('coursesMenu')">
-🎓 الدورات
-</div>
+<div class="menu-title" onclick="toggleMenu('coursesMenu')">🎓 الدورات</div>
 <div class="submenu" id="coursesMenu">
-<a href="body-language-course.html">لغة الجسد</a>
-<a href="character-analysis-course.html">تحليل الشخصيات</a>
-<a href="courses-details.html">جميع الدورات</a>
-</div>
-
-
-
-<div class="menu-title" onclick="toggleMenu('storeMenu')">
-🛒 المتجر
-</div>
-<div class="submenu" id="storeMenu">
-<a href="exelo-store.html">📚 الكتب</a>
-<a href="exelo-store.html">عرض المتجر</a>
-</div>
-
-<hr style="margin:20px 0; opacity:0.2;">
-
-<a href="#">👤 من نحن</a>
-<a href="reviews.html">⭐ آراء العملاء</a>
-<a href="sessions.html">📞 تواصل معنا</a>
-
-<hr style="margin:20px 0; opacity:0.2;">
-
-<a href="terms.html">📄 الشروط والأحكام</a>
-<a href="privacy.html">🔒 سياسة الخصوصية</a>
-
+<a href="#">لغة الجسد</a>
+<a href="#">تحليل الشخصيات</a>
 </div>
 
 <a href="sessions.html">💬 الجلسات</a>
 
-<!-- 🔥 المتجر الجديد -->
-<div class="menu-title" onclick="toggleMenu('storeMenu')">🛒 المتجر ▾</div>
+<div class="menu-title" onclick="toggleMenu('storeMenu')">🛒 المتجر</div>
 <div class="submenu" id="storeMenu">
-<a href="exelo-store.html">📚 الكتب</a>
-<a href="exelo-store.html">عرض المتجر</a>
+<a href="#">الكتب</a>
+<a href="#">كل المنتجات</a>
 </div>
 
 <a href="reviews.html">⭐ آراء العملاء</a>
+
+<hr>
+
+<a href="terms.html">الشروط</a>
+<a href="privacy.html">الخصوصية</a>
+
 </div>
 
+<!-- الهيدر -->
 <header>
 
 <div onclick="toggleSidebar()" style="cursor:pointer;">
-<i class="fas fa-bars" style="color:gold;font-size:20px;"></i>
+<i class="fas fa-bars" style="color:gold;"></i>
 </div>
 
 <div>
@@ -267,97 +149,58 @@ footer {
 <a href="login.html" id="loginBtn" class="logout-btn" style="display:none;">تسجيل الدخول</a>
 </div>
 
-<div class="logo-text">EXILO</div>
+<div>EXILO</div>
 
 </header>
 
+<!-- البنر -->
 <div class="hero"></div>
 
+<!-- المحتوى -->
 <main class="main-content">
 
-<!-- لماذا -->
-<div class="why-section">
-<h2>لماذا إكسيلو؟</h2>
+<h2 style="text-align:center;">لماذا إكسيلو؟</h2>
+
 <div class="why-grid">
-
-<div class="why-card">
-<i class="fas fa-brain"></i>
-<p>افهم نفسك بعمق واقرأ الآخرين بذكاء لتتحكم في قراراتك بثقة</p>
+<div class="why-card">تحكم في حياتك بثقة</div>
+<div class="why-card">فهم عميق لنفسك</div>
+<div class="why-card">أدوات عملية</div>
+<div class="why-card">نتائج سريعة</div>
 </div>
-
-<div class="why-card">
-<i class="fas fa-bullseye"></i>
-<p>سيطرة كاملة على مشاعرك مهما كانت الضغوط</p>
-</div>
-
-<div class="why-card">
-<i class="fas fa-tools"></i>
-<p>أدوات عملية تطبقها فوراً وتلاحظ الفرق</p>
-</div>
-
-<div class="why-card">
-<i class="fas fa-rocket"></i>
-<p>نتائج سريعة تنقلك لمستوى أعلى</p>
-</div>
-
-</div>
-</div>
-
-<!-- الخدمات -->
-<div class="services-grid">
-
-<div class="service-card">
-<div class="image-container">
-<img src="courses.png.PNG">
-</div>
-<h3>الدورات الرقمية</h3>
-<a href="courses-details.html" class="action-btn">اكتشف برامجنا</a>
-</div>
-
-<div class="service-card">
-<div class="image-container">
-<img src="sessions.png.PNG?v=2">
-</div>
-<h3>الجلسات والاستشارات</h3>
-<a href="sessions.html" class="action-btn">احجز الآن</a>
-</div>
-
-<div class="service-card">
-<div class="image-container">
-<img src="store.png.jpg">
-</div>
-<h3>المتجر الرقمي</h3>
-<a href="exelo-store.html" class="action-btn">تصفح المتجر</a>
-</div>
-
-</div>
-
-<!-- التقييمات -->
-<section class="reviews-section">
-<a href="reviews.html">
-<h2 style="color:var(--gold);">ماذا قال عملاؤنا</h2>
-</a>
-<div id="reviewsContainer"></div>
-</section>
 
 </main>
 
+<!-- الفوتر -->
 <footer>
-<div class="social-icons">
-<a href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.snapchat.com"><i class="fab fa-snapchat"></i></a>
-<a href="https://wa.me/966000000000"><i class="fab fa-whatsapp"></i></a>
-</div>
-
-<div class="legal-links">
-<a href="terms.html">الشروط والأحكام</a>
-<a href="privacy.html">سياسة الخصوصية</a>
-</div>
-
-<p style="color:#5a718a;">
-© 2026 إكسيلو | جميع الحقوق محفوظة
-</p>
+<p>© 2026 إكسيلو</p>
 </footer>
+
+<!-- Firebase -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getAuth,
+  signOut,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const app = initializeApp({
+  apiKey: "test",
+  authDomain: "test",
+  projectId: "test"
+});
+
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+    document.getElementById("logoutBtn").style.display = user ? "inline-block":"none";
+    document.getElementById("loginBtn").style.display = user ? "none":"inline-block";
+});
+
+document.getElementById("logoutBtn").onclick = function () {
+    signOut(auth).then(()=>location.reload());
+};
+</script>
 
 <script>
 function toggleSidebar(){
@@ -374,12 +217,8 @@ o.style.display="block";
 }
 
 function toggleMenu(id){
-let menu=document.getElementById(id);
-if(menu.style.maxHeight){
-menu.style.maxHeight=null;
-}else{
-menu.style.maxHeight=menu.scrollHeight+"px";
-}
+let m=document.getElementById(id);
+m.style.display=(m.style.display==="block")?"none":"block";
 }
 </script>
 
