@@ -29,17 +29,19 @@ body {
   border-bottom: 3px solid var(--gold);
 }
 
-/* الصندوق */
+/* المربع */
 .login-box {
   background: rgba(255,255,255,0.05);
-  margin: -60px auto 0; /* يطلع فوق شوي */
+  margin-top: -60px;
+  margin-right: 5%;   /* 👈 تحريك لليمين */
   padding: 40px;
   border-radius: 20px;
-  width: 90%;
-  max-width: 420px;
+  width: 85%;
+  max-width: 360px;
   text-align: center;
   border: 1px solid rgba(197,160,89,0.3);
   backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* العنوان */
@@ -82,10 +84,8 @@ button {
 
 <body>
 
-<!-- البنر -->
 <div class="hero"></div>
 
-<!-- تسجيل الدخول -->
 <div class="login-box">
   <h2>تسجيل الدخول</h2>
 
@@ -112,18 +112,30 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// تسجيل
 window.registerUser = function () {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !password) {
+    alert("اكتب البيانات أولاً ⚠️");
+    return;
+  }
 
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => alert("تم إنشاء الحساب 🎉"))
     .catch((error) => alert(error.message));
 };
 
+// دخول
 window.loginUser = function () {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !password) {
+    alert("اكتب البيانات أولاً ⚠️");
+    return;
+  }
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => window.location.href = "account.html")
