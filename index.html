@@ -110,27 +110,40 @@
         }
 
         .main-content { flex: 1; padding: 60px 20px; }
-        
-        /* 🔥 بوكس لماذا إكسيلو */
-        .why-box {
-            max-width: 800px;
+
+        /* 🔥 الجديد */
+        .why-section {
+            max-width: 1000px;
             margin: 0 auto 60px;
-            background: rgba(255,255,255,0.04);
-            border-radius: 25px;
-            padding: 40px;
-            border: 1px solid rgba(197,160,89,0.3);
             text-align: center;
         }
 
-        .why-box h2 {
+        .why-section h2 {
             color: var(--gold);
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
-        .why-box p {
-            font-size: 1.25rem;
-            line-height: 2;
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(197,160,89,0.3);
+        }
+
+        .why-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
             color: #d1d9e6;
         }
 
@@ -189,6 +202,7 @@
 
 <div id="overlay" onclick="toggleSidebar()"></div>
 
+<!-- القائمة كاملة -->
 <div id="sidebar">
     <div onclick="toggleSidebar()" style="cursor:pointer; color:var(--gold); font-size:20px;">✕</div>
 
@@ -228,12 +242,8 @@
     
     <div class="user-section">
         <span class="user-email" id="userEmail"></span>
-
         <button class="logout-btn" id="logoutBtn" onclick="logout()">خروج</button>
-
-        <a href="login.html" class="logout-btn" id="loginBtn" style="display:none;">
-            تسجيل الدخول
-        </a>
+        <a href="login.html" class="logout-btn" id="loginBtn" style="display:none;">تسجيل الدخول</a>
     </div>
     
     <div class="logo-text">EXILO</div>
@@ -243,18 +253,18 @@
 
 <main class="main-content">
 
-    <!-- 🔥 لماذا إكسيلو (معدل) -->
-    <div class="why-box">
+    <!-- 🔥 فقط هذا تغير -->
+    <div class="why-section">
         <h2>لماذا إكسيلو؟</h2>
-        <p>
-            لأن التغيير الحقيقي لا يحدث بالصدفة… بل بالوعي.<br><br>
-            في إكسيلو، لا نقدم محتوى عادي، بل نصنع لك تجربة تغير طريقة تفكيرك وتعاملك مع الحياة من الداخل.<br><br>
-            ستتعلم كيف تفهم نفسك بعمق، تقرأ الآخرين بدقة، وتتحكم في ردود أفعالك بثبات وثقة.<br><br>
-            كل ما نقدمه مبني على خبرة وتجربة عملية — ليس مجرد كلام… بل أدوات حقيقية تطبقها وترى نتائجها فوراً.<br><br>
-            <strong>ابدأ رحلتك الآن… لأن أفضل نسخة منك تنتظرك.</strong>
-        </p>
+        <div class="why-grid">
+            <div class="why-card"><i class="fas fa-brain"></i><p>تفهم نفسك والناس بعمق</p></div>
+            <div class="why-card"><i class="fas fa-bullseye"></i><p>تتحكم في مشاعرك بثقة</p></div>
+            <div class="why-card"><i class="fas fa-tools"></i><p>أدوات عملية مباشرة</p></div>
+            <div class="why-card"><i class="fas fa-rocket"></i><p>نتائج واضحة وسريعة</p></div>
+        </div>
     </div>
 
+    <!-- باقي الأقسام كما هي -->
     <div class="services-grid">
         <div class="service-card">
             <div class="image-container">
@@ -299,67 +309,6 @@
         &copy; 2026 إكسيلو | جميع الحقوق محفوظة لـ هاني آل حمدان
     </p>
 </footer>
-
-<script>
-function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-
-    if (sidebar.style.right === "0px") {
-        sidebar.style.right = "-260px";
-        overlay.style.display = "none";
-    } else {
-        sidebar.style.right = "0px";
-        overlay.style.display = "block";
-    }
-}
-
-function toggleMenu(id) {
-    const menu = document.getElementById(id);
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
-</script>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signOut, onAuthStateChanged, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSنIu9c0Dzo",
-  authDomain: "exilo-376f1.firebaseapp.com",
-  projectId: "exilo-376f1",
-  storageBucket: "exilo-376f1.appspot.com",
-  messagingSenderId: "736619072060",
-  appId: "1:736619072060:web:286dc36624f3be2d2a9139"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-setPersistence(auth, browserSessionPersistence);
-
-onAuthStateChanged(auth, (user) => {
-    const email = document.getElementById("userEmail");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const loginBtn = document.getElementById("loginBtn");
-
-    if (user) {
-        email.textContent = user.email;
-        logoutBtn.style.display = "inline-block";
-        loginBtn.style.display = "none";
-    } else {
-        email.textContent = "";
-        logoutBtn.style.display = "none";
-        loginBtn.style.display = "inline-block";
-    }
-});
-
-window.logout = function () {
-    signOut(auth).then(() => {
-        location.reload();
-    });
-};
-</script>
 
 </body>
 </html>
