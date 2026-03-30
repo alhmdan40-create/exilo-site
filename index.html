@@ -5,253 +5,215 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>إكسيلو | EXILO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <style>
 :root {
---navy: #050a14;
---gold: #c5a059;
---text: #e6f1ff;
---dark-grey: #0a0f1a;
---card-bg: rgba(255,255,255,0.05);
+    --navy:#050a14;
+    --gold:#c5a059;
+    --text:#e6f1ff;
 }
 
-* { box-sizing: border-box; }
-
-body {
-font-family: 'Tajawal', sans-serif;
-background: var(--navy);
-color: var(--text);
-margin: 0;
+body{
+    margin:0;
+    font-family:'Tajawal',sans-serif;
+    background:var(--navy);
+    color:var(--text);
 }
 
-/* HEADER */
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 20px;
-border-bottom: 2px solid var(--gold);
+/* الهيدر */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    border-bottom:2px solid var(--gold);
 }
 
-.menu-btn { cursor: pointer; color: var(--gold); font-size: 1.5rem; }
+.logo-text{color:var(--gold);font-size:1.5rem;font-weight:bold;}
 
-.user-section { display: flex; align-items: center; gap: 10px; }
+.user-section{display:flex;align-items:center;gap:10px;}
 
-.logout-btn {
-background: var(--gold);
-border: none;
-padding: 6px 14px;
-border-radius: 6px;
-cursor: pointer;
-display: none;
+.logout-btn{
+    background:var(--gold);
+    border:none;
+    padding:6px 15px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-.login-btn {
-background: var(--gold);
-padding: 6px 14px;
-border-radius: 6px;
-text-decoration: none;
-color: black;
-display: none;
+/* القائمة الجانبية */
+.sidebar{
+    position:fixed;
+    right:-260px;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#0a0f1a;
+    padding:20px;
+    transition:.3s;
+    z-index:999;
+}
+.sidebar.active{right:0;}
+
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    display:none;
+}
+.overlay.active{display:block;}
+
+.sidebar a{
+    display:block;
+    margin:15px 0;
+    color:#fff;
+    text-decoration:none;
 }
 
-.logo-text { color: var(--gold); font-size: 1.5rem; }
-
-/* SIDEBAR */
-#sidebar {
-position: fixed;
-top: 0;
-right: -260px;
-width: 260px;
-height: 100%;
-background: var(--dark-grey);
-padding: 30px 20px;
-transition: 0.3s;
-z-index: 2000;
-border-left: 2px solid var(--gold);
+/* البنر */
+.hero{
+    height:300px;
+    background:url('banner.png 2.PNG') center/cover no-repeat;
+    border-bottom:3px solid var(--gold);
 }
 
-#sidebar.active { right: 0; }
+/* الكروت */
+.container{padding:40px 20px;}
 
-#sidebar a {
-display: block;
-color: var(--text);
-margin: 15px 0;
-text-decoration: none;
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:30px;
+    text-align:center;
 }
 
-#overlay {
-position: fixed;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.6);
-display: none;
-z-index: 1500;
+.card img{
+    width:100%;
+    border-radius:15px;
 }
 
-#overlay.active { display: block; }
-
-/* HERO */
-.hero {
-height: 300px;
-background: linear-gradient(rgba(5,10,20,0.4), rgba(5,10,20,0.4)), url('banner.png%202.PNG') center/cover no-repeat;
-border-bottom: 4px solid var(--gold);
+.btn{
+    display:block;
+    background:var(--gold);
+    color:#000;
+    padding:12px;
+    border-radius:10px;
+    margin-top:15px;
+    text-decoration:none;
 }
 
-/* CONTENT */
-.main-content { padding: 40px 20px; }
-
-.section-intro {
-text-align: center;
-max-width: 800px;
-margin: auto;
-margin-bottom: 50px;
+/* الفوتر القديم */
+.footer {
+    background: #050a14;
+    padding: 40px 20px 60px;
+    text-align: center;
 }
 
-.section-intro h2 {
-color: var(--gold);
-font-size: 2rem;
+.footer-line {
+    width: 100%;
+    height: 2px;
+    background: #c5a059;
+    margin-bottom: 30px;
 }
 
-.section-intro p {
-font-size: 1.1rem;
-line-height: 1.8;
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
 }
 
-.services-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 20px;
+.footer-icons a {
+    color: #c5a059;
+    font-size: 32px;
 }
 
-.service-card {
-background: var(--card-bg);
-padding: 20px;
-border-radius: 15px;
-text-align: center;
+.footer-links {
+    margin-bottom: 20px;
+    color: #8fa7c7;
 }
 
-.image-container {
-height: 220px;
-overflow: hidden;
-border-radius: 10px;
+.footer-links a {
+    color: #8fa7c7;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
-.image-container img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+.footer-links span {
+    color: #c5a059;
 }
 
-.action-btn {
-background: var(--gold);
-padding: 10px;
-display: block;
-margin-top: 10px;
-text-decoration: none;
-color: black;
-border-radius: 8px;
-}
-
-/* FOOTER */
-footer {
-text-align: center;
-padding: 20px;
-border-top: 2px solid var(--gold);
-margin-top: 30px;
+.footer-copy {
+    color: #6f859e;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div id="overlay" onclick="toggleSidebar()"></div>
-
-<div id="sidebar">
-<div onclick="toggleSidebar()" style="cursor:pointer;">❌ إغلاق</div>
-<a href="index.html">الرئيسية</a>
-<a href="courses-details.html">الدورات</a>
-<a href="exelo-store.html">المتجر</a>
-<a href="terms.html">الشروط</a>
-<a href="privacy.html">الخصوصية</a>
-</div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <header>
+    <i class="fas fa-bars" onclick="toggleMenu()" style="cursor:pointer;color:var(--gold)"></i>
 
-<div class="menu-btn" onclick="toggleSidebar()">
-<i class="fas fa-bars"></i>
-</div>
+    <div class="user-section">
+        <button class="logout-btn" onclick="logout()">خروج</button>
+        <span id="userEmail"></span>
+        <i class="fas fa-user-circle" style="color:var(--gold)"></i>
+    </div>
 
-<div class="user-section">
-<a href="login.html" id="loginBtn" class="login-btn">تسجيل دخول</a>
-<button id="logoutBtn" class="logout-btn">خروج</button>
-<span id="userEmail"></span>
-<i class="fas fa-user-circle"></i>
-</div>
-
-<div class="logo-text">EXILO</div>
-
+    <div class="logo-text">EXILO</div>
 </header>
+
+<div class="sidebar" id="sidebar">
+    <a href="#">الرئيسية</a>
+    <a href="courses-details.html">الدورات</a>
+    <a href="exelo-store.html">المتجر</a>
+</div>
 
 <div class="hero"></div>
 
-<div class="main-content">
+<div class="container">
 
-<div class="section-intro">
-<h2>لماذا إكسيلو؟</h2>
-<p>
-تخيل لو تبدأ من جديد… لكن هذه المرة بوعي أعلى وقوة أكبر.<br><br>
-إكسيلو صُممت لتكون نقطة التحول في حياتك،  
-حيث ندمج بين العلم والتطبيق لنصنع نتائج حقيقية.<br><br>
-لن نمنحك معلومات فقط…  
-بل تجربة تغيّر طريقة تفكيرك بالكامل.<br><br>
-🔥 القرار اليوم… هو الفرق بين نفس الحياة أو نسخة أقوى منك.
-</p>
-</div>
+    <div class="card">
+        <img src="sessions.png.PNG">
+        <h2>الجلسات</h2>
+        <a href="https://wa.me/966538205304" class="btn">احجز</a>
+    </div>
 
-<div class="services-grid">
-
-<div class="service-card">
-<div class="image-container">
-<img src="courses.png.PNG">
-</div>
-<h3>الدورات</h3>
-<a href="courses-details.html" class="action-btn">عرض</a>
-</div>
-
-<div class="service-card">
-<div class="image-container">
-<img src="sessions.png.PNG">
-</div>
-<h3>الجلسات</h3>
-<a href="https://wa.me/966538205304" class="action-btn">احجز</a>
-</div>
-
-<div class="service-card">
-<div class="image-container">
-<img src="store.png.jpg">
-</div>
-<h3>المتجر</h3>
-<a href="exelo-store.html" class="action-btn">تصفح</a>
-</div>
+    <div class="card">
+        <img src="store.png.jpg">
+        <h2>المتجر الرقمي</h2>
+        <a href="exelo-store.html" class="btn">تصفح</a>
+    </div>
 
 </div>
 
-</div>
+<!-- الفوتر -->
+<footer class="footer">
+    <div class="footer-line"></div>
 
-<footer>
-© 2026 إكسيلو
+    <div class="footer-icons">
+        <a href="https://wa.me/966538205304"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.snapchat.com/add/hanialhmdan"><i class="fab fa-snapchat"></i></a>
+        <a href="https://www.tiktok.com/@hanialhmdan"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="footer-links">
+        <a href="terms.html">الشروط</a>
+        <span>|</span>
+        <a href="privacy.html">الخصوصية</a>
+    </div>
+
+    <div class="footer-copy">
+        © 2026 إكسيلو
+    </div>
 </footer>
-
-<script>
-function toggleSidebar() {
-document.getElementById("sidebar").classList.toggle("active");
-document.getElementById("overlay").classList.toggle("active");
-}
-</script>
 
 <!-- Firebase -->
 <script type="module">
@@ -259,7 +221,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
-apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
+apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnlu9c0Dzo",
 authDomain: "exilo-376f1.firebaseapp.com",
 projectId: "exilo-376f1",
 storageBucket: "exilo-376f1.appspot.com",
@@ -270,25 +232,26 @@ appId: "1:736619072060:web:286dc36624f3be2d2a9139"
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const userEmail = document.getElementById("userEmail");
-const loginBtn = document.getElementById("loginBtn");
-const logoutBtn = document.getElementById("logoutBtn");
+onAuthStateChanged(auth,(user)=>{
+    if(user){
+        document.getElementById("userEmail").textContent=user.email;
+    }else{
+        window.location.href="login.html";
+    }
+});
 
-onAuthStateChanged(auth, (user) => {
-if (user) {
-userEmail.textContent = user.email;
-logoutBtn.style.display = "inline-block";
-loginBtn.style.display = "none";
-} else {
-userEmail.textContent = "";
-logoutBtn.style.display = "none";
-loginBtn.style.display = "inline-block";
+window.logout=function(){
+    signOut(auth).then(()=>{
+        window.location.href="login.html";
+    });
+};
+</script>
+
+<script>
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+    document.getElementById("overlay").classList.toggle("active");
 }
-});
-
-logoutBtn.addEventListener("click", () => {
-signOut(auth).then(() => location.reload());
-});
 </script>
 
 </body>
