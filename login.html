@@ -2,116 +2,107 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تسجيل الدخول | EXILO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --navy: #050a14;
-  --gold: #c5a059;
-  --text: #e6f1ff;
-}
+:root { --navy:#050a14; --gold:#c5a059; --text:#e6f1ff; }
 
 body {
-  margin: 0;
-  font-family: 'Tajawal', sans-serif;
-  background: var(--navy);
-  color: var(--text);
-  overflow-x: hidden;
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#050a14;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
 /* البنر */
-.hero {
-  width: 100%;
-  height: 250px;
-  background: url("banner.png 2.PNG") center/cover no-repeat;
-  border-bottom: 3px solid var(--gold);
+.bg {
+  position:fixed;
+  top:0; right:0; left:0;
+  height:100%;
+  background:url('banner.png%202.PNG?v=100') center/cover no-repeat;
+  opacity:0.25;
+  z-index:-1;
 }
 
 /* مربع تسجيل الدخول */
-.login-box {
-  width: 100%;
-  max-width: 300px; /* 👈 أصغر */
-  margin: -60px auto 0;
-  transform: translateX(8px); /* 👈 ميل خفيف ومتوازن */
-  padding: 35px;
-  border-radius: 22px;
-  text-align: center;
-
-  background: rgba(255,255,255,0.05);
-
-  /* الإطار الذهبي */
-  border-right: 2px solid var(--gold);
-  border-left: 2px solid var(--gold);
-  border-top: 1px solid rgba(197,160,89,0.2);
-  border-bottom: 1px solid rgba(197,160,89,0.2);
-
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.box {
+  width:90%;
+  max-width:380px;
+  padding:30px;
+  background:rgba(5,10,20,0.95);
+  border:2px solid var(--gold);
+  border-radius:15px;
+  text-align:center;
 }
 
 /* العنوان */
-.login-box h2 {
-  color: var(--gold);
-  margin-bottom: 25px;
+h2 {
+  color:var(--gold);
+  margin-bottom:20px;
 }
 
 /* الحقول */
 input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  border: none;
-  background: #0f1625;
-  color: white;
-  font-size: 15px;
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:8px;
+  font-family:'Tajawal';
 }
 
 /* الأزرار */
 button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: none;
-  background: var(--gold);
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 15px;
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.secondary {
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
+.btn-login {
+  background:var(--gold);
+  color:#050a14;
+}
+
+.btn-register {
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
 }
 </style>
 </head>
 
 <body>
 
-<!-- البنر -->
-<div class="hero"></div>
+<div class="bg"></div>
 
-<!-- مربع تسجيل الدخول -->
-<div class="login-box">
+<div class="box">
   <h2>تسجيل الدخول</h2>
 
   <input id="email" type="email" placeholder="البريد الإلكتروني">
   <input id="password" type="password" placeholder="كلمة المرور">
 
-  <button onclick="loginUser()">تسجيل الدخول</button>
-  <button class="secondary" onclick="registerUser()">إنشاء حساب</button>
+  <button class="btn-login" onclick="loginUser()">دخول</button>
+  <button class="btn-register" onclick="registerUser()">إنشاء حساب</button>
 </div>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+/* بياناتك */
 const firebaseConfig = {
   apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
   authDomain: "exilo-376f1.firebaseapp.com",
@@ -126,45 +117,40 @@ const auth = getAuth(app);
 
 /* إنشاء حساب */
 window.registerUser = function () {
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
   if (!email || !password) {
-    alert("اكتب البيانات أولاً ⚠️");
-    return;
-  }
-
-  if (!email.includes("@")) {
-    alert("البريد الإلكتروني غير صحيح ❌");
-    return;
-  }
-
-  if (password.length < 6) {
-    alert("كلمة المرور لازم تكون 6 أحرف على الأقل 🔒");
+    alert("أدخل البريد وكلمة المرور");
     return;
   }
 
   createUserWithEmailAndPassword(auth, email, password)
-    .then(() => alert("تم إنشاء الحساب 🎉"))
+    .then(() => {
+      alert("تم إنشاء الحساب 🎉");
+      window.location.href = "index.html";
+    })
     .catch((error) => alert(error.message));
 };
 
 /* تسجيل دخول */
 window.loginUser = function () {
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
   if (!email || !password) {
-    alert("اكتب البيانات أولاً ⚠️");
+    alert("أدخل البريد وكلمة المرور");
     return;
   }
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
+      alert("تم تسجيل الدخول ✅");
       window.location.href = "index.html";
     })
     .catch((error) => alert(error.message));
 };
+
 </script>
 
 </body>
