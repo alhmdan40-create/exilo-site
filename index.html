@@ -180,7 +180,7 @@
     </div>
     
     <div class="user-section">
-        <span class="user-email">alhmdan40@gmail.com</span>
+        <span class="user-email" id="userEmail"></span>
         <button class="logout-btn" onclick="logout()">خروج</button>
     </div>
     
@@ -254,10 +254,9 @@ function toggleSidebar() {
 }
 </script>
 
-<!-- 🔥 إضافة Firebase فقط -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCnzxPucUqpX_hYnir3aZAGTSnIu9c0Dzo",
@@ -271,13 +270,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        document.getElementById("userEmail").textContent = user.email;
+    } else {
+        document.getElementById("userEmail").textContent = "";
+    }
+});
+
 window.logout = function () {
-    signOut(auth)
-    .then(() => {
-        window.location.href = "login.html";
-    })
-    .catch((error) => {
-        alert(error.message);
+    signOut(auth).then(() => {
+        location.reload();
     });
 };
 </script>
