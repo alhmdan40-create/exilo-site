@@ -22,7 +22,7 @@ body{
     color:var(--text);
 }
 
-/* 🔥 نفس البنر */
+/* 🔥 البنر */
 .hero{
     height:350px;
     background: linear-gradient(rgba(5,10,20,0.4), rgba(5,10,20,0.4)),
@@ -31,6 +31,7 @@ body{
     background-position:center;
 }
 
+/* 🔥 المحتوى */
 .section{
     padding:50px 20px;
     max-width:900px;
@@ -43,18 +44,17 @@ h1{
     margin-bottom:25px;
 }
 
+/* 🔥 الكروت كلها بإطار ذهبي */
 .card{
     background:rgba(255,255,255,0.04);
     padding:25px;
     border-radius:20px;
     line-height:1.8;
     margin-bottom:20px;
-}
-
-.highlight{
     border:2px solid var(--gold);
 }
 
+/* 🔥 زر */
 .btn{
     display:block;
     text-align:center;
@@ -78,8 +78,10 @@ h1{
 <div class="section">
 
 <h1>🔥 الجلسة العميقة</h1>
+
 <img src="session.jpg.PNG" style="width:100%; border-radius:20px; margin:25px 0; box-shadow:0 15px 40px rgba(0,0,0,0.6);">
-<div class="card highlight">
+
+<div class="card">
 هذه ليست جلسة عادية...
 بل جلسة تساعدك تفهم نفسك بعمق وتغير طريقة تفكيرك بشكل جذري.
 </div>
@@ -99,18 +101,7 @@ h1{
 - ترغب بتغيير حقيقي في حياتك  
 </div>
 
-<a href="https://wa.me/966512345678?text=أبغى%20حجز%20جلسة%20مع%20إكسيلو" style="
-display:block;
-background:#c5a059;
-color:#050a14;
-padding:16px;
-border-radius:12px;
-text-align:center;
-font-weight:bold;
-margin-top:20px;
-font-size:1.1rem;
-text-decoration:none;
-">
+<a href="https://wa.me/966512345678?text=أبغى%20حجز%20جلسة%20مع%20إكسيلو" class="btn">
 احجز جلستك الآن 🔥
 </a>
 
