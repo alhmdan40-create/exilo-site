@@ -3,112 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أنماط الشخصيات | إكسيلو</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<title>أنماط الشخصيات | EXILO</title>
 
 <style>
-:root {
-    --navy:#050a14;
-    --gold:#c5a059;
-    --text:#e6f1ff;
-}
 
 body{
     margin:0;
-    font-family:'Tajawal',sans-serif;
-    background:var(--navy);
-    color:var(--text);
+    font-family:Arial;
+    background:#050a14;
+    color:white;
 }
 
-/* البنر */
+/* ===== البنر ===== */
 .hero{
     height:300px;
-    background: linear-gradient(rgba(5,10,20,0.4), rgba(5,10,20,0.4)),
-    url('banner.png%202.PNG');
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("banner.png 2.PNG");
     background-size:cover;
     background-position:center;
-}
-
-/* المحتوى */
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
     text-align:center;
 }
 
-h1{
-    color:var(--gold);
-    margin-bottom:20px;
+.hero h1{
+    color:white;
+    font-size:28px;
+    margin:10px 0;
 }
 
+.hero p{
+    color:white;
+    opacity:0.9;
+}
+
+/* ===== العنوان ===== */
+.title{
+    text-align:center;
+    color:#c5a059;
+    font-size:28px;
+    margin:30px 0;
+}
+
+/* ===== صورة الكتاب ===== */
 .book-img{
-    width:100%;
+    width:90%;
     max-width:400px;
-    border-radius:20px;
+    display:block;
     margin:20px auto;
-    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+    border-radius:20px;
 }
 
-/* كروت */
-.card{
-    background:rgba(255,255,255,0.04);
+/* ===== الإطار الذهبي الموحد ===== */
+.gold-box{
+    border:2px solid rgba(197,160,89,0.6);
+    border-radius:25px;
     padding:25px;
-    border-radius:20px;
-    margin-bottom:20px;
-    line-height:1.8;
-    border:1px solid rgba(197,160,89,0.3);
+    margin:20px;
+    background:rgba(255,255,255,0.02);
+    box-shadow:0 0 25px rgba(197,160,89,0.15);
+    text-align:center;
+}
+
+/* النص */
+.gold-box p{
+    color:#ccc;
+    line-height:1.9;
+}
+
+/* العناوين داخل الإطار */
+.gold-box h2{
+    color:#c5a059;
+}
+
+/* الخط الفاصل */
+.line{
+    border-top:1px solid #333;
+    margin:20px 0;
 }
 
 /* زر */
 .btn{
     display:block;
+    margin:20px;
+    padding:18px;
+    background:#c5a059;
+    color:#000;
     text-align:center;
-    background:var(--gold);
-    color:var(--navy);
-    padding:16px;
     border-radius:12px;
     font-weight:bold;
     text-decoration:none;
-    margin-top:20px;
-    font-size:1.1rem;
 }
-    .gold-box {
-    border: 2px solid rgba(197,160,89,0.6);
-    border-radius: 25px;
-    padding: 30px;
-    margin: 30px 0;
-    background: rgba(255,255,255,0.02);
-    box-shadow: 0 0 25px rgba(197,160,89,0.15);
-}
-</style>
 
+</style>
 </head>
 
 <body>
 
-<div class="hero"></div>
+<!-- البنر -->
+<div class="hero">
+    <h1>تحرر وابدأ من جديد</h1>
+    <p>التوازن يبدأ من هنا</p>
+</div>
 
-<div class="container">
+<!-- العنوان -->
+<div class="title">
+📘 أنماط الشخصيات وفهم النفسيات
+</div>
 
-<h1>📘 أنماط الشخصيات وفهم النفسيات</h1>
-
+<!-- صورة الكتاب -->
 <img src="exilo-personality-book.jpg.PNG" class="book-img">
 
+<!-- المحتوى -->
 <div class="gold-box">
 
-<h2 style="color:#c5a059;">
-هل تشعر أن هناك قوة خفية تعيق نجاحك؟
-</h2>
+<h2>هل تشعر أن هناك قوة خفية تعيق نجاحك؟</h2>
 
-<p style="color:#ccc; line-height:1.9;">
+<p>
 هذا الكتاب يأخذك في رحلة عميقة لفهم نفسك وفهم الآخرين بطريقة احترافية.
 </p>
 
-<hr style="border-color:#333; margin:20px 0;">
+<div class="line"></div>
 
-<p style="color:#ccc;">
+<p>
 ✔ فهم عميق لأنماط الشخصيات  
 ✔ تحليل سريع لأي شخص  
 ✔ تقليل المشاكل وسوء الفهم  
@@ -116,22 +135,16 @@ h1{
 </p>
 
 </div>
-<div class="card">
-✔ فهم عميق لأنماط الشخصيات  
-✔ تحليل سريع لأي شخص  
-✔ تقليل المشاكل وسوء الفهم  
-✔ تحسين علاقاتك بشكل واضح  
-</div>
 
-<div class="card">
+<!-- السعر -->
+<div class="gold-box">
 💰 السعر: 20 ريال فقط
 </div>
 
-<a href="https://wa.me/966538205304?text=أبغى%20شراء%20كتاب%20أنماط%20الشخصيات" class="btn">
-احجز الكتاب الآن 📲
+<!-- زر الشراء -->
+<a href="https://wa.me/966XXXXXXXXX" class="btn">
+احجز الآن
 </a>
-
-</div>
 
 </body>
 </html>
