@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أنماط الشخصيات | EXILO</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#050a14;
+    color:white;
+}
+
+/* ===== البنر ===== */
+.hero{
+    height:320px;
+    background-image:url("banner.png%202.PNG");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    top:0;
+    right:0;
+}
+
+.hero-content{
+    position:relative;
+    text-align:center;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:30px;
+    margin:10px 0;
+}
+
+.hero p{
+    color:#ddd;
+}
+
+/* ===== العنوان ===== */
+.title{
+    text-align:center;
+    color:#c5a059;
+    font-size:28px;
+    margin:30px 20px;
+}
+
+/* ===== صورة الكتاب ===== */
+.book-img{
+    width:90%;
+    max-width:400px;
+    display:block;
+    margin:20px auto;
+    border-radius:20px;
+}
+
+/* ===== الإطار الذهبي ===== */
+.gold-box{
+    border:2px solid rgba(197,160,89,0.6);
+    border-radius:20px;
+    padding:25px;
+    margin:20px;
+    text-align:center;
+    background:rgba(255,255,255,0.02);
+}
+
+.gold-box h2{
+    color:#c5a059;
+}
+
+.gold-box p{
+    line-height:1.9;
+    color:#ccc;
+}
+
+/* زر */
+.btn{
+    display:block;
+    margin:20px;
+    padding:16px;
+    background:#c5a059;
+    color:#000;
+    text-align:center;
+    border-radius:12px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- البنر -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>تحرر وابدأ من جديد</h1>
+        <p>التوازن يبدأ من هنا</p>
+    </div>
+</div>
+
+<!-- العنوان -->
+<div class="title">
+📘 أنماط الشخصيات وفهم النفسيات
+</div>
+
+<!-- صورة الكتاب -->
+<img src="exilo-personality-book.jpg.PNG" class="book-img">
+
+<!-- المحتوى -->
+<div class="gold-box">
+<h2>هل تشعر أن هناك قوة خفية تعيق نجاحك؟</h2>
+<p>
+هذا الكتاب يأخذك في رحلة عميقة لفهم نفسك وفهم الآخرين بطريقة احترافية.
+</p>
+</div>
+
+<div class="gold-box">
+<h2>ماذا ستحصل عليه؟</h2>
+<p>
+✔ فهم الشخصيات<br>
+✔ تحليل الناس بسرعة<br>
+✔ تقليل المشاكل<br>
+✔ تحسين علاقاتك
+</p>
+</div>
+
+<div class="gold-box">
+💰 السعر: 20 ريال فقط
+</div>
+
+<a href="https://wa.me/966538205304" class="btn">
+احجز الآن
+</a>
+
+</body>
+</html>
